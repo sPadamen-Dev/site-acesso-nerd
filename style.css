@@ -1,0 +1,47 @@
+
+*{
+    box-sizing: border-box;
+}
+
+header{
+    background-color: black;
+    color: blanchedalmond;    
+    display: inline-flex;    
+    width: 100%;
+}
+
+.topo{
+    text-align: right;
+    padding: 15px;
+
+}
+
+
+header img{
+    width: 200px;
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin:10px;
+          
+}
+
+section.banner{
+    width: 100%;
+    height: 600px;
+    background-color: black;
+    background-image: url(/img/bannerTest.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+footer{
+    background-color: #091B2E;
+    color: white;
+    display: inline-flex;
+    width: 100%;
+    
+}
