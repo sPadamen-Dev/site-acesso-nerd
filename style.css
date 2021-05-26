@@ -1,47 +1,277 @@
 
+/* configuração em toda body*/
 *{
+    display: flex;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
-header{
+#conteudo-body{
+    height: 400px;
+}
+
+/* container-pai*/
+
+body{
+    flex-direction: column;
     background-color: black;
-    color: blanchedalmond;    
-    display: inline-flex;    
-    width: 100%;
-}
-
-.topo{
-    text-align: right;
-    padding: 15px;
-
-}
-
-
-header img{
-    width: 200px;
-}
-
-
-nav ul li {
-    display: inline-block;
-    margin:10px;
-          
-}
-
-section.banner{
-    width: 100%;
-    height: 600px;
-    background-color: black;
-    background-image: url(/img/bannerTest.PNG);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-footer{
-    background-color: #091B2E;
-    color: white;
-    display: inline-flex;
-    width: 100%;
     
 }
+
+#container-pai{
+    flex-direction: column;
+   /* align-items: center;*/
+    background-image: url(img/background.pgn), linear-gradient(#1E90FF,#000000 );
+    background-repeat: repeat;
+    width: 100vw;
+}
+
+/*Formatação das informações do topo*/
+
+#info-header-top{
+    background-color: url(img/background.pgn), linear-gradient(#1E90FF,#000000 );
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-right: 30px ;
+}
+.info-header-top-span a{
+    padding: 5px;
+    color: white;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+.info-header-top-span a:hover{
+    background-color: #1e8fffaf;
+    color: black;
+}
+
+/*Formatação do header*/
+/*Fortmatação do logo, nome e login*/
+
+#header-container{
+    background-image:linear-gradient(#1E90FF, black 80%);
+    flex-direction: column;
+    width: 100%;
+    /*max-height: 180px;*/
+}
+
+#container-logo{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.div-logo{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.div-logo img{
+    width: 130px;
+    margin-right: 40px;
+}
+/* Formatando nome Acesso Nerd */
+
+.div-nome-acesso-nerd{
+    margin-left: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.div-nome-acesso-nerd h1{
+    font-size: 2.5rem;
+    color: white;
+    font-weight: bold;
+    -webkit-text-stroke: 2px #1E90FF;
+    letter-spacing: 5px;
+}
+.div-nome-acesso-nerd h3{
+    font-size: 0.9rem;
+    color: #1E90FF;
+    letter-spacing: 5px;
+}
+
+/* -------------------- */
+
+.div-login-carrinho{
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+}
+
+/* Formatação icone de carrinho*/
+
+.div-login-carrinho .div-carrinho{
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+.div-login-carrinho .div-carrinho img{
+    width: 35px;
+    height: 35px;
+}
+
+/*  Formatação icone de login*/
+.div-login-carrinho .div-login{
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+.div-login-carrinho .div-login img{
+    width: 35px;
+    height: 35px;
+}
+
+.navegação-top{
+    background-color: #1C2B3A;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.navegação-top ul{
+    padding: 10px;
+}
+.navegação-top ul li a{
+    flex-wrap: wrap;
+    color:black;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding: 20px;
+    text-decoration: none;
+    -webkit-text-stroke: 1px #FFDE5A;
+
+}
+.navegação-top li a:hover{
+    border-bottom: 5px solid #1E90FF;
+}
+
+.barra-de-pesquisa input{
+
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    border:none;
+}
+.barra-de-pesquisa input::placeholder{
+    padding-left: 10px;
+    text-align: left;
+    color: #9A9999;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.iconpesquisa{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   background-color: white;
+   border-radius: 20px;
+   width: 60px;
+   margin-left: 15px;
+}
+.iconpesquisa img{
+    width: 30px;
+    height: 30px;
+}
+
+/* #conteudo-body{
+    background-image: url(img/img-carrosel.png);
+    background-repeat: no-repeat;
+    width: 1360px;
+    flex-wrap: wrap;
+    height: 80vh;
+    margin-bottom: 10px;
+}
+*/
+
+
+
+/*Formatando rodope*/
+#footer-container{
+    width: 100vw;
+    background-image: linear-gradient(#1C2B3A, #000000);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+    padding: 20px;
+}
+.footer-contact{
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 0.25;
+    border-right: 2px solid #265380;
+}
+.footer-newlast{
+    padding: 10px;
+    margin-left: 10px ;
+    margin-right: 10px;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 0.5;
+    border-right: 2px solid #265380;
+}
+.newlast{
+    width: 80%;
+    flex-direction: row;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.newlast span{
+    margin: 10px;
+}
+.newlast input{
+    border-radius: 10px;
+    width: 80%;
+    padding: 15px;
+}
+.newlast button{
+    background-color: black;
+    border: 1px solid #FFDE5A;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    width: 100%;
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+.newlast button:hover{
+    background-color: #1C2B3A;
+}
+
+
+.footer-form-payment{
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+    flex-grow: 0.25;
+}
+.footer-form-payment img{
+    width: 300px;
+    height: 200px;
+}
+
