@@ -1,0 +1,124 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #42668a;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color : #1C2B3A;
+    height: 760px;
+    width: 550px;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 2%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 250px;
+}
+
+header img {
+    padding-top: 20px;
+    height: 90px;
+    width: 90px;
+}
+
+.title {
+    margin-top: 20px;    
+    font-size: 34px;
+    font-weight:900 ;
+    letter-spacing: 1px;
+    color: white;
+    -webkit-text-stroke: 1px #1E90FF;
+
+}
+
+.orientation {
+    color: #1E90FF;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 2px;
+    word-wrap: break-word;
+    padding: 20px 50px;
+}
+
+.form-wrapper{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-content: left;
+    padding-left: 50px;
+}
+
+form label {
+    padding: 15px 0px;
+    color: #FFDE5A;
+    font-size: 18px;
+}
+
+form input {
+    background-color: black;
+    border-radius: 20px;
+    border: 1px solid #FFDE5A;
+    height: 45px;
+    width: 450px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.agree {
+    display: flex;
+    align-items: center;
+
+}
+
+#chk-agree {
+    height: 25px;
+    width: 25px;
+    margin: 20px 10px;
+    border: 1px;
+    border-color:  #FFDE5A; 
+}
+
+.agree label {
+    color: #B9B6B6;
+    letter-spacing: 1px;
+}
+
+
+button {
+    background-color: black;
+    border: 1px solid #FFDE5A;
+    height: 50px;
+    width: 315px;
+    color: #FFDE5A;
+    font-size: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    align-self: center;
+}
