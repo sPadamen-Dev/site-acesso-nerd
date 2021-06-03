@@ -13,6 +13,12 @@ body {
     background-color: #42668a;
 }
 
+@media screen and (max-width:1200px){
+    body {
+        height: 95vh;
+    }
+}
+
 .login-container {
     display: flex;
     flex-direction: column;
@@ -54,7 +60,7 @@ header img {
 }
 
 .orientation {
-
+    text-align: center;
     color: #1E90FF;
     font-weight: 400;
     font-size: 0.9em;
@@ -98,8 +104,28 @@ form input {
     color: white;
     font-size: 0.8em;
     letter-spacing: 3px;
-    padding-left: 1em;
+    padding-left: 1.5em;
 }
+
+a:hover {
+    color: #0d5cac;
+}
+i {
+    color:#FFDE5A;
+    position: absolute;
+    right: 65px;
+    bottom: 4px;
+    top: 160px;
+}
+    @media screen and (max-width:1200px){
+        i {
+            color:#FFDE5A;
+            position: absolute;
+            right: 54px;
+            bottom: 4px;
+            top: 157px;
+        }
+    }
 
 .agree {
     display: flex;
@@ -116,13 +142,24 @@ form input {
     border-color:  #FFDE5A; 
 }
 
+    @media screen and (max-width:1200px){
+        #chk-agree {
+            height: 50%;       
+        }
+    }
+
 .agree label {
     margin-left: 15%;
     color: #B9B6B6;
     letter-spacing: 1px;
     font-size: 0.9em;
 }
-
+    @media screen and (max-width:1200px){
+        .agree label {
+            margin-left: 13%;
+            font-size: 0.8em;
+        }
+    }
 
 button {
     background-color: black;
@@ -135,3 +172,34 @@ button {
     border-radius: 20px;
     align-self: center;
 }
+button:hover, form input:hover {
+    background-color: rgb(7, 7, 7);
+    border: 1.5px solid #ffcc01;
+    cursor: pointer;
+}
+.linkContainer {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content: space-evenly;
+}
+    @media screen and (max-width:1200px){
+        .linkContainer {
+            margin-top: 35px;
+            justify-content: space-between;
+        }
+    }
+
+.link {
+    text-decoration: none;
+    color: #1E90FF;
+    font-weight: 400;
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    text-align: right;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+} 
