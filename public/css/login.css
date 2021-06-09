@@ -47,6 +47,7 @@ header img {
     padding-top: 5%;
     height: 50%;
     width: 20%;
+    object-fit: scale-down;
 }
 
 .title {
@@ -107,25 +108,41 @@ form input {
     padding-left: 1.5em;
 }
 
+.password-group input {
+    margin-bottom: 0;
+}
+.password-group{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
 a:hover {
     color: #0d5cac;
 }
+
 i {
     color:#FFDE5A;
     position: absolute;
-    right: 65px;
-    bottom: 4px;
-    top: 160px;
+    padding-right: 15px;
 }
-    @media screen and (max-width:1200px){
-        i {
-            color:#FFDE5A;
-            position: absolute;
-            right: 54px;
-            bottom: 4px;
-            top: 157px;
-        }
+
+i:focus {
+    outline: none;
+}
+
+/*
+@media screen and (max-width:1200px){
+    i {
+        color:#FFDE5A;
+        position: absolute;
+        right: 54px;
+        bottom: 4px;
+        top: 157px;
     }
+}*/
 
 .agree {
     display: flex;
@@ -142,11 +159,11 @@ i {
     border-color:  #FFDE5A; 
 }
 
-    @media screen and (max-width:1200px){
-        #chk-agree {
-            height: 50%;       
-        }
+@media screen and (max-width:1200px){
+    #chk-agree {
+        height: 50%;       
     }
+}
 
 .agree label {
     margin-left: 15%;
@@ -154,12 +171,13 @@ i {
     letter-spacing: 1px;
     font-size: 0.9em;
 }
-    @media screen and (max-width:1200px){
-        .agree label {
-            margin-left: 13%;
-            font-size: 0.8em;
-        }
+
+@media screen and (max-width:1200px){
+    .agree label {
+        margin-left: 13%;
+        font-size: 0.8em;
     }
+}
 
 button {
     background-color: black;
@@ -174,7 +192,7 @@ button {
 }
 button:hover, form input:hover {
     background-color: rgb(7, 7, 7);
-    border: 1.5px solid #ffcc01;
+/*    border: 1.5px solid #ffcc01;*/
     cursor: pointer;
 }
 .linkContainer {
@@ -184,12 +202,13 @@ button:hover, form input:hover {
     flex-wrap:nowrap;
     justify-content: space-evenly;
 }
-    @media screen and (max-width:1200px){
-        .linkContainer {
-            margin-top: 35px;
-            justify-content: space-between;
-        }
+
+@media screen and (max-width:1200px){
+    .linkContainer {
+        margin-top: 35px;
+        justify-content: space-between;
     }
+}
 
 .link {
     text-decoration: none;
