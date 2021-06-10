@@ -33,17 +33,17 @@
     <div class="bar">
         <nav class="navegação-top">
             <ul>
-                <li><a href="#">VESTUÁRIO</a></li>
-                <li><a href="#">CANECAS</a></li>
+                <li><a id="clothes" href="#" onclick="searchProductsbyType(1)">VESTUÁRIO</a></li>
+                <li><a id="mugs" href="#" onclick="searchProductsbyType(2)">CANECAS</a></li>
                 <li><a href="#">PORTA COPO</a></li>
                 <li><a href="#">DECORAÇÃO</a></li>
                 <li><a href="#">PROMO GEEK</a></li>
             </ul>
         </nav>
         <div class="barra-de-pesquisa">   
-        <input type="text" name="pesquisar" placeholder="Pesquisar produto...">
+        <input type="text" name="pesquisar" id="search" placeholder="Pesquisar produto...">
             <div class="div-pesquisa">
-                <img class="img-pesquisar" src="/img/lupa.svg" alt="buttom search">
+                <button onclick="searchProducts()"><img class="img-pesquisar"src="/img/lupa.svg" alt="buttom search"></button>
             </div>
         </div>  
     </div>
