@@ -41,9 +41,11 @@
             </ul>
         </nav>
         <div class="barra-de-pesquisa">   
-        <input type="text" name="pesquisar" placeholder="Pesquisar produto...">
+        <input type="text" name="pesquisar" id="search" placeholder="Pesquisar produto...">
             <div class="div-pesquisa">
-                <img class="img-pesquisar" src="/img/lupa.svg" alt="buttom search">
+                <button class="img-pesquisar" onclick="searchProducts()"></button>
+                <!--<input class="img-pesquisar" type="button" value="Submit" onclick="searchProducts()"/>-->
+                <!--<a href="/products"></a><img class="img-pesquisar" src="/img/lupa.svg" alt="buttom search"></a>-->
             </div>
         </div>  
     </div>
