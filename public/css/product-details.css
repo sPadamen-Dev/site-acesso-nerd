@@ -1,0 +1,361 @@
+* {
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background-color: #273E56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.product-wrapper-outer-box {
+    display: flex;
+    border: 1px solid black;
+    background-color: #1C2B3A;
+    width: 60%;
+    height: 80%;
+    box-shadow: 5px 10px 5px #1E3042;;
+}
+
+.product-wrapper-inner-box {
+    margin: auto;
+    background-color: #2A3846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95%;
+    width: 95%;
+    border-radius: 13px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.like img{
+    position: absolute;
+    height: 5%;
+    width: auto;
+    right: 3%;
+    top: 5%;
+}
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    width: 80%;
+}
+
+.product-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+}
+
+.product-main-pic {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    background-color:#0085CF;
+}
+
+.product-main-pic img {
+    width: 100%;
+    height: auto;
+}
+
+.product-miniature-pic {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 5%;
+    gap: 3%;
+    width: 100%;
+    height: 20%;
+    box-sizing: border-box;
+}
+
+.product-miniature-pic div{
+    width: 25%;
+    height: auto;
+    background-color: blue;
+}
+
+.product-miniature-pic img{
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding-left: 5%;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.product-header {
+    font-size: 1.6rem;
+    padding-bottom: 5%;
+    width: 100%;
+    height: 15%;
+    box-sizing: border-box;
+}
+
+.product-sizes {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 15% 15%;
+    justify-content: left;
+    gap: 3%;
+    width: 100%;
+    height: 10%;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+
+.size-box {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    border: 1px solid #F0AB3E;
+    box-sizing: border-box;
+}
+
+.size-available {
+    background-color: #F0AB3E;
+}
+
+.product-description {
+    font-size: 1.1em;
+    height: 25%;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+
+.product-price {
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 0.1em;
+    margin-bottom: 5%;
+    box-sizing: border-box;
+}
+
+.installment {
+    font-weight: 700;
+}
+.installment-parts {
+    font-size: 2em;
+    margin-right:2%;
+}
+
+.installment-price {
+    font-size: 2.5em;
+    color: #FFDE5A;
+}
+
+.at-sight {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+.at-sight-price {
+    font-weight: bold;
+}
+
+
+
+
+.shipping-buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height:25%;
+    box-sizing: border-box;
+}
+
+.shipping {
+    height: 40%;
+    width: 100%;
+    display: flex;
+    direction: column;
+    align-items: center;
+    margin: 4% 0 ;
+    box-sizing: border-box;
+}
+
+.cep-entry {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 60%;
+    margin-right: 3%;
+    box-sizing: border-box;
+}
+
+.cep-entry label {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
+
+.shipping input {
+    margin-left: 3%;
+    width: 80%;
+    height: 100%;
+    border-radius: 7px;
+}
+
+.shipping button {
+    width: 35%;
+    height: 100%;
+    border-radius: 7px;
+    background-color: #F0AB3E;
+    color: white;
+    font-size: 1vmax;
+    font-weight: bold;
+}
+
+.buy {
+    display: flex;
+    justify-content: space-between;
+    height: 60%;
+}
+
+.btn-add-to-kart {
+    color: white;
+    background-color: #FF124B;
+    height: 100%;
+    width:55%;
+    border-radius: 7px;
+    font-size: 1vmax;
+    font-weight: 700;
+}
+
+.btn-buy {
+    color: white;
+    background-color: #0FBF60;
+    height: 100%;
+    width:40%;
+    border-radius: 7px;
+    font-size: 1vmax;
+    font-weight: 700;
+}
+
+
+@media screen and (max-width:1250px){
+
+    body {
+        height: 100%;
+    }
+    .product-wrapper-outer-box {
+        margin: 5% 0;
+        height: 98%;
+        width: 50%;
+    }
+
+    .product-wrapper-inner-box {
+        margin: 2%;
+    }
+    .product-container {
+        margin-top: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 90%;
+        width: 90%;
+    }
+
+    .product-images {
+        display: grid;
+        grid-template-columns: 78% 20%;
+        width: 100%;
+    }
+
+    .product-main-pic {
+        height: 100%;
+        width: auto;
+    }
+    .product-miniature-pic {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: auto;
+        height: 40%;
+        box-sizing: border-box;
+        padding-top: 0;
+    }
+    
+    .product-miniature-pic div{
+        height: 20px;
+        background-color: blue;
+        box-sizing: border-box;
+    }
+    
+    .product-miniature-pic img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-details {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .product-price {
+        display: flex;
+        letter-spacing: 0em;
+        box-sizing: border-box;
+        align-items: flex-end;
+    }
+
+    .installment {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+    }
+
+    .installment-price {
+        white-space:nowrap;
+    }
+
+    .installment-parts span {
+        align-self: baseline;
+    }
+
+    .or{
+        padding: 0px 15px;
+    }
+
+    .at-sight {
+        display: flex;
+        align-items: center;
+    }
+
+    .at-sight-price {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .shipping-buy {
+        height:150px;
+    }
+
+    .like img{
+        height: 4%;
+        right: 5%;
+        top: 48%;
+    }
+}
+
