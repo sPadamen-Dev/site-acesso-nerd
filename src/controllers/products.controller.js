@@ -1,22 +1,3 @@
-const productsController = {
-    getAllProducts: (req, res)=> {
-        const productList = getAllProducts();
-        res.render("products", { productList } )
-    },
-    getProductsbyType: (req, res)=> {
-        let productList = getProductsbyType(req.params.type)
-        res.render("products", { productList })
-    },
-    getProductsbyTheme: (req, res)=> {
-        let productList = getProdutosbyTheme(req.params.theme)
-        res.render("products", { productList })
-    },
-    getProductsbyName: (req, res)=> {
-        let productList = getProductbyName(req.params.name)
-        res.render("products", { productList })
-    }
-}
-
 /* type: 1 - camiseta | 2- caneca*/
 const products = [
     {
@@ -134,7 +115,7 @@ const products = [
         type: 2,
         theme: "Marvel",
         description: "CANECA BRANCA DEADPOOL & VENOM",
-        imgPath: "/img/products/Marvel/canecas/deadpoll-venom.png",
+        imgPath: "/img/products/Marvel/canecas/deadpool-venom.png",
         installmentParts:5,
         installmentPrice: 6.48,
         atSightPrice: 32.40
@@ -203,8 +184,8 @@ const products = [
         id: 19,
         type: 2,
         theme: "Disney",
-        description: "CANECA BRANCA MADALORIAN - GROGU",
-        imgPath: "/img/products/Disney/canecas/madalorian-grogu.png",
+        description: "CANECA BRANCA MANDALORIAN - GROGU",
+        imgPath: "/img/products/Disney/canecas/mandalorian-grogu.png",
         installmentParts:5,
         installmentPrice: 6.48,
         atSightPrice: 32.40
@@ -221,16 +202,66 @@ const products = [
     }
   ];
 
+  const fs = require('fs')
+
+  const productsController = {
+    getAllProducts: (req, res)=> {
+        const productList = getAllProducts();
+        const bannerList = getBannerList();
+        res.render("home", { productList, bannerList} )
+    },
+    getProductsbyType: (req, res)=> {
+        const bannerList = getBannerList();
+        let productList = getProductsbyType(req.params.type)
+        res.render("home", { productList, bannerList })
+    },
+    getProductsbyTheme: (req, res)=> {
+        const bannerList = getBannerList();
+        let productList = getProdutosbyTheme(req.params.theme)
+        res.render("home", { productList, bannerList })
+    },
+    getProductsbyName: (req, res)=> {
+        const bannerList = getBannerList();
+        let productList = getProductbyName(req.params.name)
+        res.render("home", { productList, bannerList })
+    }
+}
+
+const banners = [
+    '/img/banners/banner-caneca-eu-sou-quadrado.png',
+    '/img/banners/banner-caneca.jpg',
+    '/img/banners/banner-canecas-1591x420-copia.jpg',
+    '/img/banners/CANECAS.jpg',
+    '/img/banners/DragonBallDesktop.png',
+    '/img/banners/justice-league-banner-2.jpg',
+    '/img/banners/Lego-Marvel-Banner-1024x576-1.jpg',
+    '/img/banners/Mario-Kart-8-Banner.jpg',
+    '/img/banners/marvel-studios-first-10-years-banner-1081327.jpeg',
+    '/img/banners/normal_oferta-personalize-camiseta-mais-caneca1.jpg'
+];
+
 function getAllProducts() {
-    /*console.log(products)*/
     return products
 }
 
 function getProductsbyType(productType) {
-   /* console.log ('Entrou na função getProductsbyType. Parametro recebido: ' + productType)*/
     let productList = products.filter( (product) => productType == product.type )
-    /*console.log('Filtro Aplicado: ' + productList)*/
     return productList
+}
+
+function getBannerList() {
+    return banners
+    /*const url ='D:/Repositories/cooperativo/site-acesso-nerd/public/img/banners'
+    let bannerList = []
+    fs.read( url, (err, arquivos) => {
+        arquivos.forEach(arquivo => {
+            bannerList.push(arquivo)
+            console.log(bannerList)
+        });
+    });
+    console.log('LISTA:')
+    console.log(bannerList);
+    return bannerList;*/
 }
 
 module.exports = productsController;

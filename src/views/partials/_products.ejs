@@ -1,5 +1,24 @@
-<div class="products-container">
-    <div class="product-card">
+<div class="menu-products-container">
+    <div class="menu-container">
+        <div class="sub-nav">
 
+        </div>
+    </div>
+    <div class="products-container">
+        <div class="products-cards">
+            <% productList.forEach(product => {%> 
+                <div class="product-card">
+                    <img class="product-img" src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
+                    <span class="product-id"><%= product.id %> - <span class="description"><%= product.description %> </span></span>
+                    <div class="installment">
+                        <span class="installment-parts"><%= product.installmentParts %>x <span class="installment-price"><%= product.installmentPrice %> à vista</span></span>
+                    </div>
+                    <div class="at-sight">
+                        <span class="or">ou <span class="at-sight-price"><%= product.atSightPrice %></span></span>
+                    </div> 
+                </div>
+            <%}); %> 
+            </div>
+        </div>
     </div>
 </div>
