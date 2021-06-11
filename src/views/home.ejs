@@ -4,16 +4,21 @@
     <%- include('./partials/_head') %> 
 
     <body>
-
-        <div id="container-pai">
-            <%- include('./partials/_header')  %> 
-
-            <section id="conteudo-body">
+        <div class="container-pai">
+            <div class="header-banner">
+                <%- include('./partials/_header')  %> 
                 <%- include('./partials/_home-banner') %>
-                <%- include('./partials/_products') %>
-            </section>
+            </div>
 
+            <div class="conteudo-body">
+                <%- include('./partials/_product-area') %> 
+                <!--CHAMAR PARTIAL _PRODUCTS-->
+            </div>
+            
         </div> <!-- end container-pai-->
-        <%- include('./partials/_footer') %>
+        <div class="home-footer">
+            <%- include('./partials/_footer') %> 
+        </div>
+
     </body>
 </html>

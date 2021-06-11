@@ -1,5 +1,39 @@
-<div class="products-container">
-    <div class="product-card">
+<div class="menu-products-container">
+    <div class="menu-container">
+        <div class="sub-nav">
 
+        </div>
+    </div>
+    <div class="products-container">
+        <div class="products-cards">
+            <% productList.forEach((product, index) => {%> 
+                <div class="product-card" onclick="searchProductsByFilter('id', <%= product.id%>)">
+                    <div class="products-buy-like">
+                        <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" onclick="addToBag(this.id)">
+                        <img class="like" id="like-<%= index %> " src="/img/like.svg" alt="like-it" onclick="likeIt(this.id)">
+                    </div>
+                    <div class="product-img">
+                        <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
+                    </div>
+                    <div class="product-description">
+                        <span><%= product.description %></span>    
+                    </div>
+
+                    <div class="payment-conditions">
+                        <div class="installment">
+                            <span class="installment-parts"><%= product.installmentParts %>x </span>
+                            <span class="installment-price"><%= product.installmentPrice %></span>
+                        </div>
+                        <div class="at-sight">
+                            <span class="or">ou</span>
+                            <span class="at-sight-price"> <%= product.atSightPrice %> à vista</span>
+                        </div> 
+                    </div>
+                </div>
+            <%}); %> 
+            </div>
+        </div>
     </div>
 </div>
+
+<script src="/js/products.js"></script>
