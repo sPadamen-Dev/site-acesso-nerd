@@ -1,0 +1,15 @@
+    <div id="banners-container">
+        <div id="banners">
+            <% bannerList.forEach(banner => {%> 
+                <div class="banner"><img src="<%= banner %>" alt="banner-images"></div>
+            <%}); %> 
+            <div class="banner-moviment-signals">
+                <% bannerList.forEach(banner => {%> 
+                    <div class="signals"></div>
+                <%}); %>  
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/home-banner.js"></script>
+

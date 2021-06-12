@@ -1,0 +1,53 @@
+<header id="header-container">
+
+    <div id="info-header-top">
+        <span class="info-header-top-span"><a href="">Quem Somos</a></span>
+        <span class="info-header-top-span"><a href="">Contato</a></span>
+    </div>  
+
+    <!--Inicio da estrutura do logo, nome e login na parte superior-->
+    <div id="container-logo">
+
+        <div class="div-logo">
+            <img src="/img/logo-acesso-nerd.png" alt="logo do site">
+
+            <div class="div-nome-acesso-nerd">
+                <h1>ACESSO NERD</h1>
+                <h3>Embarque nesse foguete 🚀 </h3>
+            </div>
+        </div>
+
+        <div class="div-login-carrinho">
+            <div class="div-carrinho">
+                <img class="nav-icons" src="/img/iconCarrinho.png" alt="icon login">
+            </div>
+            <div class="div-login">
+                <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="seu carrinho"></a>
+            </div>
+        </div>
+
+    </div>
+    <!--fim da estrutura-->
+
+    <!--Start navegation-->
+    <div class="bar">
+        <nav class="navegação-top">
+            <ul>
+                <li><a id="clothes" href="#" onclick="searchProductsbyType(1)">VESTUÁRIO</a></li>
+                <li><a id="mugs" href="#" onclick="searchProductsbyType(2)">CANECAS</a></li>
+                <li><a href="#">PORTA COPO</a></li>
+                <li><a href="#">DECORAÇÃO</a></li>
+                <li><a href="#">PROMO GEEK</a></li>
+            </ul>
+        </nav>
+        <div class="barra-de-pesquisa">   
+        <input type="text" name="pesquisar" id="search" placeholder="Pesquisar produto...">
+            <div class="div-pesquisa">
+                <button onclick="searchProducts()"><img class="img-pesquisar"src="/img/lupa.svg" alt="buttom search"></button>
+            </div>
+        </div>  
+    </div>
+    <!--end navegation-->
+
+
+</header>

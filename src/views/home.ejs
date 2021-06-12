@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-    <%- include('./partials/head') %> 
+    <%- include('./partials/_head') %> 
 
     <body>
+        <div class="container-pai">
+            <div class="header-banner">
+                <%- include('./partials/_header')  %> 
+                <%- include('./partials/_home-banner') %>
+            </div>
 
-        <div id="container-pai">
-            <%- include('./partials/header')  %> 
-
-            <section id="conteudo-body">
-
-            </section>
-
+            <div class="conteudo-body">
+                <%- include('./partials/_products') %>
+            </div>
+            
         </div> <!-- end container-pai-->
+        <div class="home-footer">
+            <%- include('./partials/_footer') %> 
+        </div>
 
-        <%- include('./partials/footer') %>
-        
     </body>
-
 </html>
