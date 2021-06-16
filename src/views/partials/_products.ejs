@@ -6,19 +6,34 @@
     </div>
     <div class="products-container">
         <div class="products-cards">
-            <% productList.forEach(product => {%> 
-                <div class="product-card">
-                    <img class="product-img" src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
-                    <span class="product-id"><%= product.id %> - <span class="description"><%= product.description %> </span></span>
-                    <div class="installment">
-                        <span class="installment-parts"><%= product.installmentParts %>x <span class="installment-price"><%= product.installmentPrice %> à vista</span></span>
+            <% productList.forEach((product, index) => {%> 
+                <div class="product-card" onclick="searchProductsByFilter('id', <%= product.id %>)">
+                    <div class="products-buy-like">
+                        <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" onclick="addToBag(this.id)">
+                        <img class="like" id="like-<%= index %> " src="/img/like.svg" alt="like-it" onclick="likeIt(this.id)">
                     </div>
-                    <div class="at-sight">
-                        <span class="or">ou <span class="at-sight-price"><%= product.atSightPrice %></span></span>
-                    </div> 
+                    <div class="product-img">
+                        <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
+                    </div>
+                    <div class="product-description">
+                        <span><%= product.description %></span>    
+                    </div>
+
+                    <div class="payment-conditions">
+                        <div class="card-installment">
+                            <span class="card-installment-parts"><%= product.installmentParts %>x </span>
+                            <span class="card-installment-price"><%= product.installmentPrice %></span>
+                        </div>
+                        <div class="card-at-sight">
+                            <span class="card-or">ou</span>
+                            <span class="card-at-sight-price"> <%= product.atSightPrice %> à vista</span>
+                        </div> 
+                    </div>
                 </div>
             <%}); %> 
             </div>
         </div>
     </div>
 </div>
+
+<script src="/js/products.js"></script>
