@@ -119,24 +119,24 @@
     color: white;
 }
 
-.installment {
+.card-installment {
     justify-content: center;
     align-items: center;
 }
-.installment-parts {
+.card-installment-parts {
     margin-right: 5px;
 }
 
-.installment-price {
+.card-installment-price {
     color: #FFDE5A;
     font-size: 24px;
 }
 
-.or {
+.card-or {
     font-weight: normal;
     margin-right: 5px;
 }
 
-.at-sight-price {
+.card-at-sight-price {
     font-style: bold;
 }
