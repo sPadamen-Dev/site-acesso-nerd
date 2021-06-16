@@ -7,7 +7,7 @@
     <div class="products-container">
         <div class="products-cards">
             <% productList.forEach((product, index) => {%> 
-                <div class="product-card" onclick="searchProductsByFilter('id', <%= product.id%>)">
+                <div class="product-card" onclick="searchProductsByFilter('id', <%= product.id %>)">
                     <div class="products-buy-like">
                         <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" onclick="addToBag(this.id)">
                         <img class="like" id="like-<%= index %> " src="/img/like.svg" alt="like-it" onclick="likeIt(this.id)">
