@@ -17,6 +17,7 @@ function addToBag(element) {
 }
 
 function showProductDetails(productId) {
+    hide(document.getElementsByClassName('banners-container'));
     url = '/products/product/' + productId
     window.location.replace(url);
 }

@@ -34,7 +34,7 @@ body{
 #header-container{
     background-color: #1C2B3A;
     flex-direction: column;
-    height: 40%;
+    height: 100%;
     width: 100%;
 }
 

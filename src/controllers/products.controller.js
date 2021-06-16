@@ -207,13 +207,13 @@ const { get } = require('../routes/products.router');
 
   const productsController = {
     getAllProducts: (req, res)=> {
+        let returnType = 'objectList'
         const productList = getAllProducts();
         const bannerList = getBannerList();
-        res.render("home", { productList, bannerList} )
+        res.render("home", { productList, bannerList, returnType} )
     },
     getProductByFilter: (req, res)=> {
         const bannerList = getBannerList();
-        console.log('request:' , req.params.param)
         if(req.params.param === 'id') {
             let returnType = 'singleObject'
             let product = getProductById(req.params.value)
@@ -225,22 +225,7 @@ const { get } = require('../routes/products.router');
                 res.render("home", {productList, bannerList, returnType})
             }
         }
-    }/*,
-    getProductsByType: (req, res)=> {
-        const bannerList = getBannerList();
-        let productList = getProductsByType(req.params.type)
-        res.render("home", { productList, bannerList })
-    },
-    getProductsByTheme: (req, res)=> {
-        const bannerList = getBannerList();
-        let productList = getProdutosByTheme(req.params.theme)
-        res.render("home", { productList, bannerList })
-    },
-    getProductsByName: (req, res)=> {
-        const bannerList = getBannerList();
-        let productList = getProductByName(req.params.name)
-        res.render("home", { productList, bannerList })
-    }*/
+    }
 }
 
 const banners = [
