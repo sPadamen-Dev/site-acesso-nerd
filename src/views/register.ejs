@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/register.css">
+    <link rel="stylesheet" href="./css/global.css">
+    <title>Cadastre-se</title>
+</head>
+
+<body>
+
+    <div>
+
+    </div>
+    <section id="boxMainForm">
+
+        <form action="/home" method="Post" class="formCadastro">
+
+            <div class="titleRegister">
+                <h2>Cadastra-se</h2>
+            </div>
+
+            <div class="childsFormInput childOne">
+                <label for="cpf">CPF:*</label>
+                <input type="number" id="cpf" name="cpf-cadastro" placeholder="000.000.000-00">
+            </div>
+            <div class="childsFormInput childTwo">
+                <label for="allNome">Nome Completo:*</label>
+                <input type="text" id="allNome" name="nomeCompleto" placeholder="Ex.. Naruto Santos">
+            </div>
+            <div class="childsFormInput childThree">
+                <label for="sexo">Sexo:*</label>
+                <div class="optionSex">
+                    <input type="radio" id="sexMasculino" name="sexo" value="m">
+                    <h4 style="display: inline;" for="sexo">Masculino</h4>
+                    <input type="radio" id="sexoFemino" name="sexo" value="f">
+                    <h4 style="display: inline;">Feminino</h4>
+                </div>
+            </div>
+            <div class="childsFormInput childFour">
+                <label for="birthday">Nascimento:*</label>
+                <input type="date" id="birthday" name="birthday" data-mask="00/00/0000" required="required"
+                    autocomplete="off" maxlength="10">
+            </div>
+            <div class="childsFormInput childFive">
+                <label for="telefone">Número com DDD:*</label>
+                <input type="tel" id="telefone" name="telefone" data-mask="(00)9 0000-0000" maxlength="13"
+                    placeholder=" (00) 9 0000-0000">
+            </div>
+            <div class="childsFormInput childSix">
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" placeholder="acessonerd@dominio.com">
+            </div>
+            <div class="childsFormInput childSeven">
+                <label for="password">Criar Senha:*</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="childsFormInput childSeven">
+                <label for="password2">Confirma senha:*</label>
+                <input type="password" id="password2" name="password2">
+            </div>
+
+            <div class="termForm">
+                <p>
+                    <input type="checkbox" id="termos" name="termos"> Li e aceito a Politica de privacidade
+                </p>
+                <p>
+                    <input type="checkbox" id="termos" name="termos"> Li e aceito os termos de Produtos e Serviços
+                </p>
+                <p>
+                    <input type="checkbox" id="termos" name="termos"> Aceito propaganda de produtos novos via email
+                </p>
+
+            </div>
+            <div class="btnCadastro">
+                <button type="submit ">Cadastrar</button>
+            </div>
+        </form>
+
+    </section>
+
+</body>
+
+</html>

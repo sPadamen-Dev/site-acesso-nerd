@@ -4,8 +4,6 @@
     display: flex;
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
@@ -34,22 +32,29 @@ body{
 #header-container{
     background-color: #1C2B3A;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    align-items: center;
+    width: 100vw;
+    border-bottom: .2rem solid var(--grey-medium);
 }
 
 #info-header-top{
+    width:100%;
     background-color: #1C2B3A;
     flex-direction: row;
     flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+}
+#info-header-top > div{
+    width: 90%;
+    display: flex;
     justify-content: flex-end;
-    padding-right: 5% ;
-    padding-top: 10px;
 }
 .info-header-top-span a{
-    padding: 5px;
+    padding: .5rem;
     color: white;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     text-decoration: none;
 }
 
@@ -58,70 +63,44 @@ body{
     color: black;
 }
 
-#container-logo {
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5%;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    height: 100px;
-}
-
 /* Formatando Logo*/
 
-.div-logo {
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
-    height: 100%;
+#container-logo {
+   display:flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   width: 90%;
 }
-.div-logo img{
-    height: 92%;
-    width: auto;
-    margin-right: 2%;
+#container-logo img.imgLogTop {
+    width: min(44rem, 60vw);
+    height: auto;
 }
 
-/* Formatando nome Acesso Nerd */
-
-.div-nome-acesso-nerd{
-    font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    margin-left: 10px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.div-nome-acesso-nerd h1{
-    font-size: 3rem;
-    color: white;
-    font-weight: bold;
-    -webkit-text-stroke: 1px #1E90FF;
-    letter-spacing: 5px;
-}
-.div-nome-acesso-nerd h3{
-    font-size: 0.9rem;
-    color: #1E90FF;
-    letter-spacing: 5px;
-}
 
 .div-login-carrinho{
+  
+}
+.div-carrinho, .div-login, .div-pesquisa {
     display: flex;
-    justify-content: flex-end;
-    width: 25%;
+    align-items: center;
+    justify-content: center;
+    background:var(--white);
+    clip-path: circle();
+    width: 5rem;
+    height: 5rem;
+    margin-left: 2rem;
 }
 
-.div-carrinho, .div-login, .div-pesquisa {
+/* .div-pesquisa {
     background-color: white;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 30px;
-    margin: 10px;
-    width: 50px;
-    height: 50px;
-}
+    border-radius: 3rem;
+    width: 5rem;
+    height: 5rem;
+} */
 
 /* Formatação icones - carrinho, login e pesquisa*/
 .nav-icons{
@@ -131,50 +110,66 @@ body{
 
 .bar {
     display: flex;
+    width:90%;
+    justify-items: center;
     justify-content: space-between;
-    padding: 1% 5% 1% 5%;
+    flex-wrap: wrap;
 }
+
 
 /* Nav */
 .navegação-top{
     background-color: #1C2B3A;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 75%;
+    align-items: flex-end;
+}
+.navegação > ul li{
+    margin: 1rem 4rem;
+    
+}
+.navegação  ul{
+    display: flex;
+    flex-wrap: wrap;
+    width:min(73rem, 100vw);
 }
 
+
 .navegação-top ul li a{
-    flex-wrap: wrap;
-    color:black;
-    font-size: 0.9rem;
+    box-sizing: content-box;
+    color:var(--yellow);
+    font-size: clamp(1.6rem, 1.8rem, 2vw);
     font-weight: bold;
-    letter-spacing: 5px;
-    padding: 20px 15px 20px 15px;
-    padding-bottom: 10px;
+    letter-spacing: 0.2rem;
+    padding:1rem;
     text-decoration: none;
-    -webkit-text-stroke: 1px #FFDE5A;
-    border-bottom: 5px solid #1C2B3A;
+    /* border-bottom: 0.5rem solid #1C2B3A; */
 }
 .navegação-top li a:hover{
-    border-bottom: 5px solid #1E90FF;
+    border-bottom: .4rem solid var(--blue-light);
 }
 
 .barra-de-pesquisa {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    width: 25%;
-    padding: 0px;
+}
+.divPesquisa{
+    display: flex;
+    width: min(35rem, 100vw);
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 1rem;
 }
 
-.barra-de-pesquisa input{
-    border-radius: 10px;
-    width: 80%;
-    height: 40px;
+.divPesquisa input{
+    width: min(300rem, 90%);
+    border-radius: 1em;
+    height: 4rem;
     border:none;
-    padding-left: 15px;
+    padding-left: 1.5rem;
+    outline:none;
 }
 .barra-de-pesquisa input::placeholder{
     font-style: italic;
@@ -184,9 +179,9 @@ body{
 }
 
 .div-pesquisa {
-    width: 45px;
-    height: 45px;
-    margin-left: 20px;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: 2rem;
 }
 .div-pesquisa button {
     border: none;
@@ -200,8 +195,8 @@ body{
 
 .img-pesquisar {
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 3rem;
+    height: 3rem;
 }
 
 /* Abaixo do nav */
@@ -323,4 +318,3 @@ body{
     width: 300px;
     height: 200px;
 }
-

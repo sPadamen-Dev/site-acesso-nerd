@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html{
+    --white: white ;
+    --black: #000000;
+    --yellow: #FFDE5A;
+    --blue-light: #1E90FF;
+    --blue-dark:#1C2B3A;
+    --grey: #B9B6B6;
+    --grey-medium: #787B7D;
+
+
+ 
+    font-size: 62.5%;
+} 
+
+body{
+    display: flex;
+    /* height: 100vh; */
+    background: rgba(32, 57, 82, 0.95);
+}
+
+.sr-only{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+button{
+transition: filter .2s;
+}
