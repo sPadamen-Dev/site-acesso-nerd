@@ -4,10 +4,17 @@ const port = 3000
 
 const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.router')
+const cookieParser = require('cookie-parser')
 const productsRouter = require('./src/routes/products.router')
+const session = require('express-session')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
+app.use(session({
+    secret: "melhorSiteGeek",
+    resave: true,
+    saveUninitialized: true
+}))
 app.use(express.json());
 
 // Static Files
