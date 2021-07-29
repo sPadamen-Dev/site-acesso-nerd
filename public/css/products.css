@@ -2,6 +2,7 @@
     border: none;
     margin: 0px;
     padding: 0px;
+    font-family: PT Sans;
 }
 
 .menu-products-container {
@@ -48,29 +49,94 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 250px;
-    height: 320px;
-    padding: 20px 10px;
+    width: 260px;
+    height: 380px;
+    padding: 15px 15px 25px 15px;
     background-color: #2A3846;
     margin: 10px;
     border-radius: 13px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
-.product-id {
-    color: whitesmoke;
-    font-size: 18px;
-    padding-right: 10px;
+.products-buy-like {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 20px;
+    width: 90%;
+}
+
+.products-buy-like img {
+    height: 100%;
+    width: auto;
+}
+
+.shopping-bag {
+    padding-right: 15px;
+    filter: grayscale(1);
+}
+
+.addedToBag {
+    filter: none;
+}
+
+.like {
+    filter: grayscale(1);
+}
+
+.liked {
+    filter: none;
 }
 
 .product-description {
-    color: red;
-    font-size: 24px;
+    color: white;
+    font-size: 16px;
+    padding: 0px 10px;
+    font-weight: bold;
+    height: 55px;
 }
 
 .product-img {
-    padding: 10px;
-    height: 200px;
-    width: 200px;
+    margin:10px 20px;
+    height: 215px;
+    width: 90%;
+    box-sizing: border-box;
 }
 
+.product-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.payment-conditions {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+
+.card-installment {
+    justify-content: center;
+    align-items: center;
+}
+.card-installment-parts {
+    margin-right: 5px;
+}
+
+.card-installment-price {
+    color: #FFDE5A;
+    font-size: 24px;
+}
+
+.card-or {
+    font-weight: normal;
+    margin-right: 5px;
+}
+
+.card-at-sight-price {
+    font-style: bold;
+}
