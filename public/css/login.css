@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     height: 100vh;
     width: 100vw;
-    background-color: #42668a;
+    background: rgba(32, 57, 82, 0.95);
 }
 
 @media screen and (max-width:1200px){

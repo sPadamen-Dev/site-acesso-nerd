@@ -7,3 +7,8 @@ function searchProductsbyType(productType) {
     url = '/products/' + productType
     window.open(url);
 }
+
+function searchProductsByFilter(param, value) {
+    url = '/products/' + param + '/' + value
+    window.location.replace(url);
+}

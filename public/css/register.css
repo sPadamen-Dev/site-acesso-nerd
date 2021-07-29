@@ -1,0 +1,143 @@
+section#boxMainForm{
+    display: flex;
+    width:100vw;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#boxMainForm form.formCadastro{
+    display: flex;
+    width: min(48rem, 100vw);
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    padding: 2.4rem;
+    background:var(--blue-dark);
+    border-radius: 1rem;
+    box-shadow: 0.4rem 0.5rem .95rem var(--black);
+    border: 1px solid var(--black);
+}
+
+#boxMainForm .childsFormInput {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 20rem;
+    padding: 1rem 0.8rem;
+}
+
+#boxMainForm > form > div.childsFormInput:nth-child(4){
+    flex: 1 1 100%;
+}
+#boxMainForm > form > div.childsFormInput:nth-child(7){
+    flex: 1 1 100%;
+}
+#boxMainForm > form > div.childsFormInput:nth-child(8){
+    flex: 1 1 100%;
+}
+#boxMainForm > form > div.childsFormInput:nth-child(9){
+    flex: 1 1 100%;
+}
+
+/* **********  BTN TERMOS   *************8 */
+
+#boxMainForm .termForm{
+    flex: 1 1 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+#boxMainForm .termForm  input{
+    margin-right: 1rem;
+}
+
+
+#boxMainForm .termForm > p{
+    display: flex;
+    margin-bottom: 0.3rem;
+    padding: 0.3rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--grey);
+}
+
+
+#boxMainForm .titleRegister{
+    flex: 1 1 100%;
+}
+
+#boxMainForm .btnCadastro{
+    margin: 4rem 0;
+}
+
+#boxMainForm .btnCadastro button{
+    padding: 1rem 5rem;
+    font-size: 1.8rem ;
+    color: var(--yellow);
+    background: var(--black);
+    border-radius: 2rem;
+    transition:.3s;
+    border:0.1rem solid var(--yellow);
+}
+
+#boxMainForm .btnCadastro  button:hover{
+    background: var(--white);
+    color: var(--black);
+    border: 0.1rem solid var(--black);
+    cursor: pointer;
+}
+
+/* *********  INPUT, config ******* */
+
+#boxMainForm .childsFormInput input{
+    outline: none;
+    cursor: pointer;
+    border: 0.2rem solid var(--yellow);
+    border-radius: 1.7rem;
+    background: var(--black);
+    transition: filter 2s;
+    padding:0.9rem;
+    color: var(--white);
+}
+#boxMainForm .childsFormInput label{
+    color: var(--yellow);
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+}
+
+#boxMainForm > form h2{
+    font-weight:bold;
+    font-size: 2.4rem;
+    color:var(--blue-light);
+    margin-bottom: 3rem;
+}
+
+#boxMainForm > form > .childThree > div{
+    color: var(--grey);
+    font-size: 1.4rem;
+    font-weight: 200;
+}
+#boxMainForm > form > .childThree > div > input{
+    margin: 1rem;
+    border: 0.1rem solid var(--black);
+}
+
+
+/* #boxMainForm .optionSex{
+    color: white;
+    font-size: 1.6rem;
+
+} */
+
+/* ******* letter-spacing ****** */
+#boxMainForm  h2, label, button{
+    letter-spacing: 0.15rem;
+}
+#boxMainForm  p{
+    letter-spacing: 0.05rem;
+}

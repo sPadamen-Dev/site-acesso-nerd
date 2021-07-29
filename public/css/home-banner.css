@@ -14,6 +14,8 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; 
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .banner {

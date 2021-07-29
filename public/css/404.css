@@ -1,0 +1,27 @@
+.container404{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container404 h1{
+    color: var(--yellow);
+    font-size:3.4rem;
+    margin-bottom: 1rem;
+}
+.container404 h2{
+    color: var(--blue-light);
+    font-size:1.8rem;
+    letter-spacing:0.17rem
+}
+.linkSPan a{ 
+    color: var(--white);
+    font-size: 1.9rem;
+}
+.linkSPan a:hover{
+    border-bottom: 0.3rem solid var(--blue-light);
+}

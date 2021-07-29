@@ -4,12 +4,12 @@
     margin: 0px;
 }
 
-body {
+.product-body {
     background-color: #273E56;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 }
 
@@ -128,7 +128,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.4rem;
     border: 1px solid #F0AB3E;
     box-sizing: border-box;
 }
@@ -138,7 +138,7 @@ body {
 }
 
 .product-description {
-    font-size: 1.1em;
+    font-size: 1.4rem;
     height: 25%;
     margin-bottom: 5%;
     box-sizing: border-box;
@@ -160,14 +160,14 @@ body {
 }
 
 .installment-price {
-    font-size: 2.5em;
+    font-size: 2.4rem;
     color: #FFDE5A;
 }
 
 .at-sight {
     font-style: normal;
     font-weight: normal;
-    font-size: 1.5em;
+    font-size: 1.6rem;
 }
 
 .at-sight-price {
