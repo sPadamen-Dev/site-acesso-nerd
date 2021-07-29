@@ -1,0 +1,98 @@
+.sobre-nos{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(10, 1em);
+    gap: 2em;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.title{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    text-align: center;
+    position: relative;
+    display:inline-block;
+    font-size: 3em;
+    margin: 0.5em 0 0.5em 0;
+    
+}
+
+.content {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+}
+.first{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+.second{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+.third{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+
+.fourth{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+    font-weight: bold;
+}
+
+.fifth{
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 8;
+    grid-row-end: 9;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+    font-weight: bold;
+}
+
+a{
+    position: relative;
+    display: inline-block;
+    color:#FFDE5A;
+}
