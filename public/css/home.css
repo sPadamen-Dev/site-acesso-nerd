@@ -52,15 +52,17 @@ body{
     justify-content: flex-end;
 }
 .info-header-top-span a{
-    padding: .5rem;
+    padding: 1rem;
     color: white;
     font-size: 1.4rem;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .info-header-top-span a:hover{
     background-color: #1C2B3A;
-    color: black;
+    color: #FFDE5A;
 }
 
 /* Formatando Logo*/
