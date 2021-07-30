@@ -27,6 +27,10 @@
     grid-row-start: 3;
     grid-row-end: 4;
     text-align: center;
+<<<<<<< Updated upstream
+=======
+    font-size: 1.5em;
+>>>>>>> Stashed changes
     position: relative;
     display: inline-block;
     margin: 0 7em 0 7em;
