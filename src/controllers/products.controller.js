@@ -229,7 +229,7 @@ const { get } = require('../routes/products.router');
 }
 
 const banners = [
-    '/img/banners/banner-acesso-nerd-star-wars',
+    '/img/banners/banner-acesso-nerd-star-wars.jpg',
     '/img/banners/banner-caneca-eu-sou-quadrado.png',
     '/img/banners/banner-caneca.jpg',
     '/img/banners/banner-canecas-1591x420-copia.jpg',
