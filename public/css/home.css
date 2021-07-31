@@ -149,6 +149,7 @@ body{
 }
 .navegação-top li a:hover{
     border-bottom: .4rem solid var(--blue-light);
+    color: white;
 }
 
 .barra-de-pesquisa {
@@ -177,7 +178,7 @@ body{
     font-style: italic;
     text-align: left;
     color: #9A9999;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .div-pesquisa {
@@ -195,11 +196,33 @@ body{
     align-items: center;
 }
 
+.div-pesquisa button:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-carrinho:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-carrinho .nav-icons:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-login:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
 .img-pesquisar {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
 }
+
+
 
 /* Abaixo do nav */
 .conteudo-body{
@@ -210,6 +233,11 @@ body{
 }
 
 /*Formatando rodape*/
+
+h2 {
+    color: #FFDE5A;
+    font-weight: 900;
+}
 
 .home-footer{
     height: fit-content;
@@ -238,20 +266,21 @@ body{
 }
 
 .footer-contact h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.2em;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.1em;
 }
 
 .footer-contact h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 100;
     padding-top: 1px;
     letter-spacing: 0.1em;
 }
 
 .footer-newlast{
     padding: 10px;
+    margin-top: 15px;
     margin-left: 10px ;
     margin-right: 10px;
     flex-direction: column;
@@ -260,6 +289,7 @@ body{
     flex-wrap: wrap;
     flex-grow: 0.5;
     border-right: 2px solid #265380;
+    letter-spacing: 0.2em;
 }
 .newlast, .newlast-form-button{
     display: flex;
@@ -267,11 +297,10 @@ body{
     justify-items: center;
     align-items: center;
     width: 80%;
-    margin-bottom: 15px;
 }
 
 .newlast span{
-    margin: 10px;
+    margin: 10px 10px 10px 0;
 }
 
 .newlast-form-button form {
@@ -280,33 +309,33 @@ body{
 
 .email-entry {
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-grow: 1;
-    padding-right: 15px;
+    padding-right: 5px;
 }
 
 .newlast-form-button input{
-    border-radius: 10px;
+    border-radius: 7px;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
 }
 
 
 .button-newlast {
-    width: 30%;
+    width: 40%;
 }
 .button-newlast button{
-    background-color: black;
-    border: 1px solid #FFDE5A;
-    border-radius: 10px;
-    letter-spacing: 2px;
-    width: 100%;
-    padding: 15px;
-    color: white;
+    background-color: #265380;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    width: 80%;
+    padding: 10px;
+    color: rgb(255, 255, 255);
     font-weight: bold;
 }
 .button-newlast button:hover{
-    background-color: #1C2B3A;
+    background-color: #1587f8;
 }
 
 .footer-form-payment{
@@ -315,8 +344,13 @@ body{
     justify-items: center;
     align-items: center;
     flex-grow: 0.25;
+    letter-spacing: 0.2em;
 }
+
 .footer-form-payment img{
-    width: 300px;
-    height: 200px;
+    max-width:300px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
 }
