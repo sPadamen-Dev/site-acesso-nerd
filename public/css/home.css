@@ -318,6 +318,7 @@ h2 {
     border-radius: 7px;
     width: 100%;
     padding: 5px;
+    
 }
 
 
@@ -336,6 +337,7 @@ h2 {
 }
 .button-newlast button:hover{
     background-color: #1587f8;
+    cursor: pointer;
 }
 
 .footer-form-payment{
