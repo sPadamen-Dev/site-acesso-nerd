@@ -110,6 +110,28 @@ body{
     height: 35px;
 }
 
+.carrinho{
+    display: inline-block;
+    position: absolute;
+    margin-top:5.5em;
+    padding: 0.3em;
+    color: white;
+    font-family: 'pt sans';
+    letter-spacing: 1px;
+}
+
+.login{
+    display: inline-block;
+    position: absolute;
+    margin-top:5.5em;
+    margin-left: 10em;
+    padding: 0.3em;
+    color: white;
+    font-family: 'pt sans';
+    letter-spacing: 1px;
+}
+
+
 .bar {
     display: flex;
     width:90%;
@@ -157,6 +179,7 @@ body{
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 1em;
 }
 .divPesquisa{
     display: flex;

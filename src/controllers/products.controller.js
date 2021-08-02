@@ -230,6 +230,7 @@ const { get } = require('../routes/products.router');
 
 const banners = [
     '/img/banners/banner-acesso-nerd-star-wars.jpg',
+    '/img/banners/banner-acesso-nerd-scooby.jpg'
 ];
 
 function getAllProducts() {

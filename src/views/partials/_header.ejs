@@ -13,11 +13,12 @@
 
         <div class="div-login-carrinho">
             <div class="div-carrinho">
-                <img class="nav-icons" src="/img/iconCarrinho.png" alt="icon login">
+                <img class="nav-icons" src="/img/iconCarrinho.png" alt="carrinho">
             </div>
+            <div class="carrinho">Acessar Carrinho</div>
             <div class="div-login">
                 <% if (typeof(nome)=="undefined" ) { %>
-                    <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="seu carrinho"></a>
+                    <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="login"></a>
                     <% }else{ %>
                         <p>
                             <%= nome %>
@@ -25,6 +26,7 @@
                         <%} %>
 
             </div>
+            <div class="login">Login</div>
         </div>
 
     </div>
