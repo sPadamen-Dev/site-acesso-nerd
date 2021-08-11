@@ -22,13 +22,25 @@ html, body {
 .info > .text1, .text2, .text3 {
     font-size: 1.8rem;
     justify-content: center;
+    padding: 0.1em;
 }
 
+.text3{
+    padding-top: 1em;
+}
 .form-contato{
     flex-direction: column;
     color: white;
     font-size: 1.6rem;
     padding: 1em;
+    background-color: #4f6375;
+    border-radius: 7px;
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    width: auto;
+    height: auto;
     justify-content: center;
 }
 
@@ -67,13 +79,15 @@ html, body {
 
 .botao-enviar {
     height: 3em;
-    width: 25em;
+    width: 24em;
     background-color: #265380;
     color: white;
     border: solid #ffff 1px;
     font-weight: bold;
     border-radius: 7px;
     justify-content: center;
+    letter-spacing: 0.5mm;
+    font-size: 1.4rem;
 }
 
 .botao-enviar:hover{
