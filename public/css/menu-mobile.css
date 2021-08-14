@@ -29,7 +29,8 @@
     .carrinho{
         display: inline-block;
         position: absolute;
-        margin-top:3.5em;
+        margin-top:3.2em;
+        margin-left: 2em;
         padding: 0.3em;
         color: white;
         font-family: 'PT Sans', sans-serif;
@@ -39,8 +40,8 @@
     .login{
         display: inline-block;
         position: absolute;
-        margin-top:3.5em;
-        margin-left: 10em;
+        margin-top:3.2em;
+        margin-left: 9em;
         padding: 0.3em;
         color: white;
         font-family: 'PT Sans', sans-serif;
@@ -166,7 +167,7 @@ a:hover
   width: 30em;
   height: 40em;
   margin: -8em 0 0 0;
-  padding: 5em;
+  padding: 2em;
   padding-top: 2em;
   right: -10em;
   background: #1e5b99;
