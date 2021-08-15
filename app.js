@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const port = 3000
+require('dotenv').config()
+const port = process.env.PORT
 
 const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.router')
@@ -24,6 +25,17 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
+// connection db
+const models = require('./src/database/models');
+const connect = async () => {
+  try {
+    await models.sequelize.authenticate();
+    console.log('Parabéns padawan conexão bem sucedida.');
+  } catch (error) {
+    console.error('Não foi possível conecta ao banco de dados Padawan:', error);
+  }
+}
+connect()
 
 app.get('/', productsRouter)
 app.use('/login', loginRouter)

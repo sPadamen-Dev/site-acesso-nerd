@@ -1,9 +1,11 @@
 const fs = require('fs');
 const bcrypt = require('bcryptjs')
 const { check, validationResult, body } = require('express-validator');
+const { Addresses, Users } = require('../database/models')
 
 module.exports = {
-    getRegister: (req, res) => {
+    getRegister: async (req, res) => {
+
         res.render('register')
     },
     postRegister: (req, res) => {

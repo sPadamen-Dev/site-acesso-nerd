@@ -8,6 +8,10 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      user_id:{
+       type: Sequelize.INTEGER, foreignKey: true,
+       allowNull:false
+      },
       address_type: {
         type: Sequelize.STRING,
         allowNull: false
@@ -41,12 +45,12 @@ module.exports = {
         allowNull: false
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       },
       updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
   },
