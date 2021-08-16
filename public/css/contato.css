@@ -1,0 +1,96 @@
+html, body {
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info{
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+}
+
+.title{
+    align-self: center !important;
+}
+
+.info > .text1, .text2, .text3 {
+    font-size: 1.8rem;
+    justify-content: center;
+    padding: 0.1em;
+}
+
+.text3{
+    padding-top: 1em;
+}
+.form-contato{
+    flex-direction: column;
+    color: white;
+    font-size: 1.6rem;
+    padding: 1em;
+    background-color: #4f6375;
+    border-radius: 7px;
+    margin-left: 20em;
+    margin-right: 20em;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+    width: auto;
+    height: auto;
+    justify-content: center;
+}
+
+.form-contato > div {
+    padding: 0.5em;
+    justify-content: center !important;
+}
+
+.form-contato > label {
+    justify-content: center !important;
+    font-weight: bold;
+
+}
+
+.caixa-nome, .caixa-telefone, .caixa-email{
+    height: 3em;
+    width: 25em;
+    border-radius: 7px;
+    padding: 1em;
+    justify-content: center;
+    text-align: center;
+}
+
+.caixa-mensagem{
+    height: 8em;
+    width: 25em;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.contato-lgpd{
+    color: #ffffff;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+.botao-enviar {
+    height: 3em;
+    width: 24em;
+    background-color: #265380;
+    color: white;
+    border: solid #ffff 1px;
+    font-weight: bold;
+    border-radius: 7px;
+    justify-content: center;
+    letter-spacing: 0.5mm;
+    font-size: 1.4rem;
+}
+
+.botao-enviar:hover{
+    background-color: #1587f8;
+    cursor: pointer;
+}

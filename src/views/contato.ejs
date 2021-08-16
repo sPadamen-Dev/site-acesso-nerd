@@ -3,38 +3,43 @@
     <%- include('./partials/_header') %> 
     <%- include('./partials/_head') %> 
 
-    <body>
-    <div class="sobre-nos">
-    <h2 class="title">Precisa de mais informações?</h2>
-    <p class="content">
-    <span class="first">Entre em contato conosco, temos um time de especialistas pronto para atender você!</span>
-    <span class="second">Telefone: (11) 2441-2345 | Celular: (11) 9 9123-5647</span>
-    <span class="third">Estamos disponível também no email: atendimento@acessonerd.com.br</span>
-    </p>
-
-    <label for="nome">Nome:</label>
+        <body>
+    <div class="contato">
+    <div class="info">
+        <h2 class="title">Precisa de mais informações?</h2>
+        <span class="text1">Entre em contato conosco, temos um time de especialistas pronto para atender você!</span>
+        <span class="text2">Telefone: (11) 2441-2345 | Celular: (11) 9 9123-5647</span>
+        <span class="text3">Preencha o formulário abaixo para que um dos nossos consultores entre em contato.</span></p>
+    </div>
+    <div class="form-contato">
+        <label for="nome">Nome Completo:</label>
     <div class="Nome">
-        <input type="name" id="nome" name="name" placeholder="Nome completo" required>
+        <input class="caixa-nome" type="name" id="nome" name="name" placeholder="Digite seu nome completo" required>
     </div>
-    <label for="Telefone">Telefone:</label>
+        <label for="Telefone">Telefone com DDD:</label>
     <div class="telefone">
-        <input type="tel" id="telefone" name="tel" placeholder="00-0000-0000" required>
+        <input class="caixa-telefone" type="tel" id="telefone" name="tel" placeholder="00-0000-0000" required>
     </div>
-    <label for="Email">Email</label>
-    <div class="email">
-        <input type="email" id="email" name="email" placeholder="Digite seu email..." required>
+        <label for="contato-email">Email para contato:</label>
+    <div class="contato-email">
+        <input class="caixa-email" type="email" id="email" name="email" placeholder="Digite seu email..." required>
     </div>
-    <label for="Mensagem">Mensagem</label>
+        <label for="Mensagem">Mensagem</label>
     <div class="Mensagem">
-        <input type="text" id="mensagem" name="mensagem" placeholder="Deixe sua mensagem..." required>
+        <input class="caixa-mensagem" type="text" id="mensagem" name="mensagem" placeholder="Deixe sua mensagem..." required>
     </div>
-
-
-
+    <div class="contato-lgpd">
+        <input class="caixa-lgpd" type="checkbox" id="contato-lgpd" name="contato-lgpd" checked>
+        <label for="contato-lgpd">Eu concordo em receber comunicações.</label>
+      </div>
+    <div class="enviar">
+        <input class="botao-enviar" type="submit" value="Enviar">
     </div>
-        <div class="home-footer">
+    </div>
+    </div>
+    <div class="home-footer">
             <%- include('./partials/_footer') %> 
-        </div>
+    </div>
 
     </body>
 </html>

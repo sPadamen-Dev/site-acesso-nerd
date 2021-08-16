@@ -80,9 +80,6 @@ body{
 }
 
 
-.div-login-carrinho{
-  
-}
 .div-carrinho, .div-login, .div-pesquisa {
     display: flex;
     align-items: center;
@@ -116,7 +113,7 @@ body{
     margin-top:5.5em;
     padding: 0.3em;
     color: white;
-    font-family: 'pt sans';
+    font-family: 'PT Sans', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -127,7 +124,7 @@ body{
     margin-left: 10em;
     padding: 0.3em;
     color: white;
-    font-family: 'pt sans';
+    font-family: 'PT Sans', sans-serif;
     letter-spacing: 1px;
 }
 
@@ -262,7 +259,7 @@ h2 {
 }
 
 .home-footer{
-    height: fit-content;
+    height: 'fit-content';
 }
 
 #footer-container{
@@ -356,6 +353,7 @@ h2 {
     padding: 10px;
     color: rgb(255, 255, 255);
     font-weight: bold;
+    justify-content: center;
 }
 .button-newlast button:hover{
     background-color: #1587f8;
