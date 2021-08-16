@@ -147,17 +147,16 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: center;
 }
 .navegação > ul li{
-    margin: 1rem 4rem;
-    
+    margin: 1rem 4rem; 
 }
 .navegação  ul{
     display: flex;
     flex-wrap: wrap;
     width:min(73rem, 100vw);
 }
-
 
 .navegação-top ul li a{
     box-sizing: content-box;
@@ -167,7 +166,7 @@ body{
     letter-spacing: 0.2rem;
     padding:1rem;
     text-decoration: none;
-    /* border-bottom: 0.5rem solid #1C2B3A; */
+    border-bottom: .4rem solid rgb(0, 0, 0, 0);
 }
 .navegação-top li a:hover{
     border-bottom: .4rem solid var(--blue-light);
