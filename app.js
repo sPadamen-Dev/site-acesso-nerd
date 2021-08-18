@@ -6,6 +6,7 @@ const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.router')
 const cookieParser = require('cookie-parser')
 const productsRouter = require('./src/routes/products.router')
+const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 
 app.set('view engine', 'ejs')
@@ -29,6 +30,7 @@ app.get('/', productsRouter)
 app.use('/login', loginRouter)
 app.use(singUpRouter)
 app.use('/products', productsRouter)
+app.use('/admin', adminRouter)
 
 
 app.use((req, res, next) => {

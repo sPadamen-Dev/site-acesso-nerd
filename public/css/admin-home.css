@@ -1,0 +1,160 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#top-bar {
+    background-color:#1C2B3A;
+    padding: 0 20px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    box-sizing: border-box;
+    flex: 0 1 auto;
+}
+
+#bar-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    background-color:#1C2B3A;
+}
+
+#profile img {
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    padding:20px;
+    box-sizing: border-box;
+}
+
+#btn-logout {
+    background-color: #1C2B3A;
+    color: white;
+}
+
+
+#wrapper {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+#menu-left {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 20vw;
+    background-color: rgb(43, 41, 41);
+    min-width: 260px;
+}
+
+#lp-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(122, 16, 16);
+    font-size:24px;
+    color: white;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    background-color: rgb(43, 41, 41);
+}
+
+#menu li {
+    display: flex;
+    align-items: center;
+    background-color: rgb(43, 41, 41);
+    height: 60px;
+    border-bottom: 1px solid rgb(78, 78, 78);;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+#menu-icon {
+    height: 100%;
+    width: auto;
+    padding:10px;
+}
+
+#menu span {
+    color: white;
+}
+
+#menu li:hover {
+    background-color: rgb(122, 16, 16);
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 100hv;
+}
+
+.rp-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 60px;
+    background-color: gray;
+    box-sizing: border-box;
+    padding-right: 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.rp-header span {
+    color: white;
+    background-color: gray;
+    padding-right: 10px;
+    text-decoration: none;
+}
+
+.rp-header button {
+    margin: 0px 10px;
+    background-color: rgb(122, 16, 16);
+    color: white;
+    padding: 5px 10px;
+}
+
+
+
