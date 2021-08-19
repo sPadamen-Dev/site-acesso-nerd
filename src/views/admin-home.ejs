@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- Interface de referência: https://i.pinimg.com/originals/83/25/37/8325377aa7180c2b0365d73824163263.png -->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/css/admin-home.css">
+        <link rel="stylesheet" href="/css/admin-panel-header.css">
         <title>admin</title>
     </head>
     <body>
@@ -13,61 +13,29 @@
 
             <div id="top-bar">
                 <img src="/img/logo.png" alt="acesso-nerd-logo">
-
                 <div id="bar-nav">
                     <div id="profile">
-                        <img src="/img/profile-pic.svg" alt="profile-pic">
+                        <img id="img-profile" src="/img/profile-pic.svg" alt="profile-pic">
                     </div>
                     <button id="btn-logout">Logout</button>
                 </div>
-
             </div>
 
             <div id="wrapper">
-                <div id="menu-left">
-
-                    <span id="lp-header">Admin</span>
-    
-
-    
+                <div id="menu-left">   
                     <ul id="menu">
-                        <li class="selected"><img class="menu-icon" src="/img/dashboard.svg" alt=""><span>Minha Conta</span></li>
-                        <li><img class="menu-icon" src="/img/ui-elements.svg" alt=""><span>Produtos</span></li>
-                        <li><img class="menu-icon" src="/img/tabs-panels.svg" alt=""><span>Pedidos</span></li>
-                        <li><img class="menu-icon" src="/img/morris-charts.svg" alt=""><span>Pagamentos</span></li>
-                        <li><img class="menu-icon" src="/img/tables.svg" alt=""><span>Central de Ajuda</span></li>
-                        <li><img class="menu-icon" src="/img/form.svg" alt=""><span>Sobre Acesso Nerd</span></li>
+                        <li><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="menu-span">Administradores</span></li>
+                        <li><img class="menu-icon" src="/img/admin-customers.png" alt=""><span class="menu-span">Clientes</span></li>
+                        <li><img class="menu-icon" src="/img/admin-products.png" alt=""><span class="menu-span">Produtos</span></li>
+                        <li><img class="menu-icon" src="/img/admin-orders.png" alt=""><span class="menu-span">Pedidos</span></li>
+                        <li><img class="menu-icon" src="/img/admin-payments.png" alt=""><span class="menu-span">Pagamentos</span></li>
+                        <li><img class="menu-icon" src="/img/admin-contact-us.png" alt=""><span class="menu-span">Central de Ajuda</span></li>
+                        <li><img class="menu-icon" src="/img/admin-about.png" alt=""><span class="menu-span">Sobre Acesso Nerd</span></li>
                     </ul>
-                    
                 </div>
     
-                <section class="right">
-                    <section class="panel">
-                        <div class="panel-content">
-                            <div class="welcome">
-                            </div>
-    
-                            <div class="notifications">
-
-
-                            </div>
-    
-                            <div class="system-health">
-    
-                                <div class="card-warning">
-    
-                                </div>
-    
-                                <div class="card-speed">
-                                    
-                                </div>
-    
-                                <div class="other-controls">
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                <section id="display-area">
+                    <%- include('./partials/_admin-products') %> 
                 </section>
 
             </div>

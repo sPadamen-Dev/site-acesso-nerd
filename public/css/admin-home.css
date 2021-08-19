@@ -24,6 +24,7 @@ body {
     height: 100px;
     box-sizing: border-box;
     flex: 0 1 auto;
+    border-bottom: 3px solid white;
 }
 
 #bar-nav {
@@ -41,7 +42,7 @@ body {
     background-color:#1C2B3A;
 }
 
-#profile img {
+#img-profile {
     height: 90px;
     width: 90px;
     border-radius: 50%;
@@ -65,96 +66,60 @@ body {
     flex-direction: column;
     height: 100%;
     width: 20vw;
-    background-color: rgb(43, 41, 41);
+    background-color: #b6b6b6;
     min-width: 260px;
 }
-
-#lp-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    background-color: rgb(122, 16, 16);
-    font-size:24px;
-    color: white;
-    box-sizing: border-box;
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 #menu {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    background-color: rgb(43, 41, 41);
 }
 
 #menu li {
     display: flex;
     align-items: center;
-    background-color: rgb(43, 41, 41);
-    height: 60px;
-    border-bottom: 1px solid rgb(78, 78, 78);;
-    padding-top: 10px;
-    padding-left: 20px;
+    height: 40px;
+    border-bottom: 1px solid white;
+    padding: 5px 10px ;
 }
 
-#menu-icon {
+.menu-icon {
     height: 100%;
     width: auto;
-    padding:10px;
+    padding:5px;
+    padding-right: 15px;
+    box-sizing: border-box;
 }
 
 #menu span {
-    color: white;
+    font-size: 20px;
+    color: black;
 }
 
 #menu li:hover {
     background-color: rgb(122, 16, 16);
 }
+#menu li:hover .menu-span {
+    color: white;
+}
 
-.right {
+.menu-separator {
+    border: 1px solid white;
+    background-color: white;
+}
+
+#display-area {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     height: 100hv;
+    background-color: whitesmoke;
+    border-right: 5px solid white;
+    border-left: 5px solid white;
+    border-bottom: 5px solid white;
 }
 
-.rp-header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 60px;
-    background-color: gray;
-    box-sizing: border-box;
-    padding-right: 10px;
-    font-size: 20px;
-    box-sizing: border-box;
-}
-
-.rp-header span {
-    color: white;
-    background-color: gray;
-    padding-right: 10px;
-    text-decoration: none;
-}
-
-.rp-header button {
-    margin: 0px 10px;
-    background-color: rgb(122, 16, 16);
-    color: white;
-    padding: 5px 10px;
-}
 
 
 
