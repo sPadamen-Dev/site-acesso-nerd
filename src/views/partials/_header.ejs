@@ -15,7 +15,7 @@
             <div class="div-carrinho">
                 <img class="nav-icons" src="/img/iconCarrinho.png" alt="carrinho">
             </div>
-            <div class="carrinho">Acessar Carrinho</div>
+            <div class="carrinho">Carrinho</div>
             <div class="div-login">
                 <% if (typeof(nome)=="undefined" ) { %>
                     <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="login"></a>
@@ -34,8 +34,13 @@
 
     <!--Start navegation-->
     <div class="bar">
+        <div id="bar">
         <nav class="navegação-top">
-            <ul>
+            <input id="burguer" type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
                 <li><a id="clothes" href="#" onclick="searchProductsByFilter('type', this.id)">VESTUÁRIO</a></li>
                 <li><a id="mugs" href="#" onclick="searchProductsByFilter('type', this.id)">CANECAS</a></li>
                 <li><a href="#">PORTA COPO</a></li>
@@ -43,7 +48,8 @@
                 <li><a href="#">PROMO GEEK</a></li>
             </ul>
         </nav>
-        <div class="barra-de-pesquisa">
+        </div>
+    <div class="barra-de-pesquisa">
             <div class="divPesquisa">
                 <input type=" text" name="pesquisar" id="search" placeholder="Pesquisar produto...">
                 <div class="div-pesquisa">

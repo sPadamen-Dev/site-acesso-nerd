@@ -11,7 +11,7 @@
         <span class="text2">Telefone: (11) 2441-2345 | Celular: (11) 9 9123-5647</span>
         <span class="text3">Preencha o formulário abaixo para que um dos nossos consultores entre em contato.</span></p>
     </div>
-    <div class="form-contato">
+    <form class="form-contato" action="/contato" method="POST">
         <label for="nome">Nome Completo:</label>
     <div class="Nome">
         <input class="caixa-nome" type="name" id="nome" name="name" placeholder="Digite seu nome completo" required>
@@ -35,7 +35,7 @@
     <div class="enviar">
         <input class="botao-enviar" type="submit" value="Enviar">
     </div>
-    </div>
+    </form>
     </div>
     <div class="home-footer">
             <%- include('./partials/_footer') %> 
