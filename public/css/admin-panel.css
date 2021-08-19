@@ -1,0 +1,48 @@
+#panel-bar {
+    /*padding: 0; border: 0; margin: 0; box-sizing: border-box;*/
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(32, 57, 82, 0.95);
+    height: 95px;
+    color: white;
+    padding: 10px 0px 0px 10px;
+}
+
+#div-title{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 30px;
+    color: white;
+    padding-left: 10px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    height: 25px;
+    border-top: 1px solid white;
+    padding-top: 10px;
+}
+
+#panel-filters {
+    padding: 10px 0px;
+}
+
+form span {
+    color: white;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+form select, input{
+    margin-left: 5px;
+    height: 25px;
+    padding-left: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.input-id {
+    width: 85px;
+}
