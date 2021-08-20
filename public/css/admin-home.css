@@ -7,6 +7,7 @@
 body {
     height: 100vh;
     width: 100vw;
+    min-width: 1260px;
 }
 
 #container {
@@ -61,19 +62,19 @@ body {
     flex: 1 1 auto;
 }
 
-#menu-left {
+
+#menu {
     display: flex;
     flex-direction: column;
+    list-style-type: none;
     height: 100%;
     width: 20vw;
     background-color: #b6b6b6;
     min-width: 260px;
 }
 
-#menu {
-    display: flex;
-    flex-direction: column;
-    list-style-type: none;
+#menu a {
+    text-decoration: none;
 }
 
 #menu li {

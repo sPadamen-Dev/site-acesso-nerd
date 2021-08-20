@@ -1,6 +1,7 @@
 const adminController = {
     adminHome: (req, res) => {
-        res.render("admin-home")
+        const panel = 'default'
+        res.render("admin-home", {panel})
     }
 }
 

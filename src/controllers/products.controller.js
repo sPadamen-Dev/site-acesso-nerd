@@ -202,8 +202,7 @@ const products = [
     }
   ];
 
-const fs = require('fs');
-const { get } = require('../routes/products.router');
+  const fs = require('fs');
 
   const productsController = {
     getAllProducts: (req, res)=> {

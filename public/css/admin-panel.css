@@ -20,9 +20,10 @@
 form {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 25px;
     border-top: 1px solid white;
-    padding-top: 10px;
+    padding: 10px 20px 0px 0px;
 }
 
 #panel-filters {
@@ -35,7 +36,7 @@ form span {
     padding-left: 10px;
 }
 
-form select, input{
+form select, input {
     margin-left: 5px;
     height: 25px;
     padding-left: 15px;
@@ -45,4 +46,14 @@ form select, input{
 
 .input-id {
     width: 85px;
+}
+
+form button {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color:#1E90FF;
+    font-weight: bolder;
 }
