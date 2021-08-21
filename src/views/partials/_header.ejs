@@ -17,12 +17,12 @@
                 <img class="nav-icons" src="/img/iconCarrinho.png" alt="icon login">
             </div>
             <div class="div-login">
-                <% if (typeof(nome)=="undefined" ) { %>
+                <% if (typeof(name)=="undefined" ) { %>
                     <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="seu carrinho"></a>
                     <% }else{ %>
-                        <p>
-                            <%= nome %>
-                        </p>
+                        <h4>
+                            Bem vindo, <a href="#"><%= name %></a>
+                        </h4>
                         <%} %>
 
             </div>

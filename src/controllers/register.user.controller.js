@@ -12,8 +12,9 @@ module.exports = {
             } = req.body;
         const passwordCrypt = bcrypt.hashSync(password, 10);
         let listError = validationResult(req);
+        const searchEmailValidate = await db.Users.findOne({where:{email}})
             try{
-                if (listError.isEmpty()) {
+                if (listError.isEmpty() && searchEmailValidate.email === null) {
                      const user = await  db.Users.create({
                         user_name: userName, birth_day: birthDay, sex,
                          cpf, email, telefone: telephone, 
@@ -27,7 +28,8 @@ module.exports = {
                     await user.setAddress(address)
                     res.status(201).redirect("login")
                 } else {    
-                    res.status(300).render("Deu errado",{listError})            
+                    let msg = "Email já cadastrado"
+                    res.status(200).render("register",{msg})            
                 }
             }catch(error){
                 console.log(error)
