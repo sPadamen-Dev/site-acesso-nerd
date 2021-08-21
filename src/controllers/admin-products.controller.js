@@ -200,13 +200,12 @@ const products = [
         installmentPrice: '6,48',
         atSightPrice: '32,40'
     }
-  ];
-
+  ]; 
 const adminProductsController = {
     getAllProducts: (req, res) => {
         let panel = 'products'
         const productList = getAllProducts();
-        res.render("admin-home", {panel, productList})
+        res.render("admin-home", { productList, panel} )
     },
     getProductsByFilters: (req, res) => {
         let panel = 'products'

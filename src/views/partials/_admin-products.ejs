@@ -35,5 +35,39 @@
             </div>
         </form>
     </div>
+
+    <div class="grid-products">
+
+        
+            <div class="product-display-row">
+
+                <table>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Id</th>
+                        <th>Tipo</th>
+                        <th>Tema</th>
+                        <th>Descrição</th>
+                        <th>Qtd. Parcelas</th>
+                        <th>Preço Parcelas</th>
+                        <th>Preço à Vista</th>
+                      </tr>
+                        <% productList.forEach((product)=> {%>
+                            <tr>
+                                <td><img style="width: 20px; height: 20px;" src="<%=product.imgPath %>" alt="profile-pic"></td>
+                                <td><%=product.id %> </td>
+                                <td><%=product.type %> </td>
+                                <td><%=product.theme %></td>
+                                <td><%=product.description %></td>
+                                <td><%=product.installmentParts %></td>
+                                <td><%=product.installmentPrice %></td>
+                                <td><%=product.atSightPrice %></td>
+                                <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%=product.id %>/edit');">Exibir</button></td>
+                            </tr>
+                        <%}) %> 
+                      </tr>
+                    </table>
+            </div>
+    </div>
 </div>
 

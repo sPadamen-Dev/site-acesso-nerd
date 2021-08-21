@@ -57,3 +57,48 @@ form button {
     color:#1E90FF;
     font-weight: bolder;
 }
+
+/*PRODUCTS PANEL*/
+
+/*PRODUCTS PANEL END*/
+
+
+/* grid pattern*/
+
+table {
+    font-family: arial, sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    height: 90%;
+  }
+
+table img {
+    height: 20px;
+    width: 20px;
+}
+  
+  td, th {
+    font-size: 14px;
+    border: 1px solid #bebebe;
+    text-align: left;
+    padding: 8px;
+    color: black;
+    height: 30px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+
+.btn-show, .btn-nav-app {
+  min-width: 80px;
+  width: fit-content;
+  background-color: rgb(95, 85, 95);
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  padding:5px;
+}
