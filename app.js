@@ -4,7 +4,7 @@ require('dotenv').config()
 const port = process.env.PORT
 
 const loginRouter = require('./src/routes/login.router')
-const singUpRouter = require('./src/routes/register.router')
+const singUpRouter = require('./src/routes/register.user.router')
 const cookieParser = require('cookie-parser')
 const productsRouter = require('./src/routes/products.router')
 const session = require('express-session')
@@ -35,7 +35,7 @@ const connect = async () => {
     console.error('Não foi possível conecta ao banco de dados Padawan:', error);
   }
 }
-connect()
+connect();
 
 app.get('/', productsRouter)
 app.use('/login', loginRouter)

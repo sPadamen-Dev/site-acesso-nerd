@@ -9,8 +9,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id:{
-       type: Sequelize.INTEGER, foreignKey: true,
-       allowNull:false
+       type: Sequelize.INTEGER,
+       references:{
+         model: 'Users',
+         key: 'user_id'
+      },
       },
       address_type: {
         type: Sequelize.STRING,
@@ -22,6 +25,10 @@ module.exports = {
       },
       number: {
         type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      additional_info:{
+        type: Sequelize.STRING,
         allowNull: false
       },
       district: {
@@ -42,7 +49,6 @@ module.exports = {
       },
       address_status: {
         type: Sequelize.BOOLEAN,
-        allowNull: false
       },
       createdAt: {
         type: Sequelize.DATE,

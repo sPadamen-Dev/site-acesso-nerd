@@ -12,6 +12,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
+      birth_day: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      sex: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
       cpf: {
         type: Sequelize.STRING,
         allowNull:false
@@ -30,7 +38,14 @@ module.exports = {
       },
       user_status: {
         type: Sequelize.BOOLEAN,
-        allowNull:false
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
   },

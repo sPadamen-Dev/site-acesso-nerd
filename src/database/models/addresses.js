@@ -11,13 +11,26 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsTo(models.Users,{
+        foreignKey: 'user_id',
+        as: 'user_address',
+        required: true
+      })
     }
   };
   Addresses.init({
-    user_id:DataTypes.INTEGER,
+    address_id:{
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
+    user_id:{
+      type: DataTypes.INTEGER
+    },
     address_type: DataTypes.STRING,
     street: DataTypes.STRING,
     number: DataTypes.INTEGER,
+    additional_info: DataTypes.INTEGER,
     district: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
@@ -26,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Addresses',
-    timestamps:true
+    timestamps:true,
   });
   return Addresses;
 };
