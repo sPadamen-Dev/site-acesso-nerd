@@ -202,9 +202,6 @@ const products = [
     }
   ];
 
-  const fs = require('fs');
-const { get } = require('../routes/products.router');
-
   const productsController = {
     getAllProducts: (req, res)=> {
         let returnType = 'objectList'
