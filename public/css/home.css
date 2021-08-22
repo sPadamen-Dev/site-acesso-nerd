@@ -52,15 +52,17 @@ body{
     justify-content: flex-end;
 }
 .info-header-top-span a{
-    padding: .5rem;
+    padding: 1rem;
     color: white;
     font-size: 1.4rem;
     text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .info-header-top-span a:hover{
     background-color: #1C2B3A;
-    color: black;
+    color: #FFDE5A;
 }
 
 /* Formatando Logo*/
@@ -78,9 +80,6 @@ body{
 }
 
 
-.div-login-carrinho{
-  
-}
 .div-carrinho, .div-login, .div-pesquisa {
     display: flex;
     align-items: center;
@@ -108,6 +107,29 @@ body{
     height: 35px;
 }
 
+.carrinho{
+    display: inline-block;
+    position: absolute;
+    margin-top:5.5em;
+    margin-left: 2em;
+    padding: 0.3em;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+.login{
+    display: inline-block;
+    position: absolute;
+    margin-top:5.5em;
+    margin-left: 10em;
+    padding: 0.3em;
+    color: white;
+    font-family: 'PT Sans', sans-serif;
+    letter-spacing: 1px;
+}
+
+
 .bar {
     display: flex;
     width:90%;
@@ -123,17 +145,16 @@ body{
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: center;
 }
 .navegação > ul li{
-    margin: 1rem 4rem;
-    
+    margin: 1rem 4rem; 
 }
 .navegação  ul{
     display: flex;
     flex-wrap: wrap;
     width:min(73rem, 100vw);
 }
-
 
 .navegação-top ul li a{
     box-sizing: content-box;
@@ -143,10 +164,11 @@ body{
     letter-spacing: 0.2rem;
     padding:1rem;
     text-decoration: none;
-    /* border-bottom: 0.5rem solid #1C2B3A; */
+    border-bottom: .4rem solid rgb(0, 0, 0, 0);
 }
 .navegação-top li a:hover{
     border-bottom: .4rem solid var(--blue-light);
+    color: white;
 }
 
 .barra-de-pesquisa {
@@ -154,6 +176,7 @@ body{
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 1em;
 }
 .divPesquisa{
     display: flex;
@@ -175,7 +198,7 @@ body{
     font-style: italic;
     text-align: left;
     color: #9A9999;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'PT Sans', sans-serif;
 }
 
 .div-pesquisa {
@@ -193,10 +216,34 @@ body{
     align-items: center;
 }
 
+.div-pesquisa button:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-carrinho:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-carrinho .nav-icons:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
+.div-login:hover{
+    background:var(--yellow);
+    cursor: pointer;
+}
+
 .img-pesquisar {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
+}
+
+#burguer{
+    visibility: hidden
 }
 
 /* Abaixo do nav */
@@ -209,8 +256,13 @@ body{
 
 /*Formatando rodape*/
 
+h2 {
+    color: #FFDE5A;
+    font-weight: 900;
+}
+
 .home-footer{
-    height: fit-content;
+    height: 'fit-content';
 }
 
 #footer-container{
@@ -236,20 +288,21 @@ body{
 }
 
 .footer-contact h2 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.2em;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 900;
+    letter-spacing: 0.1em;
 }
 
 .footer-contact h3 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 200;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 100;
     padding-top: 1px;
     letter-spacing: 0.1em;
 }
 
 .footer-newlast{
     padding: 10px;
+    margin-top: 15px;
     margin-left: 10px ;
     margin-right: 10px;
     flex-direction: column;
@@ -258,6 +311,7 @@ body{
     flex-wrap: wrap;
     flex-grow: 0.5;
     border-right: 2px solid #265380;
+    letter-spacing: 0.2em;
 }
 .newlast, .newlast-form-button{
     display: flex;
@@ -265,11 +319,10 @@ body{
     justify-items: center;
     align-items: center;
     width: 80%;
-    margin-bottom: 15px;
 }
 
 .newlast span{
-    margin: 10px;
+    margin: 10px 10px 10px 0;
 }
 
 .newlast-form-button form {
@@ -278,33 +331,36 @@ body{
 
 .email-entry {
     display: flex;
-    width: 80%;
+    width: 100%;
     flex-grow: 1;
-    padding-right: 15px;
+    padding-right: 5px;
 }
 
 .newlast-form-button input{
-    border-radius: 10px;
+    border-radius: 7px;
     width: 100%;
-    padding: 15px;
+    padding: 5px;
+    
 }
 
 
 .button-newlast {
-    width: 30%;
+    width: 40%;
 }
 .button-newlast button{
-    background-color: black;
-    border: 1px solid #FFDE5A;
-    border-radius: 10px;
-    letter-spacing: 2px;
-    width: 100%;
-    padding: 15px;
-    color: white;
+    background-color: #265380;
+    border: 1px solid #ffffff;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    width: 80%;
+    padding: 10px;
+    color: rgb(255, 255, 255);
     font-weight: bold;
+    justify-content: center;
 }
 .button-newlast button:hover{
-    background-color: #1C2B3A;
+    background-color: #1587f8;
+    cursor: pointer;
 }
 
 .footer-form-payment{
@@ -313,8 +369,13 @@ body{
     justify-items: center;
     align-items: center;
     flex-grow: 0.25;
+    letter-spacing: 0.2em;
 }
+
 .footer-form-payment img{
-    width: 300px;
-    height: 200px;
+    max-width:300px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+    margin-top: 10px;
 }
