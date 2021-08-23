@@ -10,11 +10,12 @@ module.exports = {
         const { userName,birthDay, sex,  cpf, email, telephone, password, userStatus,
                 addressType, street, number, additionalInfo, district, city, state, zipCode 
             } = req.body;
+            console.log(email)
         const passwordCrypt = bcrypt.hashSync(password, 10);
         let listError = validationResult(req);
         const searchEmailValidate = await db.Users.findOne({where:{email}})
             try{
-                if (listError.isEmpty() && searchEmailValidate.email === null) {
+                if (listError.isEmpty() && searchEmailValidate != 'null') {
                      const user = await  db.Users.create({
                         user_name: userName, birth_day: birthDay, sex,
                          cpf, email, telefone: telephone, 
@@ -29,7 +30,7 @@ module.exports = {
                     res.status(201).redirect("login")
                 } else {    
                     let msg = "Email já cadastrado"
-                    res.status(200).render("register",{msg})            
+                    res.status(200).render("register", {msg})         
                 }
             }catch(error){
                 console.log(error)
