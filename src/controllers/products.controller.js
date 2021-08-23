@@ -202,6 +202,7 @@ const products = [
     }
   ];
 
+const session = require('express-session');
   const fs = require('fs');
 const { get } = require('../routes/products.router');
 
@@ -210,7 +211,8 @@ const { get } = require('../routes/products.router');
         let returnType = 'objectList'
         const productList = getAllProducts();
         const bannerList = getBannerList();
-        res.render("home", { productList, bannerList, returnType} )
+        const nameUser = session.userName;
+        res.render("home", { productList, bannerList, returnType, name: nameUser } )
     },
     getProductByFilter: (req, res)=> {
         const bannerList = getBannerList();

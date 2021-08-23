@@ -1,13 +1,12 @@
 const { Router } = require("express");
-const registerController = require('../controllers/register.controller');
+const register_user_controller = require('../controllers/register.user.controller');
 const { check, validationResult, body } = require('express-validator');
 const router = Router();
 
-router.get("/cadastro", registerController.getRegister);
+router.get("/cadastro", register_user_controller.getRegister);
 router.post("/cadastro", [
 
-    check("fullName").notEmpty().withMessage("O campo nome não pode ser vazio"),
-    check("birthday").isDate().withMessage("A data deve ser MM/DD/YYYY"),
+    check("userName").notEmpty().withMessage("O campo nome não pode ser vazio"),
     check("email").isEmail().withMessage("O Email deve ser válido"),
     check("password").isLength({ min: 8 }).withMessage("A senha tem que conter no minimo 8 caracteres"),
 
@@ -17,7 +16,7 @@ router.post("/cadastro", [
     //     return users.email != email
     // }).withMessage("Usuario já existe")
 
-], registerController.postRegister);
+],register_user_controller.createUser);
 
 
 module.exports = router;
