@@ -16,60 +16,98 @@
 
     <!-- icone do site -->
     <link rel="shortcut icon" type="image/x-icon" href="./img/icon_acessoNerd.ico" />
-
 </head>
 
 <body>
+
+
     <div class="login-container">
-        <header>
-            <img src="./img/logo-acesso-nerd.png" alt="logo">
-            <div class="title">
-                ACESSO NERD
+        <div class="option-group">
+            <div class="login-option action-option-selected" id="login" onClick="selectOption(this.id)">
+                Já possuo cadastro
             </div>
-            <div class="orientation">
-                <p>Faça seu Login para começar a sua jornada nesse novo universo!!</p>
+            <div class="register-option" id="register" onClick="selectOption(this.id)">
+                Quero me cadastrar
             </div>
-        </header>
-
-        <div class="form-wrapper">
-            <form action="/login" method="POST">
-                <% if (typeof(msg) !="undefined" ) { %>
-                    <p style="color: red;">
-                        <%= msg %>
-                    </p>
-                    <% } %>
-                        <label for="email">E-mail:</label>
-                        <input type="email" name="email" id="email" placeholder="seu@email.aqui" required>
-
-                        <label for="senha">Senha:</label>
-                        <div class="password-group">
-                            <input type="password" id="senha" name="password" placeholder="digite sua senha" required>
-                            <i class="fa fa-eye" id="olho" ondragstart="return false;"></i>
-                        </div>
-
-                        <div class="agree">
-                            <input type="checkbox" id="chk-agree" required>
-                            <label for="agree">Aceito todos os termos de privacidade</label>
-                        </div>
-
-                        <button type="submit" id="botao">Embarcar</button>
-
-                        <div class="linkContainer">
-                            <div>
-                                <a href="recuperar.html" class="link">
-                                    <p>Esqueci minha senha
-                                </a>
-                            </div>
-                            <div>
-                                <a href="/cadastro" class="link"> Registre-se</p></a>
-                            </div>
-
-                        </div>
-            </form>
         </div>
 
+        <div class="form-login-container">
+            <header>
+                <img src="./img/logo-acesso-nerd.png" alt="logo">
+                <div class="title">
+                    ACESSO NERD
+                </div>
+                <div class= "orientation">
+                    <p>Faça seu Login para começar a sua jornada nesse novo universo!!</p>
+                </div>
+            </header>
+
+            <div class="form-wrapper">
+                <form action="/" method="POST">
+
+                    <% if (typeof(msg) !="undefined" ) { %>
+                        <p style="color: red;">
+                            <%= msg %>
+                        </p>
+                    <% } %>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="seu@email.aqui" required>
+
+
+                    <label for="senha">Senha:</label>
+                    <div class="password-inputs">
+                        <div class="password-group">
+                            <input type="password" id="senha" placeholder="digite sua senha" required>
+                            <i class="fa fa-eye-slash" id="olho"  ondragstart="return false;"></i>
+                        </div>
+    
+                        <div class="confirm-password-group">
+                            <input type="password" id="confirm-senha" placeholder="confirme sua senha" required >
+                            <i class="fa fa-eye-slash" id="confirm-olho"  ondragstart="return false;"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="agree">
+                        <input type="checkbox" id="chk-agree" required>
+                        <label for="agree">Aceito todos os termos de privacidade</label>
+                    </div>
+
+                    <button id="botao">Embarcar</button>
+                
+                    <div class="linkContainer">
+                        <div>
+                            <a href="recuperar" class="link"><p>Esqueci minha senha</a>
+                        </div>
+                        <div>
+                            <a href="cadastro" class="link"> Registre-se</p></a>
+                        </div>
+                
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <script src="/js/login.js"></script>
+
+    <script>
+        function selectOption(option) {
+            if (option == 'register' ) {
+                document.getElementById('register').classList.add('action-option-selected');
+                document.getElementById('login').classList.remove('action-option-selected');
+                document.getElementById('confirm-senha').style.display = 'initial';
+                document.getElementById('confirm-olho').style.display = 'initial';
+            } else if (option == 'login' ) {
+                document.getElementById('login').classList.add('action-option-selected');
+                document.getElementById('register').classList.remove('action-option-selected');
+                document.getElementById('confirm-senha').style.display='none';
+                document.getElementById('confirm-olho').style.display = 'none';
+            }
+        };
+
+        selectOption('login');
+    </script>
 </body>
 
 </html>
