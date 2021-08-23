@@ -8,6 +8,8 @@ const cookieParser = require('cookie-parser')
 const productsRouter = require('./src/routes/products.router')
 const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
+const aboutRouter = require('./src/routes/about.router')
+const contatoRouter = require('./src/routes/contato.router')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
@@ -31,7 +33,8 @@ app.use('/login', loginRouter)
 app.use(singUpRouter)
 app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
-
+app.use('/quem-somos',aboutRouter)
+app.use('/contato', contatoRouter)
 
 app.use((req, res, next) => {
     res.status(404).render('404')
