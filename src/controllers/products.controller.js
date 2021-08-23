@@ -231,16 +231,8 @@ const { get } = require('../routes/products.router');
 }
 
 const banners = [
-    '/img/banners/banner-caneca-eu-sou-quadrado.png',
-    '/img/banners/banner-caneca.jpg',
-    '/img/banners/banner-canecas-1591x420-copia.jpg',
-    '/img/banners/CANECAS.jpg',
-    '/img/banners/DragonBallDesktop.png',
-    '/img/banners/justice-league-banner-2.jpg',
-    '/img/banners/Lego-Marvel-Banner-1024x576-1.jpg',
-    '/img/banners/Mario-Kart-8-Banner.jpg',
-    '/img/banners/marvel-studios-first-10-years-banner-1081327.jpeg',
-    '/img/banners/normal_oferta-personalize-camiseta-mais-caneca1.jpg'
+    '/img/banners/banner-acesso-nerd-star-wars.jpg',
+    '/img/banners/banner-acesso-nerd-scooby.jpg'
 ];
 
 function getAllProducts() {

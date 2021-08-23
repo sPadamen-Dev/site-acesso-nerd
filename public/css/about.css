@@ -1,0 +1,78 @@
+html, body{
+    height: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.sobre-nos{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    margin-bottom: 2em;
+    
+}
+
+.title{
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    display:inline-block;
+    font-size: 3em;
+    margin: 0.5em 0 0.5em 0;
+    justify-content: center;
+    
+}
+
+.content {
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+}
+.first{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+.second{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+.third{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+}
+
+.fourth{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+    font-weight: bold;
+}
+
+.fifth{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+    padding: 0 0 0.5em 0;
+    font-weight: bold;
+}
+
+a{
+    position: relative;
+    display: inline-block;
+    color:#FFDE5A;
+}

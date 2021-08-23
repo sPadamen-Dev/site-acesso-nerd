@@ -75,7 +75,7 @@
 
 .shopping-bag {
     padding-right: 15px;
-    filter: grayscale(1);
+    filter: brightness(0) invert(50%);
 }
 
 .addedToBag {
@@ -83,12 +83,17 @@
 }
 
 .like {
-    filter: grayscale(1);
+    filter: brightness(0) invert(50%);
+}
+
+img:hover {
+    filter: none;
 }
 
 .liked {
     filter: none;
 }
+
 
 .product-description {
     color: white;
