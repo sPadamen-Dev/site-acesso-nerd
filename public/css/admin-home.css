@@ -24,7 +24,6 @@ body {
     align-items: center;
     height: 100px;
     box-sizing: border-box;
-    flex: 0 1 auto;
     border-bottom: 3px solid white;
 }
 
@@ -113,12 +112,13 @@ body {
 #display-area {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    height: 100hv;
+    height: 100%;
+    width: 100%;
     background-color: whitesmoke;
     border-right: 5px solid white;
     border-left: 5px solid white;
     border-bottom: 5px solid white;
+    box-sizing: border-box;
 }
 
 
