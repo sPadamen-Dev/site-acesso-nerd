@@ -1,10 +1,11 @@
 module.exports = {
     "development": {
-      "username": "null",
-      "password": "null",
+      "username": "root",
+      "password": "",
       "database": "acesso_nerd_db_dev",
       "host": "127.0.0.1",
       "dialect": "mysql",
+      "timezone": "-03:00"
 
     },
     "test": {

@@ -203,8 +203,6 @@ const products = [
   ];
 
 const session = require('express-session');
-  const fs = require('fs');
-const { get } = require('../routes/products.router');
 
   const productsController = {
     getAllProducts: (req, res)=> {
