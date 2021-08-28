@@ -7,7 +7,7 @@ module.exports = {
         res.render('register')
     },
     createUser: async (req, res) => {
-        const { userName,birthDay, sex,  cpf, email, telephone, password, userStatus,
+        const { userName,birth_date, gender,  cpf, email, telephone, password, userStatus,
                 addressType, street, number, additionalInfo, district, city, state, zipCode 
             } = req.body;
             console.log(email)
@@ -15,9 +15,9 @@ module.exports = {
         let listError = validationResult(req);
         const searchEmailValidate = await db.Users.findOne({where:{email}})
             try{
-                if (listError.isEmpty() && searchEmailValidate != 'null') {
+                if (listError.isEmpty() && searchEmailValidate == undefined ) {
                      const user = await  db.Users.create({
-                        user_name: userName, birth_day: birthDay, sex,
+                        user_name: userName, birth_date, gender,
                          cpf, email, telefone: telephone, 
                          password: passwordCrypt, user_status: userStatus,
                     },);
