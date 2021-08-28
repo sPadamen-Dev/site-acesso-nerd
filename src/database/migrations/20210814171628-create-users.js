@@ -12,11 +12,11 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
-      birth_day: {
+      birth_date: {
         type: Sequelize.STRING,
         allowNull:false
       },
-      sex: {
+      gender: {
         type: Sequelize.STRING,
         allowNull:false
       },
