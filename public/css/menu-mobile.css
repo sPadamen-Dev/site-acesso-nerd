@@ -163,10 +163,11 @@ a:hover
 
 #menu
 {
+  display: none;
   position: absolute;
   width: 30em;
   height: 40em;
-  margin: -8em 0 0 0;
+  margin: 20em 0 0 0;
   padding: 2em;
   padding-top: 2em;
   right: -10em;
