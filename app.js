@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-<<<<<<< HEAD
 const port = process.env.PORT || 3000
 =======
 const port = process.env.PORT || 3000;
