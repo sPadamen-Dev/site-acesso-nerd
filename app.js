@@ -1,16 +1,19 @@
 const express = require('express')
 const app = express()
 require('dotenv').config()
-const port = process.env.PORT
+const port = process.env.PORT || 3000
+
 
 const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.user.router')
-const cookieParser = require('cookie-parser')
 const productsRouter = require('./src/routes/products.router')
-const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
+const userInterfaceRouter = require("./src/routes/user.interface.router") 
 
+
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 app.use(session({
@@ -20,6 +23,7 @@ app.use(session({
 }))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
+
 
 // Static Files
 app.use(express.static('public'));
@@ -46,6 +50,7 @@ app.use('/products', productsRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
 
+app.use("/painel/usuario", userInterfaceRouter)
 
 app.use((req, res, next) => {
     res.status(404).render('404')

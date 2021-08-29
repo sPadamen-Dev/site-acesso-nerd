@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('./partials/_head') %> 
+
+    </script>
+    <body>
+        <%- include('./partials/_header')  %> 
+
+         <div id="container" class="margin-auto grid">
+             <aside class="column nav">
+                 <h2 class="subtitle">Painel</h2>
+                <ul class="column">
+                    <li class="linknav"><a href="/painel/usuario/editar-perfil">Editar Perfil</a></li>
+                    <li class="linknav"><a href="/painel/usuario/enderecos">Endereços</a></li>
+                    <li class="linknav"><a href="/painel/usuario/cartoes-salvos">Cartões Salvos</a></li>
+                    <li class="linknav"><a href="/painel/usuario/historico-de-compras">Histórico de compras</a></li>
+                    <li class="linknav"><a href="/painel/usuario/logout" style="color: red;">Deslogar</a></li>
+                </ul>
+             </aside>
+             <div id="contentScreen" class="screen">
+                    <% if (typeof(option) !="undefined") { %>
+
+                        <% if (option == "editar-perfil") { %>
+                             <%- include('./partials/userInterface/bodyEditPerfil') %>    
+                        <% } %>
+
+                        <% if (option == "enderecos") { %>
+                            <%- include('./partials/userInterface/bodyAddressesPerfil') %>    
+                        <% } %>
+
+                       <% if (option == "cartoes-salvos") { %>
+                         <%- include('./partials/userInterface/bodyAddressesPerfil') %>    
+                        <% } %>
+
+                        <% if (option == "historico-de-compras") { %>
+                            <%- include('./partials/userInterface/bodyAddressesPerfil') %>    
+                           <% } %>
+                     
+                    <% } %>
+
+             </div>
+         </div>
+            
+
+        <%- include('./partials/_footer') %>
+    </body>
+</html>

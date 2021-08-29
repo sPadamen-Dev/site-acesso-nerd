@@ -1,0 +1,5 @@
+div.screen{
+    width:70vw;
+    border: 0.2rem solid var(--blue-dark);
+    margin: 2rem auto;
+}
