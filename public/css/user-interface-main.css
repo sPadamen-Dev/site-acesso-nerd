@@ -1,5 +1,81 @@
+#contentScreen{
+    background-color: var(--blue-dark);
+    flex-direction: column;
+    height: 100%;
+}
+#user-edit-perfil{
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.user-interface-top{
+    justify-content: start;
+    align-items:flex-start;
+    
+    padding: 2rem;
+    height: auto;
+}
+.user-interface-top > h4{
+    position: relative;
+    top: -1.5rem;
+    color: var(--white);
+    font-size: 2rem;
+    margin-left: 4rem;
+}
+.user-interface-top > img{
+    width: 8rem;
+    height: 8rem;
+}
+
 div.screen{
     width:70vw;
     border: 0.2rem solid var(--blue-dark);
     margin: 2rem auto;
+}
+
+/****  Edit pefil user ******/
+
+.user-edit-form{
+    /* position: relative;
+    top: 5rem; */
+    /* width: 100vw; */
+    display: grid;
+    flex-direction: column;
+}
+.user-edit-form > form{
+    flex-direction: column;
+}
+
+.mg{
+    margin: 1rem;
+    font-size: 1.8rem;
+}
+
+
+/* btn */
+
+.btn-update{
+    background-color:forestgreen;
+    height: 3rem;
+    width: 12rem;
+    color: white;
+    font-size: 1.2em;
+    margin-top: 20px;
+    border-radius: 20px;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+.input-edit-perfil{
+    background-color: black;
+    border-radius: 20px;
+    border: 1px solid #FFDE5A;
+    height: 2rem;
+    width: 95%;
+    margin-bottom: 5%;
+    color: white;
+    font-size: 0.8em;
+    letter-spacing: 3px;
+    padding: 1em;
+    outline: none;
 }

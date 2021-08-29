@@ -19,7 +19,8 @@ app.set('views', './src/views')
 app.use(session({
     secret: "melhorSiteGeek",
     resave: true,
-    saveUninitialized: true
+    // saveUninitialized: true,
+    cookie:{maxAge:30000}
 }))
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))

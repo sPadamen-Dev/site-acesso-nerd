@@ -34,11 +34,19 @@
 
                         <% if (option == "historico-de-compras") { %>
                             <%- include('./partials/userInterface/bodyAddressesPerfil') %>    
-                           <% } %>
-                     
-                    <% } %>
-
-             </div>
+                           
+                        <% }%>
+                            
+                            <% } else{%>
+                                
+                                <div class="user-interface-top">
+                                    <img src="/img/_Logo.svg" alt="">
+                                    <h4>Bem vindo,</h2>
+                            
+                                </div>
+                                
+                            <% } %>
+                        </div>
          </div>
             
 

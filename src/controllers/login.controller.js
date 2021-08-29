@@ -14,8 +14,8 @@ const loginController = {
          await bcrypt.compare(password, searchUser.password)
           .then(response =>{
              if(response){
-               let nameUser = session.userName = searchUser.user_name
-               return res.redirect(301, "/",)
+               session.userName = searchUser
+               return res.redirect("/painel/usuario")
               //  return res.status(301).redirect("/home", {name: nameUser})
              }else{
                return res.status(200).render("login",{msg: "Senha ou email ínvalido"})

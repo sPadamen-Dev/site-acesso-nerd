@@ -1,3 +1,52 @@
 <div id="user-edit-perfil">
-    <h1>Estou no perfil</h1>
+    <div class="user-interface-top">
+        <img src="/img/_Logo.svg" alt="">
+    </div>
+    <div class="user-edit-form">
+        <form action="/painel/usuario/perfil/update" method="POST">
+            <div>
+                <div class="column mg">
+                    <label for="">Nome</label>
+                    <input type="text" class="input-edit-perfil" value="<%= inforUser.user_name %>">
+                </div>
+                
+            </div>
+            <div>
+                <div class="column mg" >
+                    <label for="">Telefone</label>
+                    <input type="text" class="input-edit-perfil" value="<%= inforUser.telefone %>">
+                </div>
+                <div class="column mg">
+                    <label for="">Nascimento</label>
+                    <input type="text" class="input-edit-perfil" value="<%= inforUser.birth_date %>">
+                </div>
+                    
+            </div>
+
+            <div>
+                <div class="column mg">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="input-edit-perfil" style="width: 100%;" value="<%= inforUser.email %>">
+                </div>
+                    
+            </div>
+            <div>
+                <div class="column mg">
+                    <label for="">Nova Senha</label>
+                    <input type="text" class="input-edit-perfil">
+                </div>
+                <div class="column mg">
+                    <label for="">Confirma Senha</label>
+                    <input type="text" class="input-edit-perfil">
+                </div>
+                    
+            </div>
+            <div style="justify-content: center; align-items: center; width: 30rem;">
+                <button class="btn-update">Atualizar</button>
+
+            </div>
+        
+        </form>
+
+    </div>
 </div>
