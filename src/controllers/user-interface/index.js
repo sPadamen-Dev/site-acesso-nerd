@@ -6,13 +6,13 @@ module.exports =  {
     index: async (req, res)=>{
         let option = req.params.config
         if(option === "editar-perfil" || option === "enderecos"|| option === "cartoes-salvo"|| option === "historico-de-compras"){
-             let { email, telefone, birth_date, user_name} = session.userName;
+             let { email, telefone, birth_date,cpf, user_name} = session.userName;
             res.status(200).render("userInterface", { option, inforUser:{
-                email, telefone, birth_date, user_name
+                email, telefone, birth_date, user_name, cpf
             }})
         }else{
             option = undefined
-            res.status(200).render("userInterface")
+            res.status(404).render("userInterface")
         }
     }
 }

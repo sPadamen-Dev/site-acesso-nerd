@@ -7,18 +7,22 @@
             <div>
                 <div class="column mg">
                     <label for="">Nome</label>
-                    <input type="text" class="input-edit-perfil" value="<%= inforUser.user_name %>">
+                    <input type="text" class="input-edit-perfil"  name="user_name"value="<%= inforUser.user_name %>">
+                </div>
+                <div class="column mg">
+                    <label for="">CPF</label>
+                    <input type="text" class="input-edit-perfil" value="<%= inforUser.cpf%>">
                 </div>
                 
             </div>
-            <div>
+            <div class="flex-wrap">
                 <div class="column mg" >
                     <label for="">Telefone</label>
-                    <input type="text" class="input-edit-perfil" value="<%= inforUser.telefone %>">
+                    <input type="text" class="input-edit-perfil" name="telefone" value="<%= inforUser.telefone %>">
                 </div>
                 <div class="column mg">
                     <label for="">Nascimento</label>
-                    <input type="text" class="input-edit-perfil" value="<%= inforUser.birth_date %>">
+                    <input type="text" class="input-edit-perfil" name="birth_date" value="<%= inforUser.birth_date %>">
                 </div>
                     
             </div>
@@ -30,14 +34,14 @@
                 </div>
                     
             </div>
-            <div>
+            <div class="flex-wrap">
                 <div class="column mg">
                     <label for="">Nova Senha</label>
-                    <input type="text" class="input-edit-perfil">
+                    <input type="password" name="password" class="input-edit-perfil">
                 </div>
                 <div class="column mg">
                     <label for="">Confirma Senha</label>
-                    <input type="text" class="input-edit-perfil">
+                    <input type="password" name="passwordCofirm" class="input-edit-perfil">
                 </div>
                     
             </div>

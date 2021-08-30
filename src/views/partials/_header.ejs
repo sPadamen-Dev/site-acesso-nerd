@@ -17,16 +17,18 @@
             </div>
             <div class="carrinho">Carrinho</div>
             <div class="div-login">
-                <% if (typeof(nome)=="undefined" ) { %>
+                <% if (typeof(name)=="undefined" ) { %>
                     <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="login"></a>
                     <% }else{ %>
-                        <h4>
-                            Bem vindo, <a href="#"><%= name %></a>
-                        </h4>
-                        <%} %>
-
-            </div>
-            <div class="login">Login</div>
+                        <a href="/painel/usuario"> <h2 style="color: black;">Painel</h2></a>
+                        
+                    <%} %>
+                        
+                </div>
+                <% if (typeof(name)=="undefined" ) { %>
+                    <div class="login">Login</div>
+                    
+                <%} %>
         </div>
 
     </div>

@@ -1,10 +1,9 @@
 #contentScreen{
     background-color: var(--blue-dark);
     flex-direction: column;
-    height: 100%;
 }
 #user-edit-perfil{
-    height: 100vh;
+    height: 100%;
     flex-wrap: wrap;
 }
 .user-interface-top{
@@ -79,3 +78,4 @@ div.screen{
     padding: 1em;
     outline: none;
 }
+
