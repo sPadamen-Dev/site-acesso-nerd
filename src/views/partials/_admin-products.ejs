@@ -5,7 +5,7 @@
         </div>
         
         <div id="panel-filters">
-            <form action="">
+            <form action="" id="filter-form">
                 <div id="obj-filters">
 
                     <span>Código:</span>
@@ -60,7 +60,7 @@
                         <td><%=product.installmentParts %></td>
                         <td><%=product.installmentPrice %></td>
                         <td><%=product.atSightPrice %></td>
-                        <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%=product.id %>/edit');">Exibir</button></td>
+                        <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>
                     </tr>
                 <%}) %> 
             </tr>

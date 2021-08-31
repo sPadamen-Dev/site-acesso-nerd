@@ -10,6 +10,7 @@ const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
+const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
@@ -27,15 +28,18 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
-
+app.use(methodOverride('_method'))
 app.get('/', productsRouter)
 app.use('/login', loginRouter)
 app.use(singUpRouter)
 app.use('/products', productsRouter)
-app.use('/admin', adminRouter)
-app.use('/admin/product/:id/edit', adminRouter)
+app.use('/admin', function(req, res, next) {
+    console.log('Request URL:', req.url);
+    next();
+  }, adminRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
+
 
 app.use((req, res, next) => {
     res.status(404).render('404')
