@@ -202,12 +202,15 @@ const products = [
     }
   ];
 
+const session = require('express-session');
+
   const productsController = {
     getAllProducts: (req, res)=> {
         let returnType = 'objectList'
         const productList = getAllProducts();
         const bannerList = getBannerList();
-        res.render("home", { productList, bannerList, returnType} )
+        const nameUser = session.userName;
+        res.render("home", { productList, bannerList, returnType, name: nameUser } )
     },
     getProductByFilter: (req, res)=> {
         const bannerList = getBannerList();
