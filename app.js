@@ -33,6 +33,7 @@ app.use('/login', loginRouter)
 app.use(singUpRouter)
 app.use('/products', productsRouter)
 app.use('/admin', adminRouter)
+app.use('/admin/product/:id/edit', adminRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
 

@@ -211,11 +211,53 @@ const adminProductsController = {
         let panel = 'products'
         const productList = getProductsByFilters();
         res.render("admin-home", { panel, productList})
+    },
+    getProductDetails: (req, res) => {
+        if(req.params.id === 'id') {
+            let panel = 'product-details'
+            let product = getProductDetails(req.params.id)
+            res.render("admin-home", {panel, product})
+        }
+    },
+    editProduct: (req, res) => {
+        const imgPathHolder = '/images/placeHolderProductImage.jpg'
+        const id = req.params.id
+        const { type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
+
+        if (req.file) {
+            let { filename } = req.file
+            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
+        } else { 
+            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice , imgPathHolder );
+        }
+    },
+    deleteProduct: (req, res) => {
+        deleteProduct(req.params.id)
+        let usersList = {
+            users : getAllUsers()
+        };
+        res.render('index', { usersList: usersList })
     }
 }
 
 function getAllProducts() {
     return products;
+}
+
+function getProductDetails (productId) {
+    return products.find((product)=> product.id == productId)
+}
+
+function editProduct (id, type, theme, description, imgPath, installmentParts, installmentPrice, atSightPrice) {
+    
+    let objectIndex = products.findIndex( (product) => id == product.id )
+    products[objectIndex].type = type
+    products[objectIndex].theme = theme
+    products[objectIndex].description = description
+    products[objectIndex].imgPath = imgPath 
+    products[objectIndex].installmentParts = installmentParts
+    products[objectIndex].installmentPrice = installmentPrice
+    products[objectIndex].atSightPrice = atSightPrice 
 }
 
 module.exports = adminProductsController;
