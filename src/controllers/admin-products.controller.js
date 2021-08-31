@@ -5,7 +5,7 @@ const products = [
         type: 'clothes',
         theme: "Disney",
         description: "CAMISETA BRANCA ALICE NO PAÍS DAS MARAVILHAS",
-        imgPath: "/img/products/Disney/camisetas/alice-in-wonderland.png",
+        imgPath: "", /*"/img/products/Disney/camisetas/alice-in-wonderland.png"*/
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90'
@@ -213,14 +213,21 @@ const adminProductsController = {
         res.render("admin-home", { panel, productList})
     },
     getProductDetails: (req, res) => {
-        if(req.params.id === 'id') {
-            let panel = 'product-details'
-            let product = getProductDetails(req.params.id)
-            res.render("admin-home", {panel, product})
+        const imgPathHolder = '/img/placeHolderProductImage.jpg'
+
+        let panel = 'product-details'
+        let product = getProductDetails(req.params.id);
+
+        if (!product.imgPath) {
+            product.imgPath = imgPathHolder;
         }
+
+        console.log('meu produto: ', product)
+        res.render("admin-home", { panel, product })
+        
     },
     editProduct: (req, res) => {
-        const imgPathHolder = '/images/placeHolderProductImage.jpg'
+        const imgPathHolder = '/img/placeHolderProductImage.jpg'
         const id = req.params.id
         const { type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
 
@@ -228,6 +235,7 @@ const adminProductsController = {
             let { filename } = req.file
             editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
         } else { 
+            console.log('achou imagem')
             editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice , imgPathHolder );
         }
     },
@@ -245,6 +253,7 @@ function getAllProducts() {
 }
 
 function getProductDetails (productId) {
+    console.log('entrou em getProductDetails')
     return products.find((product)=> product.id == productId)
 }
 

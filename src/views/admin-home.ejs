@@ -37,6 +37,8 @@
                 <section id="display-area">
                     <% if(panel === 'products') {%> 
                         <%- include('./partials/_admin-products') %> 
+                    <% } else if(panel === 'product-details') {%> 
+                        <%- include('./partials/_admin-product') %> 
                     <% } %> 
                 </section>
 

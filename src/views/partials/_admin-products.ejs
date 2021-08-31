@@ -2,10 +2,13 @@
     <div id="panel-bar">
         <div id="div-title">
             <span>Produtos</span>
+            <div id="div-add-product">
+                <img src="/img/add-icon.png" alt="">
+            </div>
         </div>
         
         <div id="panel-filters">
-            <form action="">
+            <form action="" id="filter-form-panel">
                 <div id="obj-filters">
 
                     <span>Código:</span>
@@ -38,7 +41,7 @@
         </div>
     </div>
 
-    <div class="grid">
+    <div id="grid-panel">
         <table>
             <tr>
                 <th>Imagem</th>
@@ -60,7 +63,7 @@
                         <td><%=product.installmentParts %></td>
                         <td><%=product.installmentPrice %></td>
                         <td><%=product.atSightPrice %></td>
-                        <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%=product.id %>/edit');">Exibir</button></td>
+                        <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>
                     </tr>
                 <%}) %> 
             </tr>

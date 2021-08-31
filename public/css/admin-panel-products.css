@@ -1,0 +1,50 @@
+
+#product-form {
+    background-color: #1C2B3A;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-product-container {
+    display: flex;
+}
+
+#gr-product-pic {
+    height: 200px;
+    width: 200px;
+}
+
+#product-img {
+    height: 200px;
+    width: 200px;
+}
+
+#gr-product-description input {
+    width: 400px;
+}
+
+#gr-product-prices {
+    display: flex;
+    width: 400px;
+}
+
+#gr-product-atSightPrice {
+    width: 200px;
+}
+
+#gr-product-installmentParts {
+    width: 100px;
+}
+#gr-product-installmentParts input {
+    width: 50px;
+}
+
+#gr-product-installmentPrice {
+    width: 100px;
+}
+
+#inp-atSightPrice, #inp-installmentPrice {
+    width: 70px;
+}
