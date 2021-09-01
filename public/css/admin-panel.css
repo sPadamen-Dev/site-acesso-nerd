@@ -33,7 +33,11 @@
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 #filter-form-panel {
+=======
+#filter-form {
+>>>>>>> f76a2668067f22428e7d6befb7f6219e3f730725
     display: flex;
     align-items: center;
     justify-content: space-between;
