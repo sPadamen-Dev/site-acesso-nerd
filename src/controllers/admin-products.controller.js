@@ -213,6 +213,7 @@ const adminProductsController = {
         res.render("admin-home", { panel, productList})
     },
     getProductDetails: (req, res) => {
+<<<<<<< HEAD
         const imgPathHolder = '/img/placeHolderProductImage.jpg'
 
         let panel = 'product-details'
@@ -224,6 +225,15 @@ const adminProductsController = {
 
         console.log('meu produto: ', product)
         res.render("admin-home", { panel, product })
+=======
+        console.log('chegou aqui!!', req.params.id )
+            let panel = 'product-details'
+            let product = {
+                product: getProductDetails(req.params.id)
+            }
+            console.log('meu produto: ', product)
+            res.render("admin-home", { panel, product })
+>>>>>>> f76a2668067f22428e7d6befb7f6219e3f730725
         
     },
     editProduct: (req, res) => {

@@ -1,10 +1,15 @@
 <form id="product-form" method="POST" action="/admin/product/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data" >
     <div id="form-product-container">
         <section id="product-pics-section">
-            <div id="gr-product-pic">
-                <img id="product-img" src="<%= product.imgPath %>" alt="product-img">
+            <div id="grp-product-main-image">
+                <img id="product-image1" src="<%= product.imgPath %>" alt="product-img">
                 <div>
                     <input type="file" name="inp-product-pic" accept="image/*">
+                </div>
+                <div id="product-images">
+                    <img id="product-image2" src="<%= product.imgPath %>" alt="product-img">
+                    <img id="product-image3" src="<%= product.imgPath %>" alt="product-img">
+                    <img id="product-image4" src="<%= product.imgPath %>" alt="product-img">
                 </div>
             </div>
         </section>
