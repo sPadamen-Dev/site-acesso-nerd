@@ -1,50 +1,139 @@
-
-#product-form {
-    background-color: #1C2B3A;
+#pdp-form{
     height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--blue-dark);
+}
+
+#pdp-container {
+    display: flex;
+    background-color: var(--blue-innerbox);
+    padding:20px;
+}
+
+#pdp-section-pics{
+    display: flex;
+    flex-direction: column;
+}
+
+#pdp-image1 {
+    height: 250px;
+    width: 250px;
+    margin-bottom: 3px;
+}
+
+#pdp-images {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.pdp-thumb-images {
+    height: 81px;
+    width: 81px;
+}
+
+#pdp-div-insert-pics {
+    padding: 10px 0 ;
+    padding-left: 0px;
+}
+
+#pdp-div-input-pics {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0px;
+    width: 250px;
+    box-sizing: border-box;
+}
+
+#pdp-inp-pics {
+    border: 1px solid gray;
+}
+
+#pdp-section-info {
+    padding-left: 20px;
+}
+
+.pdp-div-groups {
+    padding: 10px 0;
+}
+
+.pdp-div-spans {
+    padding: 5px 0;
+
+}
+
+.pdp-spans {
+    font-size: 18px;
+    color:var(--yellow);
+    font-weight: bolder;
+}
+
+.pdp-inputs , .pdp-selects {
+    padding: 5px;
+}
+
+
+
+#pdp-inp-description {
+    width: 400px;
+}
+
+#pdp-select-category {
+    width: 400px;
+}
+
+#pdp-grp-prices {
+    padding:20px;
+    background-color: var('--blue-dark');
+}
+
+#pdp-section-installment , #pdp-section-atSight{
+    display: flex;
+    flex-direction: column;
+}
+
+.pdp-div-title {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+}
+.pdp-prices-values {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#form-product-container {
+
+
+.pdp-payment-parts {
     display: flex;
-}
-
-#gr-product-pic {
-    height: 200px;
-    width: 200px;
-}
-
-#product-img {
-    height: 200px;
-    width: 200px;
-}
-
-#gr-product-description input {
-    width: 400px;
-}
-
-#gr-product-prices {
-    display: flex;
-    width: 400px;
-}
-
-#gr-product-atSightPrice {
-    width: 200px;
-}
-
-#gr-product-installmentParts {
-    width: 100px;
-}
-#gr-product-installmentParts input {
     width: 50px;
+    text-align: center;
 }
 
-#gr-product-installmentPrice {
+#pdp-inp-installmentParts[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+}
+
+/* to hide arrows on input type number
+  input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+*/
+
+.pdp-x {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bolder;
+    color:var(--white);
+}
+
+#pdp-inp-installmentPrice , #pdp-inp-atSightPrice {
     width: 100px;
-}
-
-#inp-atSightPrice, #inp-installmentPrice {
-    width: 70px;
 }

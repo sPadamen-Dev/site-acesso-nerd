@@ -1,46 +1,89 @@
-<form id="product-form" method="POST" action="/admin/product/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data" >
-    <div id="form-product-container">
-        <section id="product-pics-section">
-            <div id="grp-product-main-image">
-                <img id="product-image1" src="<%= product.imgPath %>" alt="product-img">
-                <div>
-                    <input type="file" name="inp-product-pic" accept="image/*">
-                </div>
-                <div id="product-images">
-                    <img id="product-image2" src="<%= product.imgPath %>" alt="product-img">
-                    <img id="product-image3" src="<%= product.imgPath %>" alt="product-img">
-                    <img id="product-image4" src="<%= product.imgPath %>" alt="product-img">
-                </div>
+<!--pdp product details panel-->
+<form id="pdp-form" method="POST" action="/admin/product/<%= product.id %>/edit?_method=PUT" enctype="multipart/form-data" >
+    <div id="pdp-container">
+        <section id="pdp-section-pics">
+            <div id="pdp-grp-main-image">
+                <img id="pdp-image1" src="<%= product.imgPath %>" alt="product-img">
+            </div>
+            <div id="pdp-images">
+                <img class="pdp-thumb-images" id="product-image2" src="<%= product.imgPath %>" alt="product-img">
+                <img class="pdp-thumb-images" id="product-image3" src="<%= product.imgPath %>" alt="product-img">
+                <img class="pdp-thumb-images" id="product-image4" src="<%= product.imgPath %>" alt="product-img">
+            </div>
+            <div id="pdp-div-input-pics">
+                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*">
             </div>
         </section>
-        <section id="product-info-section">
-            <div id="gr-product-description">
-                <div id="div-product-description">
-                    <span>Descrição:</span>
+        <section id="pdp-section-info">
+
+            <div class="pdp-div-groups">
+                <div id="pdp-div-description">
+                    <div class="pdp-div-spans">
+                        <span class="pdp-spans">Descrição</span>
+                    </div>
+                    <input id="pdp-inp-description" class="pdp-inputs" name="description" type="text" value="<%= product.description %>" required>
                 </div>
-                    <input class="entriesProduct" name="description" type="text" value="<%= product.description %>" required>
             </div>
-            <div id="gr-product-prices">
-                <div id="gr-product-installmentParts">
-                    <div id="div-product-installmentParts">
-                        <span>Qtd. Parcelas:</span>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-category">
+                    <div class="pdp-div-spans">
+                        <span class="pdp-spans">Categoria</span>
                     </div>
-                        <input id="inp-installmentParts" class="entriesProduct" name="installmentParts" type="number" value="<%= product.installmentParts %>" required>
+                    <select id="pdp-select-category" class="pdp-selects">
+                        <!--<optgroup label="agrupador">-->
+                            <option value="canecas">Escolha um grupo</option>
+                            <option value="canecas">CANECAS</option>
+                            <option value="camisetas">CAMISETAS</option>
+                            <option value="gadgets">GADGETS</option>
+                        <!--</optgroup>-->
+                    </select>
                 </div>
-                <div id="gr-product-installmentPrice">
-                    <div id="div-product-installmentPrice">
-                        <span>Valor Parcela:</span>
+            </div>
+
+
+            <div id="pdp-grp-prices">
+                <section id="pdp-section-installment">
+                    <div class="pdp-div-title">
+                        <span class="pdp-spans">Valor Parcelado</span>
                     </div>
-                        <input id="inp-installmentPrice" class="entriesProduct" name="installmentPrice" type="text" value="<%= product.installmentPrice %>" required>
-                </div>
-                <div id="gr-product-atSightPrice">
-                    <div id="div-product-atSightPrice">
-                        <span>Preço de Venda à Vista:</span>
+
+                    <div class="pdp-prices-values pdp-div-groups">
+                        <div id="pdp-div-installmentParts">
+                            <input id="pdp-inp-installmentParts" class="pdp-inputs pdp-payment-parts" name="pdp-installmentParts" type="number" value="<%= product.installmentParts %>" required>
+                        </div>
+
+                        <div class="pdp-x">X</div>
+
+                        <div id="pdp-div-installmentPrice">
+                            <input id="pdp-inp-installmentPrice" class="pdp-inputs" name="installmentPrice" type="text" value="<%= product.installmentPrice %>" required>
+                        </div>
                     </div>
-                        <input id="inp-atSightPrice" class="entriesProduct" name="atSightPrice" type="text" value="<%= product.atSightPrice %>" required>
-                </div>
+
+                </section>
+                <section id="pdp-section-atSight">
+                    <div class="pdp-div-title">
+                        <span class="pdp-spans">Valor à Vista</span>
+                    </div>
+
+                    <div class="pdp-prices-values pdp-div-groups">
+                        <div id="pdp-div-atSightParts">
+                            <input id="pdp-inp-atSightParts" class="pdp-inputs pdp-payment-parts" name="pdp-atSightParts" type="number" value="01" readonly>
+                        </div>
+
+                        <div class="pdp-x">X</div>
+
+                        <div id="pdp-div-atSightPrice">
+                            <input id="pdp-inp-atSightPrice" class="pdp-inputs" name="pdp-atSightPrice" type="text" value="<%= product.atSightPrice %>" required>
+                        </div>
+                    </div>
+
+                </section>
             </div>
         </section>
+    </div>
+    <div class="pdp-buttons">
+        <button>Salvar</button>
+        <button>Cancelar</button>
     </div>
 </form>
 

@@ -33,11 +33,7 @@
   cursor: pointer;
 }
 
-<<<<<<< HEAD
 #filter-form-panel {
-=======
-#filter-form {
->>>>>>> f76a2668067f22428e7d6befb7f6219e3f730725
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -56,7 +52,7 @@
     padding-left: 10px;
 }
 
-#filter-form-panel select, input {
+.ffp-input {
     margin-left: 5px;
     height: 25px;
     padding-left: 15px;
@@ -64,8 +60,16 @@
     font-size: 14px;
 }
 
-.input-id {
-    width: 85px;
+.ffp-select {
+  margin-left: 5px;
+  height: 25px;
+  padding-left: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#product-id {
+    width: 65px;
 }
 
 #filter-form-panel button {
