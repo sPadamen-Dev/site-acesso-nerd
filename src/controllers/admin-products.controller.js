@@ -8,7 +8,8 @@ const products = [
         imgPath: "", /*"/img/products/Disney/camisetas/alice-in-wonderland.png"*/
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Inativo'
     },
     {
         id: 2,
@@ -18,7 +19,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/darth-vader.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 3,
@@ -28,7 +30,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/lion-king-simba.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 4,
@@ -38,7 +41,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/madalorian-grogu.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 5,
@@ -48,7 +52,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/toy-story-forky.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 6,
@@ -58,7 +63,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/toy-story-woody.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 7,
@@ -68,7 +74,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/deadpool-venom.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 8,
@@ -78,7 +85,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/manopla-do-infinito.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 9,
@@ -88,7 +96,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/spider-man.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 10,
@@ -98,7 +107,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/stan-lee.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 11,
@@ -108,7 +118,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/thanos.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 12,
@@ -118,7 +129,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/deadpool-venom.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 13,
@@ -128,7 +140,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/manopla-do-infinito.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 14,
@@ -138,7 +151,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/spider-man.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 15,
@@ -148,7 +162,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/stan-lee.png",
         installmentParts:5,
         installmentPrice:'6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 16,
@@ -158,7 +173,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/alice-in-wonderland.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 17,
@@ -168,7 +184,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/darth-vader.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 18,
@@ -178,7 +195,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/lion-king-simba.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 19,
@@ -188,7 +206,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/mandalorian-grogu.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 20,
@@ -198,7 +217,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/toy-story-woody.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     }
   ]; 
 const adminProductsController = {

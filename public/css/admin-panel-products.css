@@ -4,13 +4,14 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: var(--white);
+    background-color: whitesmoke;
     font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 #pdp-container {
     display: flex;
-    background-color: var(--blue-innerbox);
+    width: fit-content;
+    background-color: white;
     padding:20px;
 }
 
@@ -23,6 +24,7 @@
     height: 250px;
     width: 250px;
     margin-bottom: 3px;
+    border: 1px solid gainsboro;
 }
 
 #pdp-images {
@@ -34,6 +36,7 @@
 .pdp-thumb-images {
     height: 81px;
     width: 81px;
+    border: 1px solid gainsboro;
 }
 
 #pdp-div-insert-pics {
@@ -49,13 +52,28 @@
     box-sizing: border-box;
 }
 
-#pdp-inp-pics {
-    border: 1px solid gray;
+#pdp-div-input-pics label {
+    display: flex;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--btn-confirm);
+}
+
+#pdp-inp-pics[type="file"] {
+    display: none;
+}
+
+.pdp-btn-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-color: rgb(222, 238, 220);
+    padding: 6px 12px;
+    width: 100%;
+    cursor: pointer;
 }
 
 #pdp-section-info {
     padding: 0px 20px;
-    background-color: var(--blue-innerbox);
     border: 1px solid whitesmoke;
     margin-left: 10px;
 
@@ -65,24 +83,23 @@
     padding: 5px 0;
 }
 
-.pdp-div-spans {
-    padding: 5px 0;
+.pdp-div-titles {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px 0 0 5px;
+    background-color: whitesmoke;
 
-}
-
-.pdp-spans {
     font-size: 18px;
-    color:var(--yellow);
-    font-weight: bolder;
+    color: var(--blue-dark);
+    font-weight: 700;
 }
 
 .pdp-inputs , .pdp-selects {
     padding: 5px;
     font-family: 'IBM Plex Sans KR', sans-serif;
     font-weight: 300;
+    border: 1px solid gainsboro;
 }
-
-
 
 #pdp-inp-description {
     width: 400px;
@@ -99,9 +116,8 @@
 #pdp-grp-prices {
     display: flex;
     justify-content: space-between;
-    padding-top:20px;
-    background-color: var(--blue-innerbox);
-    border-top: 1px solid var(--white)
+    padding:10px 25px 0 25px;
+    border: 1px solid gainsboro;
 }
 
 #pdp-section-installment , #pdp-section-atSight{
@@ -109,11 +125,14 @@
     flex-direction: column;
 }
 
-.pdp-div-title {
+.pdp-div-subtitles {
     display: flex;
     justify-content: center;
-    font-size: 20px;
+    font-size: 16px;
+    color:var(--blue-dark);
+    font-weight: 500;
 }
+
 .pdp-prices-values {
     display: flex;
     justify-content: center;
@@ -149,7 +168,106 @@
     justify-content: center;
     align-items: center;
     padding: 10px;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bolder;
-    color:var(--yellow);
+    color: #cf113d;
 }
+
+#pdp-grp-buttons {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.pdp-buttons {
+    color: white;
+    height: 35px;
+    width: 100px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0px 10px;
+}
+
+#pdp-button-cancel {
+    background-color:var(--btn-cancel);
+}
+
+#pdp-button-save {
+    background-color: var(--btn-confirm);
+}
+
+
+/***** SLIDE SWITCH *****/
+#pdp-status {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+}
+
+#pdp-div-switch {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+.pdp-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+  }
+  
+  #pdp-inp-switch { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .pdp-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .pdp-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  #pdp-inp-switch:checked + .pdp-slider {
+    background-color: var(--btn-confirm);
+  }
+  
+  #pdp-inp-switch:focus + .pdp-slider {
+    box-shadow: 0 0 1px var(--btn-confirm);
+  }
+  
+  #pdp-inp-switch:checked + .pdp-slider:before {
+    -webkit-transform: translateX(22px);
+    -ms-transform: translateX(22px);
+    transform: translateX(22px);
+  }
+  
+  /* Rounded sliders */
+  .pdp-slider.pdp-round {
+    border-radius: 34px;
+  }
+  
+  .pdp-slider.pdp-round:before {
+    border-radius: 50%;
+  }

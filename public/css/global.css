@@ -15,9 +15,10 @@ html{
     --grey: #B9B6B6;
     --grey-medium: #787B7D;
 
+    --btn-cancel: #F0AB3E;
+    --btn-confirm: #0FBF60;
+    --btn-delete: #FF124B;
 
-
- 
     font-size: 62.5%;
 } 
 
