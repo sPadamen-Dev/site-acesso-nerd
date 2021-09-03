@@ -4,7 +4,8 @@
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: var(--blue-dark);
+    background-color: var(--white);
+    font-family: 'IBM Plex Sans KR', sans-serif;
 }
 
 #pdp-container {
@@ -53,11 +54,15 @@
 }
 
 #pdp-section-info {
-    padding-left: 20px;
+    padding: 0px 20px;
+    background-color: var(--blue-innerbox);
+    border: 1px solid whitesmoke;
+    margin-left: 10px;
+
 }
 
 .pdp-div-groups {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .pdp-div-spans {
@@ -73,6 +78,8 @@
 
 .pdp-inputs , .pdp-selects {
     padding: 5px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
 }
 
 
@@ -85,9 +92,16 @@
     width: 400px;
 }
 
+#pdp-div-category {
+    padding-bottom: 10px;
+}
+
 #pdp-grp-prices {
-    padding:20px;
-    background-color: var('--blue-dark');
+    display: flex;
+    justify-content: space-between;
+    padding-top:20px;
+    background-color: var(--blue-innerbox);
+    border-top: 1px solid var(--white)
 }
 
 #pdp-section-installment , #pdp-section-atSight{
@@ -114,6 +128,12 @@
     text-align: center;
 }
 
+.pdp-payment-prices {
+    display: flex;
+    width: 70px;
+    text-align: center;
+}
+
 #pdp-inp-installmentParts[type=number]::-webkit-inner-spin-button {
     opacity: 1;
 }
@@ -131,9 +151,5 @@
     padding: 10px;
     font-size: 24px;
     font-weight: bolder;
-    color:var(--white);
-}
-
-#pdp-inp-installmentPrice , #pdp-inp-atSightPrice {
-    width: 100px;
+    color:var(--yellow);
 }
