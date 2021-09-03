@@ -54,16 +54,16 @@
                 <th>Preço à Vista</th>
                 </tr>
                 <% productList.forEach((product)=> {%>
-                    <tr>
-                        <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.imgPath %>" alt="profile-pic"></div></td>
-                        <td><%=product.id %> </td>
-                        <td><%=product.type %> </td>
-                        <td><%=product.theme %></td>
-                        <td><%=product.description %></td>
-                        <td><%=product.installmentParts %></td>
-                        <td><%=product.installmentPrice %></td>
-                        <td><%=product.atSightPrice %></td>
-                        <td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>
+                    <tr onclick="window.location.replace('/admin/product/<%= product.id %>');">
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="profile-pic"></div></td>
+                            <td><%=product.id %> </td>
+                            <td><%=product.type %> </td>
+                            <td><%=product.theme %></td>
+                            <td><%=product.description %></td>
+                            <td><%=product.installmentParts %></td>
+                            <td><%=product.installmentPrice %></td>
+                            <td><%=product.atSightPrice %></td>
+                            <!--<td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>--> 
                     </tr>
                 <%}) %> 
             </tr>

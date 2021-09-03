@@ -117,9 +117,6 @@ body {
     height: 100%;
     width: 100%;
     background-color: whitesmoke;
-    border-right: 5px solid white;
-    border-left: 5px solid white;
-    border-bottom: 5px solid white;
     box-sizing: border-box;
 }
 

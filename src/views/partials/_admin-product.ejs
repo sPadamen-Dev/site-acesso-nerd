@@ -3,31 +3,48 @@
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
-                <img id="pdp-image1" src="<%= product.imgPath %>" alt="product-img">
+                <img id="pdp-image1" src="<%= product.images[0].imgPath %>" alt="product-img">
             </div>
+            <% console.log('Chegou até aqui corretamente', product.images) %> 
             <div id="pdp-images">
-                <img class="pdp-thumb-images" id="product-image2" src="<%= product.imgPath %>" alt="product-img">
-                <img class="pdp-thumb-images" id="product-image3" src="<%= product.imgPath %>" alt="product-img">
-                <img class="pdp-thumb-images" id="product-image4" src="<%= product.imgPath %>" alt="product-img">
+                <% product.images.forEach((image, index)=> {%>
+                    <% if(image.imgType === 'S') {%> 
+                    <img class="pdp-thumb-images" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" alt="product-img">
+                    <% } %> 
+                <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
+                <label for="pdp-inp-pics" class="pdp-btn-upload">Upload imagens</label>
                 <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*">
             </div>
         </section>
         <section id="pdp-section-info">
+            <div id="pdp-status">
+                <p id="pdp-p-status"><%= product.status %> </p>
+                <div id="pdp-div-switch">
+                    <label class="pdp-switch">
+                        <% if(product.status === 'Ativo') {%> 
+                            <input id="pdp-inp-switch" type="checkbox" checked>
+                        <% } else { %>
+                            <input id="pdp-inp-switch" type="checkbox">
+                        <% } %> 
+                        <span class="pdp-slider pdp-round"></span>
+                    </label>
+                </div>
+            </div>
 
             <div class="pdp-div-groups">
                 <div id="pdp-div-description">
-                    <div class="pdp-div-spans">
-                        <span class="pdp-spans">Descrição</span>
+                    <div class="pdp-div-titles">
+                        <span>Descrição</span>
                     </div>
                     <input id="pdp-inp-description" class="pdp-inputs" name="description" type="text" value="<%= product.description %>" required>
                 </div>
             </div>
             <div class="pdp-div-groups">
                 <div id="pdp-div-category">
-                    <div class="pdp-div-spans">
-                        <span class="pdp-spans">Categoria</span>
+                    <div class="pdp-div-titles">
+                        <span>Categoria</span>
                     </div>
                     <select id="pdp-select-category" class="pdp-selects">
                         <!--<optgroup label="agrupador">-->
@@ -39,12 +56,13 @@
                     </select>
                 </div>
             </div>
-
-
+            <div class="pdp-div-titles">
+                <span>Preços</span>
+            </div>
             <div id="pdp-grp-prices">
                 <section id="pdp-section-installment">
-                    <div class="pdp-div-title">
-                        <span class="pdp-spans">Valor Parcelado</span>
+                    <div class="pdp-div-subtitles">
+                        <span>Valor Parcelado</span>
                     </div>
 
                     <div class="pdp-prices-values pdp-div-groups">
@@ -61,8 +79,8 @@
 
                 </section>
                 <section id="pdp-section-atSight">
-                    <div class="pdp-div-title">
-                        <span class="pdp-spans">Valor à Vista</span>
+                    <div class="pdp-div-subtitles">
+                        <span>Valor à Vista</span>
                     </div>
 
                     <div class="pdp-prices-values pdp-div-groups">
@@ -76,14 +94,25 @@
                             <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="pdp-atSightPrice" type="text" value="<%= product.atSightPrice %>" required>
                         </div>
                     </div>
-
                 </section>
             </div>
+
+            <div id="pdp-grp-buttons">
+                <div>
+                    <button id="pdp-button-save" class="pdp-buttons">Salvar</button>
+                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                </div>
+            </div>
+
         </section>
     </div>
-    <div class="pdp-buttons">
-        <button>Salvar</button>
-        <button>Cancelar</button>
-    </div>
 </form>
-
+<script>
+    document.querySelector('#pdp-inp-switch').addEventListener('change', (evento)=>{
+        if (document.getElementById('pdp-inp-switch').checked) {
+            document.getElementById('pdp-p-status').innerText = "Ativo"
+        } else {
+            document.getElementById('pdp-p-status').innerText = "Inativo"
+        }
+    });
+</script>

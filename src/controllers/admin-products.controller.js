@@ -1,25 +1,45 @@
+const imgPathHolder = '/img/placeHolderProductImage.jpg'
 /* type: 1 - camiseta | 2- caneca*/
-const products = [
+let products = [
     {
         id: 1,
         type: 'clothes',
         theme: "Disney",
         description: "CAMISETA BRANCA ALICE NO PAÍS DAS MARAVILHAS",
-        imgPath: "", /*"/img/products/Disney/camisetas/alice-in-wonderland.png"*/
+        /*imgPath: "", /*"/img/products/Disney/camisetas/alice-in-wonderland.png"*/
+        images: [{
+            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
+            imgType: 'M'
+        }, {
+            imgPath: '/img/products/Disney/camisetas/darth-vader.png',
+            imgType: 'S'
+        }, {
+            imgPath: '/img/products/Disney/camisetas/lion-king-simba.png',
+            imgType: 'S'
+        }, {
+            imgPath: '/img/products/Disney/camisetas/madalorian-grogu.png',
+            imgType: 'S'
+        }],
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Inativo'
     },
     {
         id: 2,
         type: 'clothes',
         theme: "Disney",
         description: "CAMISETA BRANCA DARTH VADER",
-        imgPath: "/img/products/Disney/camisetas/darth-vader.png",
+        /*imgPath: "/img/products/Disney/camisetas/darth-vader.png",*/
+        images:[{
+            imgPath:'',
+            imgType:''
+        }],
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
-    },
+        atSightPrice: '50,90',
+        status: 'Ativo'
+    }/*,
     {
         id: 3,
         type: 'clothes',
@@ -28,7 +48,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/lion-king-simba.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 4,
@@ -38,7 +59,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/madalorian-grogu.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 5,
@@ -48,7 +70,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/toy-story-forky.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 6,
@@ -58,7 +81,8 @@ const products = [
         imgPath: "/img/products/Disney/camisetas/toy-story-woody.png",
         installmentParts:5,
         installmentPrice: '10,18',
-        atSightPrice: '50,90'
+        atSightPrice: '50,90',
+        status: 'Ativo'
     },
     {
         id: 7,
@@ -68,7 +92,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/deadpool-venom.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 8,
@@ -78,7 +103,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/manopla-do-infinito.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 9,
@@ -88,7 +114,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/spider-man.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 10,
@@ -98,7 +125,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/stan-lee.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 11,
@@ -108,7 +136,8 @@ const products = [
         imgPath: "/img/products/Marvel/camisetas/thanos.png",
         installmentParts:5,
         installmentPrice: '13,25',
-        atSightPrice: '66,25'
+        atSightPrice: '66,25',
+        status: 'Ativo'
     },
     {
         id: 12,
@@ -118,7 +147,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/deadpool-venom.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 13,
@@ -128,7 +158,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/manopla-do-infinito.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 14,
@@ -138,7 +169,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/spider-man.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 15,
@@ -148,7 +180,8 @@ const products = [
         imgPath: "/img/products/Marvel/canecas/stan-lee.png",
         installmentParts:5,
         installmentPrice:'6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 16,
@@ -158,7 +191,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/alice-in-wonderland.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 17,
@@ -168,7 +202,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/darth-vader.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 18,
@@ -178,7 +213,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/lion-king-simba.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 19,
@@ -188,7 +224,8 @@ const products = [
         imgPath: "/img/products/Disney/canecas/mandalorian-grogu.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
+        atSightPrice: '32,40',
+        status: 'Ativo'
     },
     {
         id: 20,
@@ -198,8 +235,9 @@ const products = [
         imgPath: "/img/products/Disney/canecas/toy-story-woody.png",
         installmentParts:5,
         installmentPrice: '6,48',
-        atSightPrice: '32,40'
-    }
+        atSightPrice: '32,40',
+        status: 'Ativo'
+    }*/
   ]; 
 const adminProductsController = {
     getAllProducts: (req, res) => {
@@ -213,13 +251,14 @@ const adminProductsController = {
         res.render("admin-home", { panel, productList})
     },
     getProductDetails: (req, res) => {
-        const imgPathHolder = '/img/placeHolderProductImage.jpg'
-
         let panel = 'product-details'
         let product = getProductDetails(req.params.id);
-
-        if (!product.imgPath) {
-            product.imgPath = imgPathHolder;
+        
+        if (product.images == undefined) {
+            product.images = [{
+                imgPath: imgPathHolder,
+                imgType: 'M'
+            }]
         }
 
         console.log('meu produto: ', product)
@@ -227,7 +266,6 @@ const adminProductsController = {
         
     },
     editProduct: (req, res) => {
-        const imgPathHolder = '/img/placeHolderProductImage.jpg'
         const id = req.params.id
         const { type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
 
@@ -249,21 +287,35 @@ const adminProductsController = {
 }
 
 function getAllProducts() {
+
+    products.forEach((product, index)=> {
+        if (!product.images[0].imgPath) {
+            product.images[0].imgPath = imgPathHolder
+            product.images[0].imgType = 'M'
+        }
+    })
     return products;
 }
 
 function getProductDetails (productId) {
     console.log('entrou em getProductDetails')
-    return products.find((product)=> product.id == productId)
+    let product = products.find((product)=> product.id == productId)
+    
+    if (!product.images[0].imgPath) {
+        console.log('entrou aqui: ', product.images)
+        product.images[0].imgPath = imgPathHolder
+        product.images[0].imgType = 'M'
+    }
+    return product
 }
 
-function editProduct (id, type, theme, description, imgPath, installmentParts, installmentPrice, atSightPrice) {
+function editProduct (id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice) {
     
     let objectIndex = products.findIndex( (product) => id == product.id )
     products[objectIndex].type = type
     products[objectIndex].theme = theme
     products[objectIndex].description = description
-    products[objectIndex].imgPath = imgPath 
+    products[objectIndex].images = images 
     products[objectIndex].installmentParts = installmentParts
     products[objectIndex].installmentPrice = installmentPrice
     products[objectIndex].atSightPrice = atSightPrice 

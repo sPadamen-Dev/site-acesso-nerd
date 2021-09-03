@@ -107,21 +107,21 @@
 }
 
 #grid-panel table img {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
   
  #grid-panel td, th {
     font-size: 14px;
     border: 1px solid #bebebe;
     text-align: left;
-    padding: 8px;
+    padding: 5px;
     color: black;
     height: 30px;
   }
   
   #grid-panel  tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: whitesmoke;
   }
 
  .img-row-cell {
