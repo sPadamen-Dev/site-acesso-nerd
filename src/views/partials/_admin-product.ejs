@@ -3,9 +3,14 @@
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
-                <img id="pdp-image1" src="<%= product.images[0].imgPath %>" alt="product-img">
+                <% product.images.every((image, index)=> { %>
+                    <% if(image.imgType === 'M') {%> 
+                        <img id="pdp-image1" src="<%= image.imgPath %>" alt="product-img">
+                    <% return false; %>
+                    <% } %>
+                    <% return true; %> 
+                <%}) %> 
             </div>
-            <% console.log('Chegou até aqui corretamente', product.images) %> 
             <div id="pdp-images">
                 <% product.images.forEach((image, index)=> {%>
                     <% if(image.imgType === 'S') {%> 
@@ -14,8 +19,8 @@
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
-                <label for="pdp-inp-pics" class="pdp-btn-upload">Upload imagens</label>
-                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*">
+                <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*" multiple max=4>
             </div>
         </section>
         <section id="pdp-section-info">

@@ -9,10 +9,10 @@ let products = [
         /*imgPath: "", /*"/img/products/Disney/camisetas/alice-in-wonderland.png"*/
         images: [{
             imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
-            imgType: 'M'
+            imgType: 'S'
         }, {
             imgPath: '/img/products/Disney/camisetas/darth-vader.png',
-            imgType: 'S'
+            imgType: 'M'
         }, {
             imgPath: '/img/products/Disney/camisetas/lion-king-simba.png',
             imgType: 'S'
