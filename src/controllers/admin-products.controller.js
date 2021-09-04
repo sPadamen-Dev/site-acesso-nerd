@@ -237,6 +237,7 @@ let products = [
         installmentPrice: '6,48',
         atSightPrice: '32,40',
         status: 'Ativo'
+<<<<<<< HEAD
     }*/
   ]; 
 const adminProductsController = {
