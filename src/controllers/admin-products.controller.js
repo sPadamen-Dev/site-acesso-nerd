@@ -237,11 +237,7 @@ let products = [
         installmentPrice: '6,48',
         atSightPrice: '32,40',
         status: 'Ativo'
-<<<<<<< HEAD
     }*/
-=======
-    }
->>>>>>> 01d94e1eaf8c3aefd8aa4f240417e8d3c097dbbe
   ]; 
 const adminProductsController = {
     getAllProducts: (req, res) => {

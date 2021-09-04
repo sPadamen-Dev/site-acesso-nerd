@@ -24,7 +24,6 @@
     height: 250px;
     width: 250px;
     margin-bottom: 3px;
-    border: 1px solid gainsboro;
 }
 
 #pdp-images {
@@ -36,7 +35,6 @@
 .pdp-thumb-images {
     height: 81px;
     width: 81px;
-    border: 1px solid gainsboro;
 }
 
 #pdp-div-insert-pics {
@@ -47,7 +45,7 @@
 #pdp-div-input-pics {
     display: flex;
     justify-content: center;
-    padding: 10px 0px;
+    padding: 15px 0px;
     width: 250px;
     box-sizing: border-box;
 }
@@ -177,7 +175,7 @@
     display: flex;
     width: 100%;
     justify-content: space-around;
-    padding-top: 40px;
+    padding: 20px 0px;
 }
 
 .pdp-buttons {
