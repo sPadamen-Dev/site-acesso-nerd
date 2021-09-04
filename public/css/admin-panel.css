@@ -1,0 +1,145 @@
+#panel-wrapper {
+  display: flex;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  padding-left: 5px;
+  background-color: white;
+}
+
+#panel-bar {
+    display: flex;
+    flex-direction: column;
+    background-color:var(--blue-innerbox);
+    height: 100px;
+    color: white;
+    padding:10px;
+    margin-bottom: 5px;
+}
+
+#div-title{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 50%;
+    font-size: 24px;
+    color:var(--yellow);
+    padding-bottom: 5px;
+}
+
+#div-add-product {
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  right: 20px;
+}
+
+#div-add-product img{
+  height: 100%;
+  width: 100%;
+
+  cursor: pointer;
+}
+
+#filter-form-panel {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#panel-filters {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-top: 1px solid white;
+}
+
+#filter-form-panel span {
+    color: white;
+    font-size: 18px;
+}
+
+.ffp-input {
+    margin-left: 5px;
+    height: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ffp-select {
+  margin-left: 5px;
+  height: 25px;
+  padding-left: 15px;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+#product-id {
+    width: 65px;
+}
+
+#filter-form-panel button {
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color:#1E90FF;
+    font-weight: bolder;
+}
+
+#panel-wrapper {
+  display: flex;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#grid-panel table {
+    font-family: arial, sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+}
+
+#grid-panel table img {
+    height: 30px;
+    width: 30px;
+}
+  
+ #grid-panel td, th {
+    font-size: 14px;
+    border: 1px solid #bebebe;
+    text-align: left;
+    padding: 5px;
+    color: black;
+    height: 30px;
+  }
+  
+  #grid-panel  tr:nth-child(even) {
+    background-color: whitesmoke;
+  }
+
+ .img-row-cell {
+    display: flex;
+    justify-content: center;
+  }
+  .img-row-pic {
+    width: 40px; 
+    height: 40px;
+  }
+
+.btn-show, .btn-nav-app {
+  min-width: 80px;
+  width: fit-content;
+  background-color: rgb(95, 85, 95);
+  border: 0.5px solid gray;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  padding:5px;
+}

@@ -1,0 +1,72 @@
+<div id="panel-wrapper">
+    <div id="panel-bar">
+        <div id="div-title">
+            <span>Produtos</span>
+            <div id="div-add-product">
+                <img src="/img/add-icon.png" alt="">
+            </div>
+        </div>
+        
+        <div id="panel-filters">
+            <form action="" id="filter-form-panel">
+                <div id="obj-filters">
+
+                    <span>Código:</span>
+                    <input class="ffp-input" type="text" name="product-id" id="product-id">
+
+                    <span>Produto:</span>
+                    <input class="ffp-input" type="text" name="product-description" id="product-description">
+
+                    <span>Categorias:</span>
+                    <select class="ffp-select" id="types">
+                        <!--<optgroup label="agrupador">-->
+                            <option value="canecas">Escolha uma categoria</option>
+                            <option value="canecas">CANECAS</option>
+                            <option value="camisetas">CAMISETAS</option>
+                            <option value="gadgets">GADGETS</option>
+                        <!--</optgroup>-->
+                    </select>
+                    
+                    <span>Tema:</span>
+                    <select class="ffp-select" id="themes">
+                        <option value="canecas">Escolha um tema</option>
+                        <option value="disney">DISNEY</option>
+                        <option value="marvel">MARVEL</option>
+                    </select>
+                </div>
+                <div>
+                    <button>Filtrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="grid-panel">
+        <table>
+            <tr>
+                <th>Imagem</th>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Tema</th>
+                <th>Descrição</th>
+                <th>Qtd. Parcelas</th>
+                <th>Preço Parcelas</th>
+                <th>Preço à Vista</th>
+                </tr>
+                <% productList.forEach((product)=> {%>
+                    <tr onclick="window.location.replace('/admin/product/<%= product.id %>');">
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="profile-pic"></div></td>
+                            <td><%=product.id %> </td>
+                            <td><%=product.type %> </td>
+                            <td><%=product.theme %></td>
+                            <td><%=product.description %></td>
+                            <td><%=product.installmentParts %></td>
+                            <td><%=product.installmentPrice %></td>
+                            <td><%=product.atSightPrice %></td>
+                            <!--<td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>--> 
+                    </tr>
+                <%}) %> 
+            </tr>
+        </table>
+    </div>
+</div>
