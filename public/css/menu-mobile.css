@@ -1,8 +1,12 @@
-@media (min-width: 100px) and (max-width: 600px) {
+@media (max-width: 600px) {
 
   #burguer{
       visibility: visible;;
-  }
+  }  
+
+    .info-header-top-span > a{
+      font-size: 2em;
+    }
 
   .div-carrinho, .div-login, .div-pesquisa {
       display: flex;
@@ -193,7 +197,7 @@ opacity: 1;
 }
 }
 
-@media (min-width: 100px) and (max-width: 540px) {
+@media (max-width: 540px) {
 
   #burguer{
       visibility: visible;;
@@ -388,7 +392,7 @@ opacity: 1;
 }
 }
 
-@media (min-width: 100px) and (max-width: 480px) {
+@media (max-width: 480px) {
 
     #burguer{
         visibility: visible;;
@@ -583,7 +587,7 @@ a:hover
 }
 }
 
-@media (min-width: 100px) and (max-width: 425px) {
+@media (max-width: 425px) {
 
   #burguer{
       visibility: visible;;
@@ -778,7 +782,7 @@ opacity: 1;
 }
 }
 
-@media (min-width: 100px) and (max-width: 375px) {
+@media (max-width: 375px) {
 
   #burguer{
       visibility: visible;;
@@ -962,7 +966,7 @@ opacity: 1;
 }
 }
 
-@media (min-width: 100px) and (max-width: 360px) {
+@media (max-width: 360px) {
 
   #burguer{
       visibility: visible;;
@@ -1030,7 +1034,7 @@ opacity: 1;
 a
 {
 text-decoration: none;
-color: #232323;
+color: #FFDE5A;
 transition: color 0.3s ease;
 }
 
@@ -1043,7 +1047,7 @@ color: tomato;
 {
 display: block;
 position: absolute;
-top: 11.3em;
+top: 11.9em;
 right: -21.5em;
 z-index: 1;
 -webkit-user-select:none;
@@ -1144,10 +1148,15 @@ font-size: 22px;
 transform: none;
 opacity: 1;
 }
+
+.first, .second, .thrid, .fourth, .fifth{
+  text-align: initial;
+}
+
 }
 
 
-@media (min-width: 100px) and (max-width: 320px) {
+@media (max-width: 320px) {
 
   #burguer{
       visibility: visible;;
@@ -1331,6 +1340,15 @@ opacity: 1;
 }
 }
 
+.form-contato{
+  flex-direction: column;
+  color: white;
+  font-size: 1.6rem;
+  padding: 1em;
+  background-color: #5a708d;
+  margin-top: 0.5em;
+  justify-content: center;
+}
 
 .home-footer{
   height: 'fit-content';
@@ -1344,12 +1362,6 @@ opacity: 1;
   justify-content: space-between;
   color: white;
   padding: 20px 150px;
-}
-.footer-contact{
-  flex-direction: column;
-  flex-wrap: wrap;
-  flex-grow: 0.25;
-  border-right: none;
 }
 
 .contato, .email, .endereco {
