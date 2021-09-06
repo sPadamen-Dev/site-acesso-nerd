@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000;
 const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.user.router')
 const cookieParser = require('cookie-parser')
-const productsRouter = require('./src/routes/products.router')
+const homeRouter = require('./src/routes/home.router')
 const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
@@ -42,10 +42,11 @@ const connect = async () => {
 }
 connect();
 
-app.get('/', productsRouter)
+app.get('/', homeRouter)
+app.get('/product/:id', homeRouter)
+
 app.use('/login', loginRouter)
 app.use(singUpRouter)
-app.use('/products', productsRouter)
 app.use('/admin', function(req, res, next) {
     console.log('Request URL:', req.url);
     next();

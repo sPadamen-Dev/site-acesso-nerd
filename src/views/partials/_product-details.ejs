@@ -7,13 +7,12 @@
             <div class="product-container">
                 <div class="product-images">
                     <div class="product-main-pic">
-                        <img src="<%= product.imgPath %> " alt="product-main-pic">
+                        <img src="<%= product.images[0].imgPath %> " alt="product-main-pic">                    
                     </div>
-                    <div class="product-miniature-pic">
-                        <img src="<%= product.imgPath %>" alt="">
-                        <img src="<%= product.imgPath %>" alt="">
-                        <img src="<%= product.imgPath %>" alt="">
-                        <img src="<%= product.imgPath %>" alt="">
+                    <div class="pd-div-miniature-pic">
+                        <% product.images.forEach((image, index)=> {%>
+                            <img id="pd-img-<%= index %>" src="<%= image.imgPath %>" alt="product-image">
+                        <%}) %> 
                     </div>
                 </div>
                 <div class="product-details">

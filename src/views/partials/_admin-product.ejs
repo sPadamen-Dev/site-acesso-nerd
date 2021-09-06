@@ -3,19 +3,11 @@
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
-                <% product.images.every((image, index)=> { %>
-                    <% if(image.imgType === 'M') {%> 
-                        <img id="pdp-image1" src="<%= image.imgPath %>" alt="product-img">
-                    <% return false; %>
-                    <% } %>
-                    <% return true; %> 
-                <%}) %> 
+                <img id="pdp-image1" src="<%= product.images[0].imgPath %>" alt="product-img">
             </div>
             <div id="pdp-images">
                 <% product.images.forEach((image, index)=> {%>
-                    <% if(image.imgType === 'S') {%> 
                     <img class="pdp-thumb-images" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" alt="product-img">
-                    <% } %> 
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
