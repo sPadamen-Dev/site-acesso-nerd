@@ -7,7 +7,7 @@
     <div class="products-container">
         <div class="products-cards">
             <% productList.forEach((product, index)=> {%>
-                <div class="product-card" onclick="searchProductsByFilter('id', '<%= product.id %>')">
+                <div class="product-card" onclick="showProductDetails('<%= product.id %>')">
                     <div class="products-buy-like">
                         <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" title="Adicionar ao Carrinho"
                             onclick="addToBag(this.id)">
@@ -15,7 +15,7 @@
                             onclick="likeIt(this.id)">
                     </div>
                     <div class="product-img">
-                        <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
+                        <img src="<%= product.images[0].imgPath %>" alt="imagem <%= product.description %>">
                     </div>
                     <div class="product-description">
                         <span>
@@ -42,6 +42,4 @@
         </div>
     </div>
 </div>
-</div>
-
 <script src="/js/products.js"></script>

@@ -18,23 +18,24 @@
 #pdp-section-pics{
     display: flex;
     flex-direction: column;
+    width: 255px;
 }
 
 #pdp-image1 {
-    height: 250px;
-    width: 250px;
-    margin-bottom: 3px;
+    height: 255px;
+    width: 255px;
 }
 
 #pdp-images {
-    display: flex;
-    justify-content: space-between;
-    width: 250px;
+    display: grid;
+    grid-template-columns: 60px 60px 60px 60px;
+    grid-gap: 5px;
+    width: 255px;
 }
 
 .pdp-thumb-images {
-    height: 81px;
-    width: 81px;
+    height: 60px;
+    width: 60px;
 }
 
 #pdp-div-insert-pics {
@@ -46,7 +47,7 @@
     display: flex;
     justify-content: center;
     padding: 15px 0px;
-    width: 250px;
+    width: 260px;
     box-sizing: border-box;
 }
 
