@@ -3,11 +3,15 @@
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
-                <img id="pdp-image1" src="<%= product.images[0].imgPath %>" alt="product-img">
+                <img id="pdp-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-img">
             </div>
             <div id="pdp-images">
                 <% product.images.forEach((image, index)=> {%>
-                    <img class="pdp-thumb-images" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" alt="product-img">
+                    <% if(index == 0) { %>
+                        <img class="pdp-pic-selected" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onload="loadProductMainPic('<%= image.imgPath %>')" onclick="selectAdminProductPic('<%= image.imgPath %>', this.id)" alt="product-img">
+                    <% } else { %> 
+                        <img  id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic('<%= image.imgPath %>', this.id)" alt="product-img">
+                    <% } %> 
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
@@ -104,12 +108,3 @@
         </section>
     </div>
 </form>
-<script>
-    document.querySelector('#pdp-inp-switch').addEventListener('change', (evento)=>{
-        if (document.getElementById('pdp-inp-switch').checked) {
-            document.getElementById('pdp-p-status').innerText = "Ativo"
-        } else {
-            document.getElementById('pdp-p-status').innerText = "Inativo"
-        }
-    });
-</script>

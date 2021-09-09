@@ -8,11 +8,11 @@ let products = [
         images: [{
             imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
         }, {
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
+            imgPath: '/img/products/Disney/camisetas/darth-vader.png',
         }, {
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
+            imgPath: '/img/products/Disney/camisetas/lion-king-simba.png',
         }, {
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
+            imgPath: '/img/products/Disney/camisetas/madalorian-grogu.png',
         }],
         installmentParts:5,
         installmentPrice: '10,18',
