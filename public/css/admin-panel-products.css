@@ -60,6 +60,37 @@
     /*pdp-thumb-images*/
 }
 
+.pdp-grp-images {
+    position: relative;
+}
+
+.pdp-img-del {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    right: -5px;
+    top:-5px;
+    position: absolute;
+    background-color: gray;
+    color: whitesmoke;
+    cursor: pointer;
+    opacity: .5;
+    
+}
+
+.pdp-img-del:hover {
+    position: absolute;
+    color: whitesmoke;
+    opacity: 1;
+    background-color: red;
+    right: -5px;
+    top:-5px;
+    transition: 400ms;
+}
+
 #pdp-div-insert-pics {
     padding: 10px 0 ;
     padding-left: 0px;
@@ -101,6 +132,32 @@
     padding: 0px 20px;
     border: 1px solid whitesmoke;
     margin-left: 10px;
+}
+
+#pdp-id-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bolder;
+    color: gray;
+}
+
+#pdp-div-id {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    outline: none;
+}
+
+#pdp-id {
+    height: 100%;
+    outline: none;
+    width: 70px;
+    font-size: 18px;
+    color: rgb(163, 163, 163);
+    font-weight: 900;
+    padding-left: 10px;
 }
 
 .pdp-div-groups {

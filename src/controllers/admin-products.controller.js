@@ -18,11 +18,14 @@ const adminProductsController = {
         res.render("admin-home", { panel, productList})
     },
     editProduct: (req, res) => {
-        const id = req.params.id
-        const { type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
 
-        if (req.file) {
-            let { filename } = req.file
+        console.log(req.body)
+        const { id, type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
+        console.log('entrou no edit product - id: ', id)
+        console.log('req: ', req )
+
+        if (req.files) {
+            let { filename } = req.files
             editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
         } else { 
             console.log('achou imagem')
