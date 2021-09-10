@@ -21,7 +21,6 @@ const adminProductsController = {
 
         console.log(req.body)
         const { id, type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
-        console.log('entrou no edit product - id: ', id)
         console.log('req: ', req )
 
         if (req.files) {

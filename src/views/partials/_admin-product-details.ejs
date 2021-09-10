@@ -7,17 +7,10 @@
             </div>
             <div id="pdp-images">
                 <% product.images.forEach((image, index)=> {%>
-                    <% if(index == 0) { %>
-                        <div class="pdp-grp-images" id='pdp-div-image<%= index %>'>
-                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>">x</div>
-                            <img class="pdp-pic-selected" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onload="loadProductMainPic('<%= image.imgPath %>')" onclick="selectAdminProductPic('<%= image.imgPath %>', this.id)" alt="product-img">
-                        </div>
-                    <% } else { %> 
-                        <div class="pdp-grp-images" id='pdp-div-image<%= index %> '>
-                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>">x</div>
-                            <img  id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic('<%= image.imgPath %>', this.id)" alt="product-img">
-                        </div>
-                    <% } %> 
+                    <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
+                        <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id)">x</div>
+                        <img class="pdp-product-pics" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
+                    </div>
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
