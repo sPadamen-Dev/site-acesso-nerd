@@ -26,38 +26,60 @@ function selectAdminProductPic(id) {
     imgToBeSelected.classList.add('pdp-pic-selected');
 }
 
-
-/* Loading main Pic as first thumbnail image on load and adding select style */
-document.getElementById('pdp-img-0').addEventListener('load', (evento)=>{
+function loadMainPic(id) {
+    selectAdminProductPic(id);
+    console.log(id);
     let mainPicElem = document.getElementById('pdp-main-pic');
-    let firstThumbPic = document.getElementById('pdp-img-0');
-    firstThumbPic.classList.add('pdp-pic-selected');
+    let firstThumbPic = document.getElementById(id);
+    /*firstThumbPic.classList.add('pdp-pic-selected');*/
     mainPicElem.src = firstThumbPic.getAttribute("src");
-});
+};
+
+function loadDefaultMainPic() {
+    let mainPicElem = document.getElementById('pdp-main-pic');
+    mainPicElem.src = "/img/placeHolderProductImage.jpg";
+}
 
 /* Loading main pic when thumbnail is selected */
-document.querySelectorAll('.pdp-grp-images').addEventListener('', (evento)=> {
-    const divs = document.querySelectorAll('.pdp-grp-images');
-
-    divs.forEach(el => el.addEventListener('click', event => {
-        let img = (event.target.getAttribute("src"));
-        let mainPic = document.getElementById('pdp-main-pic');
-        mainPic.src = img;
-    }));
-});
-
-
+const divs = document.querySelectorAll('.pdp-grp-images');
+divs.forEach(el => el.addEventListener('click', event => {
+    if (!(el.style.display == 'none')) {
+        loadMainPic(event.target.id)
+    }
+}));
 
 /* Deleting Pic */
 function deleteAdminProductPic(id) {
+
+    let parentElementToBeDeleted = document.getElementById(id).parentElement;
+    let selectedParentElement = document.getElementById(document.querySelector('.pdp-pic-selected').id).parentElement;
+    
+    parentElementToBeDeleted.style.display = 'none';
+
     let list = document.querySelectorAll('img.pdp-product-pics');
-
+    let elementsIds = [];
     list.forEach( item => {
-        console.log(getName(item.src))
-    }
-        
-      );
+        elementsIds.push(item.id);
+    });
 
-    document.getElementById(id).parentElement.style.display = 'none';
+    let picFound = false;
+    console.log('selectedParentElement: ' , selectedParentElement.id , 'parentElementToBeDeleted: ', parentElementToBeDeleted.id)
+    if(selectedParentElement.id == parentElementToBeDeleted.id) {
+        console.log('mesmo ids')
+        elementsIds.some(elementId => {
+            let elem = document.getElementById(elementId);
+            if(!(elem.parentElement.style.display)) {
+                loadMainPic(elem.id)
+                picFound = true;
+                return true;
+            }
+        })
+    } else {
+        picFound = true;
+    }
+
+    if (!picFound) {
+        loadDefaultMainPic();
+    }
 }
 

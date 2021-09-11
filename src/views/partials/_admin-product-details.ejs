@@ -3,14 +3,25 @@
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
-                <img id="pdp-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-img">
+                <% if( product.images[0].imgPath ) { %>
+                    <img id="pdp-main-pic" src="<%= product.images[0].imgPath %>" alt="product-img">
+                <% } else { %>
+                    <img id="pdp-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-img">
+                <% } %> 
             </div>
             <div id="pdp-images">
                 <% product.images.forEach((image, index)=> {%>
-                    <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
-                        <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id)">x</div>
-                        <img class="pdp-product-pics" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
-                    </div>
+                    <% if (index == 0) { %>
+                        <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
+                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id)">x</div>
+                            <img class="pdp-product-pics pdp-pic-selected" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
+                        </div>
+                    <% } else { %> 
+                        <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
+                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id)">x</div>
+                            <img class="pdp-product-pics" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
+                        </div>
+                    <% } %> 
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
