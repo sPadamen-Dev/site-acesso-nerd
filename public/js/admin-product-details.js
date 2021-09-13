@@ -1,3 +1,16 @@
+let numberOfPics = 0;
+let numberOfPicsToBeLoaded = 4;
+
+function getNumberOfPics() {
+    numberOfPics = document.getElementById('pdp-images').childElementCount;
+    numberOfPicsToBeLoaded -= numberOfPics;
+    console.log('number of pics: ', numberOfPics, ' you can load more: ', numberOfPicsToBeLoaded)
+}
+
+function getNumberOfPicsToBeLoaded() {
+    console.log('you can upload ', numberOfPicsToBeLoaded, ' pics')
+}
+
 function getName(fullPath) {
     var index = fullPath.lastIndexOf("/");
     var filename = fullPath;
@@ -51,10 +64,10 @@ divs.forEach(el => el.addEventListener('click', event => {
 /* Deleting Pic */
 function deleteAdminProductPic(id) {
 
-    let parentElementToBeDeleted = document.getElementById(id).parentElement;
-    let selectedParentElement = document.getElementById(document.querySelector('.pdp-pic-selected').id).parentElement;
-    
+    let parentElementToBeDeleted = document.getElementById(id).parentElement;   
     parentElementToBeDeleted.style.display = 'none';
+
+    console.log('ChildElement: ', parentElementToBeDeleted.lastElementChild.getAttribute('src'));
 
     let list = document.querySelectorAll('img.pdp-product-pics');
     let elementsIds = [];
@@ -63,9 +76,9 @@ function deleteAdminProductPic(id) {
     });
 
     let picFound = false;
-    console.log('selectedParentElement: ' , selectedParentElement.id , 'parentElementToBeDeleted: ', parentElementToBeDeleted.id)
+
+    let selectedParentElement = document.getElementById(document.querySelector('.pdp-pic-selected').id).parentElement;
     if(selectedParentElement.id == parentElementToBeDeleted.id) {
-        console.log('mesmo ids')
         elementsIds.some(elementId => {
             let elem = document.getElementById(elementId);
             if(!(elem.parentElement.style.display)) {
@@ -81,5 +94,37 @@ function deleteAdminProductPic(id) {
     if (!picFound) {
         loadDefaultMainPic();
     }
+    numberOfPicsToBeLoaded ++;
+    console.log('number of to be loaded: ', numberOfPicsToBeLoaded)
 }
+
+
+/* Controlling images update */
+const picInput = document.getElementById('pdp-inp-pics');
+
+// Listen for files selection
+picInput.addEventListener('change', (e) => {
+    // Retrieve all files
+    const files = picInput.files;
+
+    let numberOfLoadedPics = 4 - numberOfPicsToBeLoaded ;
+
+    // Check files count
+    if (numberOfPicsToBeLoaded == 0) {
+        alert(`Limite de fotos excedido. O produto já possui o máximo de fotos permitidas: 4 fotos.`)
+        return;
+    }
+
+    if (files.length > numberOfPicsToBeLoaded) {
+        alert(`Limite de fotos excedido. Tente novamente selecionando apenas ${numberOfPicsToBeLoaded} foto(s).`)
+    }
+
+    // TODO: continue uploading on server
+});
+
+getNumberOfPics();
+
+
+
+
 
