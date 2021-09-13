@@ -1,4 +1,5 @@
 function likeIt(element) {
+    console.log('entrou likeIt')
     var v = document.getElementById(element);
     if (v.classList.contains("liked")) {
         v.classList.remove("liked")
@@ -17,7 +18,11 @@ function addToBag(element) {
 }
 
 function showProductDetails(productId) {
-    hide(document.getElementsByClassName('banners-container'));
-    url = '/products/product/' + productId
+    hideBanner();
+    const url = '/product/' + productId
     window.location.replace(url);
+}
+
+async function  hideBanner() {
+    await hide(document.getElementsByClassName('banners-container'));
 }
