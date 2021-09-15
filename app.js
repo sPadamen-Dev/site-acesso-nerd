@@ -3,14 +3,15 @@ const app = express()
 require('dotenv').config()
 const port = process.env.PORT || 3000
 
-
 const loginRouter = require('./src/routes/login.router')
 const singUpRouter = require('./src/routes/register.user.router')
-const productsRouter = require('./src/routes/products.router')
+const cookieParser = require('cookie-parser')
+const homeRouter = require('./src/routes/home.router')
+const adminRouter = require('./src/routes/admin.router')
+const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
-const userInterfaceRouter = require("./src/routes/user.interface.router") 
-
+const methodOverride = require('method-override')
 
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
@@ -32,6 +33,7 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
+app.use(methodOverride('_method'))
 // connection db
 const models = require('./src/database/models');
 const connect = async () => {
@@ -44,10 +46,15 @@ const connect = async () => {
 }
 connect();
 
-app.get('/', productsRouter)
+app.get('/', homeRouter)
+app.get('/product/:id', homeRouter)
+
 app.use('/login', loginRouter)
 app.use(singUpRouter)
-app.use('/products', productsRouter)
+app.use('/admin', function(req, res, next) {
+    console.log('Request URL:', req.url);
+    next();
+  }, adminRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
 

@@ -15,7 +15,7 @@ module.exports = {
         let listError = validationResult(req);
         const searchEmailValidate = await db.Users.findOne({where:{email}})
             try{
-                if (listError.isEmpty() && searchEmailValidate != 'null') {
+                if (listError.isEmpty() && searchEmailValidate == undefined ) {
                      const user = await  db.Users.create({
                         user_name: userName, birth_date, gender,
                          cpf, email, telefone: telephone, 

@@ -23,14 +23,37 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color : #1C2B3A;
-    height: 85%;
-    width: 30%;
+    height: 640px;
+    width: 400px;
     margin: auto;
+}
+
+.option-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 2px;
+}
+
+.login-option, .register-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 197px;
+    border: 1px solid black;
+    border-bottom: 1px solid black;    
+    color:rgb(148, 142, 142);
+    background-color : #1C2B3A;
+    cursor: pointer;
+}
+
+.form-login-container {
+    background-color : #1C2B3A;
     border: 2px solid black;
-    border-radius: 2%;
+    /*border-radius: 0 0 2% 2%;*/
     min-width: 372px;
-    min-height: 572px;
+    height: 580px;
 }
 
 header {
@@ -38,15 +61,13 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 45%;
-    padding-left: 10%;
-    padding-right: 10%;
+    height: 180px;
+    padding: 10px 30px ;
 }
 
 header img {
-    padding-top: 5%;
-    height: 50%;
-    width: 20%;
+    height: 75px;
+    width: 65px;
     object-fit: scale-down;
 }
 
@@ -56,8 +77,8 @@ header img {
     font-weight: 900 ;
     letter-spacing: 1px;
     color: white;
-    -webkit-text-stroke: 1px #1E90FF;
-    padding-bottom: 5%;
+    /*-webkit-text-stroke: 1px #1E90FF;*/
+    padding-bottom: 10px;;
 }
 
 .orientation {
@@ -67,20 +88,20 @@ header img {
     font-size: 0.9em;
     letter-spacing: 2px;
     word-wrap: break-word;
-    padding-bottom: 5%;
-    
+    height: 40px;
+    padding-bottom: 5px;
+}
+
+.action-option-selected {
+    border-bottom: none;
+    color: white;
 }
 
 .form-wrapper{
-    padding-top: 3%;
     display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 form{
-    position: absolute;
     display: flex;
     width: 80%;
     flex-direction: column;
@@ -90,16 +111,16 @@ form{
 }
 
 form label {
-    padding: 0.7em 0em;
+    padding: 5px 0em;
     color: #FFDE5A;
     font-size: 1.2em;
 }
 
 form input {
     background-color: black;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid #FFDE5A;
-    height: 2rem;
+    height: 35px;
     width: 95%;
     margin-bottom: 5%;
     color: white;
@@ -108,10 +129,10 @@ form input {
     padding-left: 1.5em;
 }
 
-.password-group input {
-    margin-bottom: 0;
+.password-inputs {
+    height: 90px;
 }
-.password-group{
+.password-group {
     position: relative;
     display: flex;
     justify-content: flex-end;
@@ -119,14 +140,37 @@ form input {
     margin-bottom: 5%;
 }
 
-a:hover {
-    color: #0d5cac;
+.password-group input {
+    margin-bottom: 0;
 }
 
-i {
+.password-group i {
     color:#FFDE5A;
     position: absolute;
     padding-right: 15px;
+}
+
+
+.confirm-password-group{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.confirm-password-group input {
+    margin-bottom: 0;
+}
+
+.confirm-password-group i {
+    color:#FFDE5A;
+    position: absolute;
+    padding-right: 15px;
+}
+
+a:hover {
+    color: #0d5cac;
 }
 
 i:focus {
@@ -146,68 +190,48 @@ i:focus {
 
 .agree {
     display: flex;
+    justify-content: center;
     align-items: center;
-    position:relative;
 }
 
 #chk-agree {
-    position:absolute;
-    height: 60%;
-    width: 10%;
-    margin: 5% 2%;
+    height: 15px;
+    width: 15px;
+    margin-right: 10px;
+    margin-top: 15px;
     border: 1px;
     border-color:  #FFDE5A; 
 }
 
-@media screen and (max-width:1200px){
-    #chk-agree {
-        height: 50%;       
-    }
-}
-
-.agree label {
-    margin-left: 15%;
+.agree label {    
     color: #B9B6B6;
     letter-spacing: 1px;
-    font-size: 0.9em;
-}
-
-@media screen and (max-width:1200px){
-    .agree label {
-        margin-left: 13%;
-        font-size: 0.8em;
-    }
+    font-size: 14px;
 }
 
 button {
     background-color: black;
     border: 1px solid #FFDE5A;
-    height: 3rem;
-    width: 12rem;
+    height: 40px;
+    width: 180px;
     color: #FFDE5A;
     font-size: 1.2em;
-    margin-top: 20px;
-    border-radius: 20px;
+    margin-top: 10px;
+    border-radius: 10px;
     align-self: center;
 }
+
 button:hover, form input:hover {
     background-color: rgb(7, 7, 7);
-/*    border: 1.5px solid #ffcc01;*/
     cursor: pointer;
 }
+
 .linkContainer {
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
     justify-content: space-evenly;
-}
-
-@media screen and (max-width:1200px){
-    .linkContainer {
-        margin-top: 35px;
-        justify-content: space-between;
-    }
 }
 
 .link {
@@ -218,7 +242,26 @@ button:hover, form input:hover {
     letter-spacing: 2px;
     text-align: right;
 }
+
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
 } 
+
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(212, 212, 212);
+    opacity: 1; /* Firefox */
+    font-style: italic;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: whitesmoke;
+    font-style: italic;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: whitesmoke;
+    font-style: italic;
+  }
