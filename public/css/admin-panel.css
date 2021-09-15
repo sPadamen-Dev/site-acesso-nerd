@@ -26,14 +26,14 @@
     padding-bottom: 5px;
 }
 
-#div-add-product {
+#panel-div-add {
   height: 30px;
   width: 30px;
   position: absolute;
   right: 20px;
 }
 
-#div-add-product img{
+#panel-div-add img{
   height: 100%;
   width: 100%;
 

@@ -1,4 +1,3 @@
-const imgPathHolder = '/img/placeHolderProductImage.jpg'
 const productsController = require('./products.controller')
 
 const adminProductsController = {
@@ -12,17 +11,9 @@ const adminProductsController = {
         let product = productsController.getProductById(req.params.id);
         res.render("admin-home", { panel, product })
     },
-    getProductsByFilters: (req, res) => {
-        let panel = 'products'
-        const productList = getProductsByFilters();
-        res.render("admin-home", { panel, productList})
-    },
     createProduct: (req, res) => {
         let panel = 'product-create'
         res.render("admin-home", { panel })
-    },
-    editProduct: (req, res) => {
-        productsController.editProduct (req,res);
     },
     saveProduct: (req, res) => {
         let panel = 'product-details'
@@ -37,7 +28,5 @@ const adminProductsController = {
         res.render('index', { usersList: usersList })
     }
 }
-
-
 
 module.exports = adminProductsController;
