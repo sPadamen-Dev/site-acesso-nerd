@@ -4,7 +4,7 @@ const adminProductsController = require("../controllers/admin-products.controlle
 const router = Router();
 
 const multer = require('multer');
-const upload = multer({dest: '/img/'})
+const upload = multer({dest: 'img/'})
 
 router.get("/", adminController.adminHome);
 router.get("/products", adminProductsController.getAllProducts);

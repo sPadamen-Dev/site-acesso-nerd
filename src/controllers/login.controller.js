@@ -7,32 +7,27 @@ const loginController = {
     res.render("login");
   },
   postLogin: async (req, res) => {
-    let { email, password } = req.body;
-    const searchUser = await db.Users.findOne({where:{email}});
     try{
-        if (searchUser != null){
-         await bcrypt.compare(password, searchUser.password)
-          .then(response =>{
-             if(response){
-               session.userName = searchUser
-               return res.redirect("/painel/usuario")
-              //  return res.status(301).redirect("/home", {name: nameUser})
-             }else{
-               return res.status(200).render("login",{msg: "Senha ou email ínvalido"})
-             }
-          }).catch(error =>{
-            return res.status(500).json(error)
-          });
-          
-        } else {
-          let msg = "Usuario não encontrado!"
-          res.status(200).render("login", { msg: msg })
+      let { email, password } = req.body;
+      await db.Users.findOne({where:{email}}).then(user => {
+        if(user != null){
+            let response = bcrypt.compareSync(password, user.password)
+            if(response){
+              session.userName = user
+              res.status(200).json({msg: "Usuario logado com sucesso!"})
+            }else{
+              res.status(200).json({msg: "Senha ínvalida"})
+            }
+        }else{
+          let msg = "Email não encontrado!"
+          res.status(200).json({msg})
         }
-    }catch(error){
-      res.status(500).json(error)
-    }
-
-  }
-};
+      }).catch(err => {
+        let msg = "Email não encontrado!"
+        res.status(200).json({msg})
+      });
+}catch(err){
+  res.status(500).json(err)
+}}};
 
 module.exports = loginController

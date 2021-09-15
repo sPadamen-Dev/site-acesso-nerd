@@ -12,9 +12,8 @@ const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
 const methodOverride = require('method-override')
+const userInterfaceRouter = require('./src/routes/user.interface.router')
 
-const session = require('express-session')
-const cookieParser = require('cookie-parser')
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
 app.use(session({
@@ -58,7 +57,7 @@ app.use('/admin', function(req, res, next) {
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
 
-app.use("/painel/usuario", userInterfaceRouter)
+app.use("/painel", userInterfaceRouter);
 
 app.use((req, res, next) => {
     res.status(404).render('404')

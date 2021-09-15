@@ -4,13 +4,12 @@ const userInterfaceController = require("../controllers/user-interface/");
 
 const userAuth = require("../middlewares/userAuth");
 
+router.get("/", userInterfaceController.index);
+router.get("/perfil", userInterfaceController.accountInformation);
+router.get("/enderecos", userInterfaceController.accountAddresses);
 
-
-router.get("/:config?",userAuth ,userInterfaceController.index)
-
-router.post("/perfil", userInterfaceController.editUser)
-
-router.get("/enderecos", userInterfaceController.addressesUsers)
+router.put("/perfil", userInterfaceController.editAccount);
+router.post("/enderecos", userInterfaceController.createAddress);
 
 
 module.exports = router;
