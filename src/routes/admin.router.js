@@ -5,7 +5,6 @@ const adminAdministratorsController = require("../controllers/admin-administrato
 const router = Router();
 const multer = require('multer');
 const fs = require('fs');
-const administratorsController = require("../controllers/admin-administrators.controller");
 
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -34,5 +33,5 @@ router.delete("/product/:id/delete", adminProductsController.deleteProduct)
 
 /* Administrators */
 router.get("/administrators", adminAdministratorsController.getAllAdministrators)
-
+router.get("/administrator/edit/:id", adminAdministratorsController.getAdministratorById)
 module.exports = router;
