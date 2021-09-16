@@ -55,7 +55,7 @@
                 </tr>
                 <% productList.forEach((product)=> {%>
                     <tr onclick="window.location.replace('/admin/product/edit/<%= product.id %>');">
-                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="profile-pic"></div></td>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="product-pic"></div></td>
                             <td><%=product.id %> </td>
                             <td><%=product.type %> </td>
                             <td><%=product.theme %></td>

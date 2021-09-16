@@ -42,6 +42,12 @@
             <% if(administratorList) {%>
                 <% administratorList.forEach((administrator)=> {%>
                     <tr onclick="window.location.replace('/admin/administrator/edit/<%= administrator.id %>');">
+
+                        <% if( administrator.imgPath ) { %>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=administrator.imgPath %>" alt="profile-pic"></div></td>
+                        <% } else { %>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-pic"></div></td>
+                        <% } %> 
                         <td><%=administrator.id %> </td>
                         <td><%=administrator.user %> </td>
                         <td><%=administrator.name %></td>
