@@ -1,56 +1,70 @@
-html, body {
-    height: 100%;
-    font-family: 'PT Sans', sans-serif;
-}
-
-.contato {
+.page-contato{
     display: flex;
     flex-direction: column;
+    color: white;
     justify-content: center;
+    margin-bottom: 2em;
+
 }
 
-.info{
+.info {
     flex-direction: column;
-    color: #ffffff;
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+    display: inline-block;
+    margin: 0 7em 0 7em;
+
+}
+
+.title2{
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    display: block;
+    font-size: 2em;
+    margin: 0.5em 0 0.5em 0;
     justify-content: center;
 }
 
-.title{
-    align-self: center !important;
+.text1{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0.5em 0;
 }
 
-.info > .text1, .text2, .text3 {
-    font-size: 1.8rem;
-    justify-content: center;
-    padding: 0.1em;
+.text2{
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0.5em 0;
+    
 }
-
 .text3{
-    padding-top: 1em;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0.5em 0;
 }
+
 .form-contato{
     flex-direction: column;
     color: white;
     font-size: 1.6rem;
     padding: 1em;
-    background-color: #4f6375;
-    border-radius: 7px;
-    margin-left: 20em;
-    margin-right: 20em;
+    background-color: #5a708d;
     margin-top: 0.5em;
-    margin-bottom: 2em;
-    width: auto;
-    height: auto;
     justify-content: center;
 }
 
 .form-contato > div {
     padding: 0.5em;
-    justify-content: center !important;
+    justify-content: center;
 }
 
 .form-contato > label {
-    justify-content: center !important;
+    justify-content: center;
     font-weight: bold;
 
 }
