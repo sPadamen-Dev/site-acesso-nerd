@@ -22,7 +22,8 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 
-router.get("/", adminController.adminHome)
+router.get("/", adminController.adminLogin)
+router.post("/", adminController.adminHome)
 
 /* Products */
 router.get("/products", adminProductsController.getAllProducts)
