@@ -1,0 +1,80 @@
+<!--pdp profile details panel-->
+<form id="pdp-form" method="POST" action="/admin/administrator/edit?_method=PUT" enctype="multipart/form-data" >
+    <div id="pdp-container">
+        <section id="pdp-section-pics">
+            <div id="pdp-grp-main-image">
+                <% if( administrator.imgPath ) { %>
+                    <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
+                <% } else { %>
+                    <img id="pdp-main-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-img">
+                <% } %> 
+            </div>
+            <div id="pdp-div-input-pics">
+                <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*" multiple>
+            </div>
+        </section>
+        <section id="pdp-section-info">
+            <div id="pdp-id-status">
+                <div id="pdp-div-id">
+                    <% if( administrator.id ) {%>
+                        <label>Id:</label>
+                        <input type="text" id="pdp-id" name="id" value="<%= administrator.id %>" readonly>
+                    <% } %>
+                </div>
+                <div id="pdp-status">
+                    <p id="pdp-p-status"><%= administrator.status %> </p>
+                    <div id="pdp-div-switch">
+                        <label class="pdp-switch">
+                            <% if(administrator.status === 'Ativo') {%> 
+                                <input id="pdp-inp-switch" type="checkbox" checked>
+                            <% } else { %>
+                                <input id="pdp-inp-switch" type="checkbox">
+                            <% } %> 
+                            <span class="pdp-slider pdp-round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-user">
+                    <div class="pdp-div-titles">
+                        <span>Usuário</span>
+                    </div>
+                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-name">
+                    <div class="pdp-div-titles">
+                        <span>Nome</span>
+                    </div>
+                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-cpf">
+                    <div class="pdp-div-titles">
+                        <span>CPF</span>
+                    </div>
+                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-email">
+                    <div class="pdp-div-titles">
+                        <span>Email</span>
+                    </div>
+                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="text" value="<%= administrator.email %>" required>
+                </div>
+            </div>
+            <div id="pdp-grp-buttons">
+                <div>
+                    <button id="pdp-button-save" class="pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
+                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</form>

@@ -1,0 +1,86 @@
+* {
+    border: 0px; margin: 0px; padding: 0px; box-sizing: border-box;
+}
+
+#login-admin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+header img {
+    width: auto;
+    height: 80px;
+}
+
+#login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#al-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    color: whitesmoke;
+}
+
+.input-grp {
+    display: flex;
+    justify-content: center ;
+    padding-top: 10px;
+    padding-right: 60px;
+}
+
+label {
+    font-family: 'Hind Siliguri', sans-serif;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    width: 80px;
+    padding-right: 8px;
+}
+
+input {
+    width: 210px;
+    height: 30px;
+    padding-left: 8px;
+    border-radius: 5px;
+}
+
+#msgErro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    margin-top: 10px;
+    color: tomato;
+    font-size: 14px;
+    font-style: italic;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+}
+
+button {
+    height: 30px;
+    width: 100px;
+    background-color: var(--blue-dark);
+    color: white;
+}
+
+button:hover {
+    background-color: var(--blue-light);
+    color: black;
+    transition: 0.5s;
+}

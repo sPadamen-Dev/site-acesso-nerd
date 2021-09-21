@@ -29,7 +29,7 @@
 
             <div id="wrapper"> 
                     <ul id="menu">
-                        <li><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="menu-span">Administradores</span></li>
+                        <a href="/admin/administrators"><li><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="menu-span">Administradores</span></li></a>
                         <li><img class="menu-icon" src="/img/admin-customers.png" alt=""><span class="menu-span">Clientes</span></li>
                         <a href="/admin/products"><li><img class="menu-icon" src="/img/admin-products.png" alt=""><span class="menu-span">Produtos</span></li></a>
                         <li><img class="menu-icon" src="/img/admin-orders.png" alt=""><span class="menu-span">Pedidos</span></li>
@@ -43,11 +43,20 @@
                     <% if(panel === 'products') {%> 
                         <%- include('./partials/_admin-products') %> 
                     <% } else if(panel === 'product-details') {%> 
-                        <%- include('./partials/_admin-product') %> 
+                        <%- include('./partials/_admin-product-details') %> 
+                    <% } else if(panel === 'product-create') {%> 
+                        <%- include('./partials/_admin-product-create') %> 
+                    <% } else if(panel === 'administrators') {%> 
+                        <%- include('./partials/_admin-administrators') %> 
+                    <% } else if(panel === 'administrator-details') {%> 
+                        <%- include('./partials/_admin-administrator-details') %> 
+                    <% }  else if(panel === 'administrator-create') {%> 
+                        <%- include('./partials/_admin-administrator-create') %> 
                     <% } %> 
                 </section>
 
             </div>
         </div>
+        <script src="/js/admin-product-details.js"></script>
     </body>
 </html>

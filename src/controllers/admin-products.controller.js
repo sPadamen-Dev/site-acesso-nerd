@@ -1,4 +1,3 @@
-const imgPathHolder = '/img/placeHolderProductImage.jpg'
 const productsController = require('./products.controller')
 
 const adminProductsController = {
@@ -12,22 +11,14 @@ const adminProductsController = {
         let product = productsController.getProductById(req.params.id);
         res.render("admin-home", { panel, product })
     },
-    getProductsByFilters: (req, res) => {
-        let panel = 'products'
-        const productList = getProductsByFilters();
-        res.render("admin-home", { panel, productList})
+    createProduct: (req, res) => {
+        let panel = 'product-create'
+        res.render("admin-home", { panel })
     },
-    editProduct: (req, res) => {
-        const id = req.params.id
-        const { type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
-
-        if (req.file) {
-            let { filename } = req.file
-            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
-        } else { 
-            console.log('achou imagem')
-            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice , imgPathHolder );
-        }
+    saveProduct: (req, res) => {
+        let panel = 'product-details'
+        let product = productsController.saveProduct (req,res);
+        res.render("admin-home", { panel, product })
     },
     deleteProduct: (req, res) => {
         deleteProduct(req.params.id)
@@ -36,18 +27,6 @@ const adminProductsController = {
         };
         res.render('index', { usersList: usersList })
     }
-}
-
-function editProduct (id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice) {
-    
-    let objectIndex = products.findIndex( (product) => id == product.id )
-    products[objectIndex].type = type
-    products[objectIndex].theme = theme
-    products[objectIndex].description = description
-    products[objectIndex].images = images 
-    products[objectIndex].installmentParts = installmentParts
-    products[objectIndex].installmentPrice = installmentPrice
-    products[objectIndex].atSightPrice = atSightPrice 
 }
 
 module.exports = adminProductsController;

@@ -2,8 +2,8 @@
     <div id="panel-bar">
         <div id="div-title">
             <span>Produtos</span>
-            <div id="div-add-product">
-                <img src="/img/add-icon.png" alt="">
+            <div id="panel-div-add">
+                <img src="/img/add-icon.png" alt="add" onclick="window.location.replace('/admin/product/create');">
             </div>
         </div>
         
@@ -54,8 +54,8 @@
                 <th>Preço à Vista</th>
                 </tr>
                 <% productList.forEach((product)=> {%>
-                    <tr onclick="window.location.replace('/admin/product/<%= product.id %>');">
-                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="profile-pic"></div></td>
+                    <tr onclick="window.location.replace('/admin/product/edit/<%= product.id %>');">
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.images[0].imgPath %>" alt="product-pic"></div></td>
                             <td><%=product.id %> </td>
                             <td><%=product.type %> </td>
                             <td><%=product.theme %></td>

@@ -20,8 +20,9 @@ app.use(session({
     resave: true,
     saveUninitialized: true
 }))
+
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
 
 // Static Files
 app.use(express.static('public'));
