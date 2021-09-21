@@ -6,6 +6,7 @@ const router = Router();
 const multer = require('multer');
 const fs = require('fs');
 
+/*
 const storage = multer.diskStorage({
     destination: function (req, file, callback) {
         const dir = "/img/products/uploads"
@@ -21,6 +22,9 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage })
+*/
+
+const upload = multer({dest: './public/img'})
 
 router.get("/", adminController.adminLogin)
 router.post("/", adminController.adminHome)
@@ -34,5 +38,7 @@ router.delete("/product/:id/delete", adminProductsController.deleteProduct)
 
 /* Administrators */
 router.get("/administrators", adminAdministratorsController.getAllAdministrators)
+router.get("/administrator/create", adminAdministratorsController.createAdministrator)
+router.post("/administrator/save", upload.single('pdp-inp-pics'), adminAdministratorsController.saveAdministrator)
 router.get("/administrator/edit/:id", adminAdministratorsController.getAdministratorById)
 module.exports = router;
