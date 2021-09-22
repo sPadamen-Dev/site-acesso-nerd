@@ -28,8 +28,9 @@
     </div>
 
     <div id="grid-panel">
-        <table>
+        <table id='administrators-table'>
             <tr>
+                <th>Foto</th>
                 <th>Id</th>
                 <th>Usuario</th>
                 <th>Name</th>
@@ -48,12 +49,16 @@
                         <% } else { %>
                             <td><div class="img-row-cell"><img class="img-row-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-pic"></div></td>
                         <% } %> 
-                        <td><%=administrator.id %> </td>
+                        <td><%=administrator.admin_id %> </td>
                         <td><%=administrator.user %> </td>
                         <td><%=administrator.name %></td>
                         <td><%=administrator.cpf %></td>
                         <td><%=administrator.email %></td>
-                        <td><%=administrator.status %></td>
+                        <% if (administrator.status == 'A') {%>
+                            <td>Ativo</td>
+                        <% } else { %>
+                            <td>Inativo</td>
+                        <% } %> 
                         <td><%=administrator.createdAt %></td>
                         <td><%=administrator.updatedAt %></td>
                     </tr>

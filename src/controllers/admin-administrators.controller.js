@@ -37,11 +37,15 @@ const administrators = [
 const { Administrator } = require('../database/models')
 
 const administratorsController = {
-    getAllAdministrators: (req, res) => {
-        let panel = 'administrators'
-        const administratorList = getAllAdministrators();
-        console.log(administratorList)
-        res.render("admin-home", { administratorList, panel} )
+    getAllAdministrators: async (req, res) => {
+        try {
+            let panel = 'administrators'
+            let administratorList = await Administrator.findAll()
+
+            res.status(200).render("admin-home", { administratorList, panel} )
+        } catch (error) {
+            res.status(500).render("admin-home", { error: error.message} )
+        }        
     },
     getAdministratorById: (req, res) => {
         let panel = 'administrator-details'
@@ -54,30 +58,18 @@ const administratorsController = {
         res.render("admin-home", { panel })
     },
     saveAdministrator: (req, res) => {
-        console.log('Body recebido: ', req.body)
         const administrator = saveAdministrator(req, res);
-
         if (administrator) {
-            console.log('cadastrado: ', administrator)
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
-        }
-
-        /*    return res.status(201).json({ administrator });
-        } else {
-            return res.status(500).json({error: error.message})
-        }*/
-    
+        }    
     }
 }
 
-function getAllAdministrators() {
-    return administrators ;
-}
 
 function getAdministratorById(adminId) {
     let administrator = administrators.find((administrator)=> administrator.id == adminId)
-    return administrator
+    return { administrator }
 }
 
 async function saveAdministrator(req, res) {
@@ -100,8 +92,6 @@ async function saveAdministrator(req, res) {
         status,
         imgPath
     }
-
-    console.log('monstado: ' , administrator)
 
     try {
         await Administrator.create( administrator )

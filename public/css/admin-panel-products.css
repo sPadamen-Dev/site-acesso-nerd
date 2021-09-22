@@ -15,16 +15,9 @@
     padding:20px;
 }
 
-#pdp-section-pics{
-    display: flex;
-    flex-direction: column;
-    width: 255px;
-}
 
-#pdp-main-pic {
-    height: 255px;
-    width: 255px;
-}
+
+
 /*
 #pdp-images {
     display: grid;
@@ -99,7 +92,7 @@
 #pdp-div-input-pics {
     display: flex;
     justify-content: center;
-    padding: 15px 0px;
+    padding: 15px 0px 20px 0px;
     width: 260px;
     box-sizing: border-box;
 }
