@@ -19,11 +19,11 @@ function getName(fullPath) {
 }*/
 
 /*Loading product status on switch*/
-document.querySelector('#pdp-inp-switch').addEventListener('change', (evento)=>{
-    if (document.getElementById('pdp-inp-switch').checked) {
-        document.getElementById('pdp-p-status').innerText = "Ativo"
+document.querySelector('#prod-status-switch').addEventListener('change', (evento)=>{
+    if (document.getElementById('prod-status-switch').checked) {
+        document.getElementById('prod-status').innerText = "Ativo"
     } else {
-        document.getElementById('pdp-p-status').innerText = "Inativo"
+        document.getElementById('prod-status').innerText = "Inativo"
     }
 });
 

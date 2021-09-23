@@ -1,44 +1,8 @@
-const administrators = [
-    {
-        id: 1,
-        user: 'gilvan.tbd',
-        name: 'Gilvan Tbd',
-        cpf: '11111111111',
-        email: 'gilvan.tbd@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '12/09/2021',
-        updatedAt: '12/09/2021',
-    },
-    {
-        id: 1,
-        user: 'rah.tbd',
-        name: 'Rah Tbd',
-        cpf: '22222222222',
-        email: 'rah.tbd@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '13/09/2021',
-        updatedAt: '13/09/2021',
-    },
-    {
-        id: 1,
-        user: 'william.tbd',
-        name: 'William Xavier',
-        cpf: '33333333333',
-        email: 'william.xavier@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '14/09/2021',
-        updatedAt: '14/09/2021',
-    }
-];
-
 const { Administrator } = require('../database/models')
 const bcrypt = require('bcryptjs')
 
 const administratorsController = {
-    getAllAdministrators: async (req, res) => {
+    getAll: async (req, res) => {
         try {
             let panel = 'administrators'
             let administratorList = await Administrator.findAll()
@@ -47,34 +11,46 @@ const administratorsController = {
             res.status(500).render("admin-home", { error: error.message} )
         }        
     },
-    getAdministratorById: (req, res) => {
+    getById: (req, res) => {
+        console.log('chamou getById')
         let panel = 'administrator-details'
-        const administrator = getAdministratorById(req.params.id);
-        console.log(administrator)
+        let administrator = {
+            id: 0,
+            user: null,
+            name: null,
+            cpf: null,
+            email: null,
+            status: 'A',
+            imgPath: null,
+        }
+
+        if (req.params.id > 0) {
+            administrator = getAdministratorById(req.params.id);
+        }
         res.render("admin-home", { administrator, panel})
     },
-    createAdministrator: (req, res) => {
-        let panel = 'administrator-create'
-        res.render("admin-home", { panel })
-    },
-    saveAdministrator: (req, res) => {
-        const administrator = saveAdministrator(req, res);
-
-        console.log ('new administrator: ', administrator)
+    create: (req, res) => {
+        const administrator = save(req, res);
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
-        }    
+        }
+    },
+    update: (req, res) => {
+
+    },
+    remove: (req, res) => {
+        
     }
 }
 
 
-function getAdministratorById(adminId) {
+function getById(adminId) {
     let administrator = administrators.find((administrator)=> administrator.id == adminId)
     return { administrator }
 }
 
-async function saveAdministrator(req, res) {
+async function save(req, res) {
 
     const imgPathHolder = '/img/profiles/placeHolderProfileImage.jpg'
     let { user, name, cpf, email, password, status } = req.body;

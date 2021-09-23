@@ -15,14 +15,14 @@ const adminProductsController = {
         let panel = 'product-create'
         res.render("admin-home", { panel })
     },
-    update: (req, res) => {
-        console.log(req.body);
-        console.log(req.files); 
-    },
     create: (req, res) => {
         let panel = 'product-details'
         let product = productsController.saveProduct (req,res);
         res.render("admin-home", { panel, product })
+    },
+    update: (req, res) => {
+        console.log(req.body);
+        console.log(req.files); 
     },
     remove: (req, res) => {
         deleteProduct(req.params.id)

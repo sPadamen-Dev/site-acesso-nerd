@@ -38,8 +38,17 @@ router.put("/products/:id", upload.array('pdp-inp-pics'), adminProductsControlle
 router.delete("/products/:id", adminProductsController.remove)
 
 /* Administrators */
-router.get("/administrators", adminAdministratorsController.getAllAdministrators)
-router.get("/administrator/create", adminAdministratorsController.createAdministrator)
-router.post("/administrator/save", upload.single('pdp-inp-pics'), adminAdministratorsController.saveAdministrator)
-router.get("/administrator/edit/:id", adminAdministratorsController.getAdministratorById)
+
+router.get("/administrators", adminAdministratorsController.getAll)
+router.get("/administrators/:id", adminAdministratorsController.getById)
+router.post("/administrators", upload.array('pdp-inp-pics'), adminAdministratorsController.create)
+router.put("/administrators/:id", upload.array('pdp-inp-pics'), adminAdministratorsController.update)
+router.delete("/administrators/:id", adminAdministratorsController.remove)
+
+/*
+router.get("/administrators", adminAdministratorsController.getAll)
+router.get("/administrator/edit/:id", adminAdministratorsController.getById)
+router.get("/administrator/create", adminAdministratorsController.create)
+router.post("/administrator/save", upload.single('pdp-inp-pics'), adminAdministratorsController.save)
+*/
 module.exports = router;

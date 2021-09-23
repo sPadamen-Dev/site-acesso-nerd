@@ -1,12 +1,12 @@
 <!--pdp profile details panel-->
-<form id="pdp-form" method="POST" action="/admin/administrator/edit?_method=PUT" enctype="multipart/form-data" >
+<form id="pdp-form" method="POST" action="/admin/administrators/<%= administrator.id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
                 <% if( administrator.imgPath ) { %>
                     <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
                 <% } else { %>
-                    <img id="pdp-main-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-img">
+                    <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
                 <% } %> 
             </div>
             <div id="pdp-div-input-pics">
@@ -23,13 +23,14 @@
                     <% } %>
                 </div>
                 <div id="pdp-status">
-                    <p id="pdp-p-status"><%= administrator.status %> </p>
+                    <% let status = administrator.status == 'A'? 'Ativo' : 'Inativo' %> 
+                    <p id="admin-status"><%= status %> </p>
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
-                            <% if(administrator.status === 'Ativo') {%> 
-                                <input id="pdp-inp-switch" type="checkbox" checked>
+                            <% if(status === 'Ativo') {%> 
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" checked>
                             <% } else { %>
-                                <input id="pdp-inp-switch" type="checkbox">
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox">
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>
@@ -70,11 +71,10 @@
             </div>
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
+                    <button id="pdp-button-save" class="pdp-buttons" type="submit">Salvar</button>
                     <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
                 </div>
             </div>
-
         </section>
     </div>
 </form>

@@ -3,14 +3,13 @@
         <div id="div-title">
             <span>Administradores</span>
             <div id="panel-div-add">
-                <img src="/img/add-icon.png" alt="add" onclick="window.location.replace('/admin/administrator/create');">
+                <img src="/img/add-icon.png" alt="add" onclick="window.location.replace('/admin/administrators/0');">
             </div>
         </div>
         
         <div id="panel-filters">
             <form action="" id="filter-form-panel">
                 <div id="obj-filters">
-
                     <span>Id:</span>
                     <input class="ffp-input" type="text" name="administrator-id" id="administrator-id">
 
@@ -42,8 +41,7 @@
             </tr>
             <% if(administratorList) {%>
                 <% administratorList.forEach((administrator)=> {%>
-                    <tr onclick="window.location.replace('/admin/administrator/edit/<%= administrator.id %>');">
-
+                    <tr onclick="window.location.replace('/admin/administrators/<%= administrator.id %>');">
                         <% if( administrator.imgPath ) { %>
                             <td><div class="img-row-cell"><img class="img-row-pic" src="<%= administrator.imgPath %>" alt="profile-pic"></div></td>
                         <% } else { %>

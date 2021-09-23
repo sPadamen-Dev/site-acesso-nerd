@@ -38,13 +38,13 @@
                     <% } %>
                 </div>
                 <div id="pdp-status">
-                    <p id="pdp-p-status"><%= product.status %> </p>
+                    <p id="prod-status"><%= product.status %> </p>
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
                             <% if(product.status === 'Ativo') {%> 
-                                <input id="pdp-inp-switch" type="checkbox" checked>
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked>
                             <% } else { %>
-                                <input id="pdp-inp-switch" type="checkbox">
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox">
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>
