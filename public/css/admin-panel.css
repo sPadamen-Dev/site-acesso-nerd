@@ -164,6 +164,24 @@
 
 /* Details interface */
 
+.pdp-form{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: whitesmoke;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+#pdp-container {
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  padding:20px;
+}
+
+
 #pdp-section-pics{
   display: flex;
   flex-direction: column;
@@ -215,6 +233,13 @@
   width: 100%;
 }
 
+.pdp-button-save {
+  background-color: var(--btn-confirm);
+}
+
+.pdp-button-cancel {
+  background-color:var(--btn-cancel);
+}
 /***** SLIDE SWITCH *****/
 #pdp-status {
   display: flex;

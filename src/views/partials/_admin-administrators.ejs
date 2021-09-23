@@ -41,7 +41,7 @@
             </tr>
             <% if(administratorList) {%>
                 <% administratorList.forEach((administrator)=> {%>
-                    <tr onclick="window.location.replace('/admin/administrators/<%= administrator.id %>');">
+                    <tr onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">
                         <% if( administrator.imgPath ) { %>
                             <td><div class="img-row-cell"><img class="img-row-pic" src="<%= administrator.imgPath %>" alt="profile-pic"></div></td>
                         <% } else { %>
@@ -61,7 +61,9 @@
                         <td><%=administrator.updatedAt %></td>
                     </tr>
                 <%}) %> 
-                <% } %> 
+            <% } else {%> 
+                <div class="notFound">Não há resultados para sua pesquisa</div>
+            <% } %> 
             </tr>
         </table>
     </div>

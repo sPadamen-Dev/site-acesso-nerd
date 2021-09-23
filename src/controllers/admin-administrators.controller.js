@@ -11,11 +11,11 @@ const administratorsController = {
             res.status(500).render("admin-home", { error: error.message} )
         }        
     },
-    getById: (req, res) => {
+    getById: async (req, res) => {
         console.log('chamou getById')
         let panel = 'administrator-details'
         let administrator = {
-            id: 0,
+            admin_id: null,
             user: null,
             name: null,
             cpf: null,
@@ -25,12 +25,18 @@ const administratorsController = {
         }
 
         if (req.params.id > 0) {
-            administrator = getAdministratorById(req.params.id);
+            try {
+                administrator = await Administrator.findByPk(req.params.id)
+            } catch (error) {
+                res.status(500).render("admin-home", { error: error.message} )
+            }       
         }
-        res.render("admin-home", { administrator, panel})
+
+        console.log(administrator)
+        res.status(200).render("admin-home", { administrator, panel})
     },
     create: (req, res) => {
-        const administrator = save(req, res);
+        const administrator = create(req, res);
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
@@ -45,15 +51,12 @@ const administratorsController = {
 }
 
 
-function getById(adminId) {
-    let administrator = administrators.find((administrator)=> administrator.id == adminId)
-    return { administrator }
-}
 
-async function save(req, res) {
-
+async function create(req, res) {
     const imgPathHolder = '/img/profiles/placeHolderProfileImage.jpg'
     let { user, name, cpf, email, password, status } = req.body;
+
+    console.log(req.file)
 
     if (req.file) {
         const { filename } = req.file

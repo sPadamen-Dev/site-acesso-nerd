@@ -1,5 +1,5 @@
 <!--pdp product details panel-->
-<form id="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
+<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
@@ -34,7 +34,7 @@
                 <div id="pdp-div-id">
                     <% if( product.id ) {%>
                         <label>Código:</label>
-                        <input type="text" id="pdp-id" name="id" value="<%= product.id %>" readonly>
+                        <input type="text" id="prod-id" class="pdp-id" name="id" value="<%= product.id %>" readonly>
                     <% } %>
                 </div>
                 <div id="pdp-status">
@@ -117,11 +117,12 @@
 
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
-                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
+                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
                 </div>
             </div>
 
         </section>
     </div>
 </form>
+<script src="/js/admin-product-details.js"></script>

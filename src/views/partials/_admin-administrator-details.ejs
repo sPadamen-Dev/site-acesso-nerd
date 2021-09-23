@@ -1,5 +1,9 @@
 <!--pdp profile details panel-->
-<form id="pdp-form" method="POST" action="/admin/administrators/<%= administrator.id %> ?_method=PUT" enctype="multipart/form-data" >
+<% if (administrator.admin_id) { %>
+    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
+<% } else {%>
+    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/" enctype="multipart/form-data" >
+<%} %> 
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
@@ -17,9 +21,9 @@
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
-                    <% if( administrator.id ) {%>
+                    <% if( administrator.admin_id ) {%>
                         <label>Id:</label>
-                        <input type="text" id="pdp-id" name="id" value="<%= administrator.id %>" readonly>
+                        <input type="text" id='admin-id' class="pdp-id" name="id" value="<%= administrator.admin_id %>" readonly>
                     <% } %>
                 </div>
                 <div id="pdp-status">
@@ -69,12 +73,23 @@
                     <input id="pdp-inp-email" class="pdp-inputs" name="email" type="text" value="<%= administrator.email %>" required>
                 </div>
             </div>
+            <% if (!administrator.admin_id) { %>
+                <div class="pdp-div-groups">
+                    <div id="pdp-div-password">
+                        <div class="pdp-div-titles">
+                            <span>Password</span>
+                        </div>
+                        <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                    </div>
+                </div>
+            <%} %> 
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit">Salvar</button>
-                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>
+                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
                 </div>
             </div>
         </section>
     </div>
 </form>
+<script src="/js/admin-administrator-details.js"></script>

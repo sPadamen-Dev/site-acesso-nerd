@@ -24,7 +24,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 */
 
-const upload = multer({dest: './public/img/profile'})
+const upload = multer({dest: '.public/img/profiles'})
 
 router.get("/", adminController.adminLogin)
 router.post("/", adminController.adminHome)
@@ -41,8 +41,8 @@ router.delete("/products/:id", adminProductsController.remove)
 
 router.get("/administrators", adminAdministratorsController.getAll)
 router.get("/administrators/:id", adminAdministratorsController.getById)
-router.post("/administrators", upload.array('pdp-inp-pics'), adminAdministratorsController.create)
-router.put("/administrators/:id", upload.array('pdp-inp-pics'), adminAdministratorsController.update)
+router.post("/administrators", upload.single('pdp-inp-pics'), adminAdministratorsController.create)
+router.put("/administrators/:id", upload.single('pdp-inp-pics'), adminAdministratorsController.update)
 router.delete("/administrators/:id", adminAdministratorsController.remove)
 
 /*
