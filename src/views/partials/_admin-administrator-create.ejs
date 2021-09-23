@@ -4,7 +4,7 @@
         <section id="pdp-section-pics">
             <div id="pdp-div-top-space"></div>
             <div id="pdp-grp-main-image">
-                <img id="pdp-main-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-img">
+                <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
             </div>
             <div id="pdp-div-input-pics">
                 <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
@@ -59,13 +59,20 @@
                     <input id="pdp-inp-email" class="pdp-inputs" name="email" type="text" required>
                 </div>
             </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-password">
+                    <div class="pdp-div-titles">
+                        <span>Password</span>
+                    </div>
+                    <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                </div>
+            </div>
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
+                    <button id="pdp-button-save" class="pdp-buttons" type="submit">Salvar</button>
                     <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
                 </div>
             </div>
-
         </section>
     </div>
 </form>

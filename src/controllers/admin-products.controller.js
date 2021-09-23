@@ -1,26 +1,30 @@
 const productsController = require('./products.controller')
 
 const adminProductsController = {
-    getAllProducts: (req, res) => {
+    getAll: (req, res) => {
         let panel = 'products'
         const productList = productsController.getAllProducts();
         res.render("admin-home", { productList, panel} )
     },
-    getProductById: (req, res) => {
+    getById: (req, res) => {
         let panel = 'product-details'
         let product = productsController.getProductById(req.params.id);
         res.render("admin-home", { panel, product })
     },
-    createProduct: (req, res) => {
+    new: (req, res) => {
         let panel = 'product-create'
         res.render("admin-home", { panel })
     },
-    saveProduct: (req, res) => {
+    update: (req, res) => {
+        console.log(req.body);
+        console.log(req.files); 
+    },
+    create: (req, res) => {
         let panel = 'product-details'
         let product = productsController.saveProduct (req,res);
         res.render("admin-home", { panel, product })
     },
-    deleteProduct: (req, res) => {
+    remove: (req, res) => {
         deleteProduct(req.params.id)
         let usersList = {
             users : getAllUsers()

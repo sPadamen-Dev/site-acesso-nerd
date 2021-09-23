@@ -35,13 +35,13 @@ const administrators = [
 ];
 
 const { Administrator } = require('../database/models')
+const bcrypt = require('bcryptjs')
 
 const administratorsController = {
     getAllAdministrators: async (req, res) => {
         try {
             let panel = 'administrators'
             let administratorList = await Administrator.findAll()
-
             res.status(200).render("admin-home", { administratorList, panel} )
         } catch (error) {
             res.status(500).render("admin-home", { error: error.message} )
@@ -59,6 +59,8 @@ const administratorsController = {
     },
     saveAdministrator: (req, res) => {
         const administrator = saveAdministrator(req, res);
+
+        console.log ('new administrator: ', administrator)
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
@@ -74,21 +76,23 @@ function getAdministratorById(adminId) {
 
 async function saveAdministrator(req, res) {
 
-    const imgPathHolder = '/images/placeHolderProfileImage.jpg'
-    const { user, name, cpf, email, status } = req.body;
+    const imgPathHolder = '/img/profiles/placeHolderProfileImage.jpg'
+    let { user, name, cpf, email, password, status } = req.body;
 
     if (req.file) {
         const { filename } = req.file
-        imgPath = `/img/${filename}`;
+        imgPath = `/img/profiles/${filename}`;
     } else {
         imgPath = imgPathHolder;
     }
+    password = bcrypt.hashSync(password, 10);
 
     const administrator = {
         user,
         name,
         cpf,
         email,
+        password,
         status,
         imgPath
     }
