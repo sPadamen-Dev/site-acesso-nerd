@@ -1,8 +1,8 @@
 <!--pdp profile details panel-->
-<% if (administrator.admin_id) { %>
-    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
+<% if (administrator.admin_id <= 0) { %>
+    <form id="admin-details-form" method="POST" action="/admin/administrators" enctype="multipart/form-data" >
 <% } else {%>
-    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/" enctype="multipart/form-data" >
+    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
 <%} %> 
     <div id="pdp-container">
         <section id="pdp-section-pics">
@@ -14,17 +14,19 @@
                 <% } %> 
             </div>
             <div id="pdp-div-input-pics">
-                <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*" multiple>
+                <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*">
             </div>
         </section>
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
+                    <label>Id:</label>
                     <% if( administrator.admin_id ) {%>
-                        <label>Id:</label>
                         <input type="text" id='admin-id' class="pdp-id" name="id" value="<%= administrator.admin_id %>" readonly>
-                    <% } %>
+                    <% } else { %>
+                        <input type="text" id='admin-id' class="pdp-id" name="id" readonly>
+                    <% } %> 
                 </div>
                 <div id="pdp-status">
                     <% let status = administrator.status == 'A'? 'Ativo' : 'Inativo' %> 
@@ -32,9 +34,9 @@
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
                             <% if(status === 'Ativo') {%> 
-                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" checked>
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" value='A' checked>
                             <% } else { %>
-                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox">
+                                <input class="pdp-inp-switch" id='admin-status-switch' value='I' type="checkbox">
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>

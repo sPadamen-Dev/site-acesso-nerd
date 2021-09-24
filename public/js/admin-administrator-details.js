@@ -1,4 +1,4 @@
-const chooseFile = document.getElementById('pdp-inp-pics');
+const chooseFile = document.getElementById('admin-inp-pic');
 const imgPreview = document.getElementById('pdp-grp-main-image');
 
 chooseFile.addEventListener("change", function () {

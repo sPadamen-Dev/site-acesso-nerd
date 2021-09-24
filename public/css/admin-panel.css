@@ -233,6 +233,10 @@
   width: 100%;
 }
 
+.pdp-inp-pics[type="file"] {
+    display: none;
+}
+
 .pdp-button-save {
   background-color: var(--btn-confirm);
 }

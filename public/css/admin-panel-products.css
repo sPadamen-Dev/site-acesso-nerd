@@ -77,9 +77,6 @@
     color: white;
 }
 
-#pdp-inp-pics[type="file"] {
-    display: none;
-}
 
 #pdp-btn-upload {
     background-color: rgb(6, 6, 65) ;

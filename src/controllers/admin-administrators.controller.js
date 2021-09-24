@@ -57,9 +57,9 @@ async function create(req, res) {
     let { user, name, cpf, email, password, status } = req.body;
 
     console.log(req.file)
-
-    if (req.file) {
-        const { filename } = req.file
+    const { filename } = req.file
+    if (filename) {
+        console.log('filename ' , filename)
         imgPath = `/img/profiles/${filename}`;
     } else {
         imgPath = imgPathHolder;
@@ -71,9 +71,9 @@ async function create(req, res) {
         name,
         cpf,
         email,
+        imgPath,
         password,
-        status,
-        imgPath
+        status
     }
 
     try {
