@@ -1,19 +1,27 @@
 <!--pdp profile details panel-->
 <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
-        <section id="pdp-section-pics">
-            <div id="pdp-grp-main-image">
-                <% if( administrator.imgPath ) { %>
-                    <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
-                <% } else { %>
-                    <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
-                <% } %> 
-            </div>
-            <div id="pdp-div-input-pics">
-                <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*">
-            </div>
-        </section>
+        <div>
+            <section id="pdp-section-pics">
+                <div id="pdp-grp-main-image">
+                    <% if( administrator.imgPath ) { %>
+                        <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
+                    <% } else { %>
+                        <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
+                    <% } %> 
+                </div>
+                <div id="pdp-div-input-pics">
+                    <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
+                </div>
+    
+                <div class="grp-edit-delete">
+                    <button id="btn-admin-delete" class="pdp-buttons" hidden>Excluir</button>
+                    <button id="btn-admin-edit" class="pdp-buttons">Editar</button>
+                </div>
+            </section>
+        </div>
+
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
@@ -25,14 +33,18 @@
                     <% } %> 
                 </div>
                 <div id="pdp-status">
-                    <% let status = administrator.status == 'A'? 'Ativo' : 'Inativo' %> 
-                    <p id="admin-status"><%= status %> </p>
+                    <input id='admin-status-value' name='status' value="<%= administrator.status %>" hidden>
+                    <% if(administrator.status === 'A') {%> 
+                        <p id="admin-status">Ativo</p>
+                    <% } else { %>
+                        <p id="admin-status">Inativo</p>
+                    <% } %>                    
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
-                            <% if(status === 'Ativo') {%> 
-                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" value='A' checked>
+                            <% if(administrator.status === 'A') {%> 
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" checked disabled>
                             <% } else { %>
-                                <input class="pdp-inp-switch" id='admin-status-switch' value='I' type="checkbox">
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" disabled>
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>
@@ -44,7 +56,7 @@
                     <div class="pdp-div-titles">
                         <span>Usuário</span>
                     </div>
-                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" required>
+                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -52,7 +64,7 @@
                     <div class="pdp-div-titles">
                         <span>Nome</span>
                     </div>
-                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" required>
+                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -60,7 +72,7 @@
                     <div class="pdp-div-titles">
                         <span>CPF</span>
                     </div>
-                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" required>
+                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -68,7 +80,7 @@
                     <div class="pdp-div-titles">
                         <span>Email</span>
                     </div>
-                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="text" value="<%= administrator.email %>" required>
+                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" value="<%= administrator.email %>" readOnly required>
                 </div>
             </div>
             <% if (!administrator.admin_id) { %>
@@ -77,14 +89,14 @@
                         <div class="pdp-div-titles">
                             <span>Password</span>
                         </div>
-                        <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                        <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" readOnly required>
                     </div>
                 </div>
             <%} %> 
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>
-                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
+                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit" disabled>Salvar</button>
+                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons" type="reset" disabled>Cancelar</button>
                 </div>
             </div>
         </section>

@@ -3,10 +3,12 @@ const adminController = require("../controllers/admin.controller");
 const adminProductsController = require("../controllers/admin-products.controller");
 const adminAdministratorsController = require("../controllers/admin-administrators.controller");
 const router = Router();
-const fs = require('fs');
+const methodOverride = require('method-override')
 
 const multer = require('multer');
 const upload = multer({dest: './public/img/profiles'})
+
+router.use(methodOverride('_method'));
 
 router.get("/", adminController.adminLogin)
 router.post("/", adminController.adminHome)

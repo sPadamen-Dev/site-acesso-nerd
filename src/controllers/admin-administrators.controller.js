@@ -12,28 +12,13 @@ const administratorsController = {
         }        
     },
     getById: async (req, res) => {
-        console.log('chamou getById')
-        let panel = 'administrator-details'
-        let administrator = {
-            admin_id: null,
-            user: null,
-            name: null,
-            cpf: null,
-            email: null,
-            status: 'A',
-            imgPath: null,
-        }
-
-        if (req.params.id > 0) {
-            try {
-                administrator = await Administrator.findByPk(req.params.id)
-            } catch (error) {
-                res.status(500).render("admin-home", { error: error.message} )
-            }       
-        }
-
-        console.log(administrator)
-        res.status(200).render("admin-home", { administrator, panel})
+        let panel = 'administrator-details'  
+        const administrator = await getById(req)
+        if (administrator) {
+            res.status(200).render("admin-home", { administrator, panel})
+        } else {
+            res.status(500).send("Administrador não encontrado." )
+        } 
     },
     create: (req, res) => {
         let panel = 'administrator-create'
@@ -47,33 +32,44 @@ const administratorsController = {
         }
     },
     update: async (req, res) => {
-        const idAdmin = req.params.id
+        console.log('chamou update')
         let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
-        let administrator = req.body;
-        
+        let reqAdmin = req.body;
+        console.log(req.body)
         if (req.file) {
             const { filename } = req.file
             imgPath = `/img/profiles/${filename}`;
         } 
 
-        await Administrator.findOne({ admin_id: idAdmin}, (err, data) => {
-            // Updates the product payload
-            data.user = administrator.user;
-            data.name = administrator.name;
-            data.cpf = administrator.cpf;
-            data.email = administrator.email;
-            data.imgPath = imgPath;
-            data.status = administrator.status;
-            // Saves the product
-            data.save((err, updated) => res.json(updated));
-        })
+        const admin = await Administrator.findOne( {where:{ admin_id: reqAdmin.id}})
+    
+        // Updates the admin payload
+        admin.user = reqAdmin.user;
+        admin.name = reqAdmin.name;
+        admin.cpf = reqAdmin.cpf;
+        admin.email = reqAdmin.email;
+        admin.imgPath = imgPath;
+        admin.status = reqAdmin.status;
+
+        const administrator = await admin.save()
+        if (administrator) {
+            console.log('entrou aqui')
+            let panel = 'administrator-details'
+            res.status(200).render("admin-home", { administrator, panel})
+        } else {
+            res.status(200).send("Erro ao atualizar administrador")
+        } 
+
     },
     remove: (req, res) => {
         
     }
 }
 
-
+async function getById(req){
+    const administrator = await Administrator.findByPk(req.params.id)
+    return administrator
+}
 
 async function save(req, res) {
     let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
@@ -98,13 +94,9 @@ async function save(req, res) {
         status
     }
 
-        let newAdministrator = await Administrator.create( administrator )
-        .then ( ()=>{
-            console.log('administrador cadastrado: ', newAdministrator)
-            return  newAdministrator;
-        }).catch(function () {
-            console.log("Promise Rejected");
-       });
+    let newAdministrator = await Administrator.create( administrator )
+    return  newAdministrator;
+
 }
 
 module.exports = administratorsController;

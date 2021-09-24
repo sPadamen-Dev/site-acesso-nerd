@@ -186,28 +186,7 @@
     color: #cf113d;
 }
 
-#pdp-grp-buttons {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    padding: 20px 0px;
-}
 
-.pdp-buttons {
-    color: white;
-    height: 35px;
-    width: 100px;
-    border-radius: 7px;
-    font-size: 14px;
-    font-weight: 700;
-    margin: 0px 10px;
-    cursor: pointer;
-}
-
-.pdp-buttons:hover {
-    opacity: 0.7;
-    transition: 0.5s;
-}
 
 
 

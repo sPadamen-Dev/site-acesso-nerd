@@ -16,3 +16,19 @@ chooseFile.addEventListener("change", function () {
       });    
     }
   }
+
+  /*Loading product status on switch*/
+document.querySelector('#admin-status-switch').addEventListener('change', (evento)=>{
+  if (document.getElementById('admin-status-switch').checked) {
+      document.getElementById('admin-status').innerText = "Ativo"
+      document.getElementById('admin-status-value').setAttribute('value', 'A')
+  } else {
+      document.getElementById('admin-status').innerText = "Inativo"
+      document.getElementById('admin-status-value').setAttribute('value', 'I')
+  }
+});
+
+document.getElementById("btn-admin-edit").addEventListener("click", function(event){
+  event.preventDefault()
+  alert('clicou')
+});
