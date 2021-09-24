@@ -1,5 +1,5 @@
 <!--pdp profile details panel-->
-<form id="pdp-form" method="POST" action="/admin/administrator/save" enctype="multipart/form-data" >
+<form id="admin-details-form" method="POST" action="/admin/administrator" enctype="multipart/form-data" >
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-div-top-space"></div>
@@ -7,24 +7,18 @@
                 <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
             </div>
             <div id="pdp-div-input-pics">
-                <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*" multiple>
+                <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                <input type="file" id="admin-inp-pic" name="admin-inp-pic" class="pdp-inp-pics" accept="image/*">
             </div>
         </section>
         <section id="pdp-section-info">
-            <div id="pdp-id-status">
-                <div id="pdp-div-id">
-                        <label>Id:</label>
-                        <input type="text" id="pdp-id" name="id" value="" readonly>
-                </div>
-                <div id="pdp-status">
-                    <p id="pdp-p-status">Ativo</p>
-                    <div id="pdp-div-switch">
-                        <label class="pdp-switch">
-                            <input id="pdp-inp-switch" type="checkbox" checked>
-                            <span class="pdp-slider pdp-round"></span>
-                        </label>
-                    </div>
+            <div id="pdp-status">
+                <p id="admin-status">Ativo</p>
+                <div id="pdp-div-switch">
+                    <label class="pdp-switch">
+                        <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" value='A' checked>
+                        <span class="pdp-slider pdp-round"></span>
+                    </label>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -69,10 +63,11 @@
             </div>
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit">Salvar</button>
-                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>
+                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
                 </div>
             </div>
         </section>
     </div>
 </form>
+<script src="/js/admin-administrator-details.js"></script>

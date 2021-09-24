@@ -1,9 +1,5 @@
 <!--pdp profile details panel-->
-<% if (administrator.admin_id <= 0) { %>
-    <form id="admin-details-form" method="POST" action="/admin/administrators" enctype="multipart/form-data" >
-<% } else {%>
-    <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
-<%} %> 
+<form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">

@@ -36,14 +36,37 @@ const administratorsController = {
         res.status(200).render("admin-home", { administrator, panel})
     },
     create: (req, res) => {
-        const administrator = create(req, res);
+        let panel = 'administrator-create'
+        res.render("admin-home", { panel})
+    },
+    save: (req, res) => {
+        const administrator = save(req, res);
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
         }
     },
-    update: (req, res) => {
+    update: async (req, res) => {
+        const idAdmin = req.params.id
+        let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
+        let administrator = req.body;
+        
+        if (req.file) {
+            const { filename } = req.file
+            imgPath = `/img/profiles/${filename}`;
+        } 
 
+        await Administrator.findOne({ admin_id: idAdmin}, (err, data) => {
+            // Updates the product payload
+            data.user = administrator.user;
+            data.name = administrator.name;
+            data.cpf = administrator.cpf;
+            data.email = administrator.email;
+            data.imgPath = imgPath;
+            data.status = administrator.status;
+            // Saves the product
+            data.save((err, updated) => res.json(updated));
+        })
     },
     remove: (req, res) => {
         
@@ -52,18 +75,17 @@ const administratorsController = {
 
 
 
-async function create(req, res) {
-    const imgPathHolder = '/img/profiles/placeHolderProfileImage.jpg'
+async function save(req, res) {
+    let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
     let { user, name, cpf, email, password, status } = req.body;
 
     console.log(req.file)
-    const { filename } = req.file
-    if (filename) {
+    
+    if (req.file) {
+        const { filename } = req.file
         console.log('filename ' , filename)
         imgPath = `/img/profiles/${filename}`;
-    } else {
-        imgPath = imgPathHolder;
-    }
+    } 
     password = bcrypt.hashSync(password, 10);
 
     const administrator = {
@@ -76,15 +98,13 @@ async function create(req, res) {
         status
     }
 
-    try {
-        await Administrator.create( administrator )
-        .then ( newAdministrator => {
+        let newAdministrator = await Administrator.create( administrator )
+        .then ( ()=>{
+            console.log('administrador cadastrado: ', newAdministrator)
             return  newAdministrator;
-        })
-        
-    } catch (error) {
-        return  error.message;
-    }
+        }).catch(function () {
+            console.log("Promise Rejected");
+       });
 }
 
 module.exports = administratorsController;
