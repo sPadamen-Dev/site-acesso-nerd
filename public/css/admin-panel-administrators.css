@@ -7,14 +7,6 @@
     margin-bottom: 20px;
 }
 
-#btn-admin-delete{
+#btn-admin-edit, #btn-admin-cancel{
     position: absolute;
-    background-color:var(--btn-delete);
-    color: white;
-}
-
-#btn-admin-edit{
-    position: absolute;
-    background-color:var(--btn-confirm);
-    color: white;
 }

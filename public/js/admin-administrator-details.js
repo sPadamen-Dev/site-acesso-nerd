@@ -29,6 +29,17 @@ document.querySelector('#admin-status-switch').addEventListener('change', (event
 });
 
 document.getElementById("btn-admin-edit").addEventListener("click", function(event){
+  
   event.preventDefault()
-  alert('clicou')
+
+  document.getElementById('btn-admin-edit').toggleAttribute('hidden');
+  document.getElementById('admin-inp-pic').toggleAttribute('disabled');
+  document.getElementById('btn-admin-cancel').toggleAttribute('hidden');
+  document.getElementById('admin-status-switch').toggleAttribute('disabled');
+  document.getElementById('pdp-inp-user').toggleAttribute('readOnly');
+  document.getElementById('pdp-inp-name').toggleAttribute('readOnly');
+  document.getElementById('pdp-inp-cpf').toggleAttribute('readOnly');
+  document.getElementById('pdp-inp-email').toggleAttribute('readOnly');
+  document.getElementById('btn-admin-save').toggleAttribute('disabled');
+  document.getElementById('btn-admin-delete').toggleAttribute('disabled');
 });

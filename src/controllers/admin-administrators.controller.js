@@ -35,11 +35,16 @@ const administratorsController = {
         console.log('chamou update')
         let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
         let reqAdmin = req.body;
+
         console.log(req.body)
         if (req.file) {
             const { filename } = req.file
             imgPath = `/img/profiles/${filename}`;
-        } 
+        } else {
+            if (reqAdmin.initialImg) {
+                imgPath = reqAdmin.initialImg;
+            }
+        }
 
         const admin = await Administrator.findOne( {where:{ admin_id: reqAdmin.id}})
     

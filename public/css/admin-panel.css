@@ -245,6 +245,14 @@
   background-color:var(--btn-cancel);
 }
 
+.pdp-button-edit {
+  background-color:var(--btn-edit);
+}
+
+.pdp-button-delete {
+  background-color:var(--btn-delete);
+}
+
 #pdp-grp-buttons {
   display: flex;
   width: 100%;
