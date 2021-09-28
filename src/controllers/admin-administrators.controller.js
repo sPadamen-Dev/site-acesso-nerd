@@ -13,7 +13,7 @@ const administratorsController = {
     },
     getById: async (req, res) => {
         let panel = 'administrator-details'  
-        const administrator = await getById(req)
+        const administrator = await getById(req.params.id)
         if (administrator) {
             res.status(200).render("admin-home", { administrator, panel})
         } else {
@@ -24,8 +24,9 @@ const administratorsController = {
         let panel = 'administrator-create'
         res.render("admin-home", { panel})
     },
-    save: (req, res) => {
-        const administrator = save(req, res);
+    save: async (req, res) => {
+        const administrator = await save(req, res);
+        console.log('Salvou: ', administrator)
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
@@ -62,17 +63,31 @@ const administratorsController = {
             let panel = 'administrator-details'
             res.status(200).render("admin-home", { administrator, panel})
         } else {
-            res.status(200).send("Erro ao atualizar administrador")
+            res.status(500).send("Erro ao atualizar administrador")
         } 
 
     },
-    remove: (req, res) => {
-        
+    remove: (req, res) => {   
+        const idParam = req.params.id
+        Administrator.destroy({ where: {admin_id: idParam}})
+            .then(async function (rowRemoved){
+                if(rowRemoved === 1) {
+                    try {
+                        let panel = 'administrators'
+                        let administratorList = await Administrator.findAll()
+                        res.status(200).render("admin-home", { administratorList, panel} )
+                    } catch (error) {
+                        res.status(500).render("admin-home", { error: error.message} )
+                    } 
+                }
+            }, function(err) {
+                    res.status(500).send("Erro ao excluir administrador: ", err)
+            });
     }
 }
 
-async function getById(req){
-    const administrator = await Administrator.findByPk(req.params.id)
+async function getById(id){
+    const administrator = await Administrator.findByPk(id)
     return administrator
 }
 
@@ -99,9 +114,10 @@ async function save(req, res) {
         status
     }
 
-    let newAdministrator = await Administrator.create( administrator )
-    return  newAdministrator;
-
+    const newAdministrator = await Administrator.create( administrator )
+    if (newAdministrator instanceof Administrator) {
+        return await getById(newAdministrator.admin_id)
+    } 
 }
 
 module.exports = administratorsController;

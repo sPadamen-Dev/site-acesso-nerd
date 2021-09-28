@@ -43,3 +43,10 @@ document.getElementById("btn-admin-edit").addEventListener("click", function(eve
   document.getElementById('btn-admin-save').toggleAttribute('disabled');
   document.getElementById('btn-admin-delete').toggleAttribute('disabled');
 });
+
+
+document.getElementById('btn-admin-delete').addEventListener("click", function(event){
+  
+  event.preventDefault()
+  
+});

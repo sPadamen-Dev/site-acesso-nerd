@@ -189,14 +189,11 @@
   width: 255px;
 }
 
-#pdp-div-top-space {
-  height: 35px;
-}
-
 #pdp-grp-main-image {
   height: 255px;
   width: 255px;
 }
+
 #pdp-grp-main-image img {  
   width: 100%;
   height: auto; 

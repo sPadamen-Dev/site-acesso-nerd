@@ -31,6 +31,6 @@ router.post('/administrator', upload.single('admin-inp-pic'), adminAdministrator
 
 router.put("/administrators/:id", upload.single('admin-inp-pic'), adminAdministratorsController.update)
 
-router.delete("/administrators/:id", adminAdministratorsController.remove)
+router.get("/administrators/delete/:id", adminAdministratorsController.remove)
 
 module.exports = router;

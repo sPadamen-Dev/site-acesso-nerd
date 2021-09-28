@@ -16,10 +16,7 @@
                     <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
                     <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
                 </div>
-                <div class="grp-edit-delete">
-                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">Cancelar</button>
-                    <button id="btn-admin-edit" class="pdp-button-edit pdp-buttons">Editar</button>
-                </div>
+                <button id="btn-admin-delete" class="pdp-button-delete pdp-buttons" onclick="window.location.replace('/admin/administrators/delete/<%= administrator.admin_id %>');" disabled>Excluir</button>
             </section>
         </div>
 
@@ -84,10 +81,21 @@
                     <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" value="<%= administrator.email %>" readOnly required>
                 </div>
             </div>
+            <div class="pdp-div-groups" style='visibility: hidden;'>
+                <div id="pdp-div-password">
+                    <div class="pdp-div-titles">
+                        <span>Password</span>
+                    </div>
+                    <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                </div>
+            </div>
             <div id="pdp-grp-buttons">
+                <div class="grp-edit-delete">
+                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">Cancelar</button>
+                    <button id="btn-admin-edit" class="pdp-button-edit pdp-buttons">Editar</button>
+                </div>
                 <div>
                     <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit" disabled>Salvar</button>
-                    <button id="btn-admin-delete" class="pdp-button-delete pdp-buttons" disabled>Excluir</button>
                 </div>
             </div>
         </section>
