@@ -81,9 +81,13 @@ form .gender-details .gender-register-title{
     font-weight: bold;
 }
 
+form .gender-title{
+    font-weight: bold;
+}
+
 form .gender-details .categoria-gender{
     display:flex;
-    width: 80%;
+    width: 70%;
     justify-content: space-between;
     margin: 0 14px 0px 14px;
 }
