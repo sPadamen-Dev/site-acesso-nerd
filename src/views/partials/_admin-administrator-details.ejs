@@ -1,23 +1,27 @@
 <!--pdp profile details panel-->
 <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
-        <div>
+        <div class="left-side">
             <section id="pdp-section-pics">
                 <div id="pdp-grp-main-image">
+                    <input id='admin-deleted-img' name='deletedImg' hidden>
                     <% if( administrator.imgPath ) { %>
-                        <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
+                        <div id="grp-picture">
+                            <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
+                            <img id="del-admin-pic-icon" class="delete-pic-icon" src="/img/delete-x-icon.png" alt="del-pic"  onclick="removeMainPic('<%= administrator.imgPath %>')">
+                        </div>
                         <input id='admin-initial-img' name='initialImg' value="<%= administrator.imgPath %>" hidden>
                     <% } else { %>
                         <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
-                        <input id='admin-initial-img' name='initialImg' value="/img/profiles/placeHolderProfileImage.jpg" hidden>
+                        <input id='admin-initial-img' name='initialImg' value="" hidden>
                     <% } %> 
                 </div>
                 <div id="pdp-div-input-pics">
                     <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
                     <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
                 </div>
-                <button id="btn-admin-delete" class="pdp-button-delete pdp-buttons" onclick="window.location.replace('/admin/administrators/delete/<%= administrator.admin_id %>');" disabled>Excluir</button>
             </section>
+            <img id="admin-delete" class="remove-icon" src="/img/remove-icon.png" onclick="window.location.replace('/admin/administrators/delete/<%= administrator.admin_id %>');" alt="remove-admin">
         </div>
 
         <section id="pdp-section-info">
@@ -82,11 +86,11 @@
                 </div>
             </div>
             <div class="pdp-div-groups" style='visibility: hidden;'>
-                <div id="pdp-div-password">
+                <div id="pdp-div-password-hold">
                     <div class="pdp-div-titles">
-                        <span>Password</span>
+                        <span></span>
                     </div>
-                    <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                    <input>
                 </div>
             </div>
             <div id="pdp-grp-buttons">
@@ -101,4 +105,5 @@
         </section>
     </div>
 </form>
+<script src="/js/admin-administrator.js"></script>
 <script src="/js/admin-administrator-details.js"></script>

@@ -181,6 +181,12 @@
   padding:20px;
 }
 
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 #pdp-section-pics{
   display: flex;
@@ -194,17 +200,38 @@
   width: 255px;
 }
 
-#pdp-grp-main-image img {  
-  width: 100%;
-  height: auto; 
-  display: block;   
+#grp-picture {
+  padding: 0;
+  margin:0;
+  position: relative;
 }
-
 
 #pdp-main-pic {
-  height: 255px;
-  width: 255px;
+  width: 100%;
+  height: auto; 
+  display: block;
 }
+
+#del-admin-pic-icon{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.remove-icon {
+  height: 35px;
+  width: 35px;
+  margin-bottom: 40px;
+  filter: grayscale(1.0);
+}
+
+.remove-icon:hover {
+  filter: grayscale(0);
+  transition: 600ms;
+}
+
 
 .pdp-div-groups {
   padding: 5px 0;

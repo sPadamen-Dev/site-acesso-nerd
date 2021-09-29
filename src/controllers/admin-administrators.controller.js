@@ -1,5 +1,7 @@
 const { Administrator } = require('../database/models')
 const bcrypt = require('bcryptjs')
+const { deletePicById } = require('./products.controller')
+const rimraf = require('rimraf');
 
 const administratorsController = {
     getAll: async (req, res) => {
@@ -26,36 +28,45 @@ const administratorsController = {
     },
     save: async (req, res) => {
         const administrator = await save(req, res);
-        console.log('Salvou: ', administrator)
         if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
         }
     },
     update: async (req, res) => {
-        console.log('chamou update')
-        let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
-        let reqAdmin = req.body;
+        let { id, user, name, cpf, email, imgPath, status, initialImg, deletedImg } = req.body
+
+        /* Deleting old pic */
+        if ( deletedImg === 'S' ) {
+            if (initialImg) {
+                deletePicByFilename(initialImg)
+                initialImg = null
+            }
+        }
 
         console.log(req.body)
         if (req.file) {
             const { filename } = req.file
             imgPath = `/img/profiles/${filename}`;
         } else {
-            if (reqAdmin.initialImg) {
-                imgPath = reqAdmin.initialImg;
+            if (initialImg) {
+                imgPath = initialImg;
             }
         }
-
-        const admin = await Administrator.findOne( {where:{ admin_id: reqAdmin.id}})
+        
+        const admin = await Administrator.findOne( {where:{ admin_id: id}})
     
         // Updates the admin payload
-        admin.user = reqAdmin.user;
-        admin.name = reqAdmin.name;
-        admin.cpf = reqAdmin.cpf;
-        admin.email = reqAdmin.email;
-        admin.imgPath = imgPath;
-        admin.status = reqAdmin.status;
+        admin.user = user;
+        admin.name = name;
+        admin.cpf = cpf;
+        admin.email = email;
+        if (imgPath) {
+            admin.imgPath = imgPath;
+        } else {
+            admin.imgPath = null;
+        }
+        admin.status = status;
 
         const administrator = await admin.save()
         if (administrator) {
@@ -67,17 +78,25 @@ const administratorsController = {
         } 
 
     },
-    remove: (req, res) => {   
+    remove: async (req, res) => {   
         const idParam = req.params.id
+
+        const {imgPath} = await Administrator.findOne( {where:{ admin_id: idParam}})
+
         Administrator.destroy({ where: {admin_id: idParam}})
             .then(async function (rowRemoved){
                 if(rowRemoved === 1) {
                     try {
                         let panel = 'administrators'
                         let administratorList = await Administrator.findAll()
+
+                        if (imgPath) {
+                            deletePicByFilename(imgPath)
+                        }
+
                         res.status(200).render("admin-home", { administratorList, panel} )
                     } catch (error) {
-                        res.status(500).render("admin-home", { error: error.message} )
+                        res.status(500).send("Erro ao excluir Administrador" )
                     } 
                 }
             }, function(err) {
@@ -92,7 +111,7 @@ async function getById(id){
 }
 
 async function save(req, res) {
-    let imgPath = '/img/profiles/placeHolderProfileImage.jpg'
+    let imgPath = null;
     let { user, name, cpf, email, password, status } = req.body;
 
     console.log(req.file)
@@ -120,4 +139,15 @@ async function save(req, res) {
     } 
 }
 
+function deletePicByFilename(fileToDelete){
+
+    // Assuming that 'path/file.txt' is a regular file.
+    rimraf(deletePath, function (err) {
+        if(err) {
+            console.log(err)
+        }
+        console.log(`${deletePath} was deleted`);
+    });
+}
+ 
 module.exports = administratorsController;
