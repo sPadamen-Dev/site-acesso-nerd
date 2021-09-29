@@ -3,37 +3,56 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+form{
+    flex-direction: column;
+}
 .register-container {
     display: flex;
-    background: rgb(255, 255, 255);
+    background: #1C2B3A;
+    color: #FFDE5A;
     max-width:900px;
     height: 100%;
     padding: 25px 30px;
     align-items: center;
     justify-content: center;
     font-size: 16px;
-    border-radius: 9px;
     margin: 20px 0 50px 0;
+    border: 2px solid #000;
 }
 
+ .slogan{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+ }
+
+.logo-register{
+     width: auto;
+     height: 60px;
+ }
 
  .register-title{
-    font-size:25px;
-    color:rgb(255, 255, 255);
-    font-weight: bold;
+    font-size:2em;
+    color:#ffffff;
+    font-weight: 900;
     position: relative;
     padding: 10px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
-.register-title::before{
+/*.register-title::before{
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
     height: 3px;
     width: 100%;
-    background: #FFDE5A;
-}
+    background: #ffffff;
+}*/
 
 .register-container form .user-details{
     display: flex;
@@ -43,8 +62,16 @@
 }
 
 form .user-details .input-box{
-    width: calc(100% / 2 - 50px);
+    width: calc(100% / 2 - 20px);
     margin-bottom: 15px;
+}
+
+form .user-details .input-box .number{
+    width: 80px;
+}
+
+form .user-details .input-box .date-register{
+    width: 150px;
 }
 
 .user-details .input-box .details{
@@ -55,20 +82,23 @@ form .user-details .input-box{
 }
 
 .user-details .input-box input{
-    height: 45px;
+    height: 40px;
     width: 100%;
     outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px ;
+    background-color: rgb(241, 244, 245);
+    border-radius: 10px;
+    border: 1px solid #FFDE5A;
+    padding-left: 7px ;
     font-size: 16px;
     border-bottom-width: 2px;
     transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
 }
+
 
 .user-details .input-box input:focus, 
 .user-details .input-box input:valid{
-    border-color:#1E90FF;
+    border-color: #1E90FF;
 }
 
 form .gender-details{
@@ -134,12 +164,15 @@ form .register-button input:hover{
 @media (max-width: 584px){
     .register-container {
         max-width:90%;
-        background: rgb(255, 255, 255);
     }
     form .user-details .input-box{
         width: 100%;
         margin-bottom: 15px;
     
+    }
+    .slogan{
+        padding: 20px;
+        align-items: center;
     }
     form .gender-details .categoria-gender{
         width: 100%;
@@ -152,7 +185,7 @@ form .register-button input:hover{
         letter-spacing: 1px;
         padding: 10px;
     }
-    .register-title::before{
+    /*.register-title::before{
         content: '';
         position: absolute;
         left: 0;
@@ -160,7 +193,7 @@ form .register-button input:hover{
         height: 3px;
         width: 100%;
         background: #FFDE5A;
-    }
+    }*/
     form .register-button input{
         height: 3em;
         width: 500px;

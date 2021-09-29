@@ -191,12 +191,12 @@ transform: rotate(-45deg) translate(0, 0px);
 {
 display: none;
 position: absolute;
-width: 22em;
+width: 20em;
 height: 41em;
-margin: 32em 0 0 0;
-padding: 1em;
-padding-top: 7em;
-left: 3.4em;
+margin: 33em 0 0 0;
+padding: 3em;
+padding-top: 6em;
+left: 4.4em;
 background: #1e5b99;
 list-style-type: none;
 -webkit-font-smoothing: antialiased;
@@ -217,18 +217,13 @@ font-size: 22px;
 transform: none;
 opacity: 1;
 }
+
+.footer-contact{
+  border: none;
 }
 
-
-.form-contato{
-  flex-direction: column;
-  color: white;
-  font-size: 1.6rem;
-  padding: 1em;
-  background-color: #5a708d;
-  margin-top: 0.5em;
-  justify-content: center;
 }
+
 
 .home-footer{
   height: 'fit-content';

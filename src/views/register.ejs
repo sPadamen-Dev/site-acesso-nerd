@@ -3,9 +3,13 @@
     <%- include('./partials/_header') %> 
     <%- include('./partials/_head') %> 
     <body class="register-body">
-        <div class="register-title">Preencha o formulário para completar o seu cadastro</div>
+        
         <div class="register-container"> 
-        <form action=#>
+        <form action="/cadatro-realizado" method="POST">
+        <div class="slogan">
+             <img class="logo-register" src="./img/logo-acesso-nerd.png" alt="logo">
+             <span class="register-title">Preencha o formulário para completar o seu cadastro</span>
+        </div>
         <div class="user-details">
         <div class="input-box">
             <span class="details">Nome</span>
@@ -28,7 +32,7 @@
         </div>
         <div class="input-box">
             <span class="details">Data de Nascimento</span>
-            <input type="date" required>
+            <input class="date-register" type="date" required>
         </div>
         <div class="input-box">
             <span class="details">Email</span>
@@ -39,12 +43,12 @@
             <input type="text" placeholder="(00) 00000-00000" required>
         </div>
         <div class="input-box">
-            <span class="details">Enedreço</span>
+            <span class="details">Endereço</span>
             <input type="text" placeholder="Informe seu endereço" required>
         </div>
         <div class="input-box">
             <span class="details">Número</span>
-            <input type="text" placeholder="Informe o número da sua residencia" required>
+            <input class="number" type="text" placeholder="Nº" required>
         </div>
         <div class="input-box">
             <span class="details">Bairro</span>

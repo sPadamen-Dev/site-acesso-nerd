@@ -352,6 +352,7 @@ h2 {
 
 .button-newlast {
     width: 40%;
+    padding: 10px 0 10px 0;
 }
 .button-newlast button{
     background-color: #265380;

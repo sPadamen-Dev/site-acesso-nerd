@@ -5,6 +5,7 @@
     color: white;
     justify-content: center;
     margin-bottom: 3em;
+    align-items: center;
     width: 100%;
     
 }
@@ -21,49 +22,12 @@
 
 .content {
     flex-direction: column;
+    align-items: center;
     text-align: center;
     font-size: 1.5em;
     position: relative;
     display: inline-block;
-    margin: 0 7em 0 7em;
-}
-.first{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-}
-.second{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-}
-.third{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-}
-
-.fourth{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-    font-weight: bold;
-}
-
-.fifth{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-    font-weight: bold;
-}
-
-a{
-    position: relative;
-    display: inline-block;
-    color:#FFDE5A;
+    width: 550px;
+    height: auto;
+    margin-bottom: 50px;
 }

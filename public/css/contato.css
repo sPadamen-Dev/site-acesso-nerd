@@ -1,99 +1,102 @@
+.contato-body{
+    align-items: center;
+    font-family: 'PT Sans', sans-serif;
+}
+
 .page-contato{
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.contato-info{
+    flex-direction: column;
+}
+
+.text-contato{
     color: white;
+    margin: auto;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+.contato-container{
+    background: #1C2B3A;
+    color: #FFDE5A;
+    width: 550px;
+    height: 100%;
+    padding: 25px 30px;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 2em;
-
+    font-size: 16px;
+    margin: 20px 20px 50px 20px;
+    border: 2px solid #000;
 }
-
-.info {
-    flex-direction: column;
-    text-align: center;
-    font-size: 1.5em;
-    position: relative;
-    display: inline-block;
-    margin: 0 7em 0 7em;
-
-}
-
-.title2{
-    flex-direction: column;
-    text-align: center;
-    position: relative;
+.contato-details{
     display: block;
-    font-size: 2em;
-    margin: 0.5em 0 0.5em 0;
-    justify-content: center;
+    align-items: center;
 }
 
-.text1{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
+.details-mensagem{
+    height: 100px !important;
+}
+.contato-container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
 }
 
-.text2{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
-    
-}
-.text3{
-    text-align: center;
-    position: relative;
-    display: inline-block;
-    padding: 0 0 0.5em 0;
+form .contato-details .input-box{
+    margin-bottom: 15px;
 }
 
-.form-contato{
-    flex-direction: column;
-    color: white;
-    font-size: 1.6rem;
-    padding: 1em;
-    background-color: #5a708d;
-    margin-top: 0.5em;
-    justify-content: center;
-}
-
-.form-contato > div {
-    padding: 0.5em;
-    justify-content: center;
-}
-
-.form-contato > label {
-    justify-content: center;
+.contato-details .input-box .details{
     font-weight: bold;
-
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
-.caixa-nome, .caixa-telefone, .caixa-email{
-    height: 3em;
-    width: 25em;
-    border-radius: 7px;
-    padding: 1em;
+.contato-details .input-box input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    background-color: rgb(241, 244, 245);
+    border-radius: 10px;
+    border: 1px solid #FFDE5A;
+    padding-left: 7px ;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
+}
+
+.contato-details .input-box input:focus, 
+.contato-details .input-box input:valid{
+    border-color: #1E90FF;
+}
+
+.input-box-lgpd{
+    padding-left: 7px ;
+    font-size: 16px;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    color: white;
 }
 
-.caixa-mensagem{
-    height: 8em;
-    width: 25em;
-    border-radius: 7px;
-    text-align: center;
+.details-lgpd{
+    margin-right: 10px;
 }
 
-.contato-lgpd{
-    color: #ffffff;
-    font-size: 1rem;
-    justify-content: center;
+form .send-button{
+    height: 45px;
+    margin: 25px 0 0 0;
 }
 
-.botao-enviar {
+form .send-button input{
     height: 3em;
-    width: 24em;
+    width: 370px;
     background-color: #265380;
     color: white;
     border: solid #ffff 1px;
@@ -104,7 +107,33 @@
     font-size: 1.4rem;
 }
 
-.botao-enviar:hover{
-    background-color: #1587f8;
+form .send-button input:hover{
+    background: #FFDE5A;
+    color: black;
     cursor: pointer;
+}
+
+@media (max-width: 584px){
+    .contato-container {
+        max-width:90%;
+    }
+    form .user-details .input-box{
+        width: 100%;
+        margin-bottom: 15px;
+    
+    }
+
+    /*.register-title::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        background: #FFDE5A;
+    }*/
+    form .send-button input{
+        height: 3em;
+        width: 500px;
+    }
 }
