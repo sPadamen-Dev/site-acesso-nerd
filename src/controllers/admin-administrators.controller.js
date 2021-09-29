@@ -1,7 +1,6 @@
 const { Administrator } = require('../database/models')
 const bcrypt = require('bcryptjs')
-const { deletePicById } = require('./products.controller')
-const rimraf = require('rimraf');
+const fs = require('fs')
 
 const administratorsController = {
     getAll: async (req, res) => {
@@ -139,14 +138,16 @@ async function save(req, res) {
     } 
 }
 
+/*TO DO: FIX THE FUNCTION - FILE IS NOT BEING REMOVED*/
 function deletePicByFilename(fileToDelete){
 
-    // Assuming that 'path/file.txt' is a regular file.
-    rimraf(deletePath, function (err) {
+    console.log(fileToDelete)
+
+    fs.unlink(fileToDelete, function (err) {
         if(err) {
             console.log(err)
         }
-        console.log(`${deletePath} was deleted`);
+        console.log(`${fileToDelete} was deleted`);
     });
 }
  
