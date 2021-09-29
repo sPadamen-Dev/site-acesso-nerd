@@ -4,9 +4,6 @@
     display: grid;
   }
 
-  #container-logo {
-    flex-wrap: nowrap;
-  }
 
   #info-header-top > div{
     margin-right: 60px;
@@ -20,15 +17,17 @@
       font-size: 2em;
     }
 
-    .div-pesquisa{
-      margin-right: 10px;
+    .divPesquisa{
+      width:unset;
     }
 
     .divPesquisa input{
       padding-left: 2.5rem;
+      width:unset;
+      min-width: 350px !important;
     }
 
-  .div-carrinho, .div-login, .div-pesquisa {
+  .div-carrinho, .div-login {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -37,6 +36,17 @@
       width: 3rem;
       height: 3rem;
       margin-left: 3rem;
+  }
+
+  .div-pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:var(--white);
+    clip-path: circle();
+    width: 3rem;
+    height: 3rem;
+    margin-left: 1rem;
   }
 
   .nav-icons{
@@ -115,11 +125,14 @@ color: tomato;
 .bar{
   align-items: center;
   margin: 10px 0 0 10px;
+  flex-wrap: unset;
 }
 
 #bar{
 display: block;
-margin: auto;
+margin: unset;
+margin-left: 77px;
+margin-right: 11px;
 justify-content: center;
 z-index: 1;
 -webkit-user-select:none;
