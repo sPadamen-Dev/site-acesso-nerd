@@ -3,42 +3,30 @@ const adminController = require("../controllers/admin.controller");
 const adminProductsController = require("../controllers/admin-products.controller");
 const adminAdministratorsController = require("../controllers/admin-administrators.controller");
 const router = Router();
+const methodOverride = require('method-override')
+
 const multer = require('multer');
-const fs = require('fs');
+const upload = multer({dest: './public/img/profiles'})
 
-/*
-const storage = multer.diskStorage({
-    destination: function (req, file, callback) {
-        const dir = "/img/products/uploads"
-        if(!fs.existsSync(dir)){
-            console.log('diretorio nao existe')
-            fs.mkdirSync(dir)
-        }
-        callback(null, dir)
-    },
-    filename: function (req, file, callback) {
-        callback(null, file.originalname)
-    }
-});
-
-const upload = multer({ storage: storage })
-*/
-
-const upload = multer({dest: './public/img'})
+router.use(methodOverride('_method'));
 
 router.get("/", adminController.adminLogin)
 router.post("/", adminController.adminHome)
 
-/* Products */
-router.get("/products", adminProductsController.getAllProducts)
-router.get("/product/edit/:id", adminProductsController.getProductById)
-router.get("/product/create", adminProductsController.createProduct)
-router.post("/product/save", upload.array('pdp-inp-pics'), adminProductsController.saveProduct)
-router.delete("/product/:id/delete", adminProductsController.deleteProduct)
-
 /* Administrators */
-router.get("/administrators", adminAdministratorsController.getAllAdministrators)
-router.get("/administrator/create", adminAdministratorsController.createAdministrator)
-router.post("/administrator/save", upload.single('pdp-inp-pics'), adminAdministratorsController.saveAdministrator)
-router.get("/administrator/edit/:id", adminAdministratorsController.getAdministratorById)
+router.get("/administrators", adminAdministratorsController.getAll)
+router.get("/administrators/:id", adminAdministratorsController.getById)
+router.get('/administrator', adminAdministratorsController.create)
+router.post('/administrator', upload.single('admin-inp-pic'), adminAdministratorsController.save)
+router.put("/administrators/:id", upload.single('admin-inp-pic'), adminAdministratorsController.update)
+router.get("/administrators/delete/:id", adminAdministratorsController.remove)
+
+/* Products */
+router.get("/products", adminProductsController.getAll)
+router.get("/products/:id", adminProductsController.getById)
+router.get("/product", adminProductsController.new)
+router.post("/products", upload.array('prod-inp-pics'), adminProductsController.create)
+router.put("/products/:id", upload.array('prod-inp-pics'), adminProductsController.update)
+router.delete("/products/:id", adminProductsController.remove)
+
 module.exports = router;

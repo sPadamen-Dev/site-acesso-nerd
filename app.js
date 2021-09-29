@@ -11,7 +11,6 @@ const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
-const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
@@ -30,7 +29,6 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
-app.use(methodOverride('_method'))
 // connection db
 const models = require('./src/database/models');
 const connect = async () => {

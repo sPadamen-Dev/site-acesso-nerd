@@ -18,7 +18,8 @@ html{
     --btn-cancel: #F0AB3E;
     --btn-confirm: #0FBF60;
     --btn-delete: #FF124B;
-
+    --btn-edit: #589bdf;
+    
     font-size: 62.5%;
 } 
 

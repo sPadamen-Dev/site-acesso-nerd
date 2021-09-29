@@ -19,11 +19,11 @@ function getName(fullPath) {
 }*/
 
 /*Loading product status on switch*/
-document.querySelector('#pdp-inp-switch').addEventListener('change', (evento)=>{
-    if (document.getElementById('pdp-inp-switch').checked) {
-        document.getElementById('pdp-p-status').innerText = "Ativo"
+document.querySelector('#prod-status-switch').addEventListener('change', (evento)=>{
+    if (document.getElementById('prod-status-switch').checked) {
+        document.getElementById('prod-status').innerText = "Ativo"
     } else {
-        document.getElementById('pdp-p-status').innerText = "Inativo"
+        document.getElementById('prod-status').innerText = "Inativo"
     }
 });
 
@@ -38,10 +38,8 @@ function selectAdminProductPic(id) {
 
 function loadMainPic(id) {
     selectAdminProductPic(id);
-    console.log(id);
     let mainPicElem = document.getElementById('pdp-main-pic');
     let firstThumbPic = document.getElementById(id);
-    /*firstThumbPic.classList.add('pdp-pic-selected');*/
     mainPicElem.src = firstThumbPic.getAttribute("src");
 };
 
