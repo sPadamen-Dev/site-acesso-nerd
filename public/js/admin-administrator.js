@@ -3,7 +3,6 @@ const chooseFile = document.getElementById('admin-inp-pic');
 const imgPreview = document.getElementById('pdp-main-pic');
 
 chooseFile.addEventListener("change", function () {
-    console.log('chamou event listener')
     getImgData();
   });
 

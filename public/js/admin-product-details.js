@@ -38,10 +38,8 @@ function selectAdminProductPic(id) {
 
 function loadMainPic(id) {
     selectAdminProductPic(id);
-    console.log(id);
     let mainPicElem = document.getElementById('pdp-main-pic');
     let firstThumbPic = document.getElementById(id);
-    /*firstThumbPic.classList.add('pdp-pic-selected');*/
     mainPicElem.src = firstThumbPic.getAttribute("src");
 };
 

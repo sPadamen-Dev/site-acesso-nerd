@@ -43,7 +43,6 @@ const administratorsController = {
             }
         }
 
-        console.log(req.body)
         if (req.file) {
             const { filename } = req.file
             imgPath = `/img/profiles/${filename}`;
@@ -69,7 +68,6 @@ const administratorsController = {
 
         const administrator = await admin.save()
         if (administrator) {
-            console.log('entrou aqui')
             let panel = 'administrator-details'
             res.status(200).render("admin-home", { administrator, panel})
         } else {
@@ -112,12 +110,8 @@ async function getById(id){
 async function save(req, res) {
     let imgPath = null;
     let { user, name, cpf, email, password, status } = req.body;
-
-    console.log(req.file)
-    
     if (req.file) {
         const { filename } = req.file
-        console.log('filename ' , filename)
         imgPath = `/img/profiles/${filename}`;
     } 
     password = bcrypt.hashSync(password, 10);
@@ -140,9 +134,6 @@ async function save(req, res) {
 
 /*TO DO: FIX THE FUNCTION - FILE IS NOT BEING REMOVED*/
 function deletePicByFilename(fileToDelete){
-
-    console.log(fileToDelete)
-
     fs.unlink(fileToDelete, function (err) {
         if(err) {
             console.log(err)
