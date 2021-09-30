@@ -3,14 +3,13 @@
         <div id="div-title">
             <span>Administradores</span>
             <div id="panel-div-add">
-                <img src="/img/add-icon.png" alt="add" onclick="window.location.replace('/admin/administrator/create');">
+                <img src="/img/add-icon.png" alt="add" onclick="window.location.replace('/admin/administrator');">
             </div>
         </div>
         
         <div id="panel-filters">
             <form action="" id="filter-form-panel">
                 <div id="obj-filters">
-
                     <span>Id:</span>
                     <input class="ffp-input" type="text" name="administrator-id" id="administrator-id">
 
@@ -28,8 +27,9 @@
     </div>
 
     <div id="grid-panel">
-        <table>
+        <table id='administrators-table'>
             <tr>
+                <th>Foto</th>
                 <th>Id</th>
                 <th>Usuario</th>
                 <th>Name</th>
@@ -41,24 +41,29 @@
             </tr>
             <% if(administratorList) {%>
                 <% administratorList.forEach((administrator)=> {%>
-                    <tr onclick="window.location.replace('/admin/administrator/edit/<%= administrator.id %>');">
-
-                        <% if( administrator.imgPath ) { %>
-                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%=administrator.imgPath %>" alt="profile-pic"></div></td>
+                    <tr onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">
+                        <% if( administrator.imgPath != null ) { %>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="<%= administrator.imgPath %>" alt="profile-pic"></div></td>
                         <% } else { %>
-                            <td><div class="img-row-cell"><img class="img-row-pic" src="/img/placeHolderProfileImage.jpg" alt="profile-pic"></div></td>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-pic"></div></td>
                         <% } %> 
-                        <td><%=administrator.id %> </td>
+                        <td><%=administrator.admin_id %> </td>
                         <td><%=administrator.user %> </td>
                         <td><%=administrator.name %></td>
                         <td><%=administrator.cpf %></td>
                         <td><%=administrator.email %></td>
-                        <td><%=administrator.status %></td>
+                        <% if (administrator.status == 'A') {%>
+                            <td>Ativo</td>
+                        <% } else { %>
+                            <td>Inativo</td>
+                        <% } %> 
                         <td><%=administrator.createdAt %></td>
                         <td><%=administrator.updatedAt %></td>
                     </tr>
                 <%}) %> 
-                <% } %> 
+            <% } else {%> 
+                <div class="notFound">Não há resultados para sua pesquisa</div>
+            <% } %> 
             </tr>
         </table>
     </div>

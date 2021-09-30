@@ -1,5 +1,5 @@
 <!--pdp product details panel-->
-<form id="pdp-form" method="POST" action="/admin/product/edit?_method=PUT" enctype="multipart/form-data" >
+<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <section id="pdp-section-pics">
             <div id="pdp-grp-main-image">
@@ -25,8 +25,8 @@
                 <%}) %> 
             </div>
             <div id="pdp-div-input-pics">
-                <label for="pdp-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id="pdp-inp-pics" type="file" name="pdp-inp-pics" accept="image/*" multiple>
+                <label for="prod-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                <input id='prod-inp-pics' class="pdp-inp-pics" type="file" name="prod-inp-pics" accept="image/*" multiple>
             </div>
         </section>
         <section id="pdp-section-info">
@@ -34,17 +34,17 @@
                 <div id="pdp-div-id">
                     <% if( product.id ) {%>
                         <label>Código:</label>
-                        <input type="text" id="pdp-id" name="id" value="<%= product.id %>" readonly>
+                        <input type="text" id="prod-id" class="pdp-id" name="id" value="<%= product.id %>" readonly>
                     <% } %>
                 </div>
                 <div id="pdp-status">
-                    <p id="pdp-p-status"><%= product.status %> </p>
+                    <p id="prod-status"><%= product.status %> </p>
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
-                            <% if(product.status === 'Ativo') {%> 
-                                <input id="pdp-inp-switch" type="checkbox" checked>
+                            <% if(product.status === 'A') {%> 
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked>
                             <% } else { %>
-                                <input id="pdp-inp-switch" type="checkbox">
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox">
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>
@@ -117,11 +117,12 @@
 
             <div id="pdp-grp-buttons">
                 <div>
-                    <button id="pdp-button-save" class="pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
-                    <button id="pdp-button-cancel" class="pdp-buttons">Cancelar</button>
+                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
+                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
                 </div>
             </div>
 
         </section>
     </div>
 </form>
+<script src="/js/admin-product-details.js"></script>

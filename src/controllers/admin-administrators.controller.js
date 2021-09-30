@@ -1,117 +1,145 @@
-const administrators = [
-    {
-        id: 1,
-        user: 'gilvan.tbd',
-        name: 'Gilvan Tbd',
-        cpf: '11111111111',
-        email: 'gilvan.tbd@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '12/09/2021',
-        updatedAt: '12/09/2021',
-    },
-    {
-        id: 1,
-        user: 'rah.tbd',
-        name: 'Rah Tbd',
-        cpf: '22222222222',
-        email: 'rah.tbd@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '13/09/2021',
-        updatedAt: '13/09/2021',
-    },
-    {
-        id: 1,
-        user: 'william.tbd',
-        name: 'William Xavier',
-        cpf: '33333333333',
-        email: 'william.xavier@acesso-nerd.com.br',
-        status: 'Ativo',
-        imgPath: null,
-        createdAt: '14/09/2021',
-        updatedAt: '14/09/2021',
-    }
-];
-
 const { Administrator } = require('../database/models')
+const bcrypt = require('bcryptjs')
+const fs = require('fs')
 
 const administratorsController = {
-    getAllAdministrators: (req, res) => {
-        let panel = 'administrators'
-        const administratorList = getAllAdministrators();
-        console.log(administratorList)
-        res.render("admin-home", { administratorList, panel} )
+    getAll: async (req, res) => {
+        try {
+            let panel = 'administrators'
+            let administratorList = await Administrator.findAll()
+            res.status(200).render("admin-home", { administratorList, panel} )
+        } catch (error) {
+            res.status(500).render("admin-home", { error: error.message} )
+        }        
     },
-    getAdministratorById: (req, res) => {
-        let panel = 'administrator-details'
-        const administrator = getAdministratorById(req.params.id);
-        console.log(administrator)
-        res.render("admin-home", { administrator, panel})
-    },
-    createAdministrator: (req, res) => {
-        let panel = 'administrator-create'
-        res.render("admin-home", { panel })
-    },
-    saveAdministrator: (req, res) => {
-        console.log('Body recebido: ', req.body)
-        const administrator = saveAdministrator(req, res);
-
+    getById: async (req, res) => {
+        let panel = 'administrator-details'  
+        const administrator = await getById(req.params.id)
         if (administrator) {
-            console.log('cadastrado: ', administrator)
+            res.status(200).render("admin-home", { administrator, panel})
+        } else {
+            res.status(500).send("Administrador não encontrado." )
+        } 
+    },
+    create: (req, res) => {
+        let panel = 'administrator-create'
+        res.render("admin-home", { panel})
+    },
+    save: async (req, res) => {
+        const administrator = await save(req, res);
+        if (administrator) {
             let panel = 'administrator-details'
             res.render("admin-home", { administrator, panel})
         }
+    },
+    update: async (req, res) => {
+        let { id, user, name, cpf, email, imgPath, status, initialImg, deletedImg } = req.body
 
-        /*    return res.status(201).json({ administrator });
+        /* Deleting old pic */
+        if ( deletedImg === 'S' ) {
+            if (initialImg) {
+                deletePicByFilename(initialImg)
+                initialImg = null
+            }
+        }
+
+        if (req.file) {
+            const { filename } = req.file
+            imgPath = `/img/profiles/${filename}`;
         } else {
-            return res.status(500).json({error: error.message})
-        }*/
+            if (initialImg) {
+                imgPath = initialImg;
+            }
+        }
+        
+        const admin = await Administrator.findOne( {where:{ admin_id: id}})
     
+        // Updates the admin payload
+        admin.user = user;
+        admin.name = name;
+        admin.cpf = cpf;
+        admin.email = email;
+        if (imgPath) {
+            admin.imgPath = imgPath;
+        } else {
+            admin.imgPath = null;
+        }
+        admin.status = status;
+
+        const administrator = await admin.save()
+        if (administrator) {
+            let panel = 'administrator-details'
+            res.status(200).render("admin-home", { administrator, panel})
+        } else {
+            res.status(500).send("Erro ao atualizar administrador")
+        } 
+
+    },
+    remove: async (req, res) => {   
+        const idParam = req.params.id
+
+        const {imgPath} = await Administrator.findOne( {where:{ admin_id: idParam}})
+
+        Administrator.destroy({ where: {admin_id: idParam}})
+            .then(async function (rowRemoved){
+                if(rowRemoved === 1) {
+                    try {
+                        let panel = 'administrators'
+                        let administratorList = await Administrator.findAll()
+
+                        if (imgPath) {
+                            deletePicByFilename(imgPath)
+                        }
+
+                        res.status(200).render("admin-home", { administratorList, panel} )
+                    } catch (error) {
+                        res.status(500).send("Erro ao excluir Administrador" )
+                    } 
+                }
+            }, function(err) {
+                    res.status(500).send("Erro ao excluir administrador: ", err)
+            });
     }
 }
 
-function getAllAdministrators() {
-    return administrators ;
-}
-
-function getAdministratorById(adminId) {
-    let administrator = administrators.find((administrator)=> administrator.id == adminId)
+async function getById(id){
+    const administrator = await Administrator.findByPk(id)
     return administrator
 }
 
-async function saveAdministrator(req, res) {
-
-    const imgPathHolder = '/images/placeHolderProfileImage.jpg'
-    const { user, name, cpf, email, status } = req.body;
-
+async function save(req, res) {
+    let imgPath = null;
+    let { user, name, cpf, email, password, status } = req.body;
     if (req.file) {
         const { filename } = req.file
-        imgPath = `/img/${filename}`;
-    } else {
-        imgPath = imgPathHolder;
-    }
+        imgPath = `/img/profiles/${filename}`;
+    } 
+    password = bcrypt.hashSync(password, 10);
 
     const administrator = {
         user,
         name,
         cpf,
         email,
-        status,
-        imgPath
+        imgPath,
+        password,
+        status
     }
 
-    console.log('monstado: ' , administrator)
-
-    try {
-        await Administrator.create( administrator )
-        .then ( newAdministrator => {
-            return  newAdministrator;
-        })
-        
-    } catch (error) {
-        return  error.message;
-    }
+    const newAdministrator = await Administrator.create( administrator )
+    if (newAdministrator instanceof Administrator) {
+        return await getById(newAdministrator.admin_id)
+    } 
 }
 
+/*TO DO: FIX THE FUNCTION - FILE IS NOT BEING REMOVED*/
+function deletePicByFilename(fileToDelete){
+    fs.unlink(fileToDelete, function (err) {
+        if(err) {
+            console.log(err)
+        }
+        console.log(`${fileToDelete} was deleted`);
+    });
+}
+ 
 module.exports = administratorsController;
