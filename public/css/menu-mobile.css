@@ -4,10 +4,22 @@
     display: grid;
   }
 
+  .menu-container{
+    display: none;
+  }
+
+  .products-container{
+    width: 100%;
+  }
 
   #info-header-top > div{
     margin-right: 60px;
   }
+
+  #container-logo{
+    flex-wrap: nowrap;
+  }
+
 
   #burguer{
       visibility: visible;;
@@ -25,6 +37,7 @@
       padding-left: 2.5rem;
       width:unset;
       min-width: 350px !important;
+
     }
 
   .div-carrinho, .div-login {
@@ -233,6 +246,7 @@ opacity: 1;
 
 .footer-contact{
   border: none;
+  flex-direction: row !important;
 }
 
 }
