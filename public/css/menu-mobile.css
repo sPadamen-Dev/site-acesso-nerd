@@ -137,7 +137,7 @@ color: tomato;
 
 .bar{
   align-items: center;
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0 0;
   flex-wrap: unset;
 }
 
