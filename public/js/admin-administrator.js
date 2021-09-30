@@ -1,6 +1,6 @@
 const chooseFile = document.getElementById('admin-inp-pic');
 /*const imgPreview = document.getElementById('pdp-grp-main-image');*/
-const imgPreview = document.getElementById('pdp-main-pic');
+const imgPreview = document.getElementById('admin-main-pic');
 
 chooseFile.addEventListener("change", function () {
     getImgData();

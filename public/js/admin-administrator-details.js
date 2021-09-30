@@ -22,6 +22,6 @@ document.getElementById('admin-delete').addEventListener("click", function(event
 });
 
 function removeMainPic(img) {
-  document.getElementById("pdp-main-pic").src ="/img/profiles/placeHolderProfileImage.jpg";
+  document.getElementById("admin-main-pic").src ="/img/profiles/placeHolderProfileImage.jpg";
   document.getElementById("admin-deleted-img").value='S';
 }

@@ -196,6 +196,9 @@
 }
 
 #pdp-grp-main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 255px;
   width: 255px;
 }
@@ -206,7 +209,7 @@
   position: relative;
 }
 
-#pdp-main-pic {
+.main-pic {
   width: 100%;
   height: auto; 
   display: block;
