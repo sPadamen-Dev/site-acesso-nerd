@@ -251,6 +251,17 @@ opacity: 1;
 
 }
 
+@media (min-width: 700px){
+.bar {
+  justify-content: space-around !important;
+}
+.divPesquisa{
+  margin-right: 0 !important;
+}
+.navegação-top{
+  margin-left: 0 !important;
+}
+}
 
 .home-footer{
   height: 'fit-content';
