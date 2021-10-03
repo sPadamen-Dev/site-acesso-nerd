@@ -5,36 +5,32 @@
 
         <body class="contato-body">
     <div class="page-contato">
-    <div class="contato-info">
-        <h2 class="title">Precisa de mais informações?</h2>
-    <div class="text-contato">
-        <span class="text">Entre em contato conosco, temos um time de especialistas prontos para atender você!<br>
-        Telefone: (11) 2441-2345 | Celular: (11) 9 9123-5647<br>
-        Preencha o formulário abaixo para que um dos nossos consultores entre em contato.</span>
+    <div class="info">
+        <h2 class="title2">Precisa de mais informações?</h2>
+        <span class="text1">Entre em contato conosco, temos um time de especialistas pronto para atender você!</span>
+        <span class="text2">Telefone: (11) 2441-2345 | Celular: (11) 9 9123-5647</span>
+        <span class="text3">Preencha o formulário abaixo para que um dos nossos consultores entre em contato.</span>
     </div>
+    <form class="form-contato" action="/contato" method="POST">
+        <label for="nome">Nome Completo:</label>
+    <div class="Nome">
+        <input class="caixa-nome" type="name" id="nome" name="name" placeholder="Digite seu nome completo" required>
     </div>
-    <div class="contato-container">
-    <form class="form-contato" action="/contato-enviado" method="POST">
-    <div class="contato-details">
-    <div class="input-box">
-        <span class="details">Nome Completo:</span>
-        <input type="name" id="nome" name="name" placeholder="Digite seu nome completo" required>
+        <label for="Telefone">Telefone com DDD:</label>
+    <div class="telefone">
+        <input class="caixa-telefone" type="tel" id="telefone" name="tel" placeholder="00-0000-0000" required>
     </div>
-    <div class="input-box">
-        <span class="details">Telefone com DDD:</span>
-        <input type="tel" id="telefone" name="tel" placeholder="00-0000-0000" required>
+        <label for="contato-email">Email para contato:</label>
+    <div class="contato-email">
+        <input class="caixa-email" type="email" id="email" name="email" placeholder="Digite seu email..." required>
     </div>
-    <div class="input-box">
-        <label class="details">Email para contato:</span>
-        <input type="email" id="email" name="email" placeholder="Digite seu email..." required>
+        <label for="Mensagem">Mensagem</label>
+    <div class="Mensagem">
+        <input class="caixa-mensagem" type="text" id="mensagem" name="mensagem" placeholder="Deixe sua mensagem..." required>
     </div>
-    <div class="input-box">
-        <span class="details">Mensagem:</span>
-        <input class="details-mensagem" type="text" id="mensagem" name="mensagem" placeholder="Deixe sua mensagem..." required>
-    </div>
-    <div class="input-box-lgpd">
-        <span class="details-lgpd">Eu concordo em receber comunicações</span>
-        <input class="caixa-lgpd" type="checkbox" id="contato-lgpd" name="contato-lgpd" checked>
+    <div class="contato-lgpd">
+        <input class="caixa-lgpd" type="checkbox" id="contato-lgpd" name="contatoLgpd" checked>
+        <label for="contato-lgpd">Eu concordo em receber comunicações.</label>
       </div>
     <div class="send-button">
         <input class="botao-enviar" type="submit" value="Enviar">
@@ -42,8 +38,6 @@
     </div>
     </form>
     </div>
-
-
 
     </div>
     <div class="home-footer">
