@@ -84,6 +84,11 @@
     width: 100%;
     height: 100%;
     background-color: blue;
+    cursor: pointer;
+}
+
+.pd-pic-selected {
+    border: 4px solid whitesmoke;
 }
 
 .product-details {

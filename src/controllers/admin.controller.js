@@ -1,7 +1,32 @@
+const db = require("../database/models")
+const bcrypt = require('bcryptjs')
 const adminController = {
-    adminHome: (req, res) => {
-        const panel = 'default'
-        res.render("admin-home", {panel})
+    adminLogin: (req, res) => {
+        console.log('Entrou AdminLogin')
+        res.render("admin-login")
+    },
+    adminHome: async (req, res) => {
+        const { user, password } = req.body
+        const adminFound = await db.Administrator.findOne({where:{user}});
+        try {
+            if (adminFound) {
+                await bcrypt.compare(password, adminFound.password)
+                .then(response =>{
+                    if(response){
+                        const panel = 'default'
+                        res.render("admin-home", {panel})
+                    }else{
+                      return res.status(200).render("admin-login",{msg: "Senha ou email ínvalido"})
+                    }
+                 }).catch(error =>{
+                   return res.status(500).json(error)
+                 });
+            } else { 
+                res.status(200).render("admin-login", { msg: "Usuario não encontrado!" })
+            }
+        }catch(error){
+            res.status(500).json(error)
+        }
     }
 }
 

@@ -22,8 +22,9 @@ app.use(session({
     saveUninitialized: true,
     cookie:{maxAge:30000}
 }))
+
+app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }))
 
 
 // Static Files
@@ -32,7 +33,6 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
-app.use(methodOverride('_method'))
 // connection db
 const models = require('./src/database/models');
 const connect = async () => {

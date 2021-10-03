@@ -1,0 +1,12 @@
+.grp-edit-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#btn-admin-edit, #btn-admin-cancel{
+    position: absolute;
+}

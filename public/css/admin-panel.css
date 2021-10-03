@@ -9,7 +9,7 @@
 #panel-bar {
     display: flex;
     flex-direction: column;
-    background-color:var(--blue-innerbox);
+    background-color:var(--blue-dark);
     height: 100px;
     color: white;
     padding:10px;
@@ -21,19 +21,19 @@
     align-items: center;
     justify-content: left;
     height: 50%;
-    font-size: 24px;
+    font-size: 20px;
     color:var(--yellow);
     padding-bottom: 5px;
 }
 
-#div-add-product {
+#panel-div-add {
   height: 30px;
   width: 30px;
   position: absolute;
   right: 20px;
 }
 
-#div-add-product img{
+#panel-div-add img{
   height: 100%;
   width: 100%;
 
@@ -52,11 +52,12 @@
     align-items: center;
     height: 100%;
     border-top: 1px solid white;
+    padding-top: 10px;
 }
 
 #filter-form-panel span {
     color: white;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .ffp-input {
@@ -106,18 +107,25 @@
     height: 100%;
 }
 
-#grid-panel table img {
-    height: 30px;
-    width: 30px;
+#grid-panel table th{
+  font-weight: lighter;
+  color: white;
+  background-color: var(--blue-innerbox);
+}
+
+#administrators-table img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
 }
   
  #grid-panel td, th {
-    font-size: 14px;
+    font-size: 12px;
     border: 1px solid #bebebe;
     text-align: left;
     padding: 5px;
     color: black;
-    height: 30px;
+    height: 20px;
   }
   
   #grid-panel  tr:nth-child(even) {
@@ -126,11 +134,20 @@
 
  .img-row-cell {
     display: flex;
-    justify-content: center;
+    justify-content: center; 
+    height: 20px;
   }
   .img-row-pic {
-    width: 40px; 
-    height: 40px;
+    width: 20px; 
+    height: 20px;
+  }
+
+  .img-row-pic:hover {
+    position: absolute;
+    width: 150px; 
+    height: 150px;
+    z-index: 2;
+    transition: 0.6s;
   }
 
 .btn-show, .btn-nav-app {
@@ -143,3 +160,217 @@
   font-size: 14px;
   padding:5px;
 }
+
+
+/* Details interface */
+
+.pdp-form{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: whitesmoke;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+#pdp-container {
+  display: flex;
+  width: fit-content;
+  background-color: white;
+  padding:20px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pdp-section-pics{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 255px;
+}
+
+#pdp-grp-main-image {
+  height: 255px;
+  width: 255px;
+}
+
+#grp-picture {
+  padding: 0;
+  margin:0;
+  position: relative;
+}
+
+#pdp-main-pic {
+  width: 100%;
+  height: auto; 
+  display: block;
+}
+
+#del-admin-pic-icon{
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.remove-icon {
+  height: 35px;
+  width: 35px;
+  margin-bottom: 40px;
+  filter: grayscale(1.0);
+}
+
+.remove-icon:hover {
+  filter: grayscale(0);
+  transition: 600ms;
+}
+
+
+.pdp-div-groups {
+  padding: 5px 0;
+}
+
+.pdp-div-titles {
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px 0 0 5px;
+  background-color: whitesmoke;
+
+  font-size: 14px;
+  color: var(--blue-dark);
+  font-weight: 700;
+}
+
+.pdp-inputs , .pdp-selects {
+  padding: 5px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: 300;
+  font-size: 12px;
+  border: 1px solid gainsboro;
+  width: 100%;
+}
+
+.pdp-inp-pics[type="file"] {
+    display: none;
+}
+
+.pdp-button-save {
+  background-color: var(--btn-confirm);
+}
+
+.pdp-button-cancel {
+  background-color:var(--btn-cancel);
+}
+
+.pdp-button-edit {
+  background-color:var(--btn-edit);
+}
+
+.pdp-button-delete {
+  background-color:var(--btn-delete);
+}
+
+#pdp-grp-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 20px 0px;
+}
+
+.pdp-buttons {
+  color: white;
+  height: 35px;
+  width: 100px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0px 10px;
+  cursor: pointer;
+}
+
+.pdp-buttons:hover {
+  opacity: 0.7;
+  transition: 0.5s;
+}
+
+/***** SLIDE SWITCH *****/
+#pdp-status {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 14px;
+}
+
+#pdp-div-switch {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.pdp-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.pdp-inp-switch { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.pdp-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.pdp-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.pdp-inp-switch:checked + .pdp-slider {
+  background-color: var(--btn-confirm);
+}
+
+.pdp-inp-switch:focus + .pdp-slider {
+  box-shadow: 0 0 1px var(--btn-confirm);
+}
+
+.pdp-inp-switch:checked + .pdp-slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+}
+
+/* Rounded sliders */
+.pdp-slider.pdp-round {
+  border-radius: 34px;
+}
+
+.pdp-slider.pdp-round:before {
+  border-radius: 50%;
+}
+
+/***** END SLIDE SWITCH *****/

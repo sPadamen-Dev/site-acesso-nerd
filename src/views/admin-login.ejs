@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/admin-login.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400&display=swap" rel="stylesheet">
+    <title>Acesso-Nerd Admin</title>
+</head>
+<body id="login-admin">
+    <div id="login-wrapper">
+        <header>
+            <img id='logo-img' src="/img/logo.png" alt="logo">
+        </header>
+        <form action="/admin" method="POST">    
+            <div id="al-container">
+                <div class="input-grp">
+                    <label for="user">Usuário:</label>
+                    <input type="text" id="user" name="user" placeholder="digite seu usuário" required>    
+                </div>
+
+                <div class="input-grp">
+                    <label for="password">Senha:</label>
+                    <input type="password" id="password" name="password" placeholder="digite sua senha" required>
+                </div>
+
+                <div id="msgErro">
+                    <% if (typeof(msg) !="undefined" ) { %>
+                        <%= msg %> 
+                    <% } %>
+                </div>
+    
+                <div id="btn">
+                    <button type="submit">Entrar</button>
+                </div>  
+            </div>
+        </form>
+    </div>
+</body>

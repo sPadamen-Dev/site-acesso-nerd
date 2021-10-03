@@ -1,0 +1,109 @@
+<!--pdp profile details panel-->
+<form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
+    <div id="pdp-container">
+        <div class="left-side">
+            <section id="pdp-section-pics">
+                <div id="pdp-grp-main-image">
+                    <input id='admin-deleted-img' name='deletedImg' hidden>
+                    <% if( administrator.imgPath ) { %>
+                        <div id="grp-picture">
+                            <img id="pdp-main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
+                            <img id="del-admin-pic-icon" class="delete-pic-icon" src="/img/delete-x-icon.png" alt="del-pic"  onclick="removeMainPic('<%= administrator.imgPath %>')">
+                        </div>
+                        <input id='admin-initial-img' name='initialImg' value="<%= administrator.imgPath %>" hidden>
+                    <% } else { %>
+                        <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
+                        <input id='admin-initial-img' name='initialImg' value="" hidden>
+                    <% } %> 
+                </div>
+                <div id="pdp-div-input-pics">
+                    <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
+                </div>
+            </section>
+            <img id="admin-delete" class="remove-icon" src="/img/remove-icon.png" onclick="window.location.replace('/admin/administrators/delete/<%= administrator.admin_id %>');" alt="remove-admin">
+        </div>
+
+        <section id="pdp-section-info">
+            <div id="pdp-id-status">
+                <div id="pdp-div-id">
+                    <label>Id:</label>
+                    <% if( administrator.admin_id ) {%>
+                        <input type="text" id='admin-id' class="pdp-id" name="id" value="<%= administrator.admin_id %>" readonly>
+                    <% } else { %>
+                        <input type="text" id='admin-id' class="pdp-id" name="id" readonly>
+                    <% } %> 
+                </div>
+                <div id="pdp-status">
+                    <input id='admin-status-value' name='status' value="<%= administrator.status %>" hidden>
+                    <% if(administrator.status === 'A') {%> 
+                        <p id="admin-status">Ativo</p>
+                    <% } else { %>
+                        <p id="admin-status">Inativo</p>
+                    <% } %>                    
+                    <div id="pdp-div-switch">
+                        <label class="pdp-switch">
+                            <% if(administrator.status === 'A') {%> 
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" checked disabled>
+                            <% } else { %>
+                                <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" disabled>
+                            <% } %> 
+                            <span class="pdp-slider pdp-round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-user">
+                    <div class="pdp-div-titles">
+                        <span>Usuário</span>
+                    </div>
+                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" readOnly required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-name">
+                    <div class="pdp-div-titles">
+                        <span>Nome</span>
+                    </div>
+                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" readOnly required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-cpf">
+                    <div class="pdp-div-titles">
+                        <span>CPF</span>
+                    </div>
+                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" readOnly required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-email">
+                    <div class="pdp-div-titles">
+                        <span>Email</span>
+                    </div>
+                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" value="<%= administrator.email %>" readOnly required>
+                </div>
+            </div>
+            <div class="pdp-div-groups" style='visibility: hidden;'>
+                <div id="pdp-div-password-hold">
+                    <div class="pdp-div-titles">
+                        <span></span>
+                    </div>
+                    <input>
+                </div>
+            </div>
+            <div id="pdp-grp-buttons">
+                <div class="grp-edit-delete">
+                    <button id="btn-admin-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">Cancelar</button>
+                    <button id="btn-admin-edit" class="pdp-button-edit pdp-buttons">Editar</button>
+                </div>
+                <div>
+                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit" disabled>Salvar</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</form>
+<script src="/js/admin-administrator.js"></script>
+<script src="/js/admin-administrator-details.js"></script>

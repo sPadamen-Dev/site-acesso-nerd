@@ -1,0 +1,81 @@
+<!--pdp profile details panel-->
+<form id="admin-create-form" class="pdp-form" method="POST" action="/admin/administrator" enctype="multipart/form-data" >    <div id="pdp-container">
+        <div>
+            <section id="pdp-section-pics">
+                <div id="pdp-grp-main-image">
+                        <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
+                        <input id='admin-initial-img' name='initialImg' value="" hidden>
+                </div>
+                <div id="pdp-div-input-pics">
+                    <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*">
+                </div>
+            </section>
+        </div>
+
+        <section id="pdp-section-info">
+            <div id="pdp-id-status">
+                <div id="pdp-div-id">
+                    <label>Id:</label>
+                    <input type="text" id='admin-id' class="pdp-id" name="id">
+                </div>
+                <div id="pdp-status">
+                    <input id='admin-status-value' name='status' value="A" hidden>
+                    <p id="admin-status">Ativo</p>                  
+                    <div id="pdp-div-switch">
+                        <label class="pdp-switch">
+                            <input class="pdp-inp-switch" id='admin-status-switch' type="checkbox" checked>
+                            <span class="pdp-slider pdp-round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-user">
+                    <div class="pdp-div-titles">
+                        <span>Usuário</span>
+                    </div>
+                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-name">
+                    <div class="pdp-div-titles">
+                        <span>Nome</span>
+                    </div>
+                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-cpf">
+                    <div class="pdp-div-titles">
+                        <span>CPF</span>
+                    </div>
+                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-email">
+                    <div class="pdp-div-titles">
+                        <span>Email</span>
+                    </div>
+                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-password">
+                    <div class="pdp-div-titles">
+                        <span>Password</span>
+                    </div>
+                    <input id="pdp-inp-password" class="pdp-inputs" name="password" type="text" required>
+                </div>
+            </div>
+            <div id="pdp-grp-buttons">
+                <div>
+                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>                 
+                </div>
+            </div>
+        </section>
+    </div>
+</form>
+<script src="/js/admin-administrator.js"></script>
