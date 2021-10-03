@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Payment_details extends Model {
+  class Orders extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,38 +11,35 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.belongsTo(models.Credit_cards,{
-        foreignKey: 'user_id',
-        as: 'card_details_payment',
-        required: true
-      })
-      
-      this.belongsTo(models.Orders,{
-        foreignKey: 'payment_details',
-        as: 'order_payment',
-        required: true
+
+      this.hasMany(models.Payment_details,{
+        foreignKey: 'payment_id',
+        as: 'payments_order'
       })
 
+      this.belongsTo(models.Users,{
+        foreignKey: 'user_id',
+        as: 'ordem_do_usuario',
+        required: true
+      })
 
     }
   };
-  Payment_details.init({
-    payment_id:{
+  Orders.init({
+    order_id:{
       type: DataTypes.INTEGER,
       autoIncrement: true,
       primaryKey: true
     },
-    card_id:{
+    user_id:{
       type: DataTypes.INTEGER
     },
-    payment_method: DataTypes.INTEGER,
     amount: DataTypes.FLOAT,
-    installment_parts: DataTypes.INTEGER,
-    installment_value: DataTypes.FLOAT,
-    payment_status: DataTypes.STRING
+    payment_id: DataTypes.INTEGER,
+    order_status: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'Payment_details',
+    modelName: 'Orders',
   });
-  return Payment_details;
+  return Orders;
 };
