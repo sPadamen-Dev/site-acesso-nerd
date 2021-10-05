@@ -7,45 +7,46 @@ document.querySelector('#prod-status-switch').addEventListener('change', (evento
     }
 });
 
-const prodImg0 = document.getElementById('pdp-img-0')
-
-prodImg0.addEventListener('load', event =>{
-    event.target.classList.add('pdp-pic-selected')
-
-    const img = event.target.getAttribute('src')
-    document.getElementById('prod-main-pic').setAttribute('src', img)
-})
-
-const prodImgs = document.querySelectorAll('.pdp-product-pics')
-
-prodImgs.forEach(el => el.addEventListener('click', event => {
-    const prodSelected = document.querySelector('.pdp-pic-selected')
-    if (prodSelected) {
-        prodSelected.classList.remove('pdp-pic-selected')
-    }
-    el.classList.add('pdp-pic-selected')
-    const img = event.target.getAttribute('src')
-    document.getElementById('prod-main-pic').setAttribute('src', img)
-}));
+document.getElementById("btn-prod-edit").addEventListener("click", function(event){
+  
+    event.preventDefault()
+  
+    document.getElementById('btn-prod-edit').toggleAttribute('hidden');
+    document.getElementById('prod-inp-pic').toggleAttribute('disabled');
+    document.getElementById('btn-prod-cancel').toggleAttribute('hidden');
+    document.getElementById('prod-status-switch').toggleAttribute('disabled');
+    document.getElementById('pdp-inp-description').toggleAttribute('readOnly');
+    document.getElementById('pdp-inp-installmentParts').toggleAttribute('readOnly');
+    document.getElementById('pdp-inp-installmentPrice').toggleAttribute('readOnly');
+    document.getElementById('pdp-inp-atSightPrice').toggleAttribute('readOnly');
+    document.getElementById('btn-prod-save').toggleAttribute('disabled');
+    document.getElementById('prod-delete').toggleAttribute('disabled');
+  });
 
 
-const idsImgs = document.querySelectorAll('.pdp-img-del')
+  document.getElementById("prod-select-category").addEventListener("change", function(event){
+    const valueSelected = document.getElementById('prod-select-category').value;
+    document.getElementById('pdp-inp-category').value = valueSelected;
+});
 
-idsImgs.forEach(el => el.addEventListener('click', event => {
-    const elemIndex = el.getAttribute('value')
-    alert(elemIndex)
+
+/*
+
+function loadCategory(category) {
     
-    const elemId = 'pdp-id-image' + elemIndex
-    const deletedImgId = document.getElementById(elemId).getAttribute('value')
-    const deletedImgInp = document.getElementById('deleted-prod-imgs')
+    //Get select object
+    var objSelect = document.getElementById("pdp-select-category");
 
-    deletedImgInp.value += deletedImgId
+    //Set selected
+    setSelectedValue(objSelect, category);
+}
 
-    /* TO DO - Identificar se o element a ser deletado está selecionado.
-    Caso esteja, atualizar a imagem principal */
-    event.target.toggleAttribute('hidden')
-    const idToRemove = 'pdp-div-image' + elemIndex
-    const elem = document.getElementById(idToRemove);
-    elem.toggleAttribute('hidden')
-    /*elem.parentNode.removeChild(elem);*/
-}))
+
+
+function selectCategory() {
+    const select = document.getElementById("pdp-select-category")
+    var valueSelected = select.options[select.selectedIndex].value;
+    document.getElementById('pdp-inp-category').value = valueSelected;
+    alert('selecionou ', document.getElementById('pdp-inp-category').text )
+}
+*/

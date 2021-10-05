@@ -1,23 +1,11 @@
-/* type: 1 - camiseta | 2- caneca*/
+/* category: 1 - camisetas | 2- canecas*/
 let products = [
     {
         id: 1,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA ALICE NO PAÍS DAS MARAVILHAS",
-        images: [{
-            id:1,
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
-        }, {
-            id: 2,
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland2.png',
-        }, {
-            id: 3,
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland3.png',
-        }, {
-            id: 4,
-            imgPath: '/img/products/Disney/camisetas/alice-in-wonderland4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/alice-in-wonderland.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -25,22 +13,10 @@ let products = [
     },
     {
         id: 2,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA DARTH VADER",
-        images: [{
-            id: 5,
-            imgPath: '/img/products/Disney/camisetas/darth-vader.png',
-        }, {
-            id: 6,
-            imgPath: '/img/products/Disney/camisetas/darth-vader2.png',
-        }, {
-            id: 12,
-            imgPath: '/img/products/Disney/camisetas/darth-vader3.png',
-        }, {
-            id: 13,
-            imgPath: '/img/products/Disney/camisetas/darth-vader4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/darth-vader.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -48,22 +24,10 @@ let products = [
     },
     {
         id: 3,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA O REI LEÃO - SIMBA",
-        images: [{
-            id: 7,
-            imgPath: '/img/products/Disney/camisetas/lion-king-simba.png',
-        }, {
-            id: 8,
-            imgPath: '/img/products/Disney/camisetas/lion-king-simba2.png',
-        }, {
-            id: 9,
-            imgPath: '/img/products/Disney/camisetas/lion-king-simba3.png',
-        }, {
-            id: 10,
-            imgPath: '/img/products/Disney/camisetas/lion-king-simba4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/lion-king-simba.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -71,22 +35,10 @@ let products = [
     },
     {
         id: 4,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA MADALORIAN - GROGU",
-        images: [{
-            id: 11,
-            imgPath: '/img/products/Disney/camisetas/madalorian-grogu.png',
-        }, {
-            id: 14,
-            imgPath: '/img/products/Disney/camisetas/madalorian-grogu2.png',
-        }, {
-            id: 15,
-            imgPath: '/img/products/Disney/camisetas/madalorian-grogu3.png',
-        }, {
-            id: 16,
-            imgPath: '/img/products/Disney/camisetas/madalorian-grogu4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/madalorian-grogu.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -94,22 +46,10 @@ let products = [
     },
     {
         id: 5,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA TOY STORY - FORKY",
-        images: [{
-            id: 17,
-            imgPath: '/img/products/Disney/camisetas/toy-story-forky.png',
-        }, {
-            id: 18,
-            imgPath: '/img/products/Disney/camisetas/toy-story-forky2.png',
-        }, {
-            id: 19,
-            imgPath: '/img/products/Disney/camisetas/toy-story-forky3.png',
-        }, {
-            id: 20,
-            imgPath: '/img/products/Disney/camisetas/toy-story-forky4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/toy-story-forky.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -117,22 +57,10 @@ let products = [
     },
     {
         id: 6,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Disney",
         description: "CAMISETA BRANCA TOY STORY - WOODY",
-        images: [{
-            id: 21,
-            imgPath: '/img/products/Disney/camisetas/toy-story-woody.png',
-        }, {
-            id: 22,
-            imgPath: '/img/products/Disney/camisetas/toy-story-woody2.png',
-        }, {
-            id: 23,
-            imgPath: '/img/products/Disney/camisetas/toy-story-woody3.png',
-        }, {
-            id: 24,
-            imgPath: '/img/products/Disney/camisetas/toy-story-woody4.png',
-        }],
+        imgPath: '/img/products/Disney/camisetas/toy-story-woody.png',
         installmentParts:5,
         installmentPrice: '10,18',
         atSightPrice: '50,90',
@@ -140,22 +68,10 @@ let products = [
     },
     {
         id: 7,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Marvel",
         description: "CAMISETA BRANCA DEADPOOL & VENOM",
-        images: [{
-            id: 25,
             imgPath: '/img/products/Marvel/camisetas/deadpool-venom.png',
-        }, {
-            id: 26,
-            imgPath: '/img/products/Marvel/camisetas/deadpool-venom2.png',
-        }, {
-            id: 27,
-            imgPath: '/img/products/Marvel/camisetas/deadpool-venom3.png',
-        }, {
-            id: 28,
-            imgPath: '/img/products/Marvel/camisetas/deadpool-venom4.png',
-        }],
         installmentParts:5,
         installmentPrice: '13,25',
         atSightPrice: '66,25',
@@ -163,22 +79,10 @@ let products = [
     },
     {
         id: 8,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Marvel",
         description: "CAMISETA BRANCA MANOPLA DO INFINITO",
-        images: [{
-            id: 29,
             imgPath: '/img/products/Marvel/camisetas/manopla-do-infinito.png',
-        }, {
-            id: 30,
-            imgPath: '/img/products/Marvel/camisetas/manopla-do-infinito2.png',
-        }, {
-            id: 31,
-            imgPath: '/img/products/Marvel/camisetas/manopla-do-infinito3.png',
-        }, {
-            id: 32,
-            imgPath: '/img/products/Marvel/camisetas/manopla-do-infinito4.png',
-        }],
         installmentParts:5,
         installmentPrice: '13,25',
         atSightPrice: '66,25',
@@ -186,22 +90,10 @@ let products = [
     },
     {
         id: 9,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Marvel",
         description: "CAMISETA BRANCA HOMEM-ARANHA",
-        images: [{
-            id: 33,
             imgPath: '/img/products/Marvel/camisetas/spider-man.png',
-        }, {
-            id: 34,
-            imgPath: '/img/products/Marvel/camisetas/spider-man2.png',
-        }, {
-            id: 35,
-            imgPath: '/img/products/Marvel/camisetas/spider-man3.png',
-        }, {
-            id: 36,
-            imgPath: '/img/products/Marvel/camisetas/spider-man4.png',
-        }],
         installmentParts:5,
         installmentPrice: '13,25',
         atSightPrice: '66,25',
@@ -209,68 +101,32 @@ let products = [
     },
     {
         id: 10,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Marvel",
         description: "CAMISETA BRANCA MARVEL - STAN LEE",
-        images: [{
-            id: 37,
             imgPath: '/img/products/Marvel/camisetas/stan-lee.png',
-        }, {
-            id: 38,
-            imgPath: '/img/products/Marvel/camisetas/stan-lee2.png',
-        }, {
-            id: 39,
-            imgPath: '/img/products/Marvel/camisetas/stan-lee3.png',
-        }, {
-            id: 40,
-            imgPath: '/img/products/Marvel/camisetas/stan-lee4.png',
-        }],
         installmentParts:5,
         installmentPrice: '13,25',
         atSightPrice: '66,25',
         status: 'Ativo'
     },
-    /*{
+    {
         id: 11,
-        type: 'clothes',
+        category: 'camisetas',
         theme: "Marvel",
         description: "CAMISETA BRANCA THANOS",
-        images: [{
-            id: 41,
             imgPath: '/img/products/Marvel/camisetas/thanos.png',
-        }, {
-            id: 42,
-            imgPath: '/img/products/Marvel/camisetas/thanos2.png',
-        }, {
-            id: 43,
-            imgPath: '/img/products/Marvel/camisetas/thanos3.png',
-        }, {
-            id: 44,
-            imgPath: '/img/products/Marvel/camisetas/thanos4.png',
-        }],
         installmentParts:5,
         installmentPrice: '13,25',
         atSightPrice: '66,25',
         status: 'Ativo'
-    },*/
+    },
     {
         id: 12,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Marvel",
         description: "CANECA BRANCA DEADPOOL & VENOM",
-        images: [{
-            id: 45,
             imgPath: '/img/products/Marvel/canecas/deadpool-venom.png',
-        }, {
-            id: 46,
-            imgPath: '/img/products/Marvel/canecas/deadpool-venom.png',
-        }, {
-            id: 47,
-            imgPath: '/img/products/Marvel/canecas/deadpool-venom.png',
-        }, {
-            id: 48,
-            imgPath: '/img/products/Marvel/canecas/deadpool-venom.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -278,22 +134,10 @@ let products = [
     },
     {
         id: 13,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Marvel",
         description: "CANECA BRANCA MANOPLA DO INFINITO",
-        images: [{
-            id: 49,
             imgPath: '/img/products/Marvel/canecas/manopla-do-infinito.png',
-        }, {
-            id: 50,
-            imgPath: '/img/products/Marvel/canecas/manopla-do-infinito.png',
-        }, {
-            id: 51,
-            imgPath: '/img/products/Marvel/canecas/manopla-do-infinito.png',
-        }, {
-            id: 52,
-            imgPath: '/img/products/Marvel/canecas/manopla-do-infinito.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -301,22 +145,10 @@ let products = [
     },
     {
         id: 14,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Marvel",
         description: "CANECA BRANCA HOMEM-ARANHA",
-        images: [{
-            id: 53,
             imgPath: '/img/products/Marvel/canecas/spider-man.png',
-        }, {
-            id: 54,
-            imgPath: '/img/products/Marvel/canecas/spider-man.png',
-        }, {
-            id: 55,
-            imgPath: '/img/products/Marvel/canecas/spider-man.png',
-        }, {
-            id: 56,
-            imgPath: '/img/products/Marvel/canecas/spider-man.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -324,22 +156,10 @@ let products = [
     },
     {
         id: 15,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Marvel",
         description: "CANECA BRANCA MARVEL - STAN LEE",
-        images: [{
-            id: 57,
             imgPath: '/img/products/Marvel/canecas/stan-lee.png',
-        }, {
-            id: 58,
-            imgPath: '/img/products/Marvel/canecas/stan-lee.png',
-        }, {
-            id: 59,
-            imgPath: '/img/products/Marvel/canecas/stan-lee.png',
-        }, {
-            id: 60,
-            imgPath: '/img/products/Marvel/canecas/stan-lee.png',
-        }],
         installmentParts:5,
         installmentPrice:'6,48',
         atSightPrice: '32,40',
@@ -347,22 +167,10 @@ let products = [
     },
     {
         id: 16,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Disney",
         description: "CANECA BRANCA ALICE NO PAÍS DAS MARAVILHAS",
-        images: [{
-            id: 61,
             imgPath: '/img/products/Disney/canecas/alice-in-wonderland.png',
-        }, {
-            id: 62,
-            imgPath: '/img/products/Disney/canecas/alice-in-wonderland.png',
-        }, {
-            id: 63,
-            imgPath: '/img/products/Disney/canecas/alice-in-wonderland.png',
-        }, {
-            id: 64,
-            imgPath: '/img/products/Disney/canecas/alice-in-wonderland.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -370,22 +178,10 @@ let products = [
     },
     {
         id: 17,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Disney",
         description: "CANECA BRANCA DARTH VADER",
-        images: [{
-            id: 65,
             imgPath: '/img/products/Disney/canecas/darth-vader.png',
-        }, {
-            id: 66,
-            imgPath: '/img/products/Disney/canecas/darth-vader.png',
-        }, {
-            id: 67,
-            imgPath: '/img/products/Disney/canecas/darth-vader.png',
-        }, {
-            id: 68,
-            imgPath: '/img/products/Disney/canecas/darth-vader.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -393,22 +189,10 @@ let products = [
     },
     {
         id: 18,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Disney",
         description: "CANECA BRANCA O REI LEÃO - SIMBA",
-        images: [{
-            id: 69,
             imgPath: '/img/products/Disney/canecas/lion-king-simba.png',
-        }, {
-            id: 70,
-            imgPath: '/img/products/Disney/canecas/lion-king-simba.png',
-        }, {
-            id: 71,
-            imgPath: '/img/products/Disney/canecas/lion-king-simba.png',
-        }, {
-            id: 72,
-            imgPath: '/img/products/Disney/canecas/lion-king-simba.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -416,22 +200,10 @@ let products = [
     },
     {
         id: 19,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Disney",
         description: "CANECA BRANCA MANDALORIAN - GROGU",
-        images: [{
-            id: 73,
             imgPath: '/img/products/Disney/canecas/mandalorian-grogu.png',
-        }, {
-            id: 74,
-            imgPath: '/img/products/Disney/canecas/mandalorian-grogu.png',
-        }, {
-            id: 75,
-            imgPath: '/img/products/Disney/canecas/mandalorian-grogu.png',
-        }, {
-            id: 76,
-            imgPath: '/img/products/Disney/canecas/mandalorian-grogu.png',
-        }],
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',
@@ -439,22 +211,10 @@ let products = [
     },
     {
         id: 20,
-        type: 'mugs',
+        category: 'canecas',
         theme: "Disney",
         description: "CANECA BRANCA TOY STORY - WOODY",
-        images: [{
-            id: 77,
-            imgPath: '/img/products/Disney/canecas/toy-story-woody.png',
-        }, {
-            id: 78,
-            imgPath: '/img/products/Disney/canecas/toy-story-woody.png',
-        }, {
-            id: 79,
-            imgPath: '/img/products/Disney/canecas/toy-story-woody.png',
-        }, {
-            id: 80,
-            imgPath: '/img/products/Disney/canecas/toy-story-woody.png',
-        }],
+        imgPath: '/img/products/Disney/canecas/toy-story-woody.png',
         installmentParts:5,
         installmentPrice: '6,48',
         atSightPrice: '32,40',

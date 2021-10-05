@@ -235,6 +235,12 @@
   transition: 600ms;
 }
 
+#pdp-section-info {
+  padding: 0px 20px;
+  border: 1px solid whitesmoke;
+  margin-left: 10px;
+  width: 400px;
+}
 
 .pdp-div-groups {
   padding: 5px 0;

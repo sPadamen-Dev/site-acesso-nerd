@@ -1,25 +1,30 @@
 <!--pdp product details panel-->
 <form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
-        <section id="pdp-section-pics">
-            <div id="pdp-grp-main-image">
-                <img id="prod-main-pic" class="main-pic" src="/img/placeHolderProductImage.jpg" alt="product-img">
-            </div>
-            <div id="pdp-images">
-                <input id="deleted-prod-imgs" name="deleted-prod-imgs" type="hidden" multiple>
-                <% product.images.forEach((image, index)=> {%>
-                    <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
-                        <div id="pdp-id-image<%= index %>" value="<%= image.id %> "></div>
-                        <div class="pdp-img-del" id="pdp-img-del-<%= index %>" value='<%= index %>'>x</div>
-                        <img class="pdp-product-pics" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" alt="product-img">
-                    </div>
-                <%}) %> 
-            </div>
-            <div id="pdp-div-input-pics">
-                <label for="prod-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id='prod-inp-pics' class="pdp-inp-pics" type="file" name="prod-inp-pics" accept="image/*" multiple>
-            </div>
-        </section>
+        <div class="left-side">
+            <section id="pdp-section-pics">
+                <div id="pdp-grp-main-image">
+                    <input id='prod-deleted-img' name='deletedImg' hidden>
+                    <input id="deleted-prod-imgs" name="deleted-prod-imgs" hidden>
+                    <% if( product.imgPath ) { %>
+                        <div id="grp-picture">
+                            <img id="prod-main-pic" class="main-pic" src="<%= product.imgPath %>" alt="product-img">
+                            <img id="del-prod-pic-icon" class="delete-pic-icon" src="/img/delete-x-icon.png" alt="del-pic"  onclick="removeMainPic('<%= product.imgPath %>')">
+                        </div>
+                        <input id='prod-initial-img' name='initialImg' value="<%= product.imgPath %>" hidden>
+                    <% } else { %>
+                        <img id="prod-main-pic" class="main-pic" src="/img/placeHolderProductImage.jpg" alt="profile-img">
+                        <input id='prod-initial-img' name='initialImg' value="" hidden>
+                    <% } %> 
+                </div>
+                <div id="pdp-div-input-pics">
+                    <label for="prod-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <input id='prod-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
+                </div>
+            </section>
+            <img id="prod-delete" class="remove-icon" src="/img/remove-icon.png" onclick="window.location.replace('/admin/products/delete/<%= product.id %>');" alt="remove-product">
+        </div>
+
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
@@ -47,7 +52,7 @@
                     <div class="pdp-div-titles">
                         <span>Descrição</span>
                     </div>
-                    <input id="pdp-inp-description" class="pdp-inputs" name="description" type="text" value="<%= product.description %>" required>
+                    <input id="pdp-inp-description" class="pdp-inputs" name="description" type="text" value="<%= product.description %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -55,13 +60,12 @@
                     <div class="pdp-div-titles">
                         <span>Categoria</span>
                     </div>
-                    <select id="pdp-select-category" class="pdp-selects">
-                        <!--<optgroup label="agrupador">-->
-                            <option value="canecas">Escolha um grupo</option>
-                            <option value="canecas">CANECAS</option>
-                            <option value="camisetas">CAMISETAS</option>
-                            <option value="gadgets">GADGETS</option>
-                        <!--</optgroup>-->
+                    <input id="pdp-inp-category" name="category" type="text" value='<%= product.category %>' hidden>
+                    <select id="prod-select-category" class="pdp-selects">
+                            <option >Escolha um grupo</option>
+                            <option value="canecas" selected>Canecas</option>
+                            <option value="camisetas">Camisetas</option>
+                            <option value="gadgets">Gadgets</option>
                     </select>
                 </div>
             </div>
@@ -76,13 +80,13 @@
 
                     <div class="pdp-prices-values pdp-div-groups">
                         <div id="pdp-div-installmentParts">
-                            <input id="pdp-inp-installmentParts" class="pdp-inputs pdp-payment-parts" name="installmentParts" type="number" value="<%= product.installmentParts %>" required>
+                            <input id="pdp-inp-installmentParts" class="pdp-inputs pdp-payment-parts" name="installmentParts" type="number" value="<%= product.installmentParts %>" readOnly required>
                         </div>
 
                         <div class="pdp-x">X</div>
 
                         <div id="pdp-div-installmentPrice">
-                            <input id="pdp-inp-installmentPrice" class="pdp-inputs pdp-payment-prices" name="installmentPrice" type="text" value="<%= product.installmentPrice %>" required>
+                            <input id="pdp-inp-installmentPrice" class="pdp-inputs pdp-payment-prices" name="installmentPrice" type="text" value="<%= product.installmentPrice %>" readOnly required>
                         </div>
                     </div>
 
@@ -100,18 +104,22 @@
                         <div class="pdp-x">X</div>
 
                         <div id="pdp-div-atSightPrice">
-                            <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.atSightPrice %>" required>
+                            <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.atSightPrice %>" readOnly required>
                         </div>
                     </div>
                 </section>
             </div>
 
             <div id="pdp-grp-buttons">
+                <div class="grp-edit-delete">
+                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.id %>');">Cancelar</button>
+                    <button id="btn-prod-edit" class="pdp-button-edit pdp-buttons">Editar</button>
+                </div>
                 <div>
-                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
-                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
+                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>
                 </div>
             </div>
+
 
         </section>
     </div>

@@ -7,7 +7,7 @@
                     <input id='admin-deleted-img' name='deletedImg' hidden>
                     <% if( administrator.imgPath ) { %>
                         <div id="grp-picture">
-                            <img id="admin-main-pic" class= src="<%= administrator.imgPath %>" alt="profile-img">
+                            <img id="admin-main-pic" class="main-pic" src="<%= administrator.imgPath %>" alt="profile-img">
                             <img id="del-admin-pic-icon" class="delete-pic-icon" src="/img/delete-x-icon.png" alt="del-pic"  onclick="removeMainPic('<%= administrator.imgPath %>')">
                         </div>
                         <input id='admin-initial-img' name='initialImg' value="<%= administrator.imgPath %>" hidden>
