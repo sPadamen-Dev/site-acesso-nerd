@@ -7,16 +7,11 @@
             <div class="product-container">
                 <div class="product-images">
                     <div class="product-main-pic">
-                        <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">                    
-                    </div>
-                    <div class="pd-div-miniature-pic">
-                        <% product.images.forEach((image, index)=> {%>
-                            <% if(index == 0) { %>
-                                <img id="pd-img-<%= index %>" class= 'pd-pic-selected' src="<%= image.imgPath %>" onload="loadProductMainPic('<%= image.imgPath %>')" onclick="selectProductPic('<%= image.imgPath %>', this.id)" alt="product-image">
-                            <% } else { %> 
-                                <img id="pd-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectProductPic('<%= image.imgPath %>', this.id)" alt="product-image">
-                            <% } %> 
-                        <%}) %> 
+                        <% if(product.imgPath) {%>
+                            <img id="pd-main-pic" src='<%= product.imgPath %> ' alt="product-main-pic">
+                        <%} else {%>  
+                            <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">
+                        <%}%>  
                     </div>
                 </div>
                 <div class="product-details">

@@ -70,6 +70,7 @@
     height: auto;
 }
 
+/*
 .pd-div-miniature-pic {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -90,7 +91,7 @@
 .pd-pic-selected {
     border: 4px solid whitesmoke;
 }
-
+*/
 .product-details {
     display: flex;
     flex-direction: column;

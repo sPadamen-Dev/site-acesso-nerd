@@ -1,4 +1,4 @@
-function loadProductMainPic( image ) {
+/*function loadProductMainPic( image ) {
     let mainPic = document.getElementById('pd-main-pic');
     mainPic.src = image;
 }
@@ -12,5 +12,5 @@ function selectProductPic(image, id) {
     imgToBeSelected.classList.add('pd-pic-selected');
 
     loadProductMainPic(image);
-}
+}*/
 
