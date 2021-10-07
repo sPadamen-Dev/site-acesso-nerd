@@ -2,12 +2,18 @@ const productsController = require('./products.controller')
 const session = require('express-session');
 
   const homeController = {
-    getAllProducts: (req, res)=> {
+    getAllProducts: async (req, res)=> {
+        const bannerList = await productsController.getAllBanners();
         let returnType = 'objectList'
-        const productList = productsController.getAllProducts();
-        const bannerList = productsController.getAllBanners();
-        const nameUser = session.userName;
-        res.render("home", { productList, bannerList, returnType, name: nameUser } )
+        const productList = await productsController.getAll();
+        console.log(productList)
+        if (!productList.product) {
+            console.log ('entrou aqui')
+            returnType = 'notFound'
+        }
+        res.render("home", { productList, bannerList, returnType } )
+        /*const nameUser = session.userName;
+        res.render("home", { productList, bannerList, returnType, name: nameUser } )*/
     },
     getProductById: (req, res)=> {
         let returnType = 'singleObject'

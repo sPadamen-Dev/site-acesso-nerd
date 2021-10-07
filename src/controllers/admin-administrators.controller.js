@@ -7,6 +7,7 @@ const administratorsController = {
         try {
             let panel = 'administrators'
             let administratorList = await Administrator.findAll()
+            console.log(administratorList)
             res.status(200).render("admin-home", { administratorList, panel} )
         } catch (error) {
             res.status(500).render("admin-home", { error: error.message} )

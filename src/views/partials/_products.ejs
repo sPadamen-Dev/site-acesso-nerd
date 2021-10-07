@@ -5,6 +5,7 @@
         </div>
     </div>
     <div class="products-container">
+        <% if(productList) {%> 
         <div class="products-cards">
             <% productList.forEach((product, index)=> {%>
                 <div class="product-card" onclick="showProductDetails('<%= product.id %>')">
@@ -17,29 +18,32 @@
                     <div class="product-img">
                         <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
                     </div>
-                    <div class="product-description">
+                    <div class="product-name">
                         <span>
-                            <%= product.description %>
+                            <%= product.name %>
                         </span>
                     </div>
 
                     <div class="payment-conditions">
                         <div class="card-installment">
                             <span class="card-installment-parts">
-                                <%= product.installmentParts %>x
+                                <%= product.installment_parts %>x
                             </span>
-                            <span class="card-installment-price"> R$ <%= product.installmentPrice %></span>
+                            <span class="card-installment-price"> R$ <%= product.installment_price %></span>
                         </div>
                         <div class="card-at-sight">
                             <span class="card-or">ou</span>
                             <span class="card-at-sight-price">
-                                <%= product.atSightPrice %> à vista
+                                <%= product.price %> à vista
                             </span>
                         </div>
                     </div>
                 </div>
                 <%}); %>
         </div>
+        <% } else { %>
+            <div>Não há produtos cadastrados</div>
+        <% } %> 
     </div>
 </div>
 <script src="/js/products.js"></script>

@@ -2,4 +2,6 @@
     <%- include('./_products') %>
 <% } else if (returnType === 'singleObject') {  %> 
     <%- include('./_product-details') %>
+<% } else if (returnType === 'notFound') { %>
+    <%- include('./_products') %>
 <% } %> 

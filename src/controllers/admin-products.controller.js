@@ -1,10 +1,14 @@
 const productsController = require('./products.controller')
 
 const adminProductsController = {
-    getAll: (req, res) => {
-        let panel = 'products'
-        const productList = productsController.getAllProducts();
-        res.render("admin-home", { productList, panel} )
+    getAll: async (req, res) => {
+        try {
+            let panel = 'products'
+            const productList = await productsController.getAll();
+            res.status(200).render("admin-home", { productList, panel} )
+        } catch (error) {
+            res.status(500).render("admin-home", { error: error.message} )
+        }        
     },
     getById: (req, res) => {
         let panel = 'product-details'

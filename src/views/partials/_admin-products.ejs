@@ -15,7 +15,7 @@
                     <input class="ffp-input" type="text" name="product-id" id="product-id">
 
                     <span>Produto:</span>
-                    <input class="ffp-input" type="text" name="product-description" id="product-description">
+                    <input class="ffp-input" type="text" name="product-name" id="product-name">
 
                     <span>Categorias:</span>
                     <select class="ffp-select" id="types">
@@ -25,13 +25,6 @@
                             <option value="camisetas">CAMISETAS</option>
                             <option value="gadgets">GADGETS</option>
                         <!--</optgroup>-->
-                    </select>
-                    
-                    <span>Tema:</span>
-                    <select class="ffp-select" id="themes">
-                        <option value="canecas">Escolha um tema</option>
-                        <option value="disney">DISNEY</option>
-                        <option value="marvel">MARVEL</option>
                     </select>
                 </div>
                 <div>
@@ -60,9 +53,9 @@
                             <td><%=product.type %> </td>
                             <td><%=product.theme %></td>
                             <td><%=product.description %></td>
-                            <td><%=product.installmentParts %></td>
-                            <td><%=product.installmentPrice %></td>
-                            <td><%=product.atSightPrice %></td>
+                            <td><%=product.installment_parts %></td>
+                            <td><%=product.installment_price %></td>
+                            <td><%=product.price %></td>
                             <!--<td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>--> 
                     </tr>
                 <%}) %> 
