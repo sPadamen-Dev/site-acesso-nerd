@@ -4,60 +4,68 @@
             <div class="like">
                 <img src="/img/like.svg" alt="like it" title="Favoritos">
             </div>
-            <div class="product-container">
-                <div class="product-images">
-                    <div class="product-main-pic">
-                        <% if(product.imgPath) {%>
-                            <img id="pd-main-pic" src='<%= product.imgPath %> ' alt="product-main-pic">
-                        <%} else {%>  
-                            <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">
-                        <%}%>  
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="product-header">
-                        <span><%= product.name %></span>
-                    </div>
-                    <div class="product-sizes">
-                        <div class="size-box">PP</div>
-                        <div class="size-box">P</div>
-                        <div class="size-box size-available">M</div>
-                        <div class="size-box">G</div>
-                        <div class="size-box">GG</div>
-                    </div>
-                    <div class="product-description">
-                        <p>                   
-                        <%= product.description %> 
-                        </p>
-                    </div>
-                    <div class="product-price">
-                        <div class="installment">
-                            <span class="installment-parts">5x</span>
-                            <span class="installment-price">R$ 10,18</span>
+
+            <div id="prod-session1">
+                <div class="product-container">
+                    
+                        <div class="product-main-pic">
+                            <% if(product.imgPath) {%>
+                                <img id="pd-main-pic" src='<%= product.imgPath %> ' alt="product-main-pic">
+                            <%} else {%>  
+                                <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">
+                            <%}%>  
                         </div>
-                        <div class="at-sight">
-                            <span class="or">ou</span>
-                            <span class="at-sight-price">R$ 50,90 à vista</span>
+                    
+                    <div class="product-details">
+                        <div class="product-header">
+                            <span><%= product.name %></span>
                         </div>
-                    </div>
-    
-                    <div class="shipping-buy">
-                        <div class="shipping">
-                            <div class="cep-entry">
-                                <label for="cep">CEP:</label>
-                                <input type="text">
+                        <div class="product-sizes">
+                            <div class="size-box">PP</div>
+                            <div class="size-box">P</div>
+                            <div class="size-box size-available">M</div>
+                            <div class="size-box">G</div>
+                            <div class="size-box">GG</div>
+                        </div>
+                        <div class="product-description">
+                            <p>                   
+                            <%= product.description %> 
+                            </p>
+                        </div>
+                        <div class="product-price">
+                            <div class="installment">
+                                <span class="installment-parts">5x</span>
+                                <span class="installment-price">R$ 10,18</span>
                             </div>
-                            <button>calcular frete</button>
-                        </div>
-                        <div class="buy">
-                            <button class="btn-add-to-kart">adicionar ao carrinho</button>
-                            <button class="btn-buy">COMPRAR</button>
+                            <div class="at-sight">
+                                <span class="or">ou</span>
+                                <span class="at-sight-price">R$ 50,90 à vista</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-    
+
+
+                <div class="shipping-buy">
+                    <div class="shipping">
+                        <div class="cep-entry">
+                            <label for="cep">CEP:</label>
+                            <input type="text">
+                        </div>
+                        <button>calcular frete</button>
+                    </div>
+                    <div class="buy">
+                        <button class="btn-add-to-kart">adicionar ao carrinho</button>
+                        <button class="btn-buy">COMPRAR</button>
+                    </div>
+                </div>
+
             </div>
+
+            
         </div>
+
+
     </div>
 </div>
 <script src="/js/product-details.js"></script>

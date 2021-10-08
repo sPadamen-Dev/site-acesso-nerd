@@ -11,8 +11,8 @@ const productsController = {
         const productList = await getAll();
         return productList;
     },
-    getProductById: (productId)=> {
-        let product = getProductById(productId)
+    getById: (productId)=> {
+        let product = getById(productId)
         return product;
     },
     getProductByFilter: (req, res)=> {
@@ -67,6 +67,11 @@ async function getAll() {
     return productList
 }
 
+async function getById(id) {
+    const product = await Product.findByPk(id)
+    return product
+}
+
 /*
 function getAllProducts() {
     products.forEach((product, index)=> {
@@ -80,6 +85,7 @@ function getAllProducts() {
     return products;
 }*/
 
+/*
 function getProductById (productId) {
     let product = products.find((product)=> product.id == productId)
     if (product.images == undefined) {
@@ -89,7 +95,7 @@ function getProductById (productId) {
         }]
     }
     return product;
-}
+}*/
 
 function getProductsByType(productType) {
     let productList = products.filter( (product) => productType == product.type )
@@ -150,7 +156,7 @@ function addProduct (object, pictures) {
 
     console.log ('Produto Criado: ', product)
 
-    return getProductById(product.id)
+    return getById(product.product_id)
 }
 
 

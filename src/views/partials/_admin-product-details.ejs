@@ -1,5 +1,5 @@
 <!--pdp product details panel-->
-<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
+<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.product_id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <div class="left-side">
             <section id="pdp-section-pics">
@@ -28,7 +28,7 @@
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
-                    <% if( product.id ) {%>
+                    <% if( product.product_id ) {%>
                         <label>Código:</label>
                         <input type="text" id="prod-id" class="pdp-id" name="id" value="<%= product.id %>" readonly>
                     <% } %>
@@ -104,7 +104,7 @@
                         <div class="pdp-x">X</div>
 
                         <div id="pdp-div-atSightPrice">
-                            <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.atSightPrice %>" readOnly required>
+                            <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.price %>" readOnly required>
                         </div>
                     </div>
                 </section>
@@ -112,7 +112,7 @@
 
             <div id="pdp-grp-buttons">
                 <div class="grp-edit-delete">
-                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.id %>');">Cancelar</button>
+                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.product_id %>');">Cancelar</button>
                     <button id="btn-prod-edit" class="pdp-button-edit pdp-buttons">Editar</button>
                 </div>
                 <div>

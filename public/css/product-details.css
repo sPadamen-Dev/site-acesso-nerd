@@ -9,16 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+    width: fit-content;
+    height: fit-content;
+    margin: 10px;
 }
 
 .product-wrapper-outer-box {
     display: flex;
     border: 1px solid black;
     background-color: #1C2B3A;
-    width: 60%;
-    height: 80%;
+    width: fit-content;
+    height: fit-content;
+    padding: 15px;
     box-shadow: 5px 10px 5px #1E3042;;
 }
 
@@ -28,8 +30,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 95%;
-    width: 95%;
+    height: 400px;
+    width: 600px;
     border-radius: 13px;
     box-sizing: border-box;
     position: relative;
@@ -43,6 +45,13 @@
     top: 5%;
 }
 
+#prod-session1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .product-container {
     display: flex;
     flex-direction: row;
@@ -50,19 +59,9 @@
     width: 80%;
 }
 
-.product-images {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    height: 100%;
-}
-
 .product-main-pic {
-    display: flex;
-    width: 100%;
-    height: 80%;
-    background-color:#0085CF;
+    width: 50%;
+    height: fit-content;
 }
 
 .product-main-pic img {
@@ -70,28 +69,6 @@
     height: auto;
 }
 
-/*
-.pd-div-miniature-pic {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    padding-top: 5%;
-    gap: 3%;
-    width: 100%;
-    height: 20%;
-    box-sizing: border-box;
-}
-
-.pd-div-miniature-pic img{
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    cursor: pointer;
-}
-
-.pd-pic-selected {
-    border: 4px solid whitesmoke;
-}
-*/
 .product-details {
     display: flex;
     flex-direction: column;
@@ -105,16 +82,21 @@
 
 .product-header {
     font-size: 1.6rem;
-    padding-bottom: 5%;
+    padding-bottom: 20px;
     width: 100%;
-    height: 15%;
+    height: 60px;
     box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.product-header span {
+    text-align: center;
 }
 
 .product-sizes {
     display: grid;
-    grid-template-columns: 15% 15% 15% 15% 15%;
-    justify-content: left;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: center;
     gap: 3%;
     width: 100%;
     height: 10%;
@@ -123,6 +105,8 @@
 }
 
 .size-box {
+    width: 40px;
+    height: 40px;
     font-family: 'PT Sans', sans-serif;
     font-weight: 700;
     display: flex;
@@ -138,6 +122,7 @@
 }
 
 .product-description {
+    text-align: center;
     font-size: 1.4rem;
     height: 25%;
     margin-bottom: 5%;
@@ -145,21 +130,31 @@
 }
 
 .product-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-family: 'PT Sans', sans-serif;
     letter-spacing: 0.1em;
-    margin-bottom: 5%;
+    margin-bottom: 10px;
     box-sizing: border-box;
 }
 
 .installment {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
     font-weight: 700;
 }
+
 .installment-parts {
     font-size: 2em;
     margin-right:2%;
 }
 
 .installment-price {
+    display: flex;
     font-size: 2.4rem;
     color: #FFDE5A;
 }
@@ -174,14 +169,12 @@
     font-weight: bold;
 }
 
-
-
-
 .shipping-buy {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height:25%;
+    justify-content: center;
+    align-items: center;
+    height:40px;
+    margin-top: 10px;
     box-sizing: border-box;
 }
 
@@ -267,41 +260,15 @@
     .product-wrapper-inner-box {
         margin: 2%;
     }
+
     .product-container {
         margin-top: 5%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        height: 90%;
-        width: 90%;
     }
 
-    .product-images {
-        display: grid;
-        grid-template-columns: 83% 15%;
-        width: 100%;
-    }
-
-    .product-main-pic {
-        height: 100%;
-        width: auto;
-    }
-
-    .pd-div-miniature-pic {
-        display: grid;
-        grid-template-columns: auto ;
-        gap: 3%;
-        height: 100% ;
-        padding-top: 0;
-        box-sizing: border-box;
-    }
-    
-    .pd-div-miniature-pic img{
-        width: 100%;
-        height: 100%;
-        background-color: blue;
-    }
 
     .product-details {
         padding: 10px;

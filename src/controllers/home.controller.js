@@ -6,18 +6,18 @@ const session = require('express-session');
         const bannerList = await productsController.getAllBanners();
         let returnType = 'objectList'
         const productList = await productsController.getAll();
-        console.log(productList)
+
         if (!productList.product) {
-            console.log ('entrou aqui')
             returnType = 'notFound'
         }
         res.render("home", { productList, bannerList, returnType } )
         /*const nameUser = session.userName;
         res.render("home", { productList, bannerList, returnType, name: nameUser } )*/
     },
-    getProductById: (req, res)=> {
+    getProductById: async (req, res)=> {
         let returnType = 'singleObject'
-        let product = productsController.getProductById(req.params.id)
+        let product = await productsController.getById(req.params.id)
+        console.log(product)
         res.render("home", {product, returnType})
     },
     getProductByFilter: (req, res)=> {

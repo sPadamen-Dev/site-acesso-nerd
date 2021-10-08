@@ -47,16 +47,15 @@
                 <th>Preço à Vista</th>
                 </tr>
                 <% productList.forEach((product)=> {%>
-                    <tr onclick="window.location.replace('/admin/products/<%= product.id %>');">
+                    <tr onclick="window.location.replace('/admin/products/<%=  %>');">
                             <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.imgPath %>" alt="product-pic"></div></td>
-                            <td><%=product.id %> </td>
+                            <td><%=product.product_id %> </td>
                             <td><%=product.type %> </td>
                             <td><%=product.theme %></td>
                             <td><%=product.description %></td>
                             <td><%=product.installment_parts %></td>
                             <td><%=product.installment_price %></td>
                             <td><%=product.price %></td>
-                            <!--<td><button class="btn-show" onclick="window.location.replace('/admin/product/<%= product.id %>');">Exibir</button></td>--> 
                     </tr>
                 <%}) %> 
             </tr>

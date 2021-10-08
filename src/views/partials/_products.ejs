@@ -8,7 +8,7 @@
         <% if(productList) {%> 
         <div class="products-cards">
             <% productList.forEach((product, index)=> {%>
-                <div class="product-card" onclick="showProductDetails('<%= product.id %>')">
+                <div class="product-card" onclick="showProductDetails('<%= product.product_id %>')">
                     <div class="products-buy-like">
                         <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" title="Adicionar ao Carrinho"
                             onclick="addToBag(this.id)">

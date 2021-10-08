@@ -12,7 +12,7 @@ const adminProductsController = {
     },
     getById: (req, res) => {
         let panel = 'product-details'
-        let product = productsController.getProductById(req.params.id);
+        let product = productsController.getById(req.params.id);
         res.render("admin-home", { panel, product })
     },
     new: (req, res) => {
