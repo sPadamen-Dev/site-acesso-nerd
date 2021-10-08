@@ -53,28 +53,28 @@
 }
 
 .product-container {
-    display: flex;
-    flex-direction: row;
-    height: 80%;
-    width: 80%;
+    display: grid;
+    grid-template-columns: 40% 50%;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .product-main-pic {
-    width: 50%;
-    height: fit-content;
+    padding:20px;
+    width: auto;
+    height: auto;
 }
 
 .product-main-pic img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .product-details {
     display: flex;
     flex-direction: column;
     color: white;
-    padding-left: 5%;
-    width: 50%;
+    width: 100%;
     height: 100%;
     justify-content: space-between;
     box-sizing: border-box;
@@ -168,12 +168,21 @@
 .at-sight-price {
     font-weight: bold;
 }
-
+/*
 .shipping-buy {
     display: flex;
     justify-content: center;
     align-items: center;
-    height:40px;
+    height:fit-content;
+    margin-top: 10px;
+    box-sizing: border-box;
+}*/
+.shipping-buy {
+    display: grid;
+    grid-template-columns: 40% 50%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     margin-top: 10px;
     box-sizing: border-box;
 }
@@ -184,6 +193,7 @@
     display: flex;
     direction: column;
     align-items: center;
+    justify-content: center;
     margin: 4% 0 ;
     box-sizing: border-box;
 }
@@ -200,6 +210,8 @@
 .cep-entry label {
     font-family: 'PT Sans', sans-serif;
     font-weight: 400;
+    font-size: 16px;
+    color: white;
 }
 
 .shipping input {
@@ -209,42 +221,11 @@
     border-radius: 7px;
 }
 
-.shipping button {
-    width: 35%;
-    height: 100%;
-    border-radius: 7px;
-    background-color: #F0AB3E;
-    color: white;
-    font-size: 1vmax;
-    font-weight: bold;
-}
-
 .buy {
     display: flex;
-    justify-content: space-between;
-    height: 60%;
+    justify-content: space-around;
+    height: fit-content;
 }
-
-.btn-add-to-kart {
-    color: white;
-    background-color: #FF124B;
-    height: 100%;
-    width:55%;
-    border-radius: 7px;
-    font-size: 1vmax;
-    font-weight: 700;
-}
-
-.btn-buy {
-    color: white;
-    background-color: #0FBF60;
-    height: 100%;
-    width:40%;
-    border-radius: 7px;
-    font-size: 1vmax;
-    font-weight: 700;
-}
-
 
 @media screen and (max-width:1250px){
 
@@ -308,10 +289,6 @@
     .at-sight-price {
         margin: 0px;
         padding: 0px;
-    }
-
-    .shipping-buy {
-        height:150px;
     }
 
     .like img{

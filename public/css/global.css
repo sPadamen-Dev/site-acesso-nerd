@@ -17,9 +17,10 @@ html{
 
     --btn-cancel: #F0AB3E;
     --btn-confirm: #0FBF60;
-    --btn-delete: #FF124B;
+    --btn-search: #fa2355;
     --btn-edit: #589bdf;
-    
+    --btn-delete: #ca0303;
+
     font-size: 62.5%;
 } 
 
@@ -42,6 +43,51 @@ body{
     border-width: 0;
 }
 
+.pdp-inputs , .pdp-selects {
+    padding: 5px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    width: 100%;
+  }
+  
 button{
 transition: filter .2s;
 }
+
+.pdp-buttons {
+    color: white;
+    height: 35px;
+    width: 100px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  
+  .pdp-buttons:hover {
+    opacity: 0.7;
+    transition: 0.5s;
+  }
+
+  .pdp-button-save {
+    background-color: var(--btn-confirm);
+  }
+  
+  .pdp-button-cancel {
+    background-color:var(--btn-cancel);
+  }
+  
+  .pdp-button-edit {
+    background-color:var(--btn-edit);
+  }
+
+  .pdp-button-search {
+    background-color:var(--btn-search);
+  }
+  
+  .pdp-button-delete {
+    background-color:var(--btn-delete);
+  }
