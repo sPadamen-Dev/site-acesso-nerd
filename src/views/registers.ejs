@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <%- include('./partials/_header') %> 
+    <%- include('./partials/_head') %> 
+    <body class="register-body">
+        
+        <div class="register-container"> 
+        <form action="/cadastro-realizado" method="POST">
+        <div class="slogan">
+             <img class="logo-register" src="./img/logo-acesso-nerd.png" alt="logo">
+             <span class="register-title">Preencha o formulário para completar o seu cadastro</span>
+        </div>
+        <div class="user-details">
+        <div class="input-box">
+            <label for="firstName" class="details">Nome</label>
+            <input type="name" id="firstName" name="firstName" placeholder="Informe seu nome" required>
+        </div>
+        <div class="input-box">
+            <label form="lastName" class="details">Sobrenome</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Informe seu sobrenome" required>
+        </div>
+        <div class="gender-details">
+            <label for="gender" id="gender" name="gender" class="gender-title">Genero</label>
+        <div class="categoria-gender">
+            <input type="radio" id="femenino" name="gender" value="Feminino">
+            <label for="feminino">Feminino</label><br>
+            <input type="radio" id="masculino" name="gender" value="Masculino">
+            <label for="masculino">Masculino</label><br>
+            <input type="radio" id="Outro" name="gender" value="Outro">
+            <label for="outro">Prefiro não informar</label>
+        </div>
+        </div>
+        <div class="input-box">
+            <label for="birthDate" class="details">Data de Nascimento</label>
+            <input class="birthDate" type="date" id="birthDate" name="birthDate" required>
+        </div>
+        <div class="input-box">
+            <label for="mail" class="details">Email</label>
+            <input type="email" id="mail" name="mail" placeholder="Informe seu email" required>
+        </div>
+        <div class="input-box">
+            <label for="phone"class="details">Telefone</label>
+            <input type="phone" id="phone" name="phone" placeholder="(00) 00000-00000" required>
+        </div>
+        <div class="input-box">
+            <label for="address" class="details">Endereço</label>
+            <input type="text" id="address" name="addres" placeholder="Informe seu endereço" required>
+        </div>
+        <div class="input-box">
+            <label for="number" class="details">Número</label>
+            <input class="number" id="number" name="number" type="number" placeholder="Nº" required>
+        </div>
+        <div class="input-box">
+            <label for="district" class="details">Bairro</label>
+            <input type="text" id="district" name="district" placeholder="Informe seu bairro" required>
+        </div>
+        <div class="input-box">
+            <label for="zipCode" class="details">CEP</label>
+            <input type="number" id="zipCode" name="zipCode" placeholder="Informe seu CEP" required>
+        </div>
+        <div class="input-box">
+            <label for="city" class="details">Cidade</label>
+            <input type="text" id="city" name="city" placeholder="Informe sua cidade" required>
+        </div>
+        <div class="input-box">
+            <label for="state" class="details">Estado</label>
+            <input type="text" id="state" name="state" placeholder="Informe seu estado" required>
+        </div>
+        <div class="register-button">
+            <input type="submit" id="register-button" name="register-button" value="Confirmar">
+        </div>
+        </div>
+            </form>
+        </div>
+    <div class="home-footer">
+    <%- include('./partials/_footer') %> 
+    </div>
+    </body>
+</html>
