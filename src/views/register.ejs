@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +13,15 @@
  
     <form id="msform" action="/cadastro-realizado" method="POST">
 
+      <img class="logo-register" src="./img/logo.png" alt="logo">
+
     <ul id="progressbar">
       <li class="active">Cadastro</li>
       <li>Endereço</li>
       <li>Contato</li>
     </ul>
     
-    <img class="logo-register" src="./img/logo-acesso-nerd.png" alt="logo">
+
 
     <fieldset>
       <h2 class="fs-title">Preencha o formulário para realizar o seu cadastro</h2>
@@ -28,6 +30,18 @@
       <input type="name" id="firstName" name="firstName" placeholder="Nome" required>
       <label for="lastName">Sobrenome:</label>
       <input type="text" id="lastName" name="lastName" placeholder="Sobrenome" required>
+      <div id="gender-input">
+        <div id="gender-label">
+      <label for="gender" id="gender" name="gender">Genero</label></div>
+      <div id="radio-input">
+      <input type="radio" id="feminino" name="gender" value="Feminino">
+      <label id="label-gender" for="feminino">Feminino</label><br>
+      <input type="radio" id="masculino" name="gender" value="Masculino">
+      <label id="label-gender" for="masculino">Masculino</label><br>
+      <input type="radio" id="Outro" name="gender" value="Outro">
+      <label id="label-gender" for="outro">Prefiro não informar</label>
+      </div>
+      </div>
       <label for="birthDate">Data de Nascimento:</label>
       <input class="birthDate" type="date" id="birthDate" name="birthDate" placeholder="Data de Nascimento" required>
       <input type="button" name="proximo" class="proximo action-button" value="Próximo" />

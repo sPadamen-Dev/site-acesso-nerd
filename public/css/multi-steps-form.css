@@ -20,16 +20,44 @@ label{
   font-size: 14px;
   font-weight: bold;
   padding-bottom: 10px;
+  letter-spacing: 1px;
 }
 
+#radio-input{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#gender-input{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#gender-input input{
+  height: 18px !important;
+  width: 18px !important;
+  margin-right: 10px;
+  margin-left: 10px;;
+}
+
+#label-gender {
+  font-size: 12px;
+  font-weight:normal;
+  align-items: center;
+  margin-right: 15px;
+}
+
+
 .logo-register{
-    width:80px;
+    width:320px;
     height: 100%;
+    margin-bottom: 10px;
+    margin-left: 50px;
 }
 /*form styles*/
 #msform {
   width: 400px;
-  margin: 50px auto;
+  margin: 5px auto;
   text-align: center;
   position: relative;
 }
@@ -52,15 +80,25 @@ label{
 }
 /*inputs*/
 #msform input, #msform textarea {
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: montserrat;
-  color: #2C3E50;
-  font-size: 13px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #FFDE5A;
+  height: 35px;
+  width: 95%;
+  margin-bottom: 5%;
+  color: rgb(7, 7, 7);
+  font-size: 0.8em;
+  letter-spacing: 1px;
+  padding-left: 1.5em;
+  border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
+}
+
+#msform input:focus, 
+#msform input:valid{
+    border-color: #1E90FF;
 }
 /*buttons*/
 #msform .action-button {
@@ -101,7 +139,7 @@ input.enviar.action-button{
 }
 /*progressbar*/
 #progressbar {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   overflow: hidden;
   /*CSS counters to number the steps*/
   counter-reset: step;
@@ -145,7 +183,7 @@ input.enviar.action-button{
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-  background: #1e90ff;
+  background: #FFDE5A;
   color: black;
 }
 
