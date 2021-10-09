@@ -56,7 +56,7 @@ button{
 transition: filter .2s;
 }
 
-.pdp-buttons {
+.buttons {
     color: white;
     height: 35px;
     width: 100px;
@@ -67,27 +67,27 @@ transition: filter .2s;
     cursor: pointer;
   }
   
-  .pdp-buttons:hover {
+  .buttons:hover {
     opacity: 0.7;
     transition: 0.5s;
   }
 
-  .pdp-button-save {
+  .button-save {
     background-color: var(--btn-confirm);
   }
   
-  .pdp-button-cancel {
+  .button-cancel {
     background-color:var(--btn-cancel);
   }
   
-  .pdp-button-edit {
+  .button-edit {
     background-color:var(--btn-edit);
   }
 
-  .pdp-button-search {
+  .button-search {
     background-color:var(--btn-search);
   }
   
-  .pdp-button-delete {
+  .button-delete {
     background-color:var(--btn-delete);
   }

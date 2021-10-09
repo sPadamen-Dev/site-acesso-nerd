@@ -18,7 +18,7 @@
                     <% } %> 
                 </div>
                 <div id="pdp-div-input-pics">
-                    <label for="prod-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <label for="prod-inp-pic" id="pdp-btn-upload" class="buttons">Upload imagens</label>
                     <input id='prod-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*" disabled>
                 </div>
             </section>
@@ -112,11 +112,11 @@
 
             <div id="pdp-grp-buttons">
                 <div class="grp-edit-delete">
-                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.product_id %>');">Cancelar</button>
-                    <button id="btn-prod-edit" class="pdp-button-edit pdp-buttons">Editar</button>
+                    <button id="btn-prod-cancel" class="button-cancel buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.product_id %>');">Cancelar</button>
+                    <button id="btn-prod-edit" class="button-edit buttons">Editar</button>
                 </div>
                 <div>
-                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>
+                    <button id="btn-prod-save" class="button-save buttons" type="submit">Salvar</button>
                 </div>
             </div>
 

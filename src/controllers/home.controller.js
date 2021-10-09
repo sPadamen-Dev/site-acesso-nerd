@@ -17,7 +17,7 @@ const session = require('express-session');
     getProductById: async (req, res)=> {
         let returnType = 'singleObject'
         let product = await productsController.getById(req.params.id)
-        console.log(product)
+        /*console.log(product)*/
         res.render("home", {product, returnType})
     },
     getProductByFilter: (req, res)=> {

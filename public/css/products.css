@@ -5,20 +5,22 @@
     font-family: PT Sans;
 }
 
+/*
 .menu-products-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-}
+}*/
 
+/*
 .menu-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 30%;
-}
+}*/
 
 .sub-nav {
     align-self: flex-start;
@@ -34,7 +36,8 @@
     width: 68%;
 }
 
-.products-cards, .sub-nav {
+/*.products-cards, .sub-nav {*/
+.products-cards {
     display: flex;
     justify-content: center;
     align-items: center;

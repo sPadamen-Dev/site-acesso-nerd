@@ -28,21 +28,27 @@
     margin: auto;
     background-color: #2A3846;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: fit-content;
     width: 600px;
     border-radius: 13px;
     box-sizing: border-box;
     position: relative;
+    padding: 15px 0px;
 }
 
-.like img{
-    position: absolute;
-    height: 5%;
+.like {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-right: 80px;
+}
+
+.like img {
+    height: 20px;
     width: auto;
-    right: 3%;
-    top: 5%;
 }
 
 #prod-session1 {
@@ -50,6 +56,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .product-container {
@@ -81,6 +88,9 @@
 }
 
 .product-header {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.6rem;
     padding-bottom: 20px;
     width: 100%;
@@ -99,7 +109,7 @@
     justify-content: center;
     gap: 3%;
     width: 100%;
-    height: 10%;
+    height: fit-content;
     margin-bottom: 5%;
     box-sizing: border-box;
 }
@@ -168,22 +178,13 @@
 .at-sight-price {
     font-weight: bold;
 }
-/*
-.shipping-buy {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:fit-content;
-    margin-top: 10px;
-    box-sizing: border-box;
-}*/
+
 .shipping-buy {
     display: grid;
     grid-template-columns: 40% 50%;
-    align-items: center;
     justify-content: center;
+    margin-top: 20px;
     width: 100%;
-    margin-top: 10px;
     box-sizing: border-box;
 }
 
@@ -196,6 +197,19 @@
     justify-content: center;
     margin: 4% 0 ;
     box-sizing: border-box;
+}
+
+#btn-prod-shipping , #btn-prod-edit , #btn-prod-save {
+    height: 40px;
+    justify-content: center;
+}
+
+#btn-prod-edit , #btn-prod-save {
+    width: 150px;
+}
+
+#btn-prod-save {
+    line-height: 40px;
 }
 
 .cep-entry {
@@ -227,74 +241,54 @@
     height: fit-content;
 }
 
-@media screen and (max-width:1250px){
+@media screen and (max-width:700px){
 
-    body {
-        height: 100%;
-    }
     .product-wrapper-outer-box {
-        margin: 5% 0;
-        height: 98%;
-        width: 50%;
+        height: 100%;
+        width: 70%;
+        min-width: 380px;
     }
-
     .product-wrapper-inner-box {
-        margin: 2%;
+        height: fit-content;
+        width: 100%;
+        padding: 20px 0px;
+        box-sizing: border-box;
     }
-
     .product-container {
-        margin-top: 5%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: center;
-    }
-
-
-    .product-details {
-        padding: 10px;
+        justify-content: center;
         width: 100%;
-    }
-
-    .product-price {
-        display: flex;
-        letter-spacing: 0em;
         box-sizing: border-box;
-        align-items: flex-end;
     }
-
-    .installment {
+    .product-main-pic {
+        width: 200px;
+        height: auto;
+        margin: 0px 30px;
+    }
+    .shipping-buy {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        font-weight: 700;
+        width: min-content;
+    }
+    .shipping {
+        justify-content: space-between;
+        padding-left: 10px;
+        margin-bottom: 15px;
+    }
+    .cep-entry {
+        width: fit-content;
+    }
+    #prod-inp-cep {
+        width: 100px;
+    }
+    #btn-prod-shipping {
+        width: 150px;
+        line-height: 40px;
     }
 
-    .installment-price {
-        white-space:nowrap;
-    }
-
-    .installment-parts span {
-        align-self: baseline;
-    }
-
-    .or{
-        padding: 0px 15px;
-    }
-
-    .at-sight {
-        display: flex;
-        align-items: center;
-    }
-
-    .at-sight-price {
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .like img{
-        height: 4%;
-        right: 5%;
-        top: 48%;
-    }
 }
 

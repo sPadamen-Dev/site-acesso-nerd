@@ -7,7 +7,6 @@
 
             <div id="prod-session1">
                 <div class="product-container">
-                    
                         <div class="product-main-pic">
                             <% if(product.imgPath) {%>
                                 <img id="pd-main-pic" src='<%= product.imgPath %> ' alt="product-main-pic">
@@ -50,11 +49,10 @@
                             <label for="cep">CEP:</label>
                             <input id="prod-inp-cep" class="pdp-inputs" type="text">
                         </div>
-                        <button class="pdp-button-search pdp-buttons">Calcular Frete</button>
+                        <button id="btn-prod-shipping" class="button-search buttons">Calcular Frete</button>
                     </div>
                     <div class="buy">
-                        <button class="pdp-button-edit pdp-buttons">Adicionar ao carrinho</button>
-                        <button class="pdp-button-save pdp-buttons">COMPRAR</button>
+                        <button id="btn-prod-save" class="button-save buttons">COMPRAR</button>
                     </div>
                 </div>
             </div>
