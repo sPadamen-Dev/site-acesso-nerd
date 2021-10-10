@@ -42,20 +42,69 @@ $(document).ready(function validateForm() {
 	$(".next").on('click', function () {
 	  var current = $(this).data('currentBlock'),
 		next = $(this).data('nextBlock');
-  
-	  // only validate going forward. If current group is invalid, do not go further
-	  // .parsley().validate() returns validation result AND show errors
-	  if (next > current)
+  		if (next > current)
 		if (false === $('#msform').parsley().validate('block' + current))
 		  return;
-  
-	  // validation was ok. We can go on next step.
-	  
-	  advanceForm();
-  
-	});
+  	  advanceForm();
+  	});
   });
 
+
+// ===========================================================// 
+
+function continueForm(){
+	$(".continue").on('click',function () {
+	if(animating) return false;
+	animating = true;
+	
+	current_fs = $(this).parent();
+	next_fs = $(this).parent().next();
+	
+	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+	
+	next_fs.show(); 
+	
+	current_fs.animate({opacity: 0}, {
+		step: function(now, mx) {
+			scale = 1 - (1 - now) * 0.2;
+			left = (now * 50)+"%";
+			opacity = 1 - now;
+			current_fs.css({
+				'transform': 'scale('+scale+')',
+				'position': 'absolute'
+			  });
+			  next_fs.css({'left': left, 'opacity': opacity});
+		}, 
+		duration: 800, 
+		complete: function(){
+			current_fs.hide();
+			animating = false;
+		}, 
+		easing: 'easeInOutBack'
+	});
+
+});
+
+}
+
+
+$(document).ready(function validateForm() {
+	$(".continue").on('click', function () {
+	  var current = $(this).data('currentBlock'),
+		next = $(this).data('nextBlock');
+  		if (next > current)
+		if (false === $('#msform').parsley().validate('block' + current))
+		  return;
+		  continueForm();
+  	});
+  });
+
+
+
+
+
+
+// ===========================================================// 
 
 $(".previous").click(function(){
 	if(animating) return false;
