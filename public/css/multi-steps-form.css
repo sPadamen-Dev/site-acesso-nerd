@@ -80,7 +80,7 @@ li.parsley-custom-error-message{
   margin: 0 10%;
   
   /*stacking fieldsets above each other*/
-  position: relative;
+  position: absolute;
 }
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
