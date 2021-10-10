@@ -1,98 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/global.css">
-
-
-    <title>Cadastre-se</title>
-</head>
-
-<body>
-
-
-    <div>
-
+<html lang="pt-BR">
+    <%- include('./partials/_header') %> 
+    <%- include('./partials/_head') %> 
+    <body class="register-body">
+        
+        <div class="register-container"> 
+        <form action="/cadastro-realizado" method="POST">
+        <div class="slogan">
+             <img class="logo-register" src="./img/logo-acesso-nerd.png" alt="logo">
+             <span class="register-title">Preencha o formulário para completar o seu cadastro</span>
+        </div>
+        <div class="user-details">
+        <div class="input-box">
+            <label for="firstName" class="details">Nome</label>
+            <input type="name" id="firstName" name="firstName" placeholder="Informe seu nome" required>
+        </div>
+        <div class="input-box">
+            <label form="lastName" class="details">Sobrenome</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Informe seu sobrenome" required>
+        </div>
+        <div class="gender-details">
+            <label for="gender" id="gender" name="gender" class="gender-title">Genero</label>
+        <div class="categoria-gender">
+            <input type="radio" id="femenino" name="gender" value="Feminino">
+            <label for="feminino">Feminino</label><br>
+            <input type="radio" id="masculino" name="gender" value="Masculino">
+            <label for="masculino">Masculino</label><br>
+            <input type="radio" id="Outro" name="gender" value="Outro">
+            <label for="outro">Prefiro não informar</label>
+        </div>
+        </div>
+        <div class="input-box">
+            <label for="birthDate" class="details">Data de Nascimento</label>
+            <input class="birthDate" type="date" id="birthDate" name="birthDate" required>
+        </div>
+        <div class="input-box">
+            <label for="mail" class="details">Email</label>
+            <input type="email" id="mail" name="mail" placeholder="Informe seu email" required>
+        </div>
+        <div class="input-box">
+            <label for="phone"class="details">Telefone</label>
+            <input type="phone" id="phone" name="phone" placeholder="(00) 00000-00000" required>
+        </div>
+        <div class="input-box">
+            <label for="address" class="details">Endereço</label>
+            <input type="text" id="address" name="addres" placeholder="Informe seu endereço" required>
+        </div>
+        <div class="input-box">
+            <label for="number" class="details">Número</label>
+            <input class="number" id="number" name="number" type="number" placeholder="Nº" required>
+        </div>
+        <div class="input-box">
+            <label for="district" class="details">Bairro</label>
+            <input type="text" id="district" name="district" placeholder="Informe seu bairro" required>
+        </div>
+        <div class="input-box">
+            <label for="zipCode" class="details">CEP</label>
+            <input type="number" id="zipCode" name="zipCode" placeholder="Informe seu CEP" required>
+        </div>
+        <div class="input-box">
+            <label for="city" class="details">Cidade</label>
+            <input type="text" id="city" name="city" placeholder="Informe sua cidade" required>
+        </div>
+        <div class="input-box">
+            <label for="state" class="details">Estado</label>
+            <input type="text" id="state" name="state" placeholder="Informe seu estado" required>
+        </div>
+        <div class="register-button">
+            <input type="submit" id="register-button" name="register-button" value="Confirmar">
+        </div>
+        </div>
+            </form>
+        </div>
+    <div class="home-footer">
+    <%- include('./partials/_footer') %> 
     </div>
-    <section id="boxMainForm">
-        <form action="/cadastro" method="Post" class="formCadastro">
-            <div class="titleRegister">
-                <h2>Cadastra-se</h2>
-            </div>
-            <div style="width:100%;">
-                <p style="color: red;"><%= msg %></p>
-                <% if(typeof(errors) !="undefined" ){ %>
-                    <p style="color: red; font-size: 1.4rem;">ERROR</p>
-                    
-                    <ul>
-                        <% errors.forEach(error=> { %>
-                            <li style="color:var(--white); font-size: 1.2rem;">
-                                <%= error.msg %>
 
-                            </li>
-                            <% }) %>
-
-                    </ul>
-
-                    <% } %>
-            </div>
-
-
-            <div class="childsFormInput childOne">
-                <label for="cpf">CPF:*</label>
-                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" data-mask="000.000.000-00">
-            </div>
-            <div class="childsFormInput childTwo">
-                <label for="allNome">Nome Completo:*</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Ex.. Naruto Santos">
-            </div>
-            <div class="childsFormInput childThree">
-                <label for="sexo">Sexo:*</label>
-                <div class="optionSex">
-                    <input type="radio" id="sexMasculino" name="sexo" value="m">
-                    <h4 style="display: inline;" for="sexo">Masculino</h4>
-                    <input type="radio" id="sexoFemino" name="sexo" value="f">
-                    <h4 style="display: inline;">Feminino</h4>
-                </div>
-            </div>
-            <div class="childsFormInput childFour">
-                <label for="birthday">Nascimento:*</label>
-                <input type="date" class="data" name="birthday" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000"
-                    autocomplete="off">
-            </div>
-            <div class="childsFormInput childFive">
-                <label for="tel">telefone:*</label>
-                <input type="tel" id="tel" name="tel" data-mask="(00)9 0000-0000" placeholder="(00)9 0000-0000">
-            </div>
-            <div class="childsFormInput childSix">
-                <label for="email">Email:*</label>
-                <input type="email" id="email" name="email" placeholder="acessonerd@dominio.com">
-            </div>
-            <div class="childsFormInput childSeven">
-                <label for="password">Criar Senha:*</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <div class="childsFormInput childSeven">
-                <label for="password2">Confirma senha:*</label>
-                <input type="password" id="password2" name="password2">
-            </div>
-
-            <div class="termForm">
-                <p>
-                    Ao clica em cadastrar estou de acordo com os termos de privacidade
-                </p>
-            </div>
-            <div class="btnCadastro">
-                <button type="submit ">Cadastrar</button>
-            </div>
-        </form>
-
-    </section>
-
-</body>
-
+    </body>
 </html>
