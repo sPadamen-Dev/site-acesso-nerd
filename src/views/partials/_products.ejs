@@ -2,34 +2,37 @@
         <% if(productList) {%> 
         <div class="products-cards">
             <% productList.forEach((product, index)=> {%>
-                <div class="product-card" onclick="showProductDetails('<%= product.product_id %>')">
-                    <div class="products-buy-like">
+                <div class="product-card">
+                    <div class="products-buy-like" onclick="">
                         <img class="shopping-bag" id="bag-<%= index %> " src="/img/shopping-bag2.png" alt="buy-it" title="Adicionar ao Carrinho"
                             onclick="addToBag(this.id)">
                         <img class="like" id="like-<%= index %> " src="/img/like.svg" alt="like-it" title="Favoritos"
                             onclick="likeIt(this.id)">
                     </div>
-                    <div class="product-img">
-                        <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
-                    </div>
-                    <div class="product-name">
-                        <span>
-                            <%= product.name %>
-                        </span>
-                    </div>
 
-                    <div class="payment-conditions">
-                        <div class="card-installment">
-                            <span class="card-installment-parts">
-                                <%= product.installment_parts %>x
-                            </span>
-                            <span class="card-installment-price"> R$ <%= product.installment_price %></span>
+                    <div class="prod-clickable-area" onclick="showProductDetails('<%= product.product_id %>')">
+                        <div class="product-img">
+                            <img src="<%= product.imgPath %>" alt="imagem <%= product.description %>">
                         </div>
-                        <div class="card-at-sight">
-                            <span class="card-or">ou</span>
-                            <span class="card-at-sight-price">
-                                <%= product.price %> à vista
+                        <div class="product-name">
+                            <span>
+                                <%= product.name %>
                             </span>
+                        </div>
+
+                        <div class="payment-conditions">
+                            <div class="card-installment">
+                                <span class="card-installment-parts">
+                                    <%= product.installment_parts %>x
+                                </span>
+                                <span class="card-installment-price"> R$ <%= product.installment_price %></span>
+                            </div>
+                            <div class="card-at-sight">
+                                <span class="card-or">ou</span>
+                                <span class="card-at-sight-price">
+                                    <%= product.price %> à vista
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
