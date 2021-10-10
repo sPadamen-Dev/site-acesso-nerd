@@ -23,6 +23,14 @@ label{
   letter-spacing: 1px;
 }
 
+li.parsley-custom-error-message{
+  color: #FFDE5A;
+  font-size: 12px;
+  margin-bottom: 15px;
+  list-style-type: none;
+  letter-spacing: 1px;
+}
+
 #radio-input{
   display: flex;
   flex-wrap: wrap;
@@ -114,11 +122,11 @@ label{
 }
 
 
-input.anterior.action-button{
+input.previous.action-button{
     background: #F0AB3E !important;
 }
 
-input.enviar.action-button{
+input.submit.action-button{
     background: #0FBF60 !important;
 }
 
