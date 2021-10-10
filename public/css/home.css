@@ -9,6 +9,7 @@
 
 body{
     display: flex;
+    width: 100%;
     flex-direction: column;
     background-color: #273E56;
     justify-content: flex-start;
@@ -48,7 +49,8 @@ body{
 
 }
 #info-header-top > div{
-    width: 90%;
+    width: 100%;
+    margin-right: 70px;
     display: flex;
     justify-content: flex-end;
 }
@@ -73,7 +75,9 @@ body{
    align-items: center;
    justify-content: space-between;
    flex-wrap: wrap;
-   width: 90%;
+   width: 100%;
+   padding-left: 70px;
+   padding-right: 70px;
 }
 #container-logo img.imgLogTop {
     width: min(44rem, 60vw);
@@ -133,7 +137,7 @@ body{
 
 .bar {
     display: flex;
-    width:90%;
+    width: 100%;
     justify-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -143,6 +147,7 @@ body{
 /* Nav */
 .navegação-top{
     background-color: #1C2B3A;
+    margin-left: 70px;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
@@ -185,6 +190,7 @@ body{
     align-items: center;
     justify-content: space-around;
     margin-bottom: 1rem;
+    margin-right: 70px;
 }
 
 .divPesquisa input{
@@ -267,7 +273,7 @@ h2 {
 }
 
 .home-footer{
-    height: 'fit-content';
+    width: 100%;
 }
 
 #footer-container{
@@ -351,6 +357,7 @@ h2 {
 
 .button-newlast {
     width: 40%;
+    padding: 10px 0 10px 0;
 }
 .button-newlast button{
     background-color: #265380;
