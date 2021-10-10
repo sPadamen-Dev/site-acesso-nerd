@@ -29,29 +29,34 @@ module.exports = {
       imgPath: {
         type: Sequelize.STRING
       },
-      es_size: {
+      one_size: {
         type: Sequelize.CHAR,
         allowNull:false,
+        defaultValue: 'S'
+      },
+      es_size: {
+        type: Sequelize.CHAR,
+        allowNull:true,
         defaultValue: 'S'
       },
       s_size: {
         type: Sequelize.CHAR,
-        allowNull:false,
+        allowNull:true,
         defaultValue: 'S'
       },
       m_size: {
         type: Sequelize.CHAR,
-        allowNull:false,
+        allowNull:true,
         defaultValue: 'S'
       },
       l_size: {
         type: Sequelize.CHAR,
-        allowNull:false,
+        allowNull:true,
         defaultValue: 'S'
       },
       el_size: {
         type: Sequelize.CHAR,
-        allowNull:false,
+        allowNull:true,
         defaultValue: 'S'
       },
       status: {

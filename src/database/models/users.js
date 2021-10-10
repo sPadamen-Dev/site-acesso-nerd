@@ -12,20 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Addresses,{
-        foreignKey: 'user_id',
-        as: 'address'
+        foreignKey: 'address_id',
       })
 
       this.hasMany(models.Credit_cards,{
-        foreignKey: 'user_id',
-        as: 'cards_user'
+        foreignKey: 'card_id',
       })
 
       this.hasMany(models.Orders,{
-        foreignKey: 'user_id',
-        as: 'ordem_pagamento_usuario'
+        foreignKey: 'order_id',
       })
 
+      this.belongsToMany(models.Products, {through: "Favorites"})
     }
   };
   Users.init({

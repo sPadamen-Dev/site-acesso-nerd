@@ -69,6 +69,8 @@ async function getAll() {
 
 async function getById(id) {
     const product = await Product.findByPk(id)
+
+    console.log(product)
     return product
 }
 

@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      this.belongsToMany(models.Users, {through: "Favorites"})
+      this.belongsToMany(models.Orders, {through: "Orders_products"})
     }
   };
   Product.init({
@@ -27,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
     installment_price: DataTypes.DECIMAL(10,2),
     imgPath: DataTypes.STRING,
     status: DataTypes.CHAR,
+    one_size: DataTypes.CHAR,
     es_size: DataTypes.CHAR,
     s_size: DataTypes.CHAR,
     m_size: DataTypes.CHAR,
