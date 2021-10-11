@@ -4,14 +4,14 @@ require('dotenv').config()
 const port = process.env.PORT || 3000
 
 const loginRouter = require('./src/routes/login.router')
-const singUpRouter = require('./src/routes/register.user.router')
+//const singUpRouter = require('./src/routes/register.user.router')
+const registerRouter = require('./src/routes/register.router')
 const cookieParser = require('cookie-parser')
 const homeRouter = require('./src/routes/home.router')
 const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
-const cadastroRouter = require('./src/routes/cadastro.router')
 const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
@@ -47,14 +47,14 @@ app.get('/', homeRouter)
 app.get('/product/:id', homeRouter)
 
 app.use('/login', loginRouter)
-app.use(singUpRouter)
+//app.use(singUpRouter)
 app.use('/admin', function(req, res, next) {
     console.log('Request URL:', req.url);
     next();
   }, adminRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
-app.use('/cadastro', cadastroRouter)
+app.use('/cadastro', registerRouter)
 
 
 app.use((req, res, next) => {
