@@ -19,11 +19,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'card_id',
       })
 
-      this.hasMany(models.Orders,{
+      this.hasMany(models.Order,{
         foreignKey: 'order_id',
       })
 
-      this.belongsToMany(models.Products, {through: "Favorites"})
+      this.belongsToMany( models.Product, { through: 'Favorites' });
     }
   };
   Users.init({
