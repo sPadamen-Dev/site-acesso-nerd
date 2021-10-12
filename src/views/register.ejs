@@ -1,98 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/register.css">
-    <link rel="stylesheet" href="./css/global.css">
-
-
-    <title>Cadastre-se</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=5.0, minimum-scale=0.56">
+    <meta property="og:image" content="./img/logoAcessoNerd.png" />
+    <meta name="description" content="🚀 Nave em construção...">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/multi-steps-form.css">
+    
+    <title>Cadastro | Acesso Nerd</title>
 </head>
-
 <body>
+    <form id="msform" action="/cadastro" method="POST">
+      <a href="/"><img class="logo-register" src="./img/logo.png" alt="logo"></a>
+
+    <ul id="progressbar">
+      <li class="active">Cadastro</li>
+      <li>Endereço</li>
+      <li>Contato</li>
+    </ul>
+    
+    <fieldset>
+        <h2 class="fs-title">Preencha o formulário para realizar o seu cadastro</h2>
+      <label for="firstName">Nome:</label>
+      <input type="name" id="firstName" name="firstName" placeholder="Nome" required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe o seu nome">
+      <label for="lastName">Sobrenome:</label>
+      <input type="text" id="lastName" name="lastName" placeholder="Sobrenome" required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe o seu sobrenome">
+        <div id="gender-input">
+        <div id="gender-label">
+      <label for="gender" id="gender" name="gender">Genero</label></div>
+      <div id="radio-input">
+      <input type="radio" id="feminino" name="gender" value="Feminino">
+      <label id="label-gender" for="feminino">Feminino</label><br>
+      <input type="radio" id="masculino" name="gender" value="Masculino">
+      <label id="label-gender" for="masculino">Masculino</label><br>
+      <input type="radio" id="Outro" name="gender" value="Prefiro não informar">
+      <label id="label-gender" for="outro">Prefiro não informar</label>
+        </div>
+        </div>
+      <label for="birthDate">Data de Nascimento:</label>
+      <input class="birthDate" type="date" id="birthDate" name="birthDate" placeholder="Data de Nascimento" required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe sua data de nascimento">
+      <input type="button" name="next" class="next action-button" value="Próximo" data-current-block="1" data-next-block="2" />
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title"></h2>
+      <label for="address">Endereço:</label>
+      <input type="text" id="address" name="address" placeholder="Endereço" required required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o seu endereço">
+      <label for="number">Nº:</label>
+      <input class="number" id="number" name="number" type="number" placeholder="Nº" required required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o Nº da sua residencia">
+      <label for="district">Bairro:</label>
+      <input type="text" id="district" name="district" placeholder="Bairro" required required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o bairro da sua residencia">
+      <label for="cep">CEP:</label>
+      <input type="text" id="cep" name="cep" placeholder="CEP" valur="" size="10" maxlength="9" onblur="pesquisacep(this.value)" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o CEP da sua residencia">
+      <label for="city">Cidade:</label>
+      <input type="text" id="city" name="city" placeholder="Cidade" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe a cidade de sua residencia">
+      <label for="state">Estado:</label>
+      <input type="text" id="state" name="state" placeholder="Estado" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o estado de sua residencia">      
+      <input type="button" name="previous" class="previous action-button" value="Anterior" />
+      <input type="button" name="continue" class="continue action-button" value="Próximo" data-current-block="2" data-next-block="3"/>
+    </fieldset>
+
+    <fieldset>
+      <h2 class="fs-title"></h2>
+      <label for="email">Email:</label>
+      <input type="email" id="mail" name="mail" placeholder="Email" required data-parsley-group="block3" data-parsley-required data-parsley-error-message="Informe o seu email">
+      <label for="telefone">Telefone:</label>
+      <input type="text" id="phone" name="phone" placeholder="Telefone com DDD" required data-parsley-group="block3" data-parsley-required data-parsley-error-message="Informe o seu telefone" onkeypress="mask(this, mphone)" onblur="mask(this, mphone)"/>
+      <input type="button" name="previous" class="previous action-button" value="Anterior" />
+      <input type="submit" name="submit" class="submit action-button" value="Enviar" />
+    </fieldset>
 
 
-    <div>
-
-    </div>
-    <section id="boxMainForm">
-        <form action="/cadastro" method="Post" class="formCadastro">
-            <div class="titleRegister">
-                <h2>Cadastra-se</h2>
-            </div>
-            <div style="width:100%;">
-                <p style="color: red;"><%= msg %></p>
-                <% if(typeof(errors) !="undefined" ){ %>
-                    <p style="color: red; font-size: 1.4rem;">ERROR</p>
-                    
-                    <ul>
-                        <% errors.forEach(error=> { %>
-                            <li style="color:var(--white); font-size: 1.2rem;">
-                                <%= error.msg %>
-
-                            </li>
-                            <% }) %>
-
-                    </ul>
-
-                    <% } %>
-            </div>
-
-
-            <div class="childsFormInput childOne">
-                <label for="cpf">CPF:*</label>
-                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" data-mask="000.000.000-00">
-            </div>
-            <div class="childsFormInput childTwo">
-                <label for="allNome">Nome Completo:*</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Ex.. Naruto Santos">
-            </div>
-            <div class="childsFormInput childThree">
-                <label for="sexo">Sexo:*</label>
-                <div class="optionSex">
-                    <input type="radio" id="sexMasculino" name="sexo" value="m">
-                    <h4 style="display: inline;" for="sexo">Masculino</h4>
-                    <input type="radio" id="sexoFemino" name="sexo" value="f">
-                    <h4 style="display: inline;">Feminino</h4>
-                </div>
-            </div>
-            <div class="childsFormInput childFour">
-                <label for="birthday">Nascimento:*</label>
-                <input type="date" class="data" name="birthday" placeholder="Ex.: dd/mm/aaaa" data-mask="00/00/0000"
-                    autocomplete="off">
-            </div>
-            <div class="childsFormInput childFive">
-                <label for="tel">telefone:*</label>
-                <input type="tel" id="tel" name="tel" data-mask="(00)9 0000-0000" placeholder="(00)9 0000-0000">
-            </div>
-            <div class="childsFormInput childSix">
-                <label for="email">Email:*</label>
-                <input type="email" id="email" name="email" placeholder="acessonerd@dominio.com">
-            </div>
-            <div class="childsFormInput childSeven">
-                <label for="password">Criar Senha:*</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <div class="childsFormInput childSeven">
-                <label for="password2">Confirma senha:*</label>
-                <input type="password" id="password2" name="password2">
-            </div>
-
-            <div class="termForm">
-                <p>
-                    Ao clica em cadastrar estou de acordo com os termos de privacidade
-                </p>
-            </div>
-            <div class="btnCadastro">
-                <button type="submit ">Cadastrar</button>
-            </div>
-        </form>
-
-    </section>
-
+  </form>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.0.7/parsley.min.js"></script>
+  <script src="/js/form-validation.js"></script>
+  <script src="/js/mask.js"></script>
 </body>
-
 </html>
