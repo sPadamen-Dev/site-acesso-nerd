@@ -10,9 +10,9 @@ const adminProductsController = {
             res.status(500).render("admin-home", { error: error.message} )
         }        
     },
-    getById: (req, res) => {
+    getById: async (req, res) => {
         let panel = 'product-details'
-        let product = productsController.getById(req.params.id);
+        let product = await productsController.getById(req.params.id);
         res.render("admin-home", { panel, product })
     },
     new: (req, res) => {
