@@ -92,7 +92,7 @@
     justify-content: center;
     align-items: center;
     font-size: 1.6rem;
-    padding-bottom: 20px;
+    padding: 0px 15px 20px 15px;
     width: 100%;
     height: 60px;
     box-sizing: border-box;
@@ -145,8 +145,8 @@
 .product-description {
     text-align: center;
     font-size: 1.4rem;
-    height: 25%;
-    margin-bottom: 5%;
+    height: 60px;
+    margin: 0px 15px 15px 15px;
     box-sizing: border-box;
 }
 
@@ -190,7 +190,7 @@
     font-weight: bold;
 }
 
-.shipping-buy {
+#shipping-buy {
     display: grid;
     grid-template-columns: 40% 50%;
     justify-content: center;
@@ -199,8 +199,8 @@
     box-sizing: border-box;
 }
 
-.shipping {
-    height: 40%;
+#shipping {
+    height: fit-content;
     width: 100%;
     display: flex;
     direction: column;
@@ -210,9 +210,16 @@
     box-sizing: border-box;
 }
 
-#btn-prod-shipping , #btn-prod-edit , #btn-prod-save {
+#btn-prod-edit , #btn-prod-save {
     height: 40px;
     justify-content: center;
+}
+
+#btn-prod-shipping {
+    height: 30px;
+    justify-content: center;
+    line-height: 30px;
+    width: 150px;
 }
 
 #btn-prod-edit , #btn-prod-save {
@@ -223,7 +230,7 @@
     line-height: 40px;
 }
 
-.cep-entry {
+#div-cep {
     display: flex;
     align-items: center;
     height: 100%;
@@ -232,18 +239,19 @@
     box-sizing: border-box;
 }
 
-.cep-entry label {
+#lbl-cep {
     font-family: 'PT Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     color: white;
+    margin-right: 5px;
 }
 
-.shipping input {
-    margin-left: 3%;
-    width: 80%;
-    height: 100%;
+#prod-inp-cep {
+    width: 80px;
+    height: 25px;
     border-radius: 7px;
+    padding-left: 10px;
 }
 
 .buy {
@@ -273,33 +281,39 @@
         width: 100%;
         box-sizing: border-box;
     }
+
     .product-main-pic {
         width: 200px;
         height: auto;
         margin: 0px 30px;
     }
-    .shipping-buy {
+
+    #shipping-buy {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: min-content;
     }
-    .shipping {
-        justify-content: space-between;
-        padding-left: 10px;
+
+    #shipping {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-bottom: 15px;
     }
-    .cep-entry {
-        width: fit-content;
+
+    #div-cep {
+        width: 50%;
+        justify-content: center;
     }
-    #prod-inp-cep {
-        width: 100px;
+
+    #prod-inp-cep{
+        width: 110px;
+        margin-left: 3px;
     }
+
     #btn-prod-shipping {
-        width: 150px;
-        line-height: 40px;
+        width: 130px;
     }
-
 }
-

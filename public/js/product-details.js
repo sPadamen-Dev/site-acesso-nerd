@@ -4,7 +4,11 @@ window.addEventListener('load', function () {
 
     for (var i=0; i<boxSizes.length; i++) { 
         const myElem = document.getElementById(boxSizes[i].id)
+        
         myElem.addEventListener('click', event => {
+
+            let choosenSize = document.getElementById('choosen-size')
+
             /* Remove class from any size selected */
             let selectedSize = document.getElementsByClassName('selected-size');
             
@@ -12,6 +16,8 @@ window.addEventListener('load', function () {
                 let elemSelected = document.getElementById(selectedSize[i].id)
                 elemSelected.classList.remove('selected-size')
             }
+            /* Clear choosen size */
+            choosenSize.setAttribute('value', '')
 
             /*Add class for the last size selected */
             event.target.classList.add('selected-size')
@@ -19,7 +25,8 @@ window.addEventListener('load', function () {
             const elemId = event.target.id;
             const sizeSelected = document.getElementById(elemId).getAttribute('value');
             alert(sizeSelected)
-            document.getElementById('choosen-size').setAttribute('value', elemToBeSelected.value )
+            /* Add size selected to input form */
+            choosenSize.setAttribute('value', elemToBeSelected.value )
         })
       }
 })

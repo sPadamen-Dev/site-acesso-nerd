@@ -45,6 +45,7 @@ connect();
 
 app.get('/', homeRouter)
 app.get('/product/:id', homeRouter)
+app.get('/products/:field/:value', homeRouter)
 
 app.use('/login', loginRouter)
 app.use(singUpRouter)

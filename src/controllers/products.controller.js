@@ -1,4 +1,5 @@
-const { Product } = require('../database/models')
+const { Product, sequelize } = require('../database/models')
+const { QueryTypes } = require('sequelize');
 
 const imgPathHolder = '/img/placeHolderProductImage.jpg'
 const banners = [
@@ -15,11 +16,10 @@ const productsController = {
         let product = getById(productId)
         return product;
     },
-    getProductByFilter: (req, res)=> {
-        if (req.params.param == 'type') {
-            let productList = getProductsByType(req.params.value)
-            return productList;
-        }
+    getByFilter: async (req, res)=> {
+        console.log('got in getByFilter module')
+        const productList = await getByFilter(req);
+        return productList;
     },
     getAllBanners: async (req, res)=> {
         const bannerList = await getBannerList();
@@ -69,39 +69,19 @@ async function getAll() {
 
 async function getById(id) {
     const product = await Product.findByPk(id)
-
-    console.log(product)
     return product
 }
 
-/*
-function getAllProducts() {
-    products.forEach((product, index)=> {
-        if (product.images == undefined) {
-            product.images = [{
-                imgPath: imgPathHolder,
-                imgType: 'M'
-            }]
-        }
-    })
-    return products;
-}*/
-
-/*
-function getProductById (productId) {
-    let product = products.find((product)=> product.id == productId)
-    if (product.images == undefined) {
-        product.images = [{
-            imgPath: imgPathHolder,
-            imgType: 'M'
-        }]
+async function getByFilter (req) {
+    let productList =[]
+    if (req.params.prmfield == 'category') {
+        productList = await Product.findAll({
+            where: {
+                category: req.params.prmvalue 
+            }
+        });
     }
-    return product;
-}*/
-
-function getProductsByType(productType) {
-    let productList = products.filter( (product) => productType == product.type )
-    return productList;
+    return productList
 }
 
 function editProduct (id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice) {

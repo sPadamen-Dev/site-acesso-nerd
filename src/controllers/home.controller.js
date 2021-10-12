@@ -20,13 +20,23 @@ const session = require('express-session');
         /*console.log(product)*/
         res.render("home", {product, returnType})
     },
-    getProductByFilter: (req, res)=> {
+    getProductByFilter: async(req, res)=> {
+        const bannerList = await productsController.getAllBanners();
+        let returnType = 'objectList'
+        const productList = await productsController.getByFilter(req, res);
+
+        if (!productList) {
+            returnType = 'notFound'
+        }
+        res.render("home", { productList, bannerList, returnType } )
+        /*
+        console.log('chamou getProductByFilter')
         const bannerList = productsController.getBannerList();
             if (req.params.param == 'type') {
                 let returnType = 'objectList'
                 let productList = productsController.getProductsByType(req.params.value)
                 res.render("home", {productList, bannerList, returnType})
-            }
+            }*/
     }
 }
 
