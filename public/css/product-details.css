@@ -4,7 +4,7 @@
     margin: 0px;
 }
 
-.product-body {
+#product-body {
     background-color: #273E56;
     display: flex;
     justify-content: center;
@@ -103,7 +103,7 @@
     text-align: center;
 }
 
-.product-sizes {
+#product-sizes {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     justify-content: center;
@@ -123,11 +123,22 @@
     justify-content: center;
     align-items: center;
     font-size: 1.4rem;
-    border: 1px solid #F0AB3E;
+    color: gray;
+    border: 1px solid gray;
     box-sizing: border-box;
 }
 
+#choosen-size {
+    display: none;
+}
+
 .size-available {
+    color: white;
+    border: 1px solid #F0AB3E;
+    cursor: pointer;
+}
+
+.selected-size {
     background-color: #F0AB3E;
 }
 

@@ -1,4 +1,4 @@
-<div class="product-body ">
+<div id="product-body">
     <div class="product-wrapper-outer-box">
         <div class="product-wrapper-inner-box">
             <div class="like">
@@ -19,14 +19,38 @@
                         <div class="product-header">
                             <span><%= product.name %></span>
                         </div>
-                        <input id="size" type="text" hidden>
-                        <div class="product-sizes">
-                            <div id="es-size" class="size-box">PP</div>
-                            <div id="s-size" class="size-box">P</div>
-                            <div id="m-size" class="size-box size-available">M</div>
-                            <div id="l-size" class="size-box">G</div>
-                            <div id="el-size" class="size-box">GG</div>
+                        <div id="product-sizes">
+                            <% if (product.one_size === 'N') {%>
+                                <% if(product.es_size == 'S') {%> 
+                                    <div id="es-size" class="size-box size-available" value='PP'>PP</div>
+                                <% } else { %> 
+                                    <div id="es-size" class="size-box" value='PP'>PP</div>
+                                <% } %>
+                                <% if(product.s_size == 'S') {%> 
+                                    <div id="s-size" class="size-box size-available" value='P'>P</div>
+                                <% } else { %> 
+                                    <div id="s-size" class="size-box" value='P'>P</div>
+                                <% } %>
+                                <% if(product.m_size == 'S') {%> 
+                                    <div id="m-size" class="size-box size-available" value='M'>M</div>
+                                <% } else { %> 
+                                    <div id="m-size" class="size-box" value='M'>M</div>
+                                <% } %>
+                                <% if(product.l_size == 'S') {%> 
+                                    <div id="l-size" class="size-box size-available" value='G'>G</div>
+                                <% } else { %> 
+                                    <div id="l-size" class="size-box" value='G'>G</div>
+                                <% } %>
+                                <% if(product.el_size == 'S') {%> 
+                                    <div id="el-size" class="size-box size-available" value='GG'>GG</div>
+                                <% } else { %> 
+                                    <div id="el-size" class="size-box" value='GG'>GG</div>
+                                <% } %>                                
+                            <% } else { %> 
+                               <div id="one_size" class="size-box">Único</div>
+                            <% } %> 
                         </div>
+                        <input id='choosen-size' type="text" name="choosen-size" value=''>
                         <div class="product-description">
                             <p>                   
                             <%= product.description %> 
