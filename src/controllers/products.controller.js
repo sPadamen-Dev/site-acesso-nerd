@@ -12,20 +12,23 @@ const productsController = {
         const productList = await getAll();
         return productList;
     },
-    getById: (productId)=> {
-        let product = getById(productId)
+    getById: async (productId)=> {
+        let product = await getById(productId)
         return product;
     },
     getByFilter: async (req, res)=> {
-        console.log('got in getByFilter module')
         const productList = await getByFilter(req);
         return productList;
+    },
+    save: async (req, res) => {
+        const product = await save(req, res);
+        return product;
     },
     getAllBanners: async (req, res)=> {
         const bannerList = await getBannerList();
         return bannerList;
     },
-    saveProduct: (req, res) => {
+    /*saveProduct: (req, res) => {
         
         console.log('entrou no save da controller produto')
         console.log(req.files)
@@ -40,7 +43,7 @@ const productsController = {
             product = addProduct( req.body, imgPathHolder );
         }
         return product;
-    },
+    },*/
     editProduct: (req, res) => {
 
         console.log(req.body)
@@ -51,7 +54,6 @@ const productsController = {
             let { filename } = req.files
             editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
         } else { 
-            console.log('achou imagem')
             editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice , imgPathHolder );
         }
     },
@@ -82,6 +84,37 @@ async function getByFilter (req) {
         });
     }
     return productList
+}
+
+async function save(req, res) {
+    let imgPath = null;
+    let { name, description, category, price, installment_parts, installment_price, one_size, es_size, s_size, m_size, l_size, el_size, status } = req.body;
+    if (req.file) {
+        const { filename } = req.file
+        imgPath = `/img/products/${filename}`;
+    }
+
+    const product = {
+        name, 
+        description,
+        category,
+        price, 
+        installment_parts, 
+        installment_price, 
+        imgPath, 
+        one_size, 
+        es_size, 
+        s_size, 
+        m_size, 
+        l_size, 
+        el_size, 
+        status
+    }
+
+    const newProduct = await Product.create( product )
+    if (newProduct instanceof Product) {
+        return await getById(newProduct.product_id)
+    } 
 }
 
 function editProduct (id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice) {

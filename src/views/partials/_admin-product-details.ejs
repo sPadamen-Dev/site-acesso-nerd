@@ -5,7 +5,6 @@
             <section id="pdp-section-pics">
                 <div id="pdp-grp-main-image">
                     <input id='prod-deleted-img' name='deletedImg' hidden>
-                    <input id="deleted-prod-imgs" name="deleted-prod-imgs" hidden>
                     <% if( product.imgPath ) { %>
                         <div id="grp-picture">
                             <img id="prod-main-pic" class="main-pic" src="<%= product.imgPath %>" alt="product-img">
@@ -28,19 +27,26 @@
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
+                    <label>Código:</label>
                     <% if( product.product_id ) {%>
-                        <label>Código:</label>
                         <input type="text" id="prod-id" class="pdp-id" name="id" value="<%= product.id %>" readonly>
+                    <% } else { %>
+                        <input type="text" id='prod-id' class="pdp-id" name="id" readonly>
                     <% } %>
                 </div>
                 <div id="pdp-status">
-                    <p id="prod-status"><%= product.status %> </p>
+                    <input id='prod-status-value' name='status' value="<%= product.status %>" hidden>
+                    <% if(product.status === 'A') {%> 
+                        <p id="prod-status">Ativo</p>
+                    <% } else { %>
+                        <p id="prod-status">Inativo</p>
+                    <% } %>  
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
                             <% if(product.status === 'A') {%> 
-                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked>
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked disable>
                             <% } else { %>
-                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox">
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" disable>
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>

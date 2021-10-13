@@ -1,11 +1,4 @@
-/*Loading product status on switch*/
-document.querySelector('#prod-status-switch').addEventListener('change', (evento)=>{
-    if (document.getElementById('prod-status-switch').checked) {
-        document.getElementById('prod-status').innerText = "Ativo"
-    } else {
-        document.getElementById('prod-status').innerText = "Inativo"
-    }
-});
+
 
 document.getElementById("btn-prod-edit").addEventListener("click", function(event){
   

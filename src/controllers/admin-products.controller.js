@@ -21,7 +21,7 @@ const adminProductsController = {
     },
     create: (req, res) => {
         let panel = 'product-details'
-        let product = productsController.saveProduct (req,res);
+        let product = productsController.save (req,res);
         res.render("admin-home", { panel, product })
     },
     update: (req, res) => {

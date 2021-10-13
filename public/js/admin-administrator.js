@@ -19,7 +19,7 @@ chooseFile.addEventListener("change", function () {
     }
   }
 
-  /*Loading product status on switch*/
+  /*Loading admin status on switch*/
 document.querySelector('#admin-status-switch').addEventListener('change', (evento)=>{
   if (document.getElementById('admin-status-switch').checked) {
       document.getElementById('admin-status').innerText = "Ativo"
