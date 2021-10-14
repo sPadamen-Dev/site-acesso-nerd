@@ -21,11 +21,11 @@ chooseFile.addEventListener("change", function () {
 
 /*Loading product status on switch*/
 document.querySelector('#prod-status-switch').addEventListener('change', (evento)=>{
-    if (document.getElementById('prod-status-switch').checked) {
-        document.getElementById('prod-status').innerText = "Ativo"
-        document.getElementById('prod-status-value').setAttribute('value', 'A')
-    } else {
-        document.getElementById('prod-status').innerText = "Inativo"
-        document.getElementById('prod-status-value').setAttribute('value', 'I')
-    }
+  if (document.getElementById('prod-status-switch').checked) {
+      document.getElementById('prod-status').innerText = "Ativo"
+      document.getElementById('prod-status-value').setAttribute('value', 'A')
+  } else {
+      document.getElementById('prod-status').innerText = "Inativo"
+      document.getElementById('prod-status-value').setAttribute('value', 'I')
+  }
 });
