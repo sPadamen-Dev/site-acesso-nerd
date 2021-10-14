@@ -6,7 +6,7 @@ const registerController = {
     },
     saveCadastro: async (req,res) => {
       let { firstName, lastName, gender, birthDate, address, number, district, cep, city, state, mail, phone  } = req.body;
-      await db.Table_register.create({
+      await db.Users_Registers.create({
         firstName: firstName,
         lastName: lastName,
         gender: gender,
