@@ -1,4 +1,3 @@
-<!--pdp profile details panel-->
 <form id="admin-details-form" class="pdp-form" method="POST" action="/admin/administrators/<%= administrator.admin_id %>?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
         <div class="left-side">
@@ -58,7 +57,7 @@
                     <div class="pdp-div-titles">
                         <span>Usuário</span>
                     </div>
-                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" readOnly required>
+                    <input id="admin-inp-user" class="pdp-inputs" name="user" type="text" value="<%= administrator.user %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -66,7 +65,7 @@
                     <div class="pdp-div-titles">
                         <span>Nome</span>
                     </div>
-                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" readOnly required>
+                    <input id="admin-inp-name" class="pdp-inputs" name="name" type="text" value="<%= administrator.name %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -74,7 +73,7 @@
                     <div class="pdp-div-titles">
                         <span>CPF</span>
                     </div>
-                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" readOnly required>
+                    <input id="admin-inp-cpf" class="pdp-inputs" name="cpf" type="text" value="<%= administrator.cpf %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -82,7 +81,7 @@
                     <div class="pdp-div-titles">
                         <span>Email</span>
                     </div>
-                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" value="<%= administrator.email %>" readOnly required>
+                    <input id="admin-inp-email" class="pdp-inputs" name="email" type="email" value="<%= administrator.email %>" readOnly required>
                 </div>
             </div>
             <div class="pdp-div-groups" style='visibility: hidden;'>
@@ -94,11 +93,11 @@
                 </div>
             </div>
             <div id="pdp-grp-buttons">
-                <div class="grp-edit-delete">
+                <div class="grp-cancel-edit">
                     <button id="btn-admin-cancel" class="button-cancel buttons" hidden type="reset" onclick="window.location.replace('/admin/administrators/<%= administrator.admin_id %>');">Cancelar</button>
                     <button id="btn-admin-edit" class="button-edit buttons">Editar</button>
                 </div>
-                <div>
+                <div class="grp-save">
                     <button id="btn-admin-save" class="button-save buttons" type="submit" disabled>Salvar</button>
                 </div>
             </div>

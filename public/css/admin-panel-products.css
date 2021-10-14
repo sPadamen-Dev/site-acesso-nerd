@@ -125,6 +125,15 @@
     padding-left: 10px;
 }
 
+#prod-ta-description {
+    padding: 10px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    width: 100%;
+}
+
 #pdp-div-category {
     padding-bottom: 10px;
 }
@@ -191,9 +200,7 @@
     color: #cf113d;
 }
 
-#btn-prod-edit, #btn-prod-cancel{
-    position: absolute;
-}
+
 
 
 

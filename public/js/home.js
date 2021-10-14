@@ -9,7 +9,6 @@ function searchProductsbyType(productType) {
 }
 
 function searchProductsById(id) {
-    console.log('entrou em js searchProductsById')
     url = '/product/' + id
     window.location.replace(url);
 }

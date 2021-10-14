@@ -9,17 +9,15 @@ chooseFile.addEventListener("change", function () {
   function getImgData() {
     const files = chooseFile.files[0];
     if (files) {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(files);
-      fileReader.addEventListener("load", function () {
-       /* imgPreview.style.display = "block";
-        imgPreview.innerHTML = '<img src="' + this.result + '" />';*/
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(files);
+        fileReader.addEventListener("load", function () {
         imgPreview.setAttribute('src', this.result)
       });    
     }
   }
 
-  /*Loading admin status on switch*/
+/*Loading admin status on switch*/
 document.querySelector('#admin-status-switch').addEventListener('change', (evento)=>{
   if (document.getElementById('admin-status-switch').checked) {
       document.getElementById('admin-status').innerText = "Ativo"

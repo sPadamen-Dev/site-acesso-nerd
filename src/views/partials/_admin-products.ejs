@@ -39,6 +39,7 @@
             <tr>
                 <th>Imagem</th>
                 <th>Id</th>
+                <th>Nome</th>
                 <th>Categoria</th>
                 <th>Descrição</th>
                 <th>Qtd. Parcelas</th>
@@ -47,8 +48,13 @@
                 </tr>
                 <% productList.forEach((product)=> {%>
                     <tr onclick="window.location.replace('/admin/products/<%= product.product_id %>');">
+                        <% if( product.imgPath != null ) { %>
                             <td><div class="img-row-cell"><img class="img-row-pic" src="<%=product.imgPath %>" alt="product-pic"></div></td>
+                        <% } else { %>
+                            <td><div class="img-row-cell"><img class="img-row-pic" src="/img/products/placeHolderProductImage.jpg" alt="product-pic"></div></td>
+                        <% } %> 
                             <td><%=product.product_id %> </td>
+                            <td><%=product.name %> </td>
                             <td><%=product.category %> </td>
                             <td><%=product.description %></td>
                             <td><%=product.installment_parts %></td>

@@ -116,7 +116,6 @@
       letter-spacing: 0.2rem;
       padding:1rem;
       text-decoration: none;
-      /* border-bottom: 0.5rem solid #1C2B3A; */
   }
   .navegação-top li a:hover{
       border-bottom: .4rem solid var(--blue-light);

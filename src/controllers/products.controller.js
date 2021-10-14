@@ -1,7 +1,6 @@
 const { Product, sequelize } = require('../database/models')
-const { QueryTypes } = require('sequelize');
+const fs = require('fs')
 
-const imgPathHolder = '/img/placeHolderProductImage.jpg'
 const banners = [
     '/img/banners/banner-acesso-nerd-star-wars.jpg',
     '/img/banners/banner-acesso-nerd-scooby.jpg'
@@ -24,38 +23,17 @@ const productsController = {
         const product = await save(req, res);
         return product;
     },
+    update: async (req, res) => {
+        const product = await update(req, res);
+        return product;
+    },
+    remove: async (product_id) => {
+        const remove_status = await remove(product_id)
+        return remove_status
+    },
     getAllBanners: async (req, res)=> {
         const bannerList = await getBannerList();
         return bannerList;
-    },
-    /*saveProduct: (req, res) => {
-        
-        console.log('entrou no save da controller produto')
-        console.log(req.files)
-        let product;
-
-        if (req.files) {
-            const images = req.files
-            console.log(`encontro arquivos: ${images}`)
-            console.log(req.body)
-            product = addProduct( req.body, images );
-        } else {
-            product = addProduct( req.body, imgPathHolder );
-        }
-        return product;
-    },*/
-    editProduct: (req, res) => {
-
-        console.log(req.body)
-        const { id, type, theme, description, installmentParts, installmentPrice, atSightPrice } = req.body
-        console.log('req: ', req )
-
-        if (req.files) {
-            let { filename } = req.files
-            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice  , `/images/${filename}` );
-        } else { 
-            editProduct( type, theme, description, installmentParts, installmentPrice, atSightPrice , imgPathHolder );
-        }
     },
     deletePicById: (req, res)=> {
         if (req.imgList.lenght > 0) {
@@ -86,7 +64,7 @@ async function getByFilter (req) {
     return productList
 }
 
-async function save(req, res) {
+async function save (req, res) {
     let imgPath = null;
     let { name, description, category, price, installment_parts, installment_price, one_size, es_size, s_size, m_size, l_size, el_size, status } = req.body;
     if (req.file) {
@@ -117,64 +95,100 @@ async function save(req, res) {
     } 
 }
 
-function editProduct (id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice) {
+async function update (req, res) {
+    let { product_id, name, description, category, price, installment_parts, installment_price, one_size, es_size, s_size, m_size, l_size, el_size, status, imgPath, initialImg, deletedImg } = req.body;
+
+    /* Deleting old pic */
+    if ( deletedImg === 'S' ) {
+        if (initialImg) {
+           /*deletePicByFilename(initialImg)*/
+            initialImg = null;
+        }
+    }
+
+    if (req.file) {
+        const { filename } = req.file
+        imgPath = `/img/products/${filename}`;
+    } else {
+        if (initialImg) {
+            imgPath = initialImg;
+        }
+    }
     
-/*    let objectIndex = products.findIndex( (product) => id == product.id )
-    products[objectIndex].type = type
-    products[objectIndex].theme = theme
-    products[objectIndex].description = description
-    products[objectIndex].images = images 
-    products[objectIndex].installmentParts = installmentParts
-    products[objectIndex].installmentPrice = installmentPrice
-    products[objectIndex].atSightPrice = atSightPrice */
+    const prod = await Product.findOne( {where:{ product_id: product_id}})
+
+    // Updates the prod payload
+    prod.name = name
+    prod.description = description
+    prod.category = category
+    prod.price = price
+    prod.installment_parts = installment_parts
+    prod.installment_price = installment_price
+    if (imgPath) {
+        prod.imgPath = imgPath;
+    } else {
+        prod.imgPath = null;
+    }
+    prod.one_size = one_size
+    prod.es_size = es_size
+    prod.s_size = s_size
+    prod.m_size = m_size
+    prod.l_size = l_size
+    prod.el_size = el_size 
+    prod.status = status;
+
+    const product = await prod.save()
+    return product
 }
 
-function deletePicById(imgList) {
-    imgList.forEach(imgId=>{
-        console.log(`deletando img. Id: ${imgId} `)
-    })
+async function remove(product_id) {  
+
+    const {imgPath} = await Product.findOne( {where:{ product_id: product_id}})
+
+    let removeStatus = {
+        status: 'false',
+        msg: 'Erro ao excluir produto'
+    }
+    
+    Product.destroy({ where: {product_id: product_id}})
+        .then(async function (rowRemoved){
+            if(rowRemoved === 1) {
+                try {
+                    if (imgPath) {
+                        /*deletePicByFilename(imgPath)*/
+                    }
+                    removeStatus.status = true
+                    removeStatus.msg = 'Produto excluído com sucesso!'
+                } catch (error) {
+                    removeStatus.msg = `Erro ao excluir produto: ${error}`
+                } 
+            }
+        }, function(err) {
+            removeStatus.msg = `Erro ao excluir produto: ${err}`
+    });
+    return removeStatus
 }
 
 async function getBannerList() {
     return banners;
 }
 
-
-function addProduct (object, pictures) {
-    let id = 1
-    if (products.length > 0) {
-        id = products[products.length -1].id + 1;
-    }
-
-    console.log('images: ', pictures)
-    let images = [];
-
-    pictures.forEach( pic => {
-        images.push (
-            {
-                id:1 ,
-                imgPath: pic.destination + pic.originalname
-            }
-        )
+/*TO DO: FIX THE FUNCTION - FILE IS NOT BEING REMOVED*/
+function deletePicById(imgList) {
+    imgList.forEach(imgId=>{
+        console.log(`deletando img. Id: ${imgId} `)
     })
-
-    console.log ('Produto: ', object)
-    let {type, theme, description, installmentParts, installmentPrice, atSightPrice, status } = object
-
-    /* normalização dos dados*/
-    if (description) {
-        description = description.toUpperCase();
-    }
-
-    const product = { id, type, theme, description, images, installmentParts, installmentPrice, atSightPrice, status }
-    products.push (product)
-
-    console.log ('Produto Criado: ', product)
-
-    return getById(product.product_id)
 }
 
-
+function deletePicByFilename(fileToDelete){
+    fs.unlink(fileToDelete, function (err) {
+        if(err) {
+            console.log(err)
+        }
+        console.log(`${fileToDelete} was deleted`);
+    });
+}
+ 
 
 module.exports = productsController;
 

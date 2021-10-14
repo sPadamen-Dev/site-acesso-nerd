@@ -32,7 +32,6 @@ module.exports = {
       {category: 'Canecas', name: 'CANECA BRANCA O REI LEÃO - SIMBA', description:'Material: cerâmica resinada • Cor: Branca • Tamanho: 9,5 cm altura | 8 cm diâmetro', imgPath: '/img/products/c-lion-king-simba.png', installment_parts: 5, installment_price: 6.48, price: 32.40, one_size: 'S', es_size: null, s_size: null, m_size: null, l_size: null, el_size: null, status: 'A', createdAt: Sequelize.fn('NOW') , updatedAt: Sequelize.fn('NOW')},
       {category: 'Canecas', name: 'CANECA BRANCA MANDALORIAN - GROGU', description:'Material: cerâmica resinada • Cor: Branca • Tamanho: 9,5 cm altura | 8 cm diâmetro', imgPath: '/img/products/c-mandalorian-grogu.png', installment_parts: 5, installment_price: 6.48, price: 32.40, one_size: 'S', es_size: null, s_size: null, m_size: null, l_size: null, el_size: null, status: 'A', createdAt: Sequelize.fn('NOW') , updatedAt: Sequelize.fn('NOW')},
       {category: 'Canecas', name: 'CANECA BRANCA TOY STORY - WOODY', description:'Material: cerâmica resinada • Cor: Branca • Tamanho: 9,5 cm altura | 8 cm diâmetro', imgPath: '/img/products/c-toy-story-woody.png', installment_parts: 5, installment_price: 6.48, price: 32.40, one_size: 'S', es_size: null, s_size: null, m_size: null, l_size: null, el_size: null, status: 'A', createdAt: Sequelize.fn('NOW') , updatedAt: Sequelize.fn('NOW')}
-      
     ], {});
   },
 
