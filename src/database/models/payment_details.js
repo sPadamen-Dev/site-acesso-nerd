@@ -17,13 +17,11 @@ module.exports = (sequelize, DataTypes) => {
         required: true
       })
       
-      this.belongsTo(models.Orders,{
+      this.belongsTo(models.Order,{
         foreignKey: 'payment_details',
         as: 'order_payment',
         required: true
       })
-
-
     }
   };
   Payment_details.init({

@@ -2,7 +2,6 @@ const db = require("../database/models")
 const bcrypt = require('bcryptjs')
 const adminController = {
     adminLogin: (req, res) => {
-        console.log('Entrou AdminLogin')
         res.render("admin-login")
     },
     adminHome: async (req, res) => {

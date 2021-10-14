@@ -1,32 +1,19 @@
 #pdp-images {
     display: grid;
-    grid-template-columns: 60px 60px 60px 60px;
-    gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    gap: 2px;
     width: 255px;
-    height: 65px;
-}
-
-.pdp-pic-selected {
-    border: 4px solid var(--yellow);
-}
-
-/*
-.pdp-thumb-images {
     height: 60px;
-    width: 60px;
+    margin-top:1px;
     box-sizing: border-box;
-}*/
-
-#pdp-images img{
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    cursor: pointer;
-    /*pdp-thumb-images*/
 }
 
 .pdp-grp-images {
+    width: 63px;
+    height: 60px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .pdp-img-del {
@@ -43,7 +30,6 @@
     color: whitesmoke;
     cursor: pointer;
     opacity: .5;
-    
 }
 
 .pdp-img-del:hover {
@@ -55,6 +41,34 @@
     top:-5px;
     transition: 400ms;
 }
+
+.pdp-product-pics {
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+#del-prod-pic-icon{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+  }
+
+.pdp-pic-selected {
+    border: 4px solid var(--yellow);
+    box-sizing: border-box;
+}
+
+#pdp-images img{
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+
+
 
 #pdp-div-insert-pics {
     padding: 10px 0 ;
@@ -85,18 +99,6 @@
     cursor: pointer;
 }
 
-/*#pdp-btn-upload:hover {
-    background-color: rgb(71, 71, 194) ;
-    transition: 0.6s;
-}*/
-
-#pdp-section-info {
-    padding: 0px 20px;
-    border: 1px solid whitesmoke;
-    margin-left: 10px;
-    width: 290px;
-}
-
 #pdp-id-status {
     display: flex;
     justify-content: space-between;
@@ -123,6 +125,15 @@
     padding-left: 10px;
 }
 
+#prod-ta-description {
+    padding: 10px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    border: 1px solid gainsboro;
+    width: 100%;
+}
+
 #pdp-div-category {
     padding-bottom: 10px;
 }
@@ -137,6 +148,7 @@
 #pdp-section-installment , #pdp-section-atSight{
     display: flex;
     flex-direction: column;
+    margin-right: 25px;
 }
 
 .pdp-div-subtitles {
@@ -151,6 +163,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -181,11 +194,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     font-size: 18px;
     font-weight: bolder;
     color: #cf113d;
 }
+
 
 
 

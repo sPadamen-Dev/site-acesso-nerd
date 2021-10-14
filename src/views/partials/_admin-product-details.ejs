@@ -1,50 +1,50 @@
-<!--pdp product details panel-->
-<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.id %> ?_method=PUT" enctype="multipart/form-data" >
+<form id="prod-details-form" class="pdp-form" method="POST" action="/admin/products/<%= product.product_id %> ?_method=PUT" enctype="multipart/form-data" >
     <div id="pdp-container">
-        <section id="pdp-section-pics">
-            <div id="pdp-grp-main-image">
-                <% if( product.images[0].imgPath ) { %>
-                    <img id="pdp-main-pic" src="<%= product.images[0].imgPath %>" alt="product-img">
-                <% } else { %>
-                    <img id="pdp-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-img">
-                <% } %> 
-            </div>
-            <div id="pdp-images">
-                <% product.images.forEach((image, index)=> {%>
-                    <% if (index == 0) { %>
-                        <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
-                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id, '<%=image.id%>')">x</div>
-                            <img class="pdp-product-pics pdp-pic-selected" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
+        <div class="left-side">
+            <section id="pdp-section-pics">
+                <div id="pdp-grp-main-image">
+                    <input id='prod-deleted-img' name='deletedImg' hidden>
+                    <% if( product.imgPath ) { %>
+                        <div id="grp-picture">
+                            <img id="prod-main-pic" class="main-pic" src="<%= product.imgPath %>" alt="product-img">
+                            <img id="del-prod-pic-icon" class="delete-pic-icon" src="/img/delete-x-icon.png" alt="del-pic"  onclick="removeMainPic('<%= product.imgPath %>')">
                         </div>
-                    <% } else { %> 
-                        <div class="pdp-grp-images" id='pdp-div-image<%= index %>' name='pdp-div-image<%= index %>'>
-                            <div class="pdp-img-del" id="pdp-img-del-<%= index %>" onclick="deleteAdminProductPic(this.id, '<%=image.id%>')">x</div>
-                            <img class="pdp-product-pics" id="pdp-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectAdminProductPic(this.id)" alt="product-img">
-                        </div>
+                        <input id='prod-initial-img' name='initialImg' value="<%= product.imgPath %>" hidden>
+                    <% } else { %>
+                        <img id="prod-main-pic" class="main-pic" src="/img/placeHolderProductImage.jpg" alt="profile-img">
+                        <input id='prod-initial-img' name='initialImg' value="" hidden>
                     <% } %> 
-                <%}) %> 
-            </div>
-            <div id="pdp-div-input-pics">
-                <label for="prod-inp-pics" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
-                <input id='prod-inp-pics' class="pdp-inp-pics" type="file" name="prod-inp-pics" accept="image/*" multiple>
-            </div>
-        </section>
+                </div>
+                <div id="pdp-div-input-pics">
+                    <label for="prod-inp-pic" id="pdp-btn-upload" class="buttons">Upload imagens</label>
+                    <input id='prod-inp-pic' class="pdp-inp-pics" type="file" name="prod-inp-pic" accept="image/*" disabled>
+                </div>
+            </section>
+            <img id="prod-delete" class="remove-icon" src="/img/remove-icon.png" onclick="window.location.replace('/admin/products/delete/<%= product.product_id %>');" alt="remove-product">
+        </div>
         <section id="pdp-section-info">
             <div id="pdp-id-status">
                 <div id="pdp-div-id">
-                    <% if( product.id ) {%>
-                        <label>Código:</label>
-                        <input type="text" id="prod-id" class="pdp-id" name="id" value="<%= product.id %>" readonly>
+                    <label>Código:</label>
+                    <% if( product.product_id ) {%>
+                        <input type="text" id="prod-id" class="pdp-id" name="product_id" value="<%= product.product_id %>" readonly>
+                    <% } else { %>
+                        <input type="text" id='prod-id' class="pdp-id" name="product_id" readonly>
                     <% } %>
                 </div>
                 <div id="pdp-status">
-                    <p id="prod-status"><%= product.status %> </p>
+                    <input id='prod-status-value' name='status' value="<%= product.status %>" hidden>
+                    <% if(product.status === 'A') {%> 
+                        <p id="prod-status">Ativo</p>
+                    <% } else { %>
+                        <p id="prod-status">Inativo</p>
+                    <% } %>  
                     <div id="pdp-div-switch">
                         <label class="pdp-switch">
                             <% if(product.status === 'A') {%> 
-                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked>
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" checked disabled>
                             <% } else { %>
-                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox">
+                                <input class="pdp-inp-switch" id='prod-status-switch' type="checkbox" disabled>
                             <% } %> 
                             <span class="pdp-slider pdp-round"></span>
                         </label>
@@ -54,9 +54,17 @@
             <div class="pdp-div-groups">
                 <div id="pdp-div-description">
                     <div class="pdp-div-titles">
+                        <span>Nome</span>
+                    </div>
+                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" value="<%= product.name %>" readOnly required>
+                </div>
+            </div>
+            <div class="pdp-div-groups">
+                <div id="pdp-div-description">
+                    <div class="pdp-div-titles">
                         <span>Descrição</span>
                     </div>
-                    <input id="pdp-inp-description" class="pdp-inputs" name="description" type="text" value="<%= product.description %>" required>
+                    <textarea name="description" id="prod-ta-description" cols="45" rows="3" readOnly required><%= product.description %></textarea>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -64,13 +72,12 @@
                     <div class="pdp-div-titles">
                         <span>Categoria</span>
                     </div>
-                    <select id="pdp-select-category" class="pdp-selects">
-                        <!--<optgroup label="agrupador">-->
-                            <option value="canecas">Escolha um grupo</option>
-                            <option value="canecas">CANECAS</option>
-                            <option value="camisetas">CAMISETAS</option>
-                            <option value="gadgets">GADGETS</option>
-                        <!--</optgroup>-->
+                    <input id="prod-inp-category" name="category" type="text" value='<%= product.category %>' hidden>
+                    <select id="prod-select-category" class="pdp-selects">
+                            <option >Escolha um grupo</option>
+                            <option value="canecas" selected>Canecas</option>
+                            <option value="camisetas">Camisetas</option>
+                            <option value="gadgets">Gadgets</option>
                     </select>
                 </div>
             </div>
@@ -85,13 +92,13 @@
 
                     <div class="pdp-prices-values pdp-div-groups">
                         <div id="pdp-div-installmentParts">
-                            <input id="pdp-inp-installmentParts" class="pdp-inputs pdp-payment-parts" name="installmentParts" type="number" value="<%= product.installmentParts %>" required>
+                            <input id="prod-inp-installmentParts" class="pdp-inputs pdp-payment-parts" name="installment_parts" type="number" value="<%= product.installment_parts %>" readOnly required>
                         </div>
 
                         <div class="pdp-x">X</div>
 
                         <div id="pdp-div-installmentPrice">
-                            <input id="pdp-inp-installmentPrice" class="pdp-inputs pdp-payment-prices" name="installmentPrice" type="text" value="<%= product.installmentPrice %>" required>
+                            <input id="prod-inp-installmentPrice" class="pdp-inputs pdp-payment-prices" name="installment_price" type="text" value="<%= product.installment_price %>" readOnly required>
                         </div>
                     </div>
 
@@ -103,26 +110,31 @@
 
                     <div class="pdp-prices-values pdp-div-groups">
                         <div id="pdp-div-atSightParts">
-                            <input id="pdp-inp-atSightParts" class="pdp-inputs pdp-payment-parts" name="atSightParts" type="number" value="01" readonly>
+                            <input id="pdp-inp-atSightParts" class="pdp-inputs pdp-payment-parts" name="price" type="number" value="01" readonly>
                         </div>
 
                         <div class="pdp-x">X</div>
 
                         <div id="pdp-div-atSightPrice">
-                            <input id="pdp-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.atSightPrice %>" required>
+                            <input id="prod-inp-atSightPrice" class="pdp-inputs pdp-payment-prices" name="atSightPrice" type="text" value="<%= product.price %>" readOnly required>
                         </div>
                     </div>
                 </section>
             </div>
 
             <div id="pdp-grp-buttons">
-                <div>
-                    <button id="btn-prod-save" class="pdp-button-save pdp-buttons" type="submit" onclick="persistDeletedPics()">Salvar</button>
-                    <button id="btn-prod-cancel" class="pdp-button-cancel pdp-buttons">Cancelar</button>
+                <div class="grp-cancel-edit">
+                    <button id="btn-prod-cancel" class="button-cancel buttons" hidden type="reset" onclick="window.location.replace('/admin/products/<%= product.product_id %>');">Cancelar</button>
+                    <button id="btn-prod-edit" class="button-edit buttons">Editar</button>
+                </div>
+                <div class="grp-save">
+                    <button id="btn-prod-save" class="button-save buttons" type="submit" disabled>Salvar</button>
                 </div>
             </div>
+
 
         </section>
     </div>
 </form>
+<script src="/js/admin-product.js"></script>
 <script src="/js/admin-product-details.js"></script>
