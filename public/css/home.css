@@ -18,7 +18,7 @@ body{
 .container-pai{
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     overflow-y: overlay;
 }
 
@@ -249,7 +249,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: fit-content;
 
     box-sizing: border-box;

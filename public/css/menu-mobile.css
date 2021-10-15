@@ -116,10 +116,12 @@
       letter-spacing: 0.2rem;
       padding:1rem;
       text-decoration: none;
+      cursor: pointer !important;
   }
   .navegação-top li a:hover{
       border-bottom: .4rem solid var(--blue-light);
       color: #f7fc00;
+      cursor: pointer;
   }
 
 a
@@ -217,10 +219,10 @@ transform: rotate(-45deg) translate(0, 0px);
 display: none;
 position: absolute;
 width: 20em;
-height: 41em;
-margin: 33em 0 0 0;
-padding: 3em;
-padding-top: 6em;
+height: 46em;
+margin: 36em 0 0 0;
+padding: 2em;
+padding-top: 7em;
 left: 4.4em;
 background: #1e5b99;
 list-style-type: none;
@@ -235,6 +237,8 @@ transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 padding: 10px 0;
 font-size: 22px;
 }
+
+
 
 
 #bar input:checked ~ ul
