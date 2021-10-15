@@ -1,11 +1,14 @@
 const nodemailer = require('nodemailer')
 const userController = require('./user.controller')
+require('dotenv').config()
+const ejs = require('ejs')
+const path = require('path');
 
 const transporter = nodemailer.createTransport({
     service:'gmail',
     auth: {
-        user: 'acessonerd.mail@gmail.com',
-        pass: '1c3ss@N3rd'
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD
     },
     tls: {
         rejectUnauthorized: false
@@ -16,7 +19,8 @@ let mailOptions = {
     from: 'acessonerd.mail@gmail.com',
     to: '',
     subject: 'Acesso Nerd - Password Reminder',
-    text: ''
+    text: '',
+    html: ''
 }
 
 const forgotPasswordController = {
@@ -25,11 +29,16 @@ const forgotPasswordController = {
     },
     sendEmail: async (req,res) => {
         const user = await userController.getUserByFilter(req, res)
-        const emailText = `Sua senha é: ${user.password}`
+        const template = await getForgotPasswordTemplate( user )
+        
+        if (template) {
+            mailOptions.html = template        
+        } else {
+            const emailText = `Sua senha é: ${user.password}`
+            mailOptions.text = emailText
+        }
 
         mailOptions.to = user.email
-        mailOptions.text = emailText
-
         transporter.sendMail(mailOptions, function(err, success) {
             if(err) {
                 console.log('Erro no envio de email: ', err)
@@ -41,5 +50,11 @@ const forgotPasswordController = {
         })
     }
 };
+
+async function getForgotPasswordTemplate( user ) {
+    const filePath = path.join(__dirname, '../views/templates/forgot-password.ejs');
+    const template = await ejs.renderFile(filePath, { user } )    
+    return template
+}
 
 module.exports = forgotPasswordController
