@@ -1,143 +1,203 @@
-section#boxMainForm{
+.register-body{
+    align-items: center;
+    font-family: 'PT Sans', sans-serif;
+}
+
+form{
+    flex-direction: column;
+}
+.register-container {
     display: flex;
-    width:100vw;
+    background: #1C2B3A;
+    color: #FFDE5A;
+    max-width:900px;
+    height: 100%;
+    padding: 25px 30px;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    font-size: 16px;
+    margin: 20px 0 50px 0;
+    border: 2px solid #000;
 }
 
-#boxMainForm form.formCadastro{
+ .slogan{
     display: flex;
-    width: min(48rem, 100vw);
+    margin: auto;
     align-items: center;
     justify-content: center;
-    flex-flow: row wrap;
-    padding: 2.4rem;
-    background:var(--blue-dark);
-    border-radius: 1rem;
-    box-shadow: 0.4rem 0.5rem .95rem var(--black);
-    border: 1px solid var(--black);
-}
+    padding-bottom: 10px;
+ }
 
-#boxMainForm .childsFormInput {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 20rem;
-    padding: 1rem 0.8rem;
-}
+.logo-register{
+     width: auto;
+     height: 60px;
+ }
 
-#boxMainForm > form > div.childsFormInput:nth-child(4){
-    flex: 1 1 100%;
-}
-#boxMainForm > form > div.childsFormInput:nth-child(7){
-    flex: 1 1 100%;
-}
-#boxMainForm > form > div.childsFormInput:nth-child(8){
-    flex: 1 1 100%;
-}
-#boxMainForm > form > div.childsFormInput:nth-child(9){
-    flex: 1 1 100%;
-}
-
-/* **********  BTN TERMOS   *************8 */
-
-#boxMainForm .termForm{
-    flex: 1 1 100%;
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+ .register-title{
+    font-size:2em;
+    color:#ffffff;
+    font-weight: 900;
+    position: relative;
+    padding: 10px;
     justify-content: center;
-    padding: 1rem;
-    margin-top: 1rem;
-}
-#boxMainForm .termForm  input{
-    margin-right: 1rem;
+    align-items: center;
+    
 }
 
+/*.register-title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: #ffffff;
+}*/
 
-#boxMainForm .termForm > p{
+.register-container form .user-details{
     display: flex;
-    margin-bottom: 0.3rem;
-    padding: 0.3rem;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--grey);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
 }
 
-
-#boxMainForm .titleRegister{
-    flex: 1 1 100%;
+form .user-details .input-box{
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
 }
 
-#boxMainForm .btnCadastro{
-    margin: 4rem 0;
+form .user-details .input-box .number{
+    width: 80px;
 }
 
-#boxMainForm .btnCadastro button{
-    padding: 1rem 5rem;
-    font-size: 1.8rem ;
-    color: var(--yellow);
-    background: var(--black);
-    border-radius: 2rem;
-    transition:.3s;
-    border:0.1rem solid var(--yellow);
+form .user-details .input-box .birthDate{
+    width: 150px;
 }
 
-#boxMainForm .btnCadastro  button:hover{
-    background: var(--white);
-    color: var(--black);
-    border: 0.1rem solid var(--black);
-    cursor: pointer;
+.user-details .input-box .details{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-right: 10px;
 }
 
-/* *********  INPUT, config ******* */
-
-#boxMainForm .childsFormInput input{
+.user-details .input-box input{
+    height: 40px;
+    width: 100%;
     outline: none;
-    cursor: pointer;
-    border: 0.2rem solid var(--yellow);
-    border-radius: 1.7rem;
-    background: var(--black);
-    transition: filter 2s;
-    padding:0.9rem;
-    color: var(--white);
-}
-#boxMainForm .childsFormInput label{
-    color: var(--yellow);
-    font-size: 1.4rem;
-    line-height: 1.6rem;
-    margin-bottom: 1.6rem;
-    font-weight: 500;
-}
-
-#boxMainForm > form h2{
-    font-weight:bold;
-    font-size: 2.4rem;
-    color:var(--blue-light);
-    margin-bottom: 3rem;
-}
-
-#boxMainForm > form > .childThree > div{
-    color: var(--grey);
-    font-size: 1.4rem;
-    font-weight: 200;
-}
-#boxMainForm > form > .childThree > div > input{
-    margin: 1rem;
-    border: 0.1rem solid var(--black);
+    background-color: rgb(241, 244, 245);
+    border-radius: 10px;
+    border: 1px solid #FFDE5A;
+    padding-left: 7px ;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    color: rgb(0, 0, 0);
 }
 
 
-/* #boxMainForm .optionSex{
+.user-details .input-box input:focus, 
+.user-details .input-box input:valid{
+    border-color: #1E90FF;
+}
+
+form .gender-details{
+    margin-top: 14px;
+    margin-bottom: 22px;
+}
+
+form .gender-details .gender-register-title{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+form .gender-title{
+    font-weight: bold;
+}
+
+form .gender-details .categoria-gender{
+    display:flex;
+    width: 70%;
+    justify-content: space-between;
+    margin: 0 14px 0px 14px;
+}
+
+.gender-details .categoria-gender label{
+    display: flex;
+}
+
+.gender-details .categoria-gender input{
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/*form input[type="radio"]{
+    display:none;
+}/*/
+
+form .register-button{
+    height: 45px;
+    margin: 25px 0 0 0;
+}
+
+form .register-button input{
+    height: 3em;
+    width: 370px;
+    background-color: #265380;
     color: white;
-    font-size: 1.6rem;
-
-} */
-
-/* ******* letter-spacing ****** */
-#boxMainForm  h2, label, button{
-    letter-spacing: 0.15rem;
+    border: solid #ffff 1px;
+    font-weight: bold;
+    border-radius: 7px;
+    justify-content: center;
+    letter-spacing: 0.5mm;
+    font-size: 1.4rem;
 }
-#boxMainForm  p{
-    letter-spacing: 0.05rem;
+
+form .register-button input:hover{
+    background: #FFDE5A;
+    color: black;
+    cursor: pointer;
 }
+
+@media (max-width: 584px){
+    .register-container {
+        max-width:90%;
+    }
+    form .user-details .input-box{
+        width: 100%;
+        margin-bottom: 15px;
+    
+    }
+    .slogan{
+        padding: 20px;
+        align-items: center;
+    }
+    form .gender-details .categoria-gender{
+        width: 100%;
+    }
+     .register-title{
+        font-size: 20px;
+        color:#ffffff ;
+        font-weight: bold;
+        position: relative;
+        letter-spacing: 1px;
+        padding: 10px;
+    }
+    /*.register-title::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 3px;
+        width: 100%;
+        background: #FFDE5A;
+    }*/
+    form .register-button input{
+        height: 3em;
+        width: 500px;
+    }
+}
+
+/*background: linear-gradient(135deg, #71b7eb, #5a535e)*/

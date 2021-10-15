@@ -33,10 +33,10 @@
 
         <div class="form-login-container">
             <header>
-                <img src="./img/logo-acesso-nerd.png" alt="logo">
-                <div class="title">
+                <a href="/"><img src="./img/logo-acesso-nerd.png" alt="logo"></a>
+                <a href="/"><div class="title">
                     ACESSO NERD
-                </div>
+                </div></a>
                 <div class= "orientation">
                     <p>Faça seu Login para começar a sua jornada nesse novo universo!!</p>
                 </div>
@@ -94,6 +94,7 @@
                 document.getElementById('login').classList.remove('action-option-selected');
                 document.getElementById('confirm-senha').style.display = 'initial';
                 document.getElementById('confirm-olho').style.display = 'initial';
+            
             } else if (option == 'login' ) {
                 document.getElementById('login').classList.add('action-option-selected');
                 document.getElementById('register').classList.remove('action-option-selected');
