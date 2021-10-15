@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=5.0, minimum-scale=0.56">
     <title>Login | Acesso Nerd</title>
     <meta property="og:image" content="./img/logoAcessoNerd.png" />
     <meta name="description" content="🚀 Nave em construção...">
@@ -23,12 +23,7 @@
 
     <div class="login-container">
         <div class="option-group">
-            <div class="login-option action-option-selected" id="login" onClick="selectOption(this.id)">
-                Já possuo cadastro
-            </div>
-            <div class="register-option" id="register" onClick="selectOption(this.id)">
-                Quero me cadastrar
-            </div>
+
         </div>
 
         <div class="form-login-container">
@@ -38,7 +33,7 @@
                     ACESSO NERD
                 </div></a>
                 <div class= "orientation">
-                    <p>Faça seu Login para começar a sua jornada nesse novo universo!!</p>
+                    <p>Faça seu login para começar a sua jornada nesse novo universo!</p>
                 </div>
             </header>
 
@@ -51,7 +46,7 @@
                         </p>
                     <% } %>
 
-                    <label for="email">E-mail:</label>
+                    <label for="email">Email:</label>
                     <input type="email" id="email" placeholder="seu@email.aqui" required>
 
 
@@ -80,31 +75,15 @@
                         <div>
                             <a href="recuperar" class="link"><p>Esqueci minha senha</a>
                         </div>
+                        <div>
+                            <a href="cadastro" class="link_cadastro"><p>Cadastre-se!</a>
+                        </div>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <script src="/js/login.js"></script>
-
-    <script>
-        function selectOption(option) {
-            if (option == 'register' ) {
-                document.getElementById('register').classList.add('action-option-selected');
-                document.getElementById('login').classList.remove('action-option-selected');
-                document.getElementById('confirm-senha').style.display = 'initial';
-                document.getElementById('confirm-olho').style.display = 'initial';
-            
-            } else if (option == 'login' ) {
-                document.getElementById('login').classList.add('action-option-selected');
-                document.getElementById('register').classList.remove('action-option-selected');
-                document.getElementById('confirm-senha').style.display='none';
-                document.getElementById('confirm-olho').style.display = 'none';
-            }
-        };
-
-        selectOption('login');
-    </script>
 </body>
 
 </html>
