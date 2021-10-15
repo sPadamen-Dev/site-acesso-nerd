@@ -12,6 +12,7 @@ const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
+const forgotPasswordRouter = require('./src/routes/forgotpassword.router')
 const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
@@ -49,6 +50,7 @@ app.get('/products/:field/:value', homeRouter)
 
 app.use('/login', loginRouter)
 //app.use(singUpRouter)
+app.use('/forgotpassword', forgotPasswordRouter)
 app.use('/admin', function(req, res, next) {
     console.log('Request URL:', req.url);
     next();
