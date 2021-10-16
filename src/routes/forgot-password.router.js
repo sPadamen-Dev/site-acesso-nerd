@@ -1,6 +1,6 @@
 const { Router } = require('express')
 const router = Router()
-const forgotPasswordController = require('../controllers/forgotpassword.controller')
+const forgotPasswordController = require('../controllers/forgot-password.controller')
 
 router.get("/", forgotPasswordController.getForm);
 router.post("/", forgotPasswordController.sendEmail);

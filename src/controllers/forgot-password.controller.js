@@ -25,7 +25,7 @@ let mailOptions = {
 
 const forgotPasswordController = {
     getForm: (req, res) => {
-        res.render("forgotpassword");
+        res.render("forgot-password");
     },
     sendEmail: async (req,res) => {
         const user = await userController.getUserByFilter(req, res)
@@ -42,17 +42,17 @@ const forgotPasswordController = {
         transporter.sendMail(mailOptions, function(err, success) {
             if(err) {
                 console.log('Erro no envio de email: ', err)
-                res.render("forgotpassword");
+                res.render("forgot-password");
             } else {
                 console.log('Email enviado com sucesso')
-                res.render("forgotpassword");
+                res.render("forgot-password");
             }
         })
     }
 };
 
 async function getForgotPasswordTemplate( user ) {
-    const filePath = path.join(__dirname, '../views/templates/forgot-password.ejs');
+    const filePath = path.join(__dirname, '../views/templates/template-forgot-password.ejs');
     const template = await ejs.renderFile(filePath, { user } )    
     return template
 }
