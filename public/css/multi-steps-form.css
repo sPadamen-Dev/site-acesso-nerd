@@ -35,6 +35,7 @@ li.parsley-custom-error-message{
 #radio-input{
   display: flex;
   flex-wrap: wrap;
+  accent-color: #ffa700;
 }
 
 #gender-input{
@@ -274,6 +275,7 @@ header img {
   display: flex;
   justify-content: center;
   align-items: center;
+  accent-color: #ffa700;
 }
 
 input#chk-agree {
