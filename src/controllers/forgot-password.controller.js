@@ -3,6 +3,7 @@ const userController = require('./user.controller')
 require('dotenv').config()
 const ejs = require('ejs')
 const path = require('path');
+const nerdTools = require('../../public/js/utils/nerdTools')
 
 const transporter = nodemailer.createTransport({
     service:'gmail',
@@ -29,12 +30,15 @@ const forgotPasswordController = {
     },
     sendEmail: async (req,res) => {
         const user = await userController.getUserByFilter(req, res)
+        const secretkey = await nerdTools.secretGenerate(user.password, 10)
+        user.password = secretkey
+
         const template = await getForgotPasswordTemplate( user )
         
         if (template) {
             mailOptions.html = template        
         } else {
-            const emailText = `Sua senha é: ${user.password}`
+            const emailText = `O código para redefinição da senha é : ${secretkey}`
             mailOptions.text = emailText
         }
 
@@ -51,7 +55,7 @@ const forgotPasswordController = {
     }
 };
 
-async function getForgotPasswordTemplate( user ) {
+async function getForgotPasswordTemplate( user , secretkey) {
     const filePath = path.join(__dirname, '../views/templates/template-forgot-password.ejs');
     const template = await ejs.renderFile(filePath, { user } )    
     return template
