@@ -117,13 +117,20 @@ body{
     display: inline-block;
     position: absolute;
     margin-top:5.5em;
-    margin-left: 10em;
+    margin-left: 9.6em;
     padding: 0.3em;
     color: white;
     font-family: 'PT Sans', sans-serif;
     letter-spacing: 1px;
 }
 
+.link_login{
+    color:white;
+}
+
+.link_login:hover{
+    color:var(--yellow);
+}
 
 .bar {
     display: flex;

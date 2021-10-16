@@ -29,11 +29,9 @@
         <div class="form-login-container">
             <header>
                 <a href="/"><img src="./img/logo-acesso-nerd.png" alt="logo"></a>
-                <a href="/"><div class="title">
-                    ACESSO NERD
-                </div></a>
+                <a href="/"><div class="title">ACESSO NERD</div></a>
                 <div class= "orientation">
-                    <p>Faça seu login para começar a sua jornada nesse novo universo!</p>
+                    <p class="text">Faça seu login para começar a sua jornada nesse novo universo!</p>
                 </div>
             </header>
 
@@ -47,26 +45,15 @@
                     <% } %>
 
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="seu@email.aqui" required>
+                    <input type="email" id="email" placeholder="seu@email.aqui" required autofocus>
 
 
                     <label for="senha">Senha:</label>
                     <div class="password-inputs">
                         <div class="password-group">
-                            <input type="password" id="senha" placeholder="digite sua senha" required>
+                            <input type="password" id="senha" placeholder="digite sua senha" required autocomplete="on">
                             <i class="fa fa-eye-slash" id="olho"  ondragstart="return false;"></i>
                         </div>
-    
-                        <div class="confirm-password-group">
-                            <input type="password" id="confirm-senha" placeholder="confirme sua senha" required >
-                            <i class="fa fa-eye-slash" id="confirm-olho"  ondragstart="return false;"></i>
-                        </div>
-                    </div>
-
-
-                    <div class="agree">
-                        <input type="checkbox" id="chk-agree" required>
-                        <label for="agree">Aceito todos os termos de privacidade</label>
                     </div>
 
                     <button id="botao">Embarcar</button>

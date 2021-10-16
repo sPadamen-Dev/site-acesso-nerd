@@ -15,7 +15,7 @@ body {
 
 @media screen and (max-width:1200px){
     body {
-        height: 95vh;
+        height: 80vh;
     }
 }
 
@@ -34,7 +34,7 @@ body {
     background-color : #1C2B3A;
     border: 2px solid black;
     min-width: 372px;
-    height: 580px;
+    height: 600px;
     margin: auto;
     box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
 }
@@ -44,7 +44,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 180px;
     padding: 10px 30px ;
 }
 
@@ -56,12 +55,19 @@ header img {
 
 
 .title {
-    margin-top: 3%;    
+    margin-top: 2%;    
     font-size: 1.9em;
     font-weight: 900 ;
     letter-spacing: 1px;
     color: white;
     padding-bottom: 10px; 
+}
+
+.text{
+    font-size: 20px;
+    color: #ddedf7;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .orientation {
@@ -129,9 +135,7 @@ form input::placeholder{
     color:rgb(151, 150, 150);
 }
 
-.password-inputs {
-    height: 90px;
-}
+
 .password-group {
     position: relative;
     display: flex;
@@ -213,7 +217,7 @@ button {
     height: 40px;
     width: 180px;
     font-size: 1em;
-    margin-top: 10px;
+    margin-top: 40px;
     border-radius: 10px;
     align-self: center;
     width: 100px;
@@ -235,7 +239,7 @@ button:focus {
   }
 
 .linkContainer {
-    margin-top: 20px;
+    margin-top: 65px;
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
