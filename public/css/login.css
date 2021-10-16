@@ -15,7 +15,7 @@ body {
 
 @media screen and (max-width:1200px){
     body {
-        height: 95vh;
+        height: 80vh;
     }
 }
 
@@ -28,31 +28,15 @@ body {
     margin: auto;
 }
 
-.option-group {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 50px;
-    padding-bottom: 2px;
-}
 
-.login-option, .register-option {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 197px;
-    border: 1px solid black;
-    border-bottom: 1px solid black;    
-    color:rgb(148, 142, 142);
-    background-color : #1C2B3A;
-    cursor: pointer;
-}
 
 .form-login-container {
     background-color : #1C2B3A;
     border: 2px solid black;
     min-width: 372px;
-    height: 580px;
+    height: 600px;
+    margin: auto;
+    box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
 }
 
 header {
@@ -60,7 +44,6 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 180px;
     padding: 10px 30px ;
 }
 
@@ -70,23 +53,31 @@ header img {
     object-fit: scale-down;
 }
 
+
 .title {
-    margin-top: 3%;    
+    margin-top: 2%;    
     font-size: 1.9em;
     font-weight: 900 ;
     letter-spacing: 1px;
     color: white;
-    padding-bottom: 10px;;
+    padding-bottom: 10px; 
+}
+
+.text{
+    font-size: 20px;
+    color: #ddedf7;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .orientation {
     text-align: center;
-    color: #1E90FF;
+    color: #ddedf7;
     font-weight: 400;
     font-size: 0.9em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     word-wrap: break-word;
-    height: 40px;
+    width: 270px;
     padding-bottom: 5px;
 }
 
@@ -109,27 +100,42 @@ form{
 }
 
 form label {
-    padding: 5px 0em;
-    color: #FFDE5A;
-    font-size: 1.2em;
+    display: flex;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.agree label{
+    font-size: 13px !important;
+    font-weight: unset !important;
+    padding-bottom: unset !important;
 }
 
 form input {
-    background-color: black;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
+    outline: none;
     border: 1px solid #FFDE5A;
     height: 35px;
     width: 95%;
     margin-bottom: 5%;
-    color: white;
+    color: rgb(7, 7, 7);
     font-size: 0.8em;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
     padding-left: 1.5em;
+    border-bottom-width: 2px;
+      transition: all 0.3s ease;
+      color: rgb(0, 0, 0);
 }
 
-.password-inputs {
-    height: 90px;
+form input::placeholder{
+    color:rgb(151, 150, 150);
 }
+
+
 .password-group {
     position: relative;
     display: flex;
@@ -143,7 +149,7 @@ form input {
 }
 
 .password-group i {
-    color:#FFDE5A;
+    color:#9da7b1;
     position: absolute;
     padding-right: 15px;
 }
@@ -162,7 +168,7 @@ form input {
 }
 
 .confirm-password-group i {
-    color:#FFDE5A;
+    color:#9da7b1;
     position: absolute;
     padding-right: 15px;
 }
@@ -202,30 +208,38 @@ i:focus {
 }
 
 .agree label {    
-    color: #B9B6B6;
+    color: #dbdbdb;
     letter-spacing: 1px;
     font-size: 14px;
 }
 
 button {
-    background-color: black;
-    border: 1px solid #FFDE5A;
     height: 40px;
     width: 180px;
-    color: #FFDE5A;
-    font-size: 1.2em;
-    margin-top: 10px;
+    font-size: 1em;
+    margin-top: 40px;
     border-radius: 10px;
     align-self: center;
+    width: 100px;
+    background: #1E90FF;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    letter-spacing: 1px;
 }
 
 button:hover, form input:hover {
-    background-color: rgb(7, 7, 7);
-    cursor: pointer;
+    border-color: #1E90FF;
 }
 
+button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #1E90FF;
+  }
+
 .linkContainer {
-    margin-top: 20px;
+    margin-top: 65px;
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
@@ -234,12 +248,39 @@ button:hover, form input:hover {
 
 .link {
     text-decoration: none;
-    color: #1E90FF;
+    color: #ffffff;
     font-weight: 400;
     font-size: 0.9em;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-align: right;
 }
+
+.link:hover{
+    color: #6cb5ff;
+}
+
+.link_cadastro{
+    text-decoration: none;
+    color: #fff01e;
+    font-weight: bold;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-align: right;
+
+}
+
+a.link_cadastro{
+    border-bottom: 2px solid #1E90FF;
+}
+
+a.link_cadastro:hover{
+    border-bottom: 2px solid #1E90FF;
+}
+
+.link_cadastro:hover{
+    color: #fff01e;
+}
+
 
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
