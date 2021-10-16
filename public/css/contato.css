@@ -23,7 +23,7 @@
 
 .contato-container{
     background: #1C2B3A;
-    color: #FFDE5A;
+    color: #ffffff;
     width: 550px;
     height: 100%;
     padding: 25px 30px;
@@ -31,7 +31,8 @@
     justify-content: center;
     font-size: 16px;
     margin: 20px 20px 50px 20px;
-    border: 2px solid #000;
+    border: 1px solid #000;
+    box-shadow: 0 0 15px 1px rgb(0 0 0 / 40%);
 }
 .contato-details{
     display: block;
@@ -96,23 +97,31 @@ form .send-button{
 
 form .send-button input{
     height: 3em;
-    width: 370px;
-    background-color: #265380;
-    color: white;
+    width: 100%;
     border: solid #ffff 1px;
     font-weight: bold;
-    border-radius: 7px;
     justify-content: center;
     letter-spacing: 0.5mm;
-    font-size: 1.4rem;
+    font-size: 1em;
+    border-radius: 10px;
+    background: #1E90FF;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    letter-spacing: 1px;
 }
 
 form .send-button input:hover{
-    background: #FFDE5A;
-    color: black;
+    border-color: #1E90FF;
     cursor: pointer;
 }
 
+form .send-button input:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #1E90FF;
+  }
+
+  
 @media (max-width: 584px){
     .contato-container {
         max-width:90%;
