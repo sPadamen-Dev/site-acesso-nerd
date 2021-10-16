@@ -16,9 +16,9 @@ const transporter = nodemailer.createTransport({
 })
 
 let mailOptions = {
-    from: 'acessonerd.mail@gmail.com',
+    from: 'Acesso Nerd, acessonerd.mail@gmail.com',
     to: '',
-    subject: 'Acesso Nerd - Password Reminder',
+    subject: 'Acesso Nerd - Esqueci minha Senha',
     text: '',
     html: ''
 }
