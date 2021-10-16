@@ -26,11 +26,17 @@ module.exports = {
        }
       },
       order_status: {
-        type: Sequelize.STRING(1)
+        type: Sequelize.CHAR(1),
+        allowNull:false,
+        defaultValue: 'S'
       },
       createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        allowNull: false
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false
       }
     });
   },

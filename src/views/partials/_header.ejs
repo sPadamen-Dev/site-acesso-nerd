@@ -13,9 +13,9 @@
 
         <div class="div-login-carrinho">
             <div class="div-carrinho">
-                <img class="nav-icons" src="/img/iconCarrinho.png" alt="carrinho">
+                <a href="/orders"><img class="nav-icons" src="/img/iconCarrinho.png" alt="carrinho"></a>
             </div>
-            <div class="carrinho">Carrinho</div>
+            <div class="carrinho">Pedidos</div>
             <div class="div-login">
                 <% if (typeof(nome)=="undefined" ) { %>
                     <a href="/login"><img class="nav-icons" src="/img/ico-login.png" alt="login"></a>
@@ -24,7 +24,6 @@
                             Bem vindo, <a href="#"><%= name %></a>
                         </h4>
                         <%} %>
-
             </div>
             <div class="login"><a class="link_login" href="/login">Entrar</a></div>
         </div>

@@ -1,4 +1,5 @@
 const productsController = require('./products.controller')
+const ordersController = require('./orders.controller')
 const session = require('express-session');
 
   const homeController = {
@@ -26,6 +27,15 @@ const session = require('express-session');
             returnType = 'notFound'
         }
         res.render("home", { productList, bannerList, returnType } )
+    },
+    getAllOrders: async(req, res)=> {
+        const orderList = await ordersController.getAll(req, res)
+        let returnType = 'orderList'
+
+        if (!orderList) {
+            returnType = 'notFound'
+        }
+        res.render("home", { orderList, returnType } )
     }
 }
 
