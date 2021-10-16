@@ -3,6 +3,7 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+
 form{
     flex-direction: column;
 }
@@ -177,3 +178,4 @@ form .register-button input:hover{
         width: 500px;
     }
 }
+

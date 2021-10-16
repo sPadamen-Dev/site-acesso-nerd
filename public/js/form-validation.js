@@ -49,7 +49,6 @@ $(document).ready(function validateForm() {
   	});
   });
 
-
 // ===========================================================// 
 
 function continueForm(){
@@ -98,11 +97,6 @@ $(document).ready(function validateForm() {
 		  continueForm();
   	});
   });
-
-
-
-
-
 
 // ===========================================================// 
 
@@ -153,7 +147,6 @@ $(document).ready(function validateForm() {
   	});
   });
 
-
 // ===========================================================// 
 
 $(".previous").click(function(){
@@ -192,3 +185,5 @@ $(".previous").click(function(){
 $(".submit").click(function(){
 	return true;
 })
+
+
