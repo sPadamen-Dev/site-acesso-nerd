@@ -54,7 +54,10 @@ app.get('/products/:field/:value', homeRouter)
 app.use('/login', loginRouter)
 //app.use(singUpRouter)
 app.use('/forgot-password', forgotPasswordRouter)
+
+// Post route to handle form submission logic and 
 app.use('/change-password', changePasswordRouter)
+
 app.use('/admin', function(req, res, next) {
     console.log('Request URL:', req.url);
     next();
@@ -63,13 +66,14 @@ app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
 app.use('/cadastro', registerRouter)
 
+/*test
 app.get('/template-forgot-password', function(req, res){
   const user = {
     user_name: 'William Xavier',
     password: 'Senha Teste'
   }
   res.render('template-forgot-password',{ user })
-})
+})*/
 
 app.use((req, res, next) => {
     res.status(404).render('404')
