@@ -8,12 +8,12 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      userEmail: {
+        email: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true
       }, 
-      senha: {
+      password: {
         type: Sequelize.STRING,
         allowNull: false
       },
@@ -59,7 +59,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
-      email: {
+      contact_email: {
         type: Sequelize.STRING,
         allowNull:false
       },

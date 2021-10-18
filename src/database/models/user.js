@@ -24,8 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    userEmail: DataTypes.STRING,
-    senha: DataTypes.STRING,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     cpf: DataTypes.STRING,
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
     cep: DataTypes.STRING,
     city: DataTypes.STRING,
     state: DataTypes.STRING,
-    email: DataTypes.STRING, 
+    contact_email: DataTypes.STRING, 
     telephone: DataTypes.STRING
   }, {
     sequelize,

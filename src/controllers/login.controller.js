@@ -1,6 +1,7 @@
 const userController = require('./user.controller')
-const session = require("express-session");
-const nodeTools = require('../../public/js/utils/nerdTools')
+const session = require('express-session')
+const nodeTools = require('../../public/js/utils/nerdTools');
+const homeController = require('./home.controller');
 
 const loginController = {
   loginPage: (req, res) => {
@@ -18,11 +19,13 @@ const loginController = {
       res.status(200).render("login", { msg: validationResponse.msg })
     } 
 
-    const { user_id, user_name } = validationResponse.user
+    const { user_id, firstname } = validationResponse.user
+    console.log('Validation response: ', validationResponse.user)
+    console.log('session: ', req.session)
+    req.session.userid = user_id
+    req.session.username = firstname
 
-    req.session.user = { user_id: user_id, user_name: user_name };
-
-    res.status(301).redirect('/');
+    homeController.getAllProducts(req, res)
   }
 };
 
@@ -42,7 +45,7 @@ async function userLoginValidate( req, res ) {
 
     if (user) {
       const entryPassword = req.body.password
-      const encryptedPassEntry = nodeTools.encryptValue(entryPassword)
+      const encryptedPassEntry = nodeTools.encryptValue(entryPassword, 10)
 
       if ( password == encryptedPassEntry ){
         validationResponse.user = user

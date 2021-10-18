@@ -1,19 +1,13 @@
 const express = require('express')
 const app = express()
+const session = require('express-session')
 require('dotenv').config()
 const port = process.env.PORT || 3000
 
-
 const loginRouter = require('./src/routes/login.router')
-<<<<<<< HEAD
-const registerRouter = require('./src/routes/register.router')
-=======
 const usersRouter = require('./src/routes/users.router')
-const cookieParser = require('cookie-parser')
->>>>>>> main
 const homeRouter = require('./src/routes/home.router')
 const adminRouter = require('./src/routes/admin.router')
-const session = require('express-session')
 const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
 const forgotPasswordRouter = require('./src/routes/forgot-password.router')
@@ -30,15 +24,11 @@ app.use(session({
       httpOnly: true,
       secure: false,
       maxAge: 1000 * 60 * 60 * 24
-  
     }
 }))
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
-
-
-
 
 // Static Files
 app.use(express.static('public'));
@@ -67,7 +57,9 @@ app.get('/order/:id', homeRouter)
 
 app.use('/login', loginRouter)
 //app.use(singUpRouter)
-app.use('/forgot-password', forgotPasswordRouter)
+app.use('/forgot-password', function( req, res, next ) {
+  next();
+}, forgotPasswordRouter )
 
 // Post route to handle form submission logic and 
 app.use('/change-password', changePasswordRouter)
