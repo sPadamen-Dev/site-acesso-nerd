@@ -1,49 +1,43 @@
-<link rel="stylesheet" href="/css/orders.css">
-<div id='wrapper-orders'>
-    <form id='orders-form' action="/orders" method="POST" enctype="multipart/form-data">
+<form id='orders-form' action="/orders" method="POST" enctype="multipart/form-data" >
+    <div id='wrapper-orders'>
         <div id="div-orders-header">
             <p>Seus Pedidos</p>
+            <label for="order_id"></label>
             <div id="grp-orders-search">
-                <div>
-                    <input id="inp-order-search" type="text" name='order-search' placeholder="Buscar por pedido">
-                </div>
-                <div>
-                    <button id="btn-order-search">Buscar Pedido</button>
-                </div>
+                <input id="order_id" type="text" name='order_id' placeholder="Buscar por pedido">
+                <button>Buscar Pedido</button>
             </div>
         </div>
-    </form>
-    <div id="div-orders-list">
-        <div class="order-card">
-            <div class="order-card-header">
-                <div class="order-date">
-                    <p>Pedido realizao</p>
-                </div>
-                <div class="order-amount">
-                    <p>R$ </p>
-                </div>
-                <a href="">Detalhes do pedido</a>
-            </div>
-            <div id="order-products">
-                <div class="order-product-card">
-                    <div id="order-product-img">
-                        <img src="/img/products/placeHolderProductImage.jpg" alt="">
+        <div id="div-orders-list">
+            <div class="order-card">
+                <div class="order-card-header">
+                    <div class="order-date">
+                        <p>Pedido realizao</p>
                     </div>
-                    <div id="order-product-details">
-                        <div id="product-name">
-                            <p>PRODUTO NAME PLACEHOLDER</p>
+                    <div class="order-amount">
+                        <p>R$ </p>
+                    </div>
+                    <a href="">Detalhes do pedido</a>
+                </div>
+                <div id="order-products">
+                    <div class="order-product-card">
+                        <div id="order-product-img">
+                            <img src="" alt="">
                         </div>
-                        <div id="product-description">
-                            <p>PRODUTO DESCRIPTION PLACEHOLDER: Detalhes do produto
-                                referente a confeção, tamanho, material
-                            </p>
-                        </div>
-                        <div id="product-price">
-                            <p>R$ 56,90</p>
+                        <div id="order-product-details">
+                            <div id="product-name">
+
+                            </div>
+                            <div id="product-description">
+
+                            </div>
+                            <div id="product-price">
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</form>
