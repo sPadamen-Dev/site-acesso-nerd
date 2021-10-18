@@ -10,10 +10,10 @@ module.exports = {
       },
       user_id: {
         type: Sequelize.INTEGER,
-        references:{
-          model: 'Users',
-          key: 'user_id'
-       }
+        references: {
+            model: "Users",
+            key: "user_id"
+        }
       },
       amount: {
         type: Sequelize.FLOAT

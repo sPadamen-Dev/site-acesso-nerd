@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     amount: DataTypes.FLOAT,
-    payment_id: DataTypes.INTEGER,
+    /*payment_id: DataTypes.INTEGER,*/
     order_status: DataTypes.STRING
   }, {
     sequelize,

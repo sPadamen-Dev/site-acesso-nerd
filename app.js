@@ -1,7 +1,8 @@
 const express = require('express')
-const app = express()
 const session = require('express-session')
+
 require('dotenv').config()
+const app = express()
 const port = process.env.PORT || 3000
 
 const loginRouter = require('./src/routes/login.router')
@@ -27,8 +28,8 @@ app.use(session({
     }
 }))
 
-app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 // Static Files
 app.use(express.static('public'));
@@ -36,8 +37,11 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
+let sess;
+
 // connection db
 const models = require('./src/database/models');
+const { body } = require('express-validator')
 /*const { render } = require('ejs')*/
 const connect = async () => {
   try {

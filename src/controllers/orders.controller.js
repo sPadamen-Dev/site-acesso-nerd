@@ -38,12 +38,12 @@ async function getById(id) {
 }
 
 async function save (req, res) {
-    let { user_id, amount, payment_id, order_status } = req.body;
+    let { user_id, amount, /*payment_id,*/ order_status } = req.body;
 
     const order = {
         user_id, 
         amount,
-        payment_id,
+        /*payment_id,*/
         order_status
     }
 
@@ -54,12 +54,13 @@ async function save (req, res) {
 }
 
 async function update (req, res) {
-    let { order_id, amount, payment_id, order_status } = req.body;
+    let { order_id, amount, /*payment_id,*/ order_status } = req.body;
+    
     const thisOrder = await Order.findOne( {where:{ order_id: order_id}})
 
     // Updates the prod payload
     thisOrder.amount = amount
-    thisOrder.payment_id = payment_id
+    /*thisOrder.payment_id = payment_id*/
     thisOrder.order_status = order_status
 
     const order = await thisOrder.save()
@@ -67,6 +68,7 @@ async function update (req, res) {
 }
 
 async function remove(order_id) {  
+
     Order.destroy({ where: {order_id: order_id}})
         .then(async function (rowRemoved){
             if(rowRemoved === 1) {

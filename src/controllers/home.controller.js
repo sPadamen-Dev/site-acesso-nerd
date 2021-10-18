@@ -1,3 +1,4 @@
+
 const productsController = require('./products.controller')
 const ordersController = require('./orders.controller')
 
@@ -30,7 +31,7 @@ const ordersController = require('./orders.controller')
     getAllOrders: async(req, res)=> {
         const orderList = await ordersController.getAll(req, res)
         let returnType = 'orderList'
-
+        console.log('session: ',req.session)
         if (!orderList) {
             returnType = 'notFound'
         }
