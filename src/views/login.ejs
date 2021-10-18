@@ -30,13 +30,6 @@
 
             <div class="form-wrapper">
                 <form action="/login" method="POST">
-
-                    <% if (typeof(msg) !="undefined" ) { %>
-                        <p style="color: red;">
-                            <%= msg %>
-                        </p>
-                    <% } %>
-
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="seu@email.aqui" required autofocus>
 
@@ -47,7 +40,11 @@
                             <i class="fa fa-eye-slash" id="olho"  ondragstart="return false;"></i>
                         </div>
                     </div>
-
+                    <% if (typeof(msg) !="undefined" ) { %>
+                        <p style="color: red;">
+                            <%= msg %>
+                        </p>
+                    <% } %>
                     <button id="botao">Embarcar</button>
                 
                     <div class="linkContainer">
