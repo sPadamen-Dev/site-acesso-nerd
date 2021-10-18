@@ -96,12 +96,25 @@ body {
 
 #menu span {
     font-size: 20px;
+}
+
+.menu-span {
     color: black;
+}
+
+.selected-menu-span {
+    color: white;
+}
+
+.selected-menu {
+    color: white;
+    background-color: rgb(122, 16, 16);
 }
 
 #menu li:hover {
     background-color: rgb(122, 16, 16);
 }
+
 #menu li:hover .menu-span {
     color: white;
 }

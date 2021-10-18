@@ -35,7 +35,7 @@
                         <%} %>
 
             </div>
-            <div class="login">Entrar</div>
+            <div class="login"><a class="link_login" href="/login">Entrar</a></div>
         </div>
 
     </div>
@@ -49,12 +49,14 @@
             <span></span>
             <span></span>
             <span></span>
-            <ul id="menu">
-                <li><a id="clothes" href="#" onclick="searchProductsByFilter('type', this.id)">VESTUÁRIO</a></li>
-                <li><a id="mugs" href="#" onclick="searchProductsByFilter('type', this.id)">CANECAS</a></li>
-                <li><a href="#">PORTA COPO</a></li>
-                <li><a href="#">DECORAÇÃO</a></li>
-                <li><a href="#">PROMO GEEK</a></li>
+            <ul 
+            id="menu">
+                <li><a id="camisetas" onclick="window.location.replace('/')">TUDO</a></li>
+                <li><a id="camisetas" onclick="searchProductsByCategory(this.id)">CAMISETAS</a></li>
+                <li><a id="canecas" onclick="searchProductsByCategory(this.id)">CANECAS</a></li>
+                <li><a id="porta-copos" onclick="searchProductsByCategory(this.id)">PORTA COPO</a></li>
+                <li><a id="decoracao" onclick="searchProductsByCategory(this.id)">DECORAÇÃO</a></li>
+                <li><a id="promo-geek" onclick="searchProductsByCategory(this.id)">PROMO GEEK</a></li>
             </ul>
         </nav>
         </div>
@@ -64,7 +66,6 @@
                 <div class="div-pesquisa">
                     <button onclick="searchProducts()"><img class="img-pesquisar" src="/img/lupa.svg"
                             alt="buttom search"></button>
-
                 </div>
             </div>
         </div>

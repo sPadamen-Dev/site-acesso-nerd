@@ -3,6 +3,7 @@
     font-family: 'PT Sans', sans-serif;
 }
 
+
 form{
     flex-direction: column;
 }
@@ -43,16 +44,6 @@ form{
     align-items: center;
     
 }
-
-/*.register-title::before{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 100%;
-    background: #ffffff;
-}*/
 
 .register-container form .user-details{
     display: flex;
@@ -133,10 +124,6 @@ form .gender-details .categoria-gender{
     margin-left: 10px;
 }
 
-/*form input[type="radio"]{
-    display:none;
-}/*/
-
 form .register-button{
     height: 45px;
     margin: 25px 0 0 0;
@@ -185,19 +172,9 @@ form .register-button input:hover{
         letter-spacing: 1px;
         padding: 10px;
     }
-    /*.register-title::before{
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 3px;
-        width: 100%;
-        background: #FFDE5A;
-    }*/
+    
     form .register-button input{
         height: 3em;
         width: 500px;
     }
 }
-
-/*background: linear-gradient(135deg, #71b7eb, #5a535e)*/

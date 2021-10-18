@@ -9,13 +9,12 @@ function searchProductsbyType(productType) {
 }
 
 function searchProductsById(id) {
-    console.log('entrou em js searchProductsById')
     url = '/product/' + id
     window.location.replace(url);
 }
 
-function searchProductsByFilter(param, value) {
-    console.log('entrou em js searchProductsByFilter')
-    url = '/products/' + param + '/' + value
+function searchProductsByCategory(category) {
+    url = '/products/category/' + category
+    console.log(url)
     window.location.replace(url);
 }

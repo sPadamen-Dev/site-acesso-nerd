@@ -1,9 +1,8 @@
-.grp-edit-delete {
+.grp-cancel-edit, .grp-save {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 35px;
-    width: 100%;
     margin-bottom: 20px;
 }
 

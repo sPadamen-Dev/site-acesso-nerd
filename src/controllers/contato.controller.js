@@ -6,7 +6,7 @@ const contatoController = {
     },
     saveContato: async (req,res) => {
       let { name, tel, email, mensagem, contatoLgpd } = req.body;
-      await db.Table_contact.create({
+      await db.Contact.create({
         fullName: name,
         telephone: tel,
         email,

@@ -19,6 +19,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
+    overflow-y: overlay;
 }
 
 .header-banner {
@@ -26,7 +27,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: fit-content;
     width: 100%;
 }
 
@@ -95,16 +96,6 @@ body{
     margin-left: 2rem;
 }
 
-/* .div-pesquisa {
-    background-color: white;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3rem;
-    width: 5rem;
-    height: 5rem;
-} */
-
 /* Formatação icones - carrinho, login e pesquisa*/
 .nav-icons{
     width: 35px;
@@ -126,13 +117,20 @@ body{
     display: inline-block;
     position: absolute;
     margin-top:5.5em;
-    margin-left: 10em;
+    margin-left: 9.6em;
     padding: 0.3em;
     color: white;
     font-family: 'PT Sans', sans-serif;
     letter-spacing: 1px;
 }
 
+.link_login{
+    color:white;
+}
+
+.link_login:hover{
+    color:var(--yellow);
+}
 
 .bar {
     display: flex;
@@ -256,8 +254,12 @@ body{
 .conteudo-body{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    padding: 10px 5%;
+    height: fit-content;
+
+    box-sizing: border-box;
 }
 
 /*Formatando rodape*/
