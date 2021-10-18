@@ -1,66 +1,85 @@
-<div class="product-body ">
+<div id="product-body">
     <div class="product-wrapper-outer-box">
         <div class="product-wrapper-inner-box">
             <div class="like">
                 <img src="/img/like.svg" alt="like it" title="Favoritos">
             </div>
-            <div class="product-container">
-                <div class="product-images">
-                    <div class="product-main-pic">
-                        <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">                    
-                    </div>
-                    <div class="pd-div-miniature-pic">
-                        <% product.images.forEach((image, index)=> {%>
-                            <% if(index == 0) { %>
-                                <img id="pd-img-<%= index %>" class= 'pd-pic-selected' src="<%= image.imgPath %>" onload="loadProductMainPic('<%= image.imgPath %>')" onclick="selectProductPic('<%= image.imgPath %>', this.id)" alt="product-image">
+
+            <div id="prod-session1">
+                <div class="product-container">
+                        <div class="product-main-pic">
+                            <% if(product.imgPath) {%>
+                                <img id="pd-main-pic" src='<%= product.imgPath %> ' alt="product-main-pic">
+                            <%} else {%>  
+                                <img id="pd-main-pic" src="/img/placeHolderProductImage.jpg" alt="product-main-pic">
+                            <%}%>  
+                        </div>
+                    
+                    <div class="product-details">
+                        <div class="product-header">
+                            <span><%= product.name %></span>
+                        </div>
+                        <div id="product-sizes">
+                            <% if (product.one_size === 'N') {%>
+                                <% if(product.es_size == 'S') {%> 
+                                    <div id="es-size" class="size-box size-available" value='PP'>PP</div>
+                                <% } else { %> 
+                                    <div id="es-size" class="size-box" value='PP'>PP</div>
+                                <% } %>
+                                <% if(product.s_size == 'S') {%> 
+                                    <div id="s-size" class="size-box size-available" value='P'>P</div>
+                                <% } else { %> 
+                                    <div id="s-size" class="size-box" value='P'>P</div>
+                                <% } %>
+                                <% if(product.m_size == 'S') {%> 
+                                    <div id="m-size" class="size-box size-available" value='M'>M</div>
+                                <% } else { %> 
+                                    <div id="m-size" class="size-box" value='M'>M</div>
+                                <% } %>
+                                <% if(product.l_size == 'S') {%> 
+                                    <div id="l-size" class="size-box size-available" value='G'>G</div>
+                                <% } else { %> 
+                                    <div id="l-size" class="size-box" value='G'>G</div>
+                                <% } %>
+                                <% if(product.el_size == 'S') {%> 
+                                    <div id="el-size" class="size-box size-available" value='GG'>GG</div>
+                                <% } else { %> 
+                                    <div id="el-size" class="size-box" value='GG'>GG</div>
+                                <% } %>                                
                             <% } else { %> 
-                                <img id="pd-img-<%= index %>" src="<%= image.imgPath %>" onclick="selectProductPic('<%= image.imgPath %>', this.id)" alt="product-image">
+                               <div id="one_size" class="size-box">Único</div>
                             <% } %> 
-                        <%}) %> 
-                    </div>
-                </div>
-                <div class="product-details">
-                    <div class="product-header">
-                        <span><%= product.description %></span>
-                    </div>
-                    <div class="product-sizes">
-                        <div class="size-box">EP</div>
-                        <div class="size-box">P</div>
-                        <div class="size-box size-available">M</div>
-                        <div class="size-box">G</div>
-                        <div class="size-box">GG</div>
-                    </div>
-                    <div class="product-description">
-                        <p>                   
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and.
-                        </p>
-                    </div>
-                    <div class="product-price">
-                        <div class="installment">
-                            <span class="installment-parts">5x</span>
-                            <span class="installment-price">R$ 10,18</span>
                         </div>
-                        <div class="at-sight">
-                            <span class="or">ou</span>
-                            <span class="at-sight-price">R$ 50,90 à vista</span>
+                        <input id='choosen-size' type="text" name="choosen-size" value=''>
+                        <div class="product-description">
+                            <p>                   
+                            <%= product.description %> 
+                            </p>
                         </div>
-                    </div>
-    
-                    <div class="shipping-buy">
-                        <div class="shipping">
-                            <div class="cep-entry">
-                                <label for="cep">CEP:</label>
-                                <input type="text">
+                        <div class="product-price">
+                            <div class="installment">
+                                <span class="installment-parts">5x</span>
+                                <span class="installment-price">R$ 10,18</span>
                             </div>
-                            <button>calcular frete</button>
-                        </div>
-                        <div class="buy">
-                            <button class="btn-add-to-kart">adicionar ao carrinho</button>
-                            <button class="btn-buy">COMPRAR</button>
+                            <div class="at-sight">
+                                <span class="or">ou</span>
+                                <span class="at-sight-price">R$ 50,90 à vista</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-    
+                <div id="shipping-buy">
+                    <div id="shipping">
+                        <div id="div-cep">
+                            <label id="lbl-cep" for="prod-inp-cep">CEP:</label>
+                            <input id="prod-inp-cep" class="pdp-inputs" type="text">
+                        </div>
+                        <button id="btn-prod-shipping" class="button-search buttons">Calcular Frete</button>
+                    </div>
+                    <div class="buy">
+                        <button id="btn-prod-save" class="button-save buttons">COMPRAR</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

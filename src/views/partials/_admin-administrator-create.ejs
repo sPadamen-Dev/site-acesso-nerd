@@ -1,13 +1,13 @@
-<!--pdp profile details panel-->
-<form id="admin-create-form" class="pdp-form" method="POST" action="/admin/administrator" enctype="multipart/form-data" >    <div id="pdp-container">
+<form id="admin-create-form" class="pdp-form" method="POST" action="/admin/administrator" enctype="multipart/form-data" >    
+    <div id="pdp-container">
         <div>
             <section id="pdp-section-pics">
                 <div id="pdp-grp-main-image">
-                        <img id="pdp-main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
+                        <img id="admin-main-pic" class="main-pic" src="/img/profiles/placeHolderProfileImage.jpg" alt="profile-img">
                         <input id='admin-initial-img' name='initialImg' value="" hidden>
                 </div>
                 <div id="pdp-div-input-pics">
-                    <label for="admin-inp-pic" id="pdp-btn-upload" class="pdp-buttons">Upload imagens</label>
+                    <label for="admin-inp-pic" id="pdp-btn-upload" class="buttons">Upload imagens</label>
                     <input id='admin-inp-pic' class="pdp-inp-pics" type="file" name="admin-inp-pic" accept="image/*">
                 </div>
             </section>
@@ -35,7 +35,7 @@
                     <div class="pdp-div-titles">
                         <span>Usuário</span>
                     </div>
-                    <input id="pdp-inp-user" class="pdp-inputs" name="user" type="text" required>
+                    <input id="admin-inp-user" class="pdp-inputs" name="user" type="text" required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -43,7 +43,7 @@
                     <div class="pdp-div-titles">
                         <span>Nome</span>
                     </div>
-                    <input id="pdp-inp-name" class="pdp-inputs" name="name" type="text" required>
+                    <input id="admin-inp-name" class="pdp-inputs" name="name" type="text" required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -51,7 +51,7 @@
                     <div class="pdp-div-titles">
                         <span>CPF</span>
                     </div>
-                    <input id="pdp-inp-cpf" class="pdp-inputs" name="cpf" type="text" required>
+                    <input id="admin-inp-cpf" class="pdp-inputs" name="cpf" type="text" required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -59,7 +59,7 @@
                     <div class="pdp-div-titles">
                         <span>Email</span>
                     </div>
-                    <input id="pdp-inp-email" class="pdp-inputs" name="email" type="email" required>
+                    <input id="admin-inp-email" class="pdp-inputs" name="email" type="email" required>
                 </div>
             </div>
             <div class="pdp-div-groups">
@@ -71,8 +71,11 @@
                 </div>
             </div>
             <div id="pdp-grp-buttons">
-                <div>
-                    <button id="btn-admin-save" class="pdp-button-save pdp-buttons" type="submit">Salvar</button>                 
+                <div class="grp-cancel-edit">
+                    <button id="btn-admin-cancel" class="button-cancel buttons" type="reset" onclick="window.location.replace('/admin/administrators/');">Cancelar</button>
+                </div>
+                <div class="grp-save">
+                    <button id="btn-admin-save" class="button-save buttons" type="submit">Salvar</button>
                 </div>
             </div>
         </section>

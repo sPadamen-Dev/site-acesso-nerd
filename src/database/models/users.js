@@ -12,20 +12,18 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       this.hasMany(models.Addresses,{
-        foreignKey: 'user_id',
-        as: 'address'
+        foreignKey: 'address_id',
       })
 
       this.hasMany(models.Credit_cards,{
-        foreignKey: 'user_id',
-        as: 'cards_user'
+        foreignKey: 'card_id',
       })
 
-      this.hasMany(models.Orders,{
-        foreignKey: 'user_id',
-        as: 'ordem_pagamento_usuario'
+      this.hasMany(models.Order,{
+        foreignKey: 'order_id',
       })
 
+      this.belongsToMany( models.Product, { through: 'Favorites' });
     }
   };
   Users.init({
@@ -34,14 +32,21 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    user_name: DataTypes.STRING,
-    birth_date: DataTypes.STRING,
-    gender: DataTypes.STRING,
+    userEmail: DataTypes.STRING,
+    senha: DataTypes.STRING,
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
     cpf: DataTypes.STRING,
-    email: DataTypes.STRING,
-    telefone: DataTypes.STRING,
-    password: DataTypes.STRING,
-    user_status: DataTypes.BOOLEAN
+    gender: DataTypes.STRING,
+    birthDate: DataTypes.STRING,
+    address: DataTypes.STRING,
+    number: DataTypes.STRING,
+    district: DataTypes.STRING,
+    cep: DataTypes.STRING,
+    city: DataTypes.STRING,
+    state: DataTypes.STRING,
+    email: DataTypes.STRING, 
+    telephone: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Users',

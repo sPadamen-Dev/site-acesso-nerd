@@ -12,6 +12,7 @@ html {
 body {
     align-items: center;
     font-family: 'PT Sans', sans-serif;
+    margin: 20px 0px;
 }
 
 label{
@@ -34,11 +35,11 @@ li.parsley-custom-error-message{
 #radio-input{
   display: flex;
   flex-wrap: wrap;
+  accent-color: #ffa700;
 }
 
 #gender-input{
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px
 }
 
 #gender-input input{
@@ -64,7 +65,7 @@ li.parsley-custom-error-message{
 }
 /*form styles*/
 #msform {
-  width: 400px;
+  width: 372px;
   margin: 5px auto;
   text-align: center;
   position: relative;
@@ -74,13 +75,11 @@ li.parsley-custom-error-message{
   border: 2px solid black;
   border-radius: 3px;
   box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-  padding: 20px 30px;
+  padding: 5% 13%;
   box-sizing: border-box;
-  width: 80%;
-  margin: 0 10%;
-  
   /*stacking fieldsets above each other*/
   position: absolute;
+  width: 372px
 }
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
@@ -95,7 +94,6 @@ li.parsley-custom-error-message{
   height: 35px;
   width: 95%;
   margin-bottom: 5%;
-  color: rgb(7, 7, 7);
   font-size: 0.8em;
   letter-spacing: 1px;
   padding-left: 1.5em;
@@ -107,6 +105,10 @@ li.parsley-custom-error-message{
 #msform input:focus, 
 #msform input:valid{
     border-color: #1E90FF;
+}
+
+#msform input::placeholder{
+  color:rgb(151, 150, 150);
 }
 /*buttons*/
 #msform .action-button {
@@ -136,8 +138,9 @@ input.submit.action-button{
 /*headings*/
 .fs-title {
   font-size: 20px;
-  color: #ffffff;
+  color: #ddedf7;
   margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 .fs-subtitle {
   font-weight: normal;
@@ -149,6 +152,7 @@ input.submit.action-button{
 #progressbar {
   margin-bottom: 20px;
   overflow: hidden;
+  margin-left: 26px;
   /*CSS counters to number the steps*/
   counter-reset: step;
 }
@@ -157,7 +161,7 @@ input.submit.action-button{
   color: white;
   text-transform: uppercase;
   font-size: 9px;
-  width: 33.33%;
+  width: 22.33%;
   float: left;
   position: relative;
 }
@@ -195,3 +199,103 @@ input.submit.action-button{
   color: black;
 }
 
+.user_password{
+  margin-right: auto;
+  padding-bottom: 0px !important;
+}
+
+.user_password_confirmation{
+  margin-right: auto;
+  padding-bottom: 0px !important;
+}
+
+.password-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.password-group input {
+  margin-bottom: 0;
+}
+
+.password-group i {
+  color:#ffde5a;
+  position: absolute;
+  padding-right: 15px;
+}
+
+
+.confirm-password-group{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.confirm-password-group input {
+  margin-bottom: 0;
+}
+
+.confirm-password-group i {
+  color:#ffde5a;
+  position: absolute;
+  padding-right: 15px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header img {
+  height: 75px;
+  width: 65px;
+  object-fit: scale-down;
+}
+
+
+.title {
+  margin-top: 2%;    
+  font-size: 1.9em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+  padding-bottom: 5px; 
+}
+
+.agree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  accent-color: #ffa700;
+}
+
+input#chk-agree {
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  margin-top: 15px;
+  border: 1px;
+  border-color:  #FFDE5A; 
+}
+
+.agree label {    
+  color: #dbdbdb;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+.agree label{
+  font-size: 13px;
+  font-weight: unset;
+  padding-bottom: unset;
+  text-align: left;
+}

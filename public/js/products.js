@@ -1,5 +1,4 @@
 function likeIt(element) {
-    console.log('entrou likeIt')
     var v = document.getElementById(element);
     if (v.classList.contains("liked")) {
         v.classList.remove("liked")

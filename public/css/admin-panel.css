@@ -196,6 +196,9 @@
 }
 
 #pdp-grp-main-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 255px;
   width: 255px;
 }
@@ -206,7 +209,7 @@
   position: relative;
 }
 
-#pdp-main-pic {
+.main-pic {
   width: 100%;
   height: auto; 
   display: block;
@@ -232,6 +235,12 @@
   transition: 600ms;
 }
 
+#pdp-section-info {
+  padding: 0px 20px;
+  border: 1px solid whitesmoke;
+  margin-left: 10px;
+  width: 400px;
+}
 
 .pdp-div-groups {
   padding: 5px 0;
@@ -248,56 +257,14 @@
   font-weight: 700;
 }
 
-.pdp-inputs , .pdp-selects {
-  padding: 5px;
-  font-family: 'IBM Plex Sans KR', sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  border: 1px solid gainsboro;
-  width: 100%;
-}
-
 .pdp-inp-pics[type="file"] {
     display: none;
 }
 
-.pdp-button-save {
-  background-color: var(--btn-confirm);
-}
-
-.pdp-button-cancel {
-  background-color:var(--btn-cancel);
-}
-
-.pdp-button-edit {
-  background-color:var(--btn-edit);
-}
-
-.pdp-button-delete {
-  background-color:var(--btn-delete);
-}
-
 #pdp-grp-buttons {
   display: flex;
-  width: 100%;
   justify-content: space-around;
   padding: 20px 0px;
-}
-
-.pdp-buttons {
-  color: white;
-  height: 35px;
-  width: 100px;
-  border-radius: 7px;
-  font-size: 14px;
-  font-weight: 700;
-  margin: 0px 10px;
-  cursor: pointer;
-}
-
-.pdp-buttons:hover {
-  opacity: 0.7;
-  transition: 0.5s;
 }
 
 /***** SLIDE SWITCH *****/

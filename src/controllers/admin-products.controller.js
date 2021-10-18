@@ -1,35 +1,51 @@
 const productsController = require('./products.controller')
 
 const adminProductsController = {
-    getAll: (req, res) => {
-        let panel = 'products'
-        const productList = productsController.getAllProducts();
-        res.render("admin-home", { productList, panel} )
+    getAll: async (req, res) => {
+        try {
+            let panel = 'products'
+            const productList = await productsController.getAll();
+            res.status(200).render("admin-home", { productList, panel} )
+        } catch (error) {
+            res.status(500).render("admin-home", { error: error.message} )
+        }        
     },
-    getById: (req, res) => {
+    getById: async (req, res) => {
         let panel = 'product-details'
-        let product = productsController.getProductById(req.params.id);
+        let product = await productsController.getById(req.params.id);
         res.render("admin-home", { panel, product })
     },
-    new: (req, res) => {
+    create: (req, res) => {
         let panel = 'product-create'
         res.render("admin-home", { panel })
     },
-    create: (req, res) => {
-        let panel = 'product-details'
-        let product = productsController.saveProduct (req,res);
-        res.render("admin-home", { panel, product })
+    save: async (req, res) => {
+        const product = await productsController.save(req, res);
+        if (product) {
+            let panel = 'product-details'
+            res.render("admin-home", { panel, product })
+        }
     },
-    update: (req, res) => {
-        console.log(req.body);
-        console.log(req.files); 
+    update: async (req, res) => {
+        const product = await productsController.update(req, res);
+        if (product) {
+            let panel = 'product-details'
+            res.render("admin-home", { panel, product })
+        }
     },
-    remove: (req, res) => {
-        deleteProduct(req.params.id)
-        let usersList = {
-            users : getAllUsers()
-        };
-        res.render('index', { usersList: usersList })
+    remove: async(req, res) => {
+        const removeStatus = await productsController.remove(req.params.id)
+        if(removeStatus.status) {
+            try {
+                let panel = 'products'
+                const productList = await productsController.getAll();
+                res.status(200).render("admin-home", { productList, panel} )
+            } catch (error) {
+                res.status(500).render("admin-home", { error: error.message} )
+            }   
+        } else {
+            res.status(500).render("admin-home", { error: removeStatus.msg} )
+        }
     }
 }
 

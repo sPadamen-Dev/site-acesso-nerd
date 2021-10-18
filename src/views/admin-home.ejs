@@ -16,7 +16,6 @@
     </head>
     <body>
         <div id="container">
-
             <div id="top-bar">
                 <img src="/img/logo.png" alt="acesso-nerd-logo">
                 <div id="bar-nav">
@@ -28,16 +27,23 @@
             </div>
 
             <div id="wrapper"> 
-                    <ul id="menu">
-                        <a href="/admin/administrators"><li><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="menu-span">Administradores</span></li></a>
-                        <li><img class="menu-icon" src="/img/admin-customers.png" alt=""><span class="menu-span">Clientes</span></li>
-                        <a href="/admin/products"><li><img class="menu-icon" src="/img/admin-products.png" alt=""><span class="menu-span">Produtos</span></li></a>
-                        <li><img class="menu-icon" src="/img/admin-orders.png" alt=""><span class="menu-span">Pedidos</span></li>
-                        <li><img class="menu-icon" src="/img/admin-payments.png" alt=""><span class="menu-span">Pagamentos</span></li>
-                        <li><img class="menu-icon" src="/img/admin-contact-us.png" alt=""><span class="menu-span">Central de Ajuda</span></li>
-                        <li><img class="menu-icon" src="/img/admin-about.png" alt=""><span class="menu-span">Sobre Acesso Nerd</span></li>
-                    </ul>
-                
+                <ul id="menu">
+                    <% if(panel ==='administrators' || panel === 'administrator-details' || panel === 'administrator-create') { %> 
+                        <a href="/admin/administrators"><li id='administrator-menu' class='selected-menu'><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="selected-menu-span">Administradores</span></li></a>
+                    <% } else { %>
+                        <a href="/admin/administrators"><li id='administrator-menu'><img class="menu-icon" src="/img/admin-users.png" alt=""><span class="menu-span">Administradores</span></li></a>
+                    <% } %> 
+                        <li id='customer-menu'><img class="menu-icon" src="/img/admin-customers.png" alt=""><span class="menu-span">Clientes</span></li>
+                    <% if(panel ==='products' || panel === 'product-details' || panel === 'product-create') { %> 
+                        <a href="/admin/products"><li id='product-menu' class='selected-menu'><img class="menu-icon" src="/img/admin-products.png" alt=""><span class="selected-menu-span">Produtos</span></li></a>
+                    <% } else { %> 
+                        <a href="/admin/products"><li id='product-menu'><img class="menu-icon" src="/img/admin-products.png" alt=""><span class="menu-span">Produtos</span></li></a>
+                    <% } %> 
+                    <li id='order-menu'><img class="menu-icon" src="/img/admin-orders.png" alt=""><span class="menu-span">Pedidos</span></li>
+                    <li id='payment-menu'><img class="menu-icon" src="/img/admin-payments.png" alt=""><span class="menu-span">Pagamentos</span></li>
+                    <li id='contact-menu'><img class="menu-icon" src="/img/admin-contact-us.png" alt=""><span class="menu-span">Central de Ajuda</span></li>
+                    <li id='about-menu'><img class="menu-icon" src="/img/admin-about.png" alt=""><span class="menu-span">Sobre Acesso Nerd</span></li>
+                </ul>
                 
                 <section id="display-area">
                     <% if(panel === 'products') {%> 
@@ -54,8 +60,8 @@
                         <%- include('./partials/_admin-administrator-create') %> 
                     <% } %> 
                 </section>
-
             </div>
         </div>
+        <script src="/js/admin-home.js"></script>
     </body>
 </html>
