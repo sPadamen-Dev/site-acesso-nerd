@@ -6,11 +6,7 @@ const router = Router();
 const methodOverride = require('method-override')
 
 const multer = require('multer');
-<<<<<<< HEAD
-const upload = multer({dest: 'img/'})
-=======
 const upload = multer({dest: './public/img/profiles'})
->>>>>>> main
 
 router.use(methodOverride('_method'));
 
