@@ -24,14 +24,21 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
       primaryKey: true
     },
-    user_name: DataTypes.STRING,
-    birth_date: DataTypes.STRING,
-    gender: DataTypes.STRING,
+    userEmail: DataTypes.STRING,
+    senha: DataTypes.STRING,
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
     cpf: DataTypes.STRING,
-    email: DataTypes.STRING,
-    telefone: DataTypes.STRING,
-    password: DataTypes.STRING,
-    user_status: DataTypes.BOOLEAN
+    gender: DataTypes.STRING,
+    birthDate: DataTypes.STRING,
+    address: DataTypes.STRING,
+    number: DataTypes.STRING,
+    district: DataTypes.STRING,
+    cep: DataTypes.STRING,
+    city: DataTypes.STRING,
+    state: DataTypes.STRING,
+    email: DataTypes.STRING, 
+    telephone: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
