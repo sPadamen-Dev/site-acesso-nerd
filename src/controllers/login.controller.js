@@ -2,7 +2,6 @@ require('dotenv').config()
 const db = require("../database/models")
 const bcrypt = require('bcryptjs');
 const session = require("express-session");
-const jwt = require('jsonwebtoken')
 
     const loginController = {
       loginPage: (req, res) => {
@@ -19,14 +18,6 @@ const jwt = require('jsonwebtoken')
               .then(response =>{
                 if(response){
                   let nameUser = session.userEmail = searchUser.userEmail
-                  /*const token = jwt.sign({
-                    email
-                  }, process.env.ACESS_TOKEN_SECRET, {
-                    expiresIn:3600000
-                  })
-                  res.json({
-                    token
-                  })*/
                   return res.redirect(301, "/") 
                 } 
                 else{
