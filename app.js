@@ -34,9 +34,6 @@ app.use(session({
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
 
-
-
-
 // Static Files
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
@@ -59,8 +56,13 @@ connect();
 app.get('/', homeRouter)
 app.get('/product/:id', homeRouter)
 app.get('/products/:field/:value', homeRouter)
+app.get('/orders', homeRouter)
+app.get('/order/:id', homeRouter)
 
-app.use('/login', loginRouter)
+app.use('/login', function(req, res, next) {
+  req.session.email = req.body.email
+  next();
+},loginRouter)
 //app.use(singUpRouter)
 app.use('/forgot-password', forgotPasswordRouter)
 
@@ -68,7 +70,6 @@ app.use('/forgot-password', forgotPasswordRouter)
 app.use('/change-password', changePasswordRouter)
 
 app.use('/admin', function(req, res, next) {
-    console.log('Request URL:', req.url);
     next();
   }, adminRouter)
 app.use('/quem-somos',aboutRouter)

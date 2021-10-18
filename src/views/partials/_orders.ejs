@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/orders.css">
+<div id='wrapper-orders'>
+    <form id='orders-form' action="/orders" method="POST" enctype="multipart/form-data">
+        <div id="div-orders-header">
+            <p>Seus Pedidos</p>
+            <div id="grp-orders-search">
+                <div>
+                    <input id="inp-order-search" type="text" name='order-search' placeholder="Buscar por pedido">
+                </div>
+                <div>
+                    <button id="btn-order-search">Buscar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div id="div-orders-list">
+        <% orderList.forEach((product)=> {%>
+            <div class="order-card">
+                <div class="order-card-header">
+                    <div class="order-date">
+                        <p>Pedido realizado</p>
+                        <p><%=product.createdAt%></p>
+                    </div>
+                    <div class="order-amount">
+                        <p>R$ <%=product.amount%></p>
+                    </div>
+                    <a href="">Detalhes do pedido</a>
+                </div>
+                <div id="order-products">
+                    <div class="order-product-card">
+                        <div id="order-product-img">
+                            <img src="/img/products/placeHolderProductImage.jpg" alt="">
+                        </div>
+                        <div id="order-product-details">
+                            <div id="product-name">
+                                <p>PRODUTO NAME PLACEHOLDER</p>
+                            </div>
+                            <div id="product-description">
+                                <p>PRODUTO DESCRIPTION PLACEHOLDER: Detalhes do produto
+                                    referente a confeção, tamanho, material
+                                </p>
+                            </div>
+                            <div id="product-price">
+                                <p>R$ 56,90</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %> 
+    </div>
+</div>

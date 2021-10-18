@@ -2,6 +2,10 @@ const { Users } = require('../database/models');
 const nerdTools = require('../../public/js/utils/nerdTools')
 
 const userController = {
+    getUserByEmail: async (email) => {
+        const user = await getUserByEmail(email)
+        return user;
+    },
     getUserByFilter: async (req, res) => {
         const user = await getUserByFilter(req.body.email)
         return user;
@@ -10,6 +14,11 @@ const userController = {
         const user = await changePassword (req)
         return user
     }
+}
+
+async function getUserByEmail (email) {
+    const user = await Users.findOne({where:{email}})
+    return user;
 }
 
 async function getUserByFilter (email) {

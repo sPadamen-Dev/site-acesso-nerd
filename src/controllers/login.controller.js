@@ -17,7 +17,6 @@ const session = require("express-session");
             await bcrypt.compare(senha, searchUser.senha)       
               .then(response =>{
                 if(response){
-                  let nameUser = session.userEmail = searchUser.userEmail
                   return res.redirect(301, "/") 
                 } 
                 else{
