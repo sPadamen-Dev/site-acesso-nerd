@@ -52,7 +52,7 @@ const administratorsController = {
             }
         }
         
-        const admin = await Administrator.findOne( {where:{ admin_id: id}})
+        let admin = await Administrator.findOne( {where:{ admin_id: id}})
     
         // Updates the admin payload
         admin.user = user;
