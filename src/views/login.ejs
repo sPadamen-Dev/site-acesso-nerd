@@ -34,24 +34,22 @@
                     <p class="text">Faça seu login para começar a sua jornada nesse novo universo!</p>
                 </div>
             </header>
-
+                <% if (typeof(msg) !="undefined" ) { %>
+                <p style="color: #000000; text-align: center ;font-size: 15px; margin-bottom:15px; margin-left:35px; margin-right: 35px; letter-spacing: 1px; padding: 10px; background: #FFDE5A; border-radius: 9px;">
+                    <%= msg %>
+                </p>
+                <% } %>
             <div class="form-wrapper">
-                <form action="/" method="POST">
 
-                    <% if (typeof(msg) !="undefined" ) { %>
-                        <p style="color: red;">
-                            <%= msg %>
-                        </p>
-                    <% } %>
-
+                <form action="/login" method="POST">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="seu@email.aqui" required autofocus>
+                    <input type="email" id="email" name="email" placeholder="seu@email.aqui" required autofocus>
 
 
                     <label for="senha">Senha:</label>
                     <div class="password-inputs">
                         <div class="password-group">
-                            <input type="password" id="senha" placeholder="digite sua senha" required autocomplete="on">
+                            <input type="password" id="senha" name="senha" placeholder="digite sua senha" required autocomplete="on">
                             <i class="fa fa-eye-slash" id="olho"  ondragstart="return false;"></i>
                         </div>
                     </div>

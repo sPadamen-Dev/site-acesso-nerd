@@ -3,9 +3,9 @@ const app = express()
 require('dotenv').config()
 const port = process.env.PORT || 3000
 
+
 const loginRouter = require('./src/routes/login.router')
-//const singUpRouter = require('./src/routes/register.user.router')
-const registerRouter = require('./src/routes/register.router')
+const usersRouter = require('./src/routes/users.router')
 const cookieParser = require('cookie-parser')
 const homeRouter = require('./src/routes/home.router')
 const adminRouter = require('./src/routes/admin.router')
@@ -16,14 +16,24 @@ const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
+
 app.use(session({
     secret: "melhorSiteGeek",
-    resave: true,
-    saveUninitialized: true
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      secure: false,
+      maxAge: 1000 * 60 * 60 * 24
+  
+    }
 }))
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json());
+
+
+
 
 // Static Files
 app.use(express.static('public'));
@@ -48,14 +58,13 @@ app.get('/product/:id', homeRouter)
 app.get('/products/:field/:value', homeRouter)
 
 app.use('/login', loginRouter)
-//app.use(singUpRouter)
 app.use('/admin', function(req, res, next) {
     console.log('Request URL:', req.url);
     next();
   }, adminRouter)
 app.use('/quem-somos',aboutRouter)
 app.use('/contato', contatoRouter)
-app.use('/cadastro', registerRouter)
+app.use('/cadastro', usersRouter)
 
 
 app.use((req, res, next) => {

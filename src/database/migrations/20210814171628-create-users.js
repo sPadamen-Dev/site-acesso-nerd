@@ -8,15 +8,20 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      user_name: {
+      userEmail: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        unique: true
+      }, 
+      senha: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      firstName: {
         type: Sequelize.STRING,
         allowNull:false
       },
-      birth_date: {
-        type: Sequelize.STRING,
-        allowNull:false
-      },
-      gender: {
+      lastName: {
         type: Sequelize.STRING,
         allowNull:false
       },
@@ -24,20 +29,43 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
+      gender: {
+        type: Sequelize.STRING
+      },
+      birthDate: {
+        type: Sequelize.DATE,
+        allowNull:false
+      },
+      address: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      number: {
+        type: Sequelize.STRING
+      },
+      district: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      cep: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      city: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
+      state: {
+        type: Sequelize.STRING,
+        allowNull:false
+      },
       email: {
         type: Sequelize.STRING,
         allowNull:false
       },
-      telefone: {
-        type: Sequelize.STRING,
-        allowNull:false,
-      },
-      password: {
+      telephone: {
         type: Sequelize.STRING,
         allowNull:false
-      },
-      user_status: {
-        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         type: Sequelize.DATE,
