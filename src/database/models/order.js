@@ -11,11 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      this.hasOne(models.Payment_details,{
-        foreignKey: 'payment_id',
-        required: false
-      })
-
       this.hasOne(models.User,{
         foreignKey: 'user_id',
         required: true

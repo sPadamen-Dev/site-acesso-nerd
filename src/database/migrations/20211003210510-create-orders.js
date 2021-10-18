@@ -11,19 +11,12 @@ module.exports = {
       user_id: {
         type: Sequelize.INTEGER,
         references:{
-          model: 'User',
+          model: 'Users',
           key: 'user_id'
        }
       },
       amount: {
         type: Sequelize.FLOAT
-      },
-      payment_id: {
-        type: Sequelize.INTEGER,
-        references:{
-          model: 'Payment_details',
-          key: 'payment_id'
-       }
       },
       order_status: {
         type: Sequelize.CHAR(1),
