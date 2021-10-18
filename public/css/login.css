@@ -239,7 +239,7 @@ button:focus {
   }
 
 .linkContainer {
-    margin-top: 65px;
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;

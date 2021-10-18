@@ -16,39 +16,41 @@
 </head>
 <body>
     <form id="msform" action="/cadastro" method="POST">
-      
-      <% if (typeof(msg) !="undefined" ) { %>
-        <p style="color: red;">
-            <%= msg %>
-        </p>
-      <% } %>
+
     <ul id="progressbar">
       <li class="active">Acesso</li>
       <li>Dados Pessoais</li>
       <li>Endereço</li>
       <li>Contato</li>
     </ul>
-    
+
     <fieldset>
       <header>
         <a href="/"><img src="./img/logo-acesso-nerd.png" alt="logo"></a>
         <a href="/"><div class="title">ACESSO NERD</div></a>
         <h2 class="fs-title"></h2>
         <h2 class="fs-title">Preencha o formulário para realizar o seu cadastro</h2>
+
+        <% if (typeof(msg) !="undefined" ) { %>
+          <p style="color: #000000; text-align: center ;font-size: 15px; margin-bottom:15px; margin-left:0px; margin-right: 0px; letter-spacing: 1px; padding: 10px; background: #FFDE5A; border-radius: 9px;">
+              <%= msg %>
+          </p>
+          <% } %>
+
       </header>
   
       <label for="user_mail">Email:</label>
-      <input type="text" id="user_mail" name="user_mail" placeholder="Email" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe um email para cadastro" autofocus>
+      <input type="email" id="user_mail" name="user_mail" placeholder="Email" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe um email para cadastro" autofocus>
           <div class="password-group">
             <label class="user_password" for="senha">Senha:</label>
             <i class="fa fa-eye-slash" id="olho"  ondragstart="return false;"></i>
           </div>
-          <input type="password" id="senha" placeholder="Digite sua senha" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe uma senha de acesso" autocomplete="on">
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Informe uma senha de acesso" autocomplete="on">
           <div class="confirm-password-group">
             <label class="user_password_confirmation" for="confirm-senha">Confirmação de Senha:</label>
             <i class="fa fa-eye-slash" id="confirm-olho"  ondragstart="return false;"></i>
           </div>
-      <input type="password" id="confirm-senha" placeholder="Confirme sua senha" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Digite novamente sua senha" autocomplete="on">
+      <input type="password" id="confirm-senha" name="passwordConfirmation" placeholder="Confirme sua senha" required required data-parsley-group="block1" data-parsley-required data-parsley-error-message="Digite novamente sua senha" autocomplete="on">
       <input type="button" name="continue" class="continue action-button" value="Próximo" data-current-block="1" data-next-block="2"/>
     </fieldset>
 
@@ -58,7 +60,7 @@
       <label for="lastName">Sobrenome:</label>
       <input type="text" id="lastName" name="lastName" placeholder="Sobrenome" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o seu sobrenome">
       <label for="CPF">CPF:</label>
-      <input type="text" id="CPF" name="CPF" placeholder="CPF" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o seu CPF">
+      <input type="text" id="cpf" name="cpf" placeholder="CPF" required data-parsley-group="block2" data-parsley-required data-parsley-error-message="Informe o seu CPF">
         <div id="gender-input">
         <div id="gender-label">
       <label for="gender" id="gender" name="gender">Genero</label></div>
