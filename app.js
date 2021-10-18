@@ -78,7 +78,7 @@ app.use('/cadastro', usersRouter)
 /*test
 app.get('/template-forgot-password', function(req, res){
   const user = {
-    user_name: 'William Xavier',
+    firstname: 'William',
     password: 'Senha Teste'
   }
   res.render('template-forgot-password',{ user })
