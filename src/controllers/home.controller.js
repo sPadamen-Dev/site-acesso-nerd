@@ -1,6 +1,5 @@
 const productsController = require('./products.controller')
 const ordersController = require('./orders.controller')
-const session = require('express-session');
 
   const homeController = {
     getAllProducts: async (req, res)=> {

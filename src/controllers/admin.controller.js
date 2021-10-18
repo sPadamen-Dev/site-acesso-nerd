@@ -1,4 +1,4 @@
-const db = require("../database/models")
+const { Administrator } = require("../database/models")
 const bcrypt = require('bcryptjs')
 const adminController = {
     adminLogin: (req, res) => {
@@ -6,7 +6,7 @@ const adminController = {
     },
     adminHome: async (req, res) => {
         const { user, password } = req.body
-        const adminFound = await db.Administrator.findOne({where:{user}});
+        const adminFound = await Administrator.findOne({where:{user}});
         try {
             if (adminFound) {
                 await bcrypt.compare(password, adminFound.password)

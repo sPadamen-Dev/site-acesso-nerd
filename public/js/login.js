@@ -36,8 +36,10 @@ if (document.getElementById('confirm-senha').type == 'password'){
     document.getElementById('confirm-olho').setAttribute('class','fa fa-eye-slash');
   };
 }
+/*
 // permitindo ver a senha com click
 document.querySelector('#confirm-olho').addEventListener('click', showHideConfirmPass, false)
 
 // permitindo ver a senha com touch
 document.querySelector('#confirm-olho').addEventListener('touch', showHideConfirmPass, false)
+*/

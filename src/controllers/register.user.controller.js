@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { check, validationResult, body } = require('express-validator');
-const db = require("../database/models");
+const { User, Address } = require("../database/models");
 
 module.exports = {
     getRegister: (req, res) => {
@@ -13,15 +13,15 @@ module.exports = {
             console.log(email)
         const passwordCrypt = bcrypt.hashSync(password, 10);
         let listError = validationResult(req);
-        const searchEmailValidate = await db.Users.findOne({where:{email}})
+        const searchEmailValidate = await User.findOne({where:{email}})
             try{
                 if (listError.isEmpty() && searchEmailValidate == undefined ) {
-                     const user = await  db.Users.create({
+                     const user = await  User.create({
                         user_name: userName, birth_date, gender,
                          cpf, email, telefone: telephone, 
                          password: passwordCrypt, user_status: userStatus,
                     },);
-                    const address =  await  db.Addresses.create({
+                    const address =  await  Address.create({
                         address_type: addressType, street, number,
                          additional_info: additionalInfo,
                           district, city, state, zip_code: zipCode

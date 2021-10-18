@@ -1,10 +1,13 @@
-const { Users } = require('../database/models');
+const { User } = require('../database/models');
 const nerdTools = require('../../public/js/utils/nerdTools')
 
 const userController = {
     getUserByFilter: async (req, res) => {
-        const user = await getUserByFilter(req.body.email)
-        return user;
+        let user = ''
+        if (req.body.email) {
+            user = await getUserByEmail(req.body.email)
+        }
+        return user
     },
     changePassword: async (req, res) => {
         const user = await changePassword (req)
@@ -12,8 +15,8 @@ const userController = {
     }
 }
 
-async function getUserByFilter (email) {
-    const user = await Users.findOne({where:{email}})
+async function getUserByEmail (email) {
+    const user = await User.findOne({where:{email}})
     return user;
 }
 
@@ -23,7 +26,7 @@ async function changePassword(req) {
 
     const { email, password, secretkey } = req.body
     try {
-        let user = await getUserByFilter(email)
+        let user = await getUserByEmail(email)
         if(!user) {
             updateResponse.error = 'Usuário não cadastrado.'
             updateResponse.msg = 'Cadastre-se e aproveite nossas ofertas!'

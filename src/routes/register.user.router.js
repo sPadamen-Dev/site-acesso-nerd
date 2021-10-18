@@ -10,12 +10,6 @@ router.post("/cadastro", [
     check("email").isEmail().withMessage("O Email deve ser válido"),
     check("password").isLength({ min: 8 }).withMessage("A senha tem que conter no minimo 8 caracteres"),
 
-
-    // body("email").custom((email) => {
-    //     let user = JSON.parse(fs.readFileSync('./data/users.json'))
-    //     return users.email != email
-    // }).withMessage("Usuario já existe")
-
 ],register_user_controller.createUser);
 
 

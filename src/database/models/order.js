@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
         required: false
       })
 
-      this.hasOne(models.Users,{
+      this.hasOne(models.User,{
         foreignKey: 'user_id',
         required: true
       })

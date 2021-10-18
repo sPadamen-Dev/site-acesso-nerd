@@ -4,9 +4,7 @@ require('dotenv').config()
 const port = process.env.PORT || 3000
 
 const loginRouter = require('./src/routes/login.router')
-//const singUpRouter = require('./src/routes/register.user.router')
 const registerRouter = require('./src/routes/register.router')
-const cookieParser = require('cookie-parser')
 const homeRouter = require('./src/routes/home.router')
 const adminRouter = require('./src/routes/admin.router')
 const session = require('express-session')
@@ -14,7 +12,6 @@ const aboutRouter = require('./src/routes/about.router')
 const contatoRouter = require('./src/routes/contato.router')
 const forgotPasswordRouter = require('./src/routes/forgot-password.router')
 const changePasswordRouter = require('./src/routes/change-password.router')
-const methodOverride = require('method-override')
 
 app.set('view engine', 'ejs')
 app.set('views', './src/views')
@@ -36,7 +33,7 @@ app.use('/img', express.static(__dirname + 'public/img'));
 
 // connection db
 const models = require('./src/database/models');
-const { render } = require('ejs')
+/*const { render } = require('ejs')*/
 const connect = async () => {
   try {
     await models.sequelize.authenticate();
