@@ -32,11 +32,8 @@ async function changePassword(req) {
 
     let user = await getUserByFilter(email)
     const newPassword = await nerdTools.secretGenerate(password, 10)
-    console.log('Nova senha: ', password )
-    console.log('Nova senha criptografada: ', newPassword )
-    user.password = newPassword
+    user.senha = newPassword
 
-    console.log('user atualizado: ', user)
     const userUpdated = await user.save()
     return userUpdated
 }

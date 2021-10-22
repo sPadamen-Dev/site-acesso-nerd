@@ -30,3 +30,8 @@ window.addEventListener('load', function () {
         })
       }
 })
+
+function buy(product_id) {
+    const url = '/order/' + product_id
+    window.location.replace(url);
+}

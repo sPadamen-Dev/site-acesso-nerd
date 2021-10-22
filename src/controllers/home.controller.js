@@ -1,6 +1,7 @@
 const productsController = require('./products.controller')
 const ordersController = require('./orders.controller')
 const session = require('express-session');
+
 const msg = {
     msg: ''
 }
@@ -10,7 +11,7 @@ const msg = {
         const bannerList = await productsController.getAllBanners();
         let returnType = 'objectList'
         const productList = await productsController.getAll();
-        if (!productList.product) {
+        if (!productList) {
             returnType = 'notFound'
             msg.msg = 'Não há produtos correspondentes a sua pesquisa'
         }
@@ -33,13 +34,25 @@ const msg = {
         res.render("home", { productList, bannerList, returnType, msg } )
     },
     getAllOrdersByUser: async(req, res)=> {
-        const bannerList = await productsController.getAllBanners();
-        const orderList = await ordersController.getAllByUser(req, res)
+        const bannerList = await productsController.getAllBanners()
+        const orderList = await ordersController.getAllByUser(req, res);
         let returnType = 'orderList'
         if (!orderList) {
             returnType = 'notFound'
             msg.msg = 'Não há pedidos correspondentes a sua pesquisa'
-        }
+        } 
+        res.render("home", { orderList, bannerList, returnType, msg } )
+    },
+    toBuy: async(req, res)=> {
+        const bannerList = await productsController.getAllBanners()
+        await ordersController.create(req, res);
+
+        const orderList = await ordersController.getAllByUser(req, res);
+        let returnType = 'orderList'
+        if (!orderList) {
+            returnType = 'notFound'
+            msg.msg = 'Não há pedidos correspondentes a sua pesquisa'
+        } 
         res.render("home", { orderList, bannerList, returnType, msg } )
     }
 }

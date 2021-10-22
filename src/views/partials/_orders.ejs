@@ -14,15 +14,15 @@
         </div>
     </form>
     <div id="div-orders-list">
-        <% orderList.forEach((product)=> {%>
+        <% orderList.forEach((order)=> {%>
             <div class="order-card">
                 <div class="order-card-header">
                     <div class="order-date">
                         <p>Pedido realizado</p>
-                        <p><%=product.createdAt%></p>
+                        <p><%=order.createdAt%></p>
                     </div>
                     <div class="order-amount">
-                        <p>R$ <%=product.amount%></p>
+                        <p>R$ <%=order.amount%></p>
                     </div>
                     <a href="">Detalhes do pedido</a>
                 </div>
@@ -47,6 +47,6 @@
                     </div>
                 </div>
             </div>
-        <% } %> 
+        <% }) %> 
     </div>
 </div>

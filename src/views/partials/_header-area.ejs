@@ -1,8 +1,10 @@
-<% if(returnType === 'objectList' || returnType === 'notFound') {%> 
+<% if(returnType === 'objectList') {%> 
     <%- include('./_header')  %> 
     <%- include('./_home-banner') %>
 <% } else if (returnType === 'singleObject') {  %> 
     <%- include('./_header')  %>
 <% } else if (returnType === 'orderList') {  %> 
+    <%- include('./_header')  %> 
+<% } else if (returnType === 'notFound') {  %> 
     <%- include('./_header')  %> 
 <% } %> 

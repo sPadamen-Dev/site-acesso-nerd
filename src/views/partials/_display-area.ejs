@@ -1,11 +1,11 @@
-<% if(returnType === 'objectList') {%> 
+<% if(returnType == 'objectList') {%> 
     <%- include('./_products') %>
-<% } else if (returnType === 'singleObject') {  %> 
+<% } else if (returnType == 'singleObject') {  %> 
     <%- include('./_product-details') %>
-<% } else if (returnType === 'orderList') { %>
+<% } else if (returnType == 'orderList') { %>
     <%- include('./_orders') %>
-<% } else if (returnType === 'singleOrder') { %>
+<% } else if (returnType == 'singleOrder') { %>
     <%- include('./_order-details') %>
-<% } else if (returnType === 'notFound') { %>
+<% } else if (returnType == 'notFound') { %>
     <%- include('./_notFound') %>
 <% } %> 
