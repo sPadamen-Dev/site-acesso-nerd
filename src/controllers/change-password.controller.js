@@ -20,10 +20,6 @@ const changePasswordController = {
         /* get secret to compare */
         const  passwordSecret = await req.body.secretkey
 
-        console.log('Senha atual: ', user.senha)
-        console.log('Chave atual: ', actualSecret)
-        console.log('Chave informada: ', passwordSecret)
-
         if(bcrypt.compare(actualSecret, passwordSecret)) {
             console.log(`secret atual ${actualSecret} é identico ao secret informado ${passwordSecret} ` )
             const userUpdated = userController.changePassword(req, res)

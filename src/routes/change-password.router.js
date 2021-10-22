@@ -24,7 +24,6 @@ router.post("/", validateEntries, async (req, res, next) => {
         errors = errors.mapped()
         return res.render('change-password', ({ errors, old: req.body}))
     } else {
-        console.log("validacao OK")
         next()
     }
 }, changePasswordController.update );

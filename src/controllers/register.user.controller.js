@@ -10,7 +10,6 @@ module.exports = {
         const { userName,birth_date, gender,  cpf, email, telephone, password, userStatus,
                 addressType, street, number, additionalInfo, district, city, state, zipCode 
             } = req.body;
-            console.log(email)
         const passwordCrypt = bcrypt.hashSync(password, 10);
         let listError = validationResult(req);
         const searchEmailValidate = await db.Users.findOne({where:{email}})

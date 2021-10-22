@@ -21,7 +21,6 @@ async function secretGenerate(value, encryptLevel) {
     const todayDate = moment().format('L')
     value = value + todayDate
     const secret = await encryptValue(value, encryptLevel)
-    console.log('secret: ',secret)
     return secret
 }
 

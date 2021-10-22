@@ -30,11 +30,8 @@ const forgotPasswordController = {
     },
     sendEmail: async (req,res) => {
         const user = await userController.getUserByFilter(req, res)
-        console.log('Pegou usuario no banco:', user)
         const secretkey = await nerdTools.secretGenerate(user.senha, 10)
-        console.log('Gerou chave de seguranca1:', secretkey)
         user.senha = secretkey
-        console.log('user atualizado (com chave de seguranca):', user)
         const template = await getForgotPasswordTemplate( user )
         
         if (template) {
@@ -59,7 +56,6 @@ const forgotPasswordController = {
 
 async function getForgotPasswordTemplate( user , secretkey) {
     const filePath = path.join(__dirname, '../views/templates/template-forgot-password.ejs');
-    console.log('Pegou file para rendereizar, passando user como parametro: ', user)
     const template = await ejs.renderFile(filePath, { user } )    
     return template
 }
